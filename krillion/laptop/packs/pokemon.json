@@ -1,7 +1,0 @@
-{
- "id": "pokemon",
- "prompt": "Name a Pokemon",
- "source": "wikidata",
- "built": "2026-11-21",
- "answers": []
-}
