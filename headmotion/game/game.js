@@ -73,7 +73,7 @@
     m.style.display = 'flex';
     if (st.mode === 'calibrate') {
       const step = Input.s.calStep, [text, label] = CAL[step];
-      m.innerHTML = `<h1>CALIBRATE</h1>Step ${Input.STEPS.indexOf(step) + 1} of 5<br><br>${text}<br><br><span style="font-size:44px;color:#f0f">${label}</span><br><br><small>Hold the pose until the next step appears · Esc to skip and use the keyboard</small>`;
+      m.innerHTML = `<h1>CALIBRATE</h1>Step ${Input.STEPS.indexOf(step) + 1} of 5<br><br>${text}<br><br><span style="font-size:44px;color:#f0f">${label}</span><br><br><small>Hold the pose until the next step appears · Esc to skip and use the keyboard</small><p id="calhint" style="color:#fc0;min-height:1.5em"></p>`;
     } else if (st.mode === 'calibrated') m.innerHTML = `<h1>CALIBRATED ✓</h1>Lean to steer and move. The small circle (bottom right) shows your stick.<br><br>Press <b>Enter</b> to start.<br><br><small>R to calibrate again</small>`;
     else if (st.mode === 'ready') m.innerHTML = `<h1>AIRPOD WIPEOUT</h1>Press <b>Enter</b> to calibrate your AirPod joystick, then start.<br><br>
       <b>Lean left / right</b> steer &nbsp;·&nbsp; <b>Lean forward</b> move forward &nbsp;·&nbsp; <b>Lean back</b> move backward<br>
@@ -97,6 +97,7 @@
   function frame(now) {
     const dt = Math.min(0.05, (now - last) / 1000); last = now;
     const ev = Input.takeEvents();
+    if (st.mode === 'calibrate') { const h = $('calhint'); if (h) h.textContent = Input.s.calHint; }
     if (st.mode === 'calibrate' && ev.includes('calibrated')) { st.mode = 'calibrated'; showMsg(); }
     else if (st.mode === 'calibrate' && ev.includes('calstep')) showMsg();
     else if (st.mode === 'playing') step(dt);
