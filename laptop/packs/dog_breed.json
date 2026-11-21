@@ -1,0 +1,5886 @@
+{
+ "id": "dog_breed",
+ "prompt": "Name a dog breed",
+ "source": "wikidata",
+ "built": "2026-11-21",
+ "answers": [
+  {
+   "qid": "Q38280",
+   "name": "German Shepherd",
+   "aliases": [
+    "Alsatian",
+    "Alsatian dog",
+    "Alsatian wolf dog",
+    "Berger Allemand",
+    "Deutscher Schäferhund",
+    "GSD",
+    "German Shepherd Dog",
+    "Schäferhund"
+   ],
+   "popularity": 92
+  },
+  {
+   "qid": "Q38584",
+   "name": "dingo",
+   "aliases": [
+    "Canis dingo",
+    "Canis familiaris dingo",
+    "Canis lupus dingo"
+   ],
+   "popularity": 88
+  },
+  {
+   "qid": "Q38726",
+   "name": "Labrador Retriever",
+   "aliases": [
+    "Lab",
+    "Labrador"
+   ],
+   "popularity": 81
+  },
+  {
+   "qid": "Q21102",
+   "name": "beagle",
+   "aliases": [],
+   "popularity": 72
+  },
+  {
+   "qid": "Q653",
+   "name": "Chihuahua",
+   "aliases": [
+    "Chihuahueño"
+   ],
+   "popularity": 71
+  },
+  {
+   "qid": "Q38383",
+   "name": "Bulldog",
+   "aliases": [
+    "British Bulldog",
+    "English Bulldog"
+   ],
+   "popularity": 69
+  },
+  {
+   "qid": "Q38686",
+   "name": "Golden Retriever",
+   "aliases": [
+    "Golden",
+    "Goldie"
+   ],
+   "popularity": 69
+  },
+  {
+   "qid": "Q29099",
+   "name": "dachshund",
+   "aliases": [
+    "badger dog",
+    "dackel",
+    "sausage dog",
+    "teckel",
+    "wiener dog"
+   ],
+   "popularity": 68
+  },
+  {
+   "qid": "Q39093",
+   "name": "Rottweiler",
+   "aliases": [
+    "Rottie"
+   ],
+   "popularity": 66
+  },
+  {
+   "qid": "Q29164",
+   "name": "Akita",
+   "aliases": [
+    "Akita Inu",
+    "American Akita",
+    "Japanese Akita",
+    "Japanese Akitainu"
+   ],
+   "popularity": 65
+  },
+  {
+   "qid": "Q38698",
+   "name": "pug",
+   "aliases": [
+    "carlin",
+    "mops"
+   ],
+   "popularity": 62
+  },
+  {
+   "qid": "Q39295",
+   "name": "Siberian Husky",
+   "aliases": [
+    "Huskie",
+    "Husky"
+   ],
+   "popularity": 62
+  },
+  {
+   "qid": "Q38496",
+   "name": "Boxer",
+   "aliases": [
+    "Deutscher Boxer",
+    "German Boxer"
+   ],
+   "popularity": 61
+  },
+  {
+   "qid": "Q17504",
+   "name": "Dalmatian",
+   "aliases": [],
+   "popularity": 61
+  },
+  {
+   "qid": "Q38904",
+   "name": "poodle",
+   "aliases": [],
+   "popularity": 61
+  },
+  {
+   "qid": "Q5414",
+   "name": "Great Dane",
+   "aliases": [
+    "Deutsche Dogge",
+    "German Mastiff"
+   ],
+   "popularity": 60
+  },
+  {
+   "qid": "Q38358",
+   "name": "Dobermann",
+   "aliases": [
+    "Doberman",
+    "Doberman Pinscher",
+    "Dobermann Pinscher"
+   ],
+   "popularity": 60
+  },
+  {
+   "qid": "Q37710",
+   "name": "border collie",
+   "aliases": [],
+   "popularity": 58
+  },
+  {
+   "qid": "Q29013",
+   "name": "Chow Chow",
+   "aliases": [
+    "Chow",
+    "Chow-Chow"
+   ],
+   "popularity": 56
+  },
+  {
+   "qid": "Q38090",
+   "name": "St. Bernard",
+   "aliases": [
+    "Bernhardiner",
+    "St. Bernard dog"
+   ],
+   "popularity": 55
+  },
+  {
+   "qid": "Q39330",
+   "name": "Yorkshire Terrier",
+   "aliases": [
+    "Yorkie",
+    "Yorkie Terrier",
+    "Yorkshire terrier"
+   ],
+   "popularity": 54
+  },
+  {
+   "qid": "Q38991",
+   "name": "Tosa",
+   "aliases": [
+    "Japanese Fighting Dog",
+    "Japanese Mastiff",
+    "Japanese Tosa",
+    "Tosa Fighting Dog",
+    "Tosa Inu",
+    "Tosa Tōken"
+   ],
+   "popularity": 53
+  },
+  {
+   "qid": "Q21080",
+   "name": "Afghan Hound",
+   "aliases": [],
+   "popularity": 53
+  },
+  {
+   "qid": "Q38571",
+   "name": "greyhound",
+   "aliases": [],
+   "popularity": 53
+  },
+  {
+   "qid": "Q37871",
+   "name": "Basenji",
+   "aliases": [],
+   "popularity": 52
+  },
+  {
+   "qid": "Q39357",
+   "name": "Shih Tzu",
+   "aliases": [
+    "Xi Shi",
+    "Xishi"
+   ],
+   "popularity": 51
+  },
+  {
+   "qid": "Q38706",
+   "name": "Newfoundland dog",
+   "aliases": [],
+   "popularity": 51
+  },
+  {
+   "qid": "Q38322",
+   "name": "Bull Terrier",
+   "aliases": [
+    "English Bull Terrier",
+    "Hinks Bull Terrier"
+   ],
+   "popularity": 50
+  },
+  {
+   "qid": "Q38751",
+   "name": "Maltese",
+   "aliases": [
+    "Maltese dog",
+    "Maltese terrier"
+   ],
+   "popularity": 50
+  },
+  {
+   "qid": "Q39002",
+   "name": "Samoyed",
+   "aliases": [
+    "Bjelkier",
+    "Sammy"
+   ],
+   "popularity": 50
+  },
+  {
+   "qid": "Q21206",
+   "name": "Alaskan Malamute",
+   "aliases": [
+    "Malamute"
+   ],
+   "popularity": 49
+  },
+  {
+   "qid": "Q38959",
+   "name": "Pekingese",
+   "aliases": [
+    "Pekinese"
+   ],
+   "popularity": 48
+  },
+  {
+   "qid": "Q39315",
+   "name": "Shiba Inu",
+   "aliases": [],
+   "popularity": 48
+  },
+  {
+   "qid": "Q29149",
+   "name": "French Bulldog",
+   "aliases": [
+    "Frenchie"
+   ],
+   "popularity": 47
+  },
+  {
+   "qid": "Q39322",
+   "name": "Tibetan Mastiff",
+   "aliases": [
+    "Do-Khyi"
+   ],
+   "popularity": 47
+  },
+  {
+   "qid": "Q38972",
+   "name": "Shar Pei",
+   "aliases": [
+    "Shar-Pei dog",
+    "沙皮",
+    "沙皮犬",
+    "沙皮狗"
+   ],
+   "popularity": 46
+  },
+  {
+   "qid": "Q37617",
+   "name": "Airedale Terrier",
+   "aliases": [],
+   "popularity": 46
+  },
+  {
+   "qid": "Q37629",
+   "name": "Australian Shepherd",
+   "aliases": [
+    "Aussie"
+   ],
+   "popularity": 45
+  },
+  {
+   "qid": "Q38287",
+   "name": "Jack Russell Terrier",
+   "aliases": [],
+   "popularity": 45
+  },
+  {
+   "qid": "Q17510",
+   "name": "West Highland White Terrier",
+   "aliases": [
+    "Poltallock Terrier",
+    "Westie"
+   ],
+   "popularity": 44
+  },
+  {
+   "qid": "Q38576",
+   "name": "Caucasian Shepherd Dog",
+   "aliases": [
+    "Caucasian Mountain Dog"
+   ],
+   "popularity": 44
+  },
+  {
+   "qid": "Q37909",
+   "name": "Dogo Argentino",
+   "aliases": [
+    "Argentine Dogo",
+    "Argentine Mastiff",
+    "Argentinian Mastiff",
+    "Dogo"
+   ],
+   "popularity": 44
+  },
+  {
+   "qid": "Q38668",
+   "name": "Irish wolfhound",
+   "aliases": [],
+   "popularity": 44
+  },
+  {
+   "qid": "Q38950",
+   "name": "Landseer",
+   "aliases": [],
+   "popularity": 44
+  },
+  {
+   "qid": "Q21098",
+   "name": "bloodhound",
+   "aliases": [
+    "Saint Hubert's dog"
+   ],
+   "popularity": 43
+  },
+  {
+   "qid": "Q38080",
+   "name": "Bullmastiff",
+   "aliases": [
+    "English Bullmastiff"
+   ],
+   "popularity": 43
+  },
+  {
+   "qid": "Q37866",
+   "name": "Borzoi",
+   "aliases": [
+    "Barzoi",
+    "Borzaya",
+    "Russian Wolfhound"
+   ],
+   "popularity": 43
+  },
+  {
+   "qid": "Q38570",
+   "name": "Central Asian Shepherd Dog",
+   "aliases": [
+    "Alabai",
+    "CAO",
+    "Central Asia Ovcharka",
+    "Central Asian Shepherd"
+   ],
+   "popularity": 43
+  },
+  {
+   "qid": "Q38309",
+   "name": "English Setter",
+   "aliases": [],
+   "popularity": 43
+  },
+  {
+   "qid": "Q21082",
+   "name": "Cane Corso",
+   "aliases": [
+    "Cane Corso Italiano",
+    "Corso",
+    "Italian Cane Corso",
+    "Italian Corso",
+    "Italian Corso Dog",
+    "Italian Mastiff"
+   ],
+   "popularity": 42
+  },
+  {
+   "qid": "Q37595",
+   "name": "Australian Cattle Dog",
+   "aliases": [
+    "ACD",
+    "Australian Heeler",
+    "Blue Heeler",
+    "Cattle Dog",
+    "Heeler",
+    "Queensland Heeler",
+    "Red Heeler"
+   ],
+   "popularity": 42
+  },
+  {
+   "qid": "Q37608",
+   "name": "Bernese Mountain Dog",
+   "aliases": [
+    "Berner Sennenhund"
+   ],
+   "popularity": 42
+  },
+  {
+   "qid": "Q39108",
+   "name": "Saluki",
+   "aliases": [],
+   "popularity": 42
+  },
+  {
+   "qid": "Q38072",
+   "name": "Cavalier King Charles Spaniel",
+   "aliases": [
+    "CKCS",
+    "Cavalier",
+    "Cavi"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q37612",
+   "name": "American Pit Bull Terrier",
+   "aliases": [
+    "APBT",
+    "Pit Bull"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q38761",
+   "name": "Irish Setter",
+   "aliases": [
+    "Irish setter",
+    "Red Setter",
+    "Setter"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q39058",
+   "name": "Shetland Sheepdog",
+   "aliases": [
+    "Sheltie"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q37716",
+   "name": "basset hound",
+   "aliases": [],
+   "popularity": 41
+  },
+  {
+   "qid": "Q37888",
+   "name": "Cairn Terrier",
+   "aliases": [],
+   "popularity": 41
+  },
+  {
+   "qid": "Q37688",
+   "name": "American Staffordshire Terrier",
+   "aliases": [
+    "AST",
+    "AmStaff"
+   ],
+   "popularity": 40
+  },
+  {
+   "qid": "Q37600",
+   "name": "Bichon Frisé",
+   "aliases": [
+    "Bichon Frise"
+   ],
+   "popularity": 40
+  },
+  {
+   "qid": "Q38533",
+   "name": "English Cocker Spaniel",
+   "aliases": [
+    "Cocker Spaniel"
+   ],
+   "popularity": 40
+  },
+  {
+   "qid": "Q38675",
+   "name": "Komondor",
+   "aliases": [
+    "Hungarian sheepdog"
+   ],
+   "popularity": 40
+  },
+  {
+   "qid": "Q39035",
+   "name": "Scottish Terrier",
+   "aliases": [
+    "Aberdeen Terrier",
+    "Scottie",
+    "Scotty Dog"
+   ],
+   "popularity": 40
+  },
+  {
+   "qid": "Q38651",
+   "name": "Czechoslovakian Wolfdog",
+   "aliases": [],
+   "popularity": 40
+  },
+  {
+   "qid": "Q38864",
+   "name": "Puli",
+   "aliases": [],
+   "popularity": 40
+  },
+  {
+   "qid": "Q37704",
+   "name": "Old English sheepdog",
+   "aliases": [
+    "Shepherd's Dog"
+   ],
+   "popularity": 39
+  },
+  {
+   "qid": "Q38063",
+   "name": "American Cocker Spaniel",
+   "aliases": [
+    "Cocker Spaniel"
+   ],
+   "popularity": 39
+  },
+  {
+   "qid": "Q38418",
+   "name": "English Mastiff",
+   "aliases": [
+    "British Mastiff",
+    "Mastiff",
+    "Old English Mastiff"
+   ],
+   "popularity": 39
+  },
+  {
+   "qid": "Q37624",
+   "name": "Belgian Shepherd",
+   "aliases": [
+    "Belgian Malinois",
+    "Belgian Shepherd Dog",
+    "Belgian Tervuren"
+   ],
+   "popularity": 39
+  },
+  {
+   "qid": "Q38990",
+   "name": "Miniature Pinscher",
+   "aliases": [
+    "Minpin"
+   ],
+   "popularity": 39
+  },
+  {
+   "qid": "Q37550",
+   "name": "Boston Terrier",
+   "aliases": [],
+   "popularity": 39
+  },
+  {
+   "qid": "Q37859",
+   "name": "Azawakh",
+   "aliases": [],
+   "popularity": 39
+  },
+  {
+   "qid": "Q38352",
+   "name": "Lhasa Apso",
+   "aliases": [],
+   "popularity": 39
+  },
+  {
+   "qid": "Q38644",
+   "name": "Irish Terrier",
+   "aliases": [],
+   "popularity": 39
+  },
+  {
+   "qid": "Q37803",
+   "name": "Pyrenean Mountain Dog",
+   "aliases": [
+    "Great Pyrenees"
+   ],
+   "popularity": 38
+  },
+  {
+   "qid": "Q39122",
+   "name": "Whippet",
+   "aliases": [
+    "English Whippet",
+    "Snap dog"
+   ],
+   "popularity": 38
+  },
+  {
+   "qid": "Q38999",
+   "name": "Miniature Schnauzer",
+   "aliases": [],
+   "popularity": 38
+  },
+  {
+   "qid": "Q39220",
+   "name": "Fox Terrier",
+   "aliases": [],
+   "popularity": 38
+  },
+  {
+   "qid": "Q769804",
+   "name": "English Pointer",
+   "aliases": [
+    "Pointer"
+   ],
+   "popularity": 37
+  },
+  {
+   "qid": "Q7254",
+   "name": "Affenpinscher",
+   "aliases": [
+    "Monkey Dog"
+   ],
+   "popularity": 37
+  },
+  {
+   "qid": "Q38084",
+   "name": "German Shorthaired Pointer",
+   "aliases": [
+    "German Shorthair Pointer"
+   ],
+   "popularity": 37
+  },
+  {
+   "qid": "Q38529",
+   "name": "Neapolitan Mastiff",
+   "aliases": [
+    "Italian Mastiff"
+   ],
+   "popularity": 37
+  },
+  {
+   "qid": "Q38819",
+   "name": "Vizsla",
+   "aliases": [
+    "Hungarian Vizsla"
+   ],
+   "popularity": 37
+  },
+  {
+   "qid": "Q37558",
+   "name": "Border Terrier",
+   "aliases": [],
+   "popularity": 37
+  },
+  {
+   "qid": "Q38808",
+   "name": "Pharaoh Hound",
+   "aliases": [],
+   "popularity": 37
+  },
+  {
+   "qid": "Q858459",
+   "name": "Welsh Corgi",
+   "aliases": [
+    "Corgi"
+   ],
+   "popularity": 36
+  },
+  {
+   "qid": "Q38856",
+   "name": "Xoloitzcuintle",
+   "aliases": [
+    "Mexican Hairless Dog",
+    "Xolo",
+    "Xoloitzquintle"
+   ],
+   "popularity": 36
+  },
+  {
+   "qid": "Q39026",
+   "name": "Rhodesian Ridgeback",
+   "aliases": [
+    "African Lion Dog",
+    "Van Rooyen's Lion Dog"
+   ],
+   "popularity": 36
+  },
+  {
+   "qid": "Q39285",
+   "name": "Staffordshire Bull Terrier",
+   "aliases": [
+    "Staffbull",
+    "Staffie",
+    "Staffy"
+   ],
+   "popularity": 36
+  },
+  {
+   "qid": "Q38238",
+   "name": "Bergamasco Shepherd",
+   "aliases": [],
+   "popularity": 36
+  },
+  {
+   "qid": "Q38301",
+   "name": "Gordon Setter",
+   "aliases": [],
+   "popularity": 36
+  },
+  {
+   "qid": "Q38602",
+   "name": "Canaan Dog",
+   "aliases": [],
+   "popularity": 36
+  },
+  {
+   "qid": "Q37720",
+   "name": "Beauceron",
+   "aliases": [
+    "Bas rouge",
+    "Beaucenpaimenkoira",
+    "Berger de Beauce",
+    "Boseron",
+    "Boseronas",
+    "Cane da pastore di Beauce",
+    "Pastor de Beauce"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q37582",
+   "name": "Bedlington Terrier",
+   "aliases": [
+    "Rothbury Terrier"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q38156",
+   "name": "Brittany",
+   "aliases": [
+    "Bretagnenspanieli",
+    "Breton",
+    "Bretoni",
+    "Brittany Spaniel",
+    "Epagneul breton",
+    "French Brittany",
+    "Spaniel breton",
+    "Spaniel bretão",
+    "Spaniel bretón",
+    "Épagneul breton"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q37821",
+   "name": "Briard",
+   "aliases": [
+    "Berger de Brie"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q38710",
+   "name": "Icelandic Sheepdog",
+   "aliases": [
+    "Islenskur Fjárhundur"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q38965",
+   "name": "Weimaraner",
+   "aliases": [
+    "Braco de Weimar",
+    "Braque de Weimar",
+    "Grey Ghost"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q37604",
+   "name": "American Bulldog",
+   "aliases": [],
+   "popularity": 35
+  },
+  {
+   "qid": "Q37619",
+   "name": "Bearded Collie",
+   "aliases": [],
+   "popularity": 35
+  },
+  {
+   "qid": "Q37892",
+   "name": "Chinese Crested Dog",
+   "aliases": [],
+   "popularity": 35
+  },
+  {
+   "qid": "Q29195",
+   "name": "Finnish Spitz",
+   "aliases": [
+    "Finnish Hunting Dog",
+    "Finnish Pom"
+   ],
+   "popularity": 34
+  },
+  {
+   "qid": "Q38688",
+   "name": "Giant Schnauzer",
+   "aliases": [
+    "Munich Schnauzer"
+   ],
+   "popularity": 34
+  },
+  {
+   "qid": "Q37566",
+   "name": "Bolognese",
+   "aliases": [],
+   "popularity": 34
+  },
+  {
+   "qid": "Q37811",
+   "name": "German Wirehaired Pointer",
+   "aliases": [],
+   "popularity": 34
+  },
+  {
+   "qid": "Q38115",
+   "name": "Papillon",
+   "aliases": [],
+   "popularity": 34
+  },
+  {
+   "qid": "Q38368",
+   "name": "Hovawart",
+   "aliases": [],
+   "popularity": 34
+  },
+  {
+   "qid": "Q38487",
+   "name": "Leonberger",
+   "aliases": [],
+   "popularity": 34
+  },
+  {
+   "qid": "Q38503",
+   "name": "Italian Greyhound",
+   "aliases": [],
+   "popularity": 34
+  },
+  {
+   "qid": "Q38515",
+   "name": "Greenland Dog",
+   "aliases": [],
+   "popularity": 34
+  },
+  {
+   "qid": "Q38796",
+   "name": "Tibetan Terrier",
+   "aliases": [],
+   "popularity": 34
+  },
+  {
+   "qid": "Q37541",
+   "name": "Anatolian Shepherd",
+   "aliases": [
+    "Anatolian Shepherd Dog"
+   ],
+   "popularity": 33
+  },
+  {
+   "qid": "Q37878",
+   "name": "Dogue de Bordeaux",
+   "aliases": [
+    "Bordeaux dog",
+    "French Mastiff"
+   ],
+   "popularity": 33
+  },
+  {
+   "qid": "Q38494",
+   "name": "Belgian Malinois",
+   "aliases": [
+    "Belgian Shepherd Malinois",
+    "Malinois"
+   ],
+   "popularity": 33
+  },
+  {
+   "qid": "Q21074",
+   "name": "Abruzzo-Maremma Sheepdog",
+   "aliases": [],
+   "popularity": 33
+  },
+  {
+   "qid": "Q37520",
+   "name": "Australian Kelpie",
+   "aliases": [],
+   "popularity": 33
+  },
+  {
+   "qid": "Q38025",
+   "name": "Kerry Blue Terrier",
+   "aliases": [],
+   "popularity": 33
+  },
+  {
+   "qid": "Q38783",
+   "name": "Pembroke Welsh Corgi",
+   "aliases": [],
+   "popularity": 33
+  },
+  {
+   "qid": "Q38824",
+   "name": "Nova Scotia Duck Tolling Retriever",
+   "aliases": [],
+   "popularity": 33
+  },
+  {
+   "qid": "Q38884",
+   "name": "New Guinea singing dog",
+   "aliases": [],
+   "popularity": 33
+  },
+  {
+   "qid": "Q39041",
+   "name": "Welsh Terrier",
+   "aliases": [],
+   "popularity": 33
+  },
+  {
+   "qid": "Q38146",
+   "name": "Japanese Chin",
+   "aliases": [
+    "Chin",
+    "Japanese Spaniel"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q37904",
+   "name": "Aidi",
+   "aliases": [
+    "Atlas Mountain Dog"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q37808",
+   "name": "Fila Brasileiro",
+   "aliases": [
+    "Brazilian Mastiff"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q38449",
+   "name": "Havanese",
+   "aliases": [
+    "Havanese Bichon",
+    "Havanese dog"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q37934",
+   "name": "White Swiss Shepherd",
+   "aliases": [
+    "Berger Blanc Suisse"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q39408",
+   "name": "Yugoslavian Shepherd Dog",
+   "aliases": [
+    "Sharplanina"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q38126",
+   "name": "Japanese Spitz",
+   "aliases": [],
+   "popularity": 32
+  },
+  {
+   "qid": "Q38467",
+   "name": "Kuvasz",
+   "aliases": [],
+   "popularity": 32
+  },
+  {
+   "qid": "Q37899",
+   "name": "Jagdterrier",
+   "aliases": [
+    "German Hunting Terrier"
+   ],
+   "popularity": 31
+  },
+  {
+   "qid": "Q38919",
+   "name": "Pumi",
+   "aliases": [
+    "Hungarian herding terrier"
+   ],
+   "popularity": 31
+  },
+  {
+   "qid": "Q37514",
+   "name": "American foxhound",
+   "aliases": [],
+   "popularity": 31
+  },
+  {
+   "qid": "Q37530",
+   "name": "Australian Terrier",
+   "aliases": [],
+   "popularity": 31
+  },
+  {
+   "qid": "Q37699",
+   "name": "American Eskimo Dog",
+   "aliases": [],
+   "popularity": 31
+  },
+  {
+   "qid": "Q38295",
+   "name": "Coton de Tulear",
+   "aliases": [],
+   "popularity": 31
+  },
+  {
+   "qid": "Q38559",
+   "name": "Portuguese water dog",
+   "aliases": [],
+   "popularity": 31
+  },
+  {
+   "qid": "Q38650",
+   "name": "Rough Collie",
+   "aliases": [],
+   "popularity": 31
+  },
+  {
+   "qid": "Q39052",
+   "name": "Skye Terrier",
+   "aliases": [],
+   "popularity": 31
+  },
+  {
+   "qid": "Q37750",
+   "name": "Presa Canario",
+   "aliases": [
+    "Canary Dog",
+    "Canary Mastiff",
+    "Dogo Canario",
+    "Perro de Presa Canario",
+    "Presa"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q37524",
+   "name": "Australian Silky Terrier",
+   "aliases": [
+    "Sydney Silky Terrier"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q29058",
+   "name": "Catalan Sheepdog",
+   "aliases": [
+    "Pastor Català"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q37856",
+   "name": "American Water Spaniel",
+   "aliases": [
+    "AWS"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q37793",
+   "name": "German Pinscher",
+   "aliases": [
+    "Deutscher Pinscher"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q38889",
+   "name": "Griffon Bruxellois",
+   "aliases": [
+    "Brussels Griffon",
+    "Petit Brabançon"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q37950",
+   "name": "Karelian Bear Dog",
+   "aliases": [
+    "Karelian Bear Laika"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q39147",
+   "name": "Shikoku Ken",
+   "aliases": [
+    "Kochi Ken"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q39306",
+   "name": "Saarloos wolfdog",
+   "aliases": [
+    "perro enojón"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q37929",
+   "name": "Scottish Deerhound",
+   "aliases": [],
+   "popularity": 30
+  },
+  {
+   "qid": "Q38655",
+   "name": "German Spitz",
+   "aliases": [],
+   "popularity": 30
+  },
+  {
+   "qid": "Q38803",
+   "name": "Norwegian Elkhound",
+   "aliases": [],
+   "popularity": 30
+  },
+  {
+   "qid": "Q38836",
+   "name": "Polish Lowland Sheepdog",
+   "aliases": [],
+   "popularity": 30
+  },
+  {
+   "qid": "Q39181",
+   "name": "Tibetan Spaniel",
+   "aliases": [],
+   "popularity": 30
+  },
+  {
+   "qid": "Q23853",
+   "name": "Hokkaido inu",
+   "aliases": [
+    "Ainu Dog",
+    "Ainu Ken",
+    "Seta"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q29188",
+   "name": "Finnish Lapphund",
+   "aliases": [
+    "Finnish Lapponian Dog",
+    "Lapphund"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q38175",
+   "name": "Akbash",
+   "aliases": [
+    "Akbash Dog",
+    "Akbaş"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q37789",
+   "name": "English Foxhound",
+   "aliases": [
+    "Foxhound"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q38634",
+   "name": "Black Russian Terrier",
+   "aliases": [
+    "Chornyi Terrier",
+    "Tchiorny Terrier"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q38255",
+   "name": "Bracco Italiano",
+   "aliases": [
+    "Braque italien",
+    "Italian Pointer",
+    "Italian Pointing Dog"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q37920",
+   "name": "Galgo Español",
+   "aliases": [
+    "Spanish Greyhound"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q37939",
+   "name": "Spanish Mastiff",
+   "aliases": [
+    "mastín Español"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q29177",
+   "name": "Field Spaniel",
+   "aliases": [],
+   "popularity": 29
+  },
+  {
+   "qid": "Q37508",
+   "name": "American Hairless Terrier",
+   "aliases": [],
+   "popularity": 29
+  },
+  {
+   "qid": "Q37925",
+   "name": "Sloughi",
+   "aliases": [],
+   "popularity": 29
+  },
+  {
+   "qid": "Q38387",
+   "name": "Manchester Terrier",
+   "aliases": [],
+   "popularity": 29
+  },
+  {
+   "qid": "Q38478",
+   "name": "Norwegian Buhund",
+   "aliases": [],
+   "popularity": 29
+  },
+  {
+   "qid": "Q38690",
+   "name": "Mudi",
+   "aliases": [],
+   "popularity": 29
+  },
+  {
+   "qid": "Q39010",
+   "name": "Schipperke",
+   "aliases": [],
+   "popularity": 29
+  },
+  {
+   "qid": "Q29040",
+   "name": "Canadian Eskimo Dog",
+   "aliases": [
+    "Canadian Inuit Dog",
+    "Canis familiaris borealis",
+    "Kingmik",
+    "Qinmmik"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q38121",
+   "name": "Greater Swiss Mountain Dog",
+   "aliases": [
+    "Gran boyero suizo",
+    "Grand bouvier suisse",
+    "Grande bovaro svizzero",
+    "Great Swiss Mountain Dog",
+    "Grosse",
+    "Grosser Schweizer Sennenhund",
+    "Isosveitsinpaimenkoira",
+    "Swissy"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q38940",
+   "name": "Norfolk Terrier",
+   "aliases": [
+    "Norfork Terrier"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q29022",
+   "name": "English Springer Spaniel",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q29084",
+   "name": "Chesapeake Bay Retriever",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q29200",
+   "name": "Flat-Coated Retriever",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q38110",
+   "name": "Lakeland Terrier",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q38152",
+   "name": "Alaskan Klee Kai",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q38426",
+   "name": "Austrian Pinscher",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q38621",
+   "name": "Brazilian Terrier",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q38766",
+   "name": "Pyrenean Mastiff",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q39068",
+   "name": "Sealyham Terrier",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q37737",
+   "name": "Broholmer",
+   "aliases": [
+    "Danish Mastiff"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q29114",
+   "name": "Dutch Shepherd",
+   "aliases": [
+    "Dutch Shepherd Dog",
+    "Hollandse Herdershond"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q37755",
+   "name": "Ibizan Hound",
+   "aliases": [
+    "Ibizan Podenco",
+    "Podenco Ibicenco"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q38508",
+   "name": "Kangal Shepherd Dog",
+   "aliases": [
+    "Kangal",
+    "Kangal Dog",
+    "Sivas Kangal Dog"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q38342",
+   "name": "Kishu",
+   "aliases": [
+    "Kishu Inu",
+    "Kumano Ken",
+    "Taichi Ken"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q38399",
+   "name": "Groenendael",
+   "aliases": [
+    "Belgian Shepherd Dog (Groenendael)"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q38223",
+   "name": "Kai Ken",
+   "aliases": [
+    "Tora Inu"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q38843",
+   "name": "Keeshond",
+   "aliases": [
+    "Wolfspitz"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q37946",
+   "name": "Eurasier",
+   "aliases": [
+    "Eurasian"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q4227301",
+   "name": "cocker spaniel",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q29072",
+   "name": "Cardigan Welsh Corgi",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q37851",
+   "name": "Clumber Spaniel",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q37896",
+   "name": "Bouvier des Flandres",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q38020",
+   "name": "Yakutian Laika",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q38162",
+   "name": "Irish Water Spaniel",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q38336",
+   "name": "Dandie Dinmont Terrier",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q39133",
+   "name": "Tornjak",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q37690",
+   "name": "Alano Español",
+   "aliases": [
+    "Spanish Alano",
+    "Spanish Bulldog"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q37589",
+   "name": "Boerboel",
+   "aliases": [
+    "African Boerboel",
+    "African Mastiff",
+    "Boerbol",
+    "Boerbull",
+    "South African Boerboel",
+    "South African Mastiff"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q29170",
+   "name": "Korean Jindo Dog",
+   "aliases": [
+    "Jindo",
+    "Korean Jindo"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q37635",
+   "name": "Picardy Shepherd",
+   "aliases": [
+    "Berger Picard"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q38945",
+   "name": "mongrel",
+   "aliases": [
+    "mongrel dog",
+    "mongrel dogs",
+    "mongrels",
+    "muts",
+    "mutt",
+    "mutts"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q39605",
+   "name": "Standard Schnauzer",
+   "aliases": [
+    "Schnauzer"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q37585",
+   "name": "Barbet",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q38027",
+   "name": "Löwchen",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q38196",
+   "name": "Volpino Italiano",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q38546",
+   "name": "Ukrainian Vivcharka",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q38716",
+   "name": "Kooikerhondje",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q38880",
+   "name": "Parson Russell Terrier",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q38895",
+   "name": "Norwegian Lundehund",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q38934",
+   "name": "Norwich Terrier",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q39161",
+   "name": "Spinone Italiano",
+   "aliases": [],
+   "popularity": 26
+  },
+  {
+   "qid": "Q37697",
+   "name": "Appenzeller Sennenhund",
+   "aliases": [
+    "Blackberry Pink Justice"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q37498",
+   "name": "Alpine Dachsbracke",
+   "aliases": [
+    "Alpenländische Dachsbracke"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38132",
+   "name": "King Charles Spaniel",
+   "aliases": [
+    "English Toy Spaniel"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q37782",
+   "name": "English Toy Terrier",
+   "aliases": [
+    "King Charles Spaniel"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38537",
+   "name": "Croatian Sheepdog",
+   "aliases": [
+    "Hrvatski Ovčar"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38653",
+   "name": "Basque Shepherd Dog",
+   "aliases": [
+    "Euskal Artzain Txakurra",
+    "Euskal ardi-txakur"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38262",
+   "name": "Cirneco dell'Etna",
+   "aliases": [
+    "Etnahund",
+    "Sicilian Greyhound"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38874",
+   "name": "Peruvian Hairless Dog",
+   "aliases": [
+    "Peruvian Inca Orchid"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38910",
+   "name": "Lagotto Romagnolo",
+   "aliases": [
+    "Italian Truffle Dog",
+    "Romagna Water Dog"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38922",
+   "name": "Otterhound",
+   "aliases": [
+    "Otter hound"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q39075",
+   "name": "Swedish Vallhund",
+   "aliases": [
+    "Länsigöötanmaanpystykorva",
+    "Spitz dos visigodos",
+    "Vallhund sueco",
+    "Vallhund suedois",
+    "Vallhund suédois",
+    "Västgötaspets"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q39096",
+   "name": "Tatra Shepherd Dog",
+   "aliases": [
+    "Polish Tatra Sheepdog"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q5429",
+   "name": "Polish Greyhound",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q37824",
+   "name": "German Spaniel",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38189",
+   "name": "Glen of Imaal Terrier",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38642",
+   "name": "Cesky Terrier",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38777",
+   "name": "Large Münsterländer",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q38963",
+   "name": "Slovak Cuvac",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q39138",
+   "name": "Sussex Spaniel",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q39435",
+   "name": "West Siberian Laika",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q39491",
+   "name": "Wire Fox Terrier",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q1196071",
+   "name": "collie",
+   "aliases": [
+    "Collie"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q5570",
+   "name": "American Bully",
+   "aliases": [
+    "Bully",
+    "Bully dog"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q37534",
+   "name": "American Akita",
+   "aliases": [
+    "Great Japanese Dog"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q38096",
+   "name": "Estrela Mountain Dog",
+   "aliases": [
+    "Portuguese Mountain Dog"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q38105",
+   "name": "Jämthund",
+   "aliases": [
+    "Swedish Elkhound"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q37976",
+   "name": "Japanese Terrier",
+   "aliases": [
+    "Kobe Terrier",
+    "Mikado Terrier",
+    "Nippon Terrier",
+    "Oyuki Terrier"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q37537",
+   "name": "Black and Tan Coonhound",
+   "aliases": [
+    "Coonhound"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q38362",
+   "name": "Lapponian Herder",
+   "aliases": [
+    "Lapinporokoira",
+    "Lapland Reindeer Dog"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q38375",
+   "name": "Curly Coated Retriever",
+   "aliases": [
+    "curly coated retriever"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q38871",
+   "name": "Magyar agár",
+   "aliases": [
+    "Magyar agar"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q37650",
+   "name": "Dunker",
+   "aliases": [
+    "Norwegian Hound"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q39176",
+   "name": "Russkiy Toy",
+   "aliases": [
+    "Moscovian Miniature Terrier",
+    "Moscow Toy Terrier",
+    "Russian Terrier",
+    "Russian Toy",
+    "Russian Toy Terrier"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q1092646",
+   "name": "Carpathian Shepherd Dog",
+   "aliases": [],
+   "popularity": 24
+  },
+  {
+   "qid": "Q37786",
+   "name": "Pyrenean Shepherd",
+   "aliases": [],
+   "popularity": 24
+  },
+  {
+   "qid": "Q37954",
+   "name": "Karst Shepherd",
+   "aliases": [],
+   "popularity": 24
+  },
+  {
+   "qid": "Q38047",
+   "name": "Soft-coated Wheaten Terrier",
+   "aliases": [],
+   "popularity": 24
+  },
+  {
+   "qid": "Q20860",
+   "name": "Wetterhoun",
+   "aliases": [
+    "Dutch Spaniel",
+    "Dutch Water Dog",
+    "Frisian Water Dog",
+    "Otterhoun"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q37734",
+   "name": "Portuguese Sheepdog",
+   "aliases": [
+    "Cão da Serra de Aires"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q37775",
+   "name": "Drever",
+   "aliases": [
+    "Swedish Beagle",
+    "Swedish Dachsbracke"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q37986",
+   "name": "Entlebucher Mountain Dog",
+   "aliases": [
+    "Entlebuch Mountain Dogs",
+    "Entlebucher Cattle Dogs",
+    "Entlebucher Sennenhund"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q37815",
+   "name": "Laekenois",
+   "aliases": [
+    "Belgian Shepherd Laekenois"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q39172",
+   "name": "Thai Ridgeback",
+   "aliases": [
+    "Mah Thai Lang Ahn",
+    "Thai Lang-An"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q39192",
+   "name": "Stabijhoun",
+   "aliases": [
+    "Beike",
+    "Cão de aponte frisão",
+    "Frisian Pointer",
+    "Frisian Pointing Dog",
+    "Perdiguero frison",
+    "Perdiguero frisón",
+    "Stabij",
+    "Staby",
+    "Stabyhoun"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q37576",
+   "name": "Bavarian Mountain Hound",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q37830",
+   "name": "English Shepherd",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q37834",
+   "name": "German Longhaired Pointer",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q38394",
+   "name": "Transylvanian hound",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q38416",
+   "name": "East Siberian Laika",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q38930",
+   "name": "Pudelpointer",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q39047",
+   "name": "Welsh Springer Spaniel",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q39083",
+   "name": "Porcelaine",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q37510",
+   "name": "Toy Fox Terrier",
+   "aliases": [
+    "American Toy Terrier"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q29127",
+   "name": "Danish Swedish Farmdog",
+   "aliases": [
+    "Danish-Swedish Farmdog"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q37494",
+   "name": "Old Danish Pointer",
+   "aliases": [
+    "Gammel Dansk Hønsehund"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q37769",
+   "name": "Great Gascony Blue",
+   "aliases": [
+    "Great Gascony Hound"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q10520346",
+   "name": "Greek Shepherd",
+   "aliases": [
+    "Greek sheepdodg"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q11294205",
+   "name": "Catahoula Leopard Dog",
+   "aliases": [
+    "Catahoula Cur",
+    "Louisiana Catahoula Leopard Dog"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q37978",
+   "name": "Hamiltonstövare",
+   "aliases": [
+    "Hamilton Hound",
+    "Swedish Foxhound"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q38906",
+   "name": "Pražský Krysařík",
+   "aliases": [
+    "Prager Rattler",
+    "Prague Ratter",
+    "Ratier de Prague"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q37649",
+   "name": "Majorca Shepherd Dog",
+   "aliases": [
+    "CA DE BESTIAR, PERRO DE PASTOR MALLORQUIN"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q516079",
+   "name": "Africanis",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q37503",
+   "name": "Australian Stumpy Tail Cattle Dog",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q37722",
+   "name": "Chinook",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q37840",
+   "name": "Finnish Hound",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q38107",
+   "name": "Harrier",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q38165",
+   "name": "Portuguese Pointer",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q38217",
+   "name": "Polish Hound",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q38518",
+   "name": "Moscow Watchdog",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q38679",
+   "name": "Tervuren",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q38787",
+   "name": "Smooth Fox Terrier",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q38932",
+   "name": "Podenco Canario",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q39130",
+   "name": "Swedish Lapphund",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q39332",
+   "name": "Russo-European Laika",
+   "aliases": [],
+   "popularity": 22
+  },
+  {
+   "qid": "Q37746",
+   "name": "Bohemian Shepherd",
+   "aliases": [
+    "Chodenhund",
+    "Chodský pes",
+    "Czech Sheepdog"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37721",
+   "name": "Carolina Dog",
+   "aliases": [
+    "American dingo",
+    "Dixie dingo",
+    "North American native dog"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q29212",
+   "name": "Formosan Mountain Dog",
+   "aliases": [
+    "Huling Bale",
+    "Huling Seediq",
+    "National Dog",
+    "Taiwan Canis",
+    "Taiwan Dog",
+    "Taiwanese Canis",
+    "Taiwanese Dog",
+    "Taiwanese Native Dog",
+    "Takasago Dog"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37827",
+   "name": "Drentse Patrijshond",
+   "aliases": [
+    "Drentsche patrijshond",
+    "Dutch Partridge Dog",
+    "Hollanninpeltopyykoira",
+    "Perdiguero de Drenthe",
+    "Spaniel perdigueiro de Drente"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37917",
+   "name": "Bucovina Shepherd Dog",
+   "aliases": [
+    "Romanian Bucovina Shepherd Dog"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q39073",
+   "name": "Rafeiro do Alentejo",
+   "aliases": [
+    "Alentejo Herder",
+    "Alentejo Mastiff",
+    "Portuguese Mastiff",
+    "Portuguese Watch Dog"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q39200",
+   "name": "Spanish Water Dog",
+   "aliases": [
+    "Perro de agua español"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37487",
+   "name": "Ariégeois",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37632",
+   "name": "Braque du Bourbonnais",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37637",
+   "name": "Billy",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37676",
+   "name": "Perro de Presa Mallorquin",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37727",
+   "name": "Braque d'Auvergne",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37741",
+   "name": "Bouvier des Ardennes",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37798",
+   "name": "Blue Picardy Spaniel",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37967",
+   "name": "Miniature Bull Terrier",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q38030",
+   "name": "Picardy Spaniel",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q38036",
+   "name": "Small Münsterländer",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q38102",
+   "name": "Slovenský kopov",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q38403",
+   "name": "Kromfohrländer",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q38869",
+   "name": "Wirehaired Pointing Griffon",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q39126",
+   "name": "Sabueso Español",
+   "aliases": [],
+   "popularity": 21
+  },
+  {
+   "qid": "Q37664",
+   "name": "Ariege Pointer",
+   "aliases": [
+    "Braque de l’ariège"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q37678",
+   "name": "Chortai",
+   "aliases": [
+    "Chortaj"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q38099",
+   "name": "Portuguese Cattle Dog",
+   "aliases": [
+    "Castro Laboreiro Dog",
+    "Cão de Castro Laboreiro",
+    "Portuguese Watch Dog"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q38041",
+   "name": "Hanover Hound",
+   "aliases": [
+    "Hanoverian Hound",
+    "Hanoverian Scenthound"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q38925",
+   "name": "Norrbottenspets",
+   "aliases": [
+    "Norbottenspitz",
+    "Nordic Spitz",
+    "Pohjanpystykorva",
+    "Spitz de Norboten"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q37645",
+   "name": "Briquet Griffon Vendéen",
+   "aliases": [
+    "Briquet Griffon Vendeen"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q39063",
+   "name": "Portuguese Podengo",
+   "aliases": [
+    "Podengo Português",
+    "Portuguese Warren Hound"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q39254",
+   "name": "Phalène",
+   "aliases": [
+    "Phalene"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q29160",
+   "name": "French Spaniel",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q37552",
+   "name": "Basset Bleu de Gascogne",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q37666",
+   "name": "Cesky Fousek",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q37758",
+   "name": "Artois Hound",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q37838",
+   "name": "Deutsche Bracke",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q37848",
+   "name": "Boykin Spaniel",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q37982",
+   "name": "Halden Hound",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q38452",
+   "name": "Karakachan Dog",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q38504",
+   "name": "East-European Shepherd",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q1742290",
+   "name": "Kintamani",
+   "aliases": [
+    "Bali Berghund"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q38289",
+   "name": "Irish Red and White Setter",
+   "aliases": [
+    "Irish Setter",
+    "Rossmore Setter",
+    "Setter"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q37972",
+   "name": "Lancashire Heeler",
+   "aliases": [
+    "Ormskirk Heeler"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q37570",
+   "name": "Fawn Brittany Basset",
+   "aliases": [
+    "Basset Fauve de Bretagne"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q38431",
+   "name": "Rat Terrier",
+   "aliases": [
+    "rat terrier"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q37832",
+   "name": "Mioritic",
+   "aliases": [
+    "Romanian Mioritic Shepherd Dog"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q38233",
+   "name": "Greek Harehound",
+   "aliases": [
+    "Hellenic Hound"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q39080",
+   "name": "Petit Basset Griffon Vendéen",
+   "aliases": [
+    "PBGV",
+    "Petit Basset Griffon Vendeen"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q37844",
+   "name": "Pont-Audemer Spaniel",
+   "aliases": [],
+   "popularity": 19
+  },
+  {
+   "qid": "Q37969",
+   "name": "Dutch Smoushond",
+   "aliases": [],
+   "popularity": 19
+  },
+  {
+   "qid": "Q38790",
+   "name": "Smooth Collie",
+   "aliases": [],
+   "popularity": 19
+  },
+  {
+   "qid": "Q38800",
+   "name": "Patterdale Terrier",
+   "aliases": [],
+   "popularity": 19
+  },
+  {
+   "qid": "Q38961",
+   "name": "Black Norwegian Elkhound",
+   "aliases": [],
+   "popularity": 19
+  },
+  {
+   "qid": "Q37673",
+   "name": "Chinese Chongqing Dog",
+   "aliases": [
+    "Chuandong Hound"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q37692",
+   "name": "Barak hound",
+   "aliases": [
+    "Bosnian Broken-haired Hound",
+    "Bosnian Coarse-haired Hound",
+    "Bosnian Rough-coated Hound",
+    "Bosnian Rough-haired Hound"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q37730",
+   "name": "Azores Cattle Dog",
+   "aliases": [
+    "Azores Cow Dog",
+    "Cão Fila de São Miguel",
+    "Saint Miguel Cattle Dog",
+    "São Miguel Catch Dog",
+    "São Miguel Cattle Dog"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q38185",
+   "name": "Poitevin hound",
+   "aliases": [
+    "Poitevin"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q38738",
+   "name": "Smaland Hound",
+   "aliases": [
+    "Smålandsstövare"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q38199",
+   "name": "Burgos Retriever",
+   "aliases": [
+    "Perdiguero de Burgos"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q38263",
+   "name": "Russkaya tsvetnaya bolonka",
+   "aliases": [
+    "Bolonka",
+    "Russian Tsvetnaya Bolonka"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q39239",
+   "name": "Taigan",
+   "aliases": [
+    "Kyrgyzskaya Borzaya Taigan"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q39608",
+   "name": "Wirehaired Vizsla",
+   "aliases": [
+    "Drotzörü Magyar Vizsla",
+    "Vizsla"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q37657",
+   "name": "Braque Saint-Germain",
+   "aliases": [],
+   "popularity": 18
+  },
+  {
+   "qid": "Q37991",
+   "name": "Blue Gascony Griffon",
+   "aliases": [],
+   "popularity": 18
+  },
+  {
+   "qid": "Q38409",
+   "name": "Griffon Nivernais",
+   "aliases": [],
+   "popularity": 18
+  },
+  {
+   "qid": "Q38638",
+   "name": "Istrian Shorthaired Hound",
+   "aliases": [],
+   "popularity": 18
+  },
+  {
+   "qid": "Q38729",
+   "name": "Estonian Hound",
+   "aliases": [],
+   "popularity": 18
+  },
+  {
+   "qid": "Q38820",
+   "name": "Redbone Coonhound",
+   "aliases": [],
+   "popularity": 18
+  },
+  {
+   "qid": "Q39157",
+   "name": "Schapendoes",
+   "aliases": [],
+   "popularity": 18
+  },
+  {
+   "qid": "Q3343819",
+   "name": "Buryat-Mongolian Wolfhound",
+   "aliases": [
+    "Bankhar dog"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q13217219",
+   "name": "Molossian hound",
+   "aliases": [
+    "Epirus mastiff",
+    "Molosser",
+    "Molossus"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q29174",
+   "name": "Pungsan",
+   "aliases": [
+    "Poongsan"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q38179",
+   "name": "Rampur Greyhound",
+   "aliases": [
+    "Rampur Hound"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37561",
+   "name": "Basset Artésien Normand",
+   "aliases": [
+    "Basset Artesien Normand"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q38312",
+   "name": "Rajapalayam",
+   "aliases": [
+    "Rajapalayam Hound",
+    "Rajapalayam dog"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37941",
+   "name": "Grand Griffon Vendéen",
+   "aliases": [
+    "Grand Griffon Vendeen"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q39210",
+   "name": "Slovakian Rough-haired Pointer",
+   "aliases": [
+    "Slovakian Wirehaired Pointer"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37478",
+   "name": "Beagle-Harrier",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37489",
+   "name": "Alapaha Blue Blood Bulldog",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37574",
+   "name": "Serbian Hound",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37575",
+   "name": "Biewer Terrier",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37579",
+   "name": "Blue Lacy",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37773",
+   "name": "Stichelhaar",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q38975",
+   "name": "Schweizer Laufhund",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q39078",
+   "name": "Posavac Hound",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q37680",
+   "name": "Bully Kutta",
+   "aliases": [
+    "Alangu Mastiff",
+    "Indian Mastiff",
+    "Pakistani Mastiff",
+    "Sindh Mastiff"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q29178",
+   "name": "Sapsali",
+   "aliases": [
+    "Sabsal Gae"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q38000",
+   "name": "Large Vendeen Griffon Basset",
+   "aliases": [
+    "GBGV",
+    "Grand Basset Griffon Vendeen",
+    "Grand Basset Griffon Vendéen"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q37880",
+   "name": "Thai Bangkaew Dog",
+   "aliases": [
+    "Bangkaew Dog"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q38209",
+   "name": "Ratonero Bodeguero Andaluz COOPER",
+   "aliases": [
+    "Andalusian Mouse-Hunting Terrier"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q37568",
+   "name": "Bluetick Coonhound",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q37670",
+   "name": "Mudhol Hound",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q37780",
+   "name": "Serbian Tricolour Hound",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q38176",
+   "name": "Petit Bleu de Gascogne",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q38219",
+   "name": "Armenian Gampr dog",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q38728",
+   "name": "Schillerstövare",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q39095",
+   "name": "Westphalian Dachsbracke",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2642504",
+   "name": "Karelo-Finnish Laika",
+   "aliases": [
+    "Karelo-Finskaya Laika",
+    "Karero-Finnish Laika",
+    "Karjalais-suomalainen laika",
+    "Laika Karelo-Finskaya",
+    "Suomenpystykorva"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q38074",
+   "name": "Cretan Hound",
+   "aliases": [
+    "Cretan Harehound",
+    "Cretan Tracker",
+    "Kritikos Ichnilatis",
+    "Kritikos Lagonikos"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q16245559",
+   "name": "Aksaray Malaklisi",
+   "aliases": [
+    "Aksaray Malaklısı",
+    "Anatolian Lion",
+    "Anatolian Mastiff",
+    "Malaklı Karabaş",
+    "Turkish Mastiff"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q38168",
+   "name": "Olde English Bulldogge",
+   "aliases": [
+    "OEB"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q38092",
+   "name": "Kazakh tazy",
+   "aliases": [
+    "Central Asian Tazi",
+    "Middleasian greyhound",
+    "Tazi"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q38016",
+   "name": "Hygen Hound",
+   "aliases": [
+    "Hygenhund"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q38051",
+   "name": "Polish Hunting Dog",
+   "aliases": [
+    "Polish Hound",
+    "Polish Scenthound",
+    "gończy polski"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q37644",
+   "name": "Cimarrón Uruguayo",
+   "aliases": [
+    "Cimarron Uruguayo",
+    "Uruguayan Cimarron"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q39244",
+   "name": "Treeing Walker Coonhound",
+   "aliases": [
+    "TWC",
+    "Walker hound"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1135818",
+   "name": "nureongi",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q11385",
+   "name": "Austrian Black and Tan Hound",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q37482",
+   "name": "Medium-sized Anglo-French Hound",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q37667",
+   "name": "Chippiparai",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q37764",
+   "name": "continental bulldog",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q37993",
+   "name": "Fawn Brittany Griffon",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q38631",
+   "name": "Montenegrin Mountain Hound",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q39195",
+   "name": "Plott Hound",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q39214",
+   "name": "Styrian Coarse-haired Hound",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q39278",
+   "name": "Welsh Sheepdog",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1800312",
+   "name": "Black and Tan Terrier",
+   "aliases": [
+    "Old English Black and Tan Terrier",
+    "Old English Terrier"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q6865130",
+   "name": "Miniature American Shepherd",
+   "aliases": [
+    "American Shepherd",
+    "Mini American",
+    "Mini Aussie",
+    "Miniature Australian Shepherd",
+    "North American Shepherd"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q37578",
+   "name": "American English Coonhound",
+   "aliases": [
+    "English Coonhound"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q13631411",
+   "name": "Petit brabançon",
+   "aliases": [
+    "Griffon_Bruxellois"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38510",
+   "name": "Bull and Terrier",
+   "aliases": [
+    "Bull & Terrier",
+    "Bull-and-terrier",
+    "Bull-terrier",
+    "Half-and-half"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38475",
+   "name": "French Tricolour Hound",
+   "aliases": [
+    "Chien Français Tricolore"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38206",
+   "name": "Gos Rater Valencià",
+   "aliases": [
+    "Gos Rater Valencia"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38938",
+   "name": "Himalayan Sheepdog",
+   "aliases": [
+    "Kinnaur Sheepdog"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q37656",
+   "name": "Braque du Puy",
+   "aliases": [
+    "Braque dupuy"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q39262",
+   "name": "Andalusian Hound",
+   "aliases": [
+    "Andalusian Podenco",
+    "Andalusian Warren Hound",
+    "podenco andaluz"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q39334",
+   "name": "Pachón Navarro",
+   "aliases": [
+    "Nafar eper txakurra",
+    "Nafarroako eper txakur",
+    "Pachón",
+    "Pachón de Vitoria",
+    "Pachón español",
+    "Perdiguero común",
+    "Perdiguero navarro"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2165917",
+   "name": "Sulimov dog",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q12206278",
+   "name": "Pariah dog",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38055",
+   "name": "Griffon Belge",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38425",
+   "name": "Huntaway",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38566",
+   "name": "Cordoba Fighting Dog",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38921",
+   "name": "Indian Spitz",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q38948",
+   "name": "Kunming wolfdog",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q39084",
+   "name": "Tyrolean Hound",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q39103",
+   "name": "Russian Spaniel",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q39207",
+   "name": "Silken Windhound",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q326532",
+   "name": "Cão de gado transmontano",
+   "aliases": [
+    "Transmontano Cattle Dog",
+    "Transmontano Mastiff"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1072469",
+   "name": "Belgian Mastiff",
+   "aliases": [
+    "Belgian Drafting Dog"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q37728",
+   "name": "Braque Français",
+   "aliases": [
+    "Braque français"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q38008",
+   "name": "Dutch Tulip Dog",
+   "aliases": [
+    "Markiesje"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q38556",
+   "name": "Black Mouth Cur",
+   "aliases": [
+    "Blackmouth Cur"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q38202",
+   "name": "Rastreador-brasileiro",
+   "aliases": [
+    "Rastreador brasileiro"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q39116",
+   "name": "Phu Quoc ridgeback dog",
+   "aliases": [
+    "Phu Quoc Ridgeback"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q39182",
+   "name": "Kokoni (dog)",
+   "aliases": [
+    "Small Greek Domestic Dog",
+    "Κοκονι"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q39587",
+   "name": "Scotch collie",
+   "aliases": [
+    "Scottish collie"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1000049",
+   "name": "Xiasi Dog",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1779696",
+   "name": "Danish Spitz",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3092983",
+   "name": "Argentine Pila Dog",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q37464",
+   "name": "Telomian",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q38211",
+   "name": "Istrian Coarse-haired Hound",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q38563",
+   "name": "Chilean Fox Terrier",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q38958",
+   "name": "Kanni",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3322296",
+   "name": "Can de Palleiro",
+   "aliases": [
+    "Galician Cattledog",
+    "Galician Palleiro Dog",
+    "Palleiro",
+    "Palleiro Shepherd Dog"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q12908317",
+   "name": "Macedonian Karaman",
+   "aliases": [
+    "Karaman",
+    "Macedonian Shepherd Dog",
+    "Makedonsko ovcharko kuche",
+    "Македонско овчарско куче",
+    "караман"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q37997",
+   "name": "Gascon Saintongeois",
+   "aliases": [
+    "Virelade Hound"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q38509",
+   "name": "Campeiro Bulldog",
+   "aliases": [
+    "Buldogue campeiro",
+    "Pampas Bulldog"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q38724",
+   "name": "Great Anglo-French Tricolour Hound",
+   "aliases": [
+    "Grand Anglo-Français Tricolore"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q38731",
+   "name": "Schweizerischer Niederlaufhund",
+   "aliases": [
+    "Small Swiss Hound"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q39152",
+   "name": "Segugio Italiano a Pelo Raso",
+   "aliases": [
+    "Italian Short-haired Segugio",
+    "Segugio italiano a pelo raso"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q39283",
+   "name": "Limer",
+   "aliases": [
+    "Lime-hound",
+    "Limier",
+    "Lyam",
+    "Lymer"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1958596",
+   "name": "hairless dog",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q3635150",
+   "name": "Alopekis",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q6915548",
+   "name": "Moscow Water Dog",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q17521154",
+   "name": "Segugio Italiano",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q29028",
+   "name": "Combai",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q37795",
+   "name": "Romanian Raven Shepherd Dog",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q38023",
+   "name": "Lupo Italiano",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q38468",
+   "name": "Chien Français Blanc et Noir",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q38550",
+   "name": "English Water Spaniel",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q4898",
+   "name": "Saint-Usuge Spaniel",
+   "aliases": [
+    "Saint usuge spaniel",
+    "St Usuge Spaniel"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q3438758",
+   "name": "Nenets Herding Laika",
+   "aliases": [
+    "Ненецкая оленегонная лайка",
+    "Оленегонный шпиц"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q6003137",
+   "name": "Zerdava",
+   "aliases": [
+    "Kapi Kopegi",
+    "Zerdeva"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q38038",
+   "name": "Bruno Jura Hound",
+   "aliases": [
+    "Bruno Saint Hubert français"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q38691",
+   "name": "Georgian Shepherd",
+   "aliases": [
+    "Georgian Mountain Dog",
+    "Nagazi dog"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q38722",
+   "name": "Great Anglo-French White and Black Hound",
+   "aliases": [
+    "Grand Anglo-Français Blanc et Noir"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q38734",
+   "name": "Great Anglo-French White and Orange Hound",
+   "aliases": [
+    "Grand Anglo-Français Blanc et Orange"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q38784",
+   "name": "Kleinspitz",
+   "aliases": [
+    "Miniature spitz",
+    "Small spitz"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q39229",
+   "name": "Shiloh Shepherd",
+   "aliases": [
+    "Shiloh Shepherd Dog",
+    "Shiloh shepherd"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q5408020",
+   "name": "German Spitz Mittel",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q29047",
+   "name": "Cantabrian Water Dog",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q37572",
+   "name": "Perro majorero",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q37653",
+   "name": "Bakharwal Dog",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q37766",
+   "name": "Coonhound",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q37771",
+   "name": "Cursinu",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q37872",
+   "name": "Armant dog",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q37974",
+   "name": "Kerry Beagle",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q38103",
+   "name": "Maneto",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q38472",
+   "name": "Français Blanc et Orange",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q38951",
+   "name": "Koolie",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q39185",
+   "name": "Tenterfield Terrier",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q39390",
+   "name": "Talbot",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q39412",
+   "name": "Teddy Roosevelt Terrier",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1719885",
+   "name": "Silken Windsprite",
+   "aliases": [
+    "Longhaired Whippet"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q19775816",
+   "name": "Sarabi Mastiff",
+   "aliases": [
+    "Iranian Mastiff",
+    "Persian Mastiff",
+    "Sarabi Dog"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q4354350",
+   "name": "Gaucho sheepdog",
+   "aliases": [
+    "Brazilian collie",
+    "Brazilian gaucho sheepdog",
+    "Ovelheiro gaucho"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q37963",
+   "name": "Mucuchies",
+   "aliases": [
+    "Nevado",
+    "Perro Gocho",
+    "Perro Paramero",
+    "Perro de los Paramos",
+    "Perro de los Páramos",
+    "Venezuelan Sheepdog"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q37659",
+   "name": "Mallorcan ratter",
+   "aliases": [
+    "Majorca Ratter"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q38980",
+   "name": "Paisley Terrier",
+   "aliases": [
+    "Clydesdale Terrier"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q39251",
+   "name": "Villano de las Encartaciones",
+   "aliases": [
+    "Villano de carranza"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1028186",
+   "name": "griffon",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1106478",
+   "name": "Bull Arab",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1752116",
+   "name": "Segugio Maremmano",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1806071",
+   "name": "Abyssinian Sand Terrier",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q3324148",
+   "name": "Morkie",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q3398688",
+   "name": "Welsh Hound",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q4353804",
+   "name": "Hälleforshund",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q6072879",
+   "name": "Fuegian dog",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q9356247",
+   "name": "Techichi",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q15444134",
+   "name": "Leavitt Bulldog",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q17446281",
+   "name": "Perro fino Colombiano",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q38182",
+   "name": "Perro de pastor garafiano",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q38443",
+   "name": "Treeing Tennessee Brindle",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q38440",
+   "name": "Chukotka sled dog",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q38901",
+   "name": "Lithuanian Hound",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q39407",
+   "name": "Toy Manchester Terrier",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q59540",
+   "name": "Xarnego Valenciano",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1780869",
+   "name": "Dogue Brasileiro",
+   "aliases": [
+    "Brazilian Dogge",
+    "Brazilian Dogo"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q3270663",
+   "name": "Bohemian Spotted Dog",
+   "aliases": [
+    "Czech Spotted Dog",
+    "Horákův laboratorní pes",
+    "Strakáč",
+    "Český strakatý pes"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q3556229",
+   "name": "Celtic Hounds",
+   "aliases": [
+    "Cu"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q3574099",
+   "name": "Can de Chira",
+   "aliases": [
+    "Pastor altoaragones",
+    "Pastor altoaragonés"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q5401146",
+   "name": "Ryukyu Inu",
+   "aliases": [
+    "Okinawa Native Dog",
+    "Ryukyu Dog"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q12593214",
+   "name": "Dong-gyeong",
+   "aliases": [
+    "Daeng gyeong"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q10389422",
+   "name": "Pampas Deerhound",
+   "aliases": [
+    "Gaucho deer-hound",
+    "Pampeano Deer-hound",
+    "Veadeiro Pampeano"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q11698316",
+   "name": "White Shepherd Dog",
+   "aliases": [
+    "American white shepherd",
+    "White Canadian Shepherd",
+    "White german shepherd"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q11698989",
+   "name": "Lobito Herreño",
+   "aliases": [
+    "Hierran Wolfdog"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q38001",
+   "name": "Griffon à poil laineux",
+   "aliases": [
+    "Griffon a poil laineux"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q38442",
+   "name": "Guatemalan Dogo",
+   "aliases": [
+    "Guatemalan Bull Terrier",
+    "Guatemalan Mastiff"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q38899",
+   "name": "King Shepherd",
+   "aliases": [
+    "King Shepherd Dog"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q39273",
+   "name": "Italian Rough-haired Segugio",
+   "aliases": [
+    "Segugio Italiano a Pelo Forte"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q465537",
+   "name": "American Leopard Hound",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q492644",
+   "name": "Jeju dog",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q3621454",
+   "name": "Bulgarian Scenthound",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q9053651",
+   "name": "Patagonian Sheepdog",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q15618573",
+   "name": "Lucas Terrier",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q16893163",
+   "name": "Terceira Mastiff",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q38145",
+   "name": "American Alsatian",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q38192",
+   "name": "American Mastiff",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q38892",
+   "name": "Mountain Cur",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q39139",
+   "name": "Stephens Cur",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q168788",
+   "name": "Barbado da Terceira",
+   "aliases": [
+    "Terceira Cattle Dog"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q54869543",
+   "name": "Kurdish Mastiff",
+   "aliases": [
+    "Assyrian Mastiff",
+    "Assyrian Shepherd",
+    "Kurd Mastiff",
+    "Kurdish dog",
+    "Mesopotamian Mastiff",
+    "Pshdar dog"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q55454389",
+   "name": "Polish Hunting Spaniel",
+   "aliases": [
+    "Polski spaniel myśliwski"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q5758089",
+   "name": "Tarsus Çatalburun",
+   "aliases": [
+    "Tarsus Fork-nose",
+    "Tarsus Pointer",
+    "Turkish Fork-nose",
+    "Turkish Pointer",
+    "Turkish Split-Nosed Pointer",
+    "Çatalburun",
+    "Çatalburun Pointer"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q57257840",
+   "name": "Calupoh",
+   "aliases": [
+    "Mexican wolfdog",
+    "Perro lobo mexicano"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q39113",
+   "name": "Northern Inuit Dog",
+   "aliases": [
+    "Northern Inuit"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q39258",
+   "name": "Český horský pes",
+   "aliases": [
+    "Bohemian Mountain Dog",
+    "Czech Mountain Dog",
+    "Tschechischer Berghund"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q4353907",
+   "name": "Ecuadorian Hairless Dog",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q37473",
+   "name": "American Staghound",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q38737",
+   "name": "Gull Terr",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q2410835",
+   "name": "Pastore Fonnese",
+   "aliases": [
+    "Sardinian Shepherd Dog"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q17023476",
+   "name": "Tong gau",
+   "aliases": [
+    "Chinese dog",
+    "Tang Gou",
+    "Tang dog",
+    "Village dog"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q24702349",
+   "name": "Dogo español",
+   "aliases": [
+    "Spanish Dogo",
+    "Spanish bulldog"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q9649372",
+   "name": "Barrocal Algarvio",
+   "aliases": [
+    "Algarvian Barrocal Dog",
+    "Cão do Barrocal Algarvio"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q37711",
+   "name": "Ratonero Basco",
+   "aliases": [
+    "Basque Ratter",
+    "Enkarterriko billanuko",
+    "Villanuco de Las Encartaciones",
+    "Villanuco de las Encartaciones"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q15284257",
+   "name": "French Pointing Dog - Pyrenean type",
+   "aliases": [
+    "Braque francais type Pyrenees",
+    "French Pointing Dog Pyrenean Type"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q10346001",
+   "name": "Mantiqueira Shepherd",
+   "aliases": [
+    "Pastor da mantiqueira"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q10437609",
+   "name": "Serrano Bulldog",
+   "aliases": [
+    "Buldogue Serrano"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q10587816",
+   "name": "Molossus of Epirus",
+   "aliases": [
+    "Epirus Molosser"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q11860269",
+   "name": "Podengo Galego",
+   "aliases": [
+    "Galician Warren Hound",
+    "galicianpodenco",
+    "podenco gallego"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q57258179",
+   "name": "Original Fila Brasileiro",
+   "aliases": [
+    "OFB",
+    "Old Brazilian Fila",
+    "Old Brazilian Mastiff",
+    "Old Fila Brasileiro",
+    "Old Fila Dog"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q58058018",
+   "name": "Pit Monster",
+   "aliases": [
+    "Brazilian Monster Pit",
+    "Brazilian Monster dog",
+    "Brazilian Pit Monster"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q109535791",
+   "name": "Tonya Finosu",
+   "aliases": [
+    "Fino of Tonya",
+    "Kobi"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q113640408",
+   "name": "Bắc Hà dog",
+   "aliases": [
+    "Vietspitz",
+    "chó Bắc Hà"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q38459",
+   "name": "Dogo Sardesco",
+   "aliases": [
+    "Dogo Sardo",
+    "Sardinian Dogo",
+    "Sardinian Mastiff"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q1762702",
+   "name": "Segugio dell'Appennino",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q2503464",
+   "name": "Bulgarian Hound",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q4356976",
+   "name": "Svensk vit älghund",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q6865135",
+   "name": "Miniature Fox Terrier",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q10351150",
+   "name": "Pomsky",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q10657975",
+   "name": "Russian Hound",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q11701407",
+   "name": "Greyster",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q16639970",
+   "name": "Großspitz",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q113714849",
+   "name": "Hmong bobtail dog",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q37491",
+   "name": "Bernese hound",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q39148",
+   "name": "Treeing Cur",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q2887401",
+   "name": "basset",
+   "aliases": [
+    "Basset"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q123367149",
+   "name": "Dikkulak",
+   "aliases": [
+    "Turkish Dikkulak",
+    "Çivikulak"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q44116",
+   "name": "Ca de Conills",
+   "aliases": [
+    "Ca de Conills de Menorca",
+    "Can de Conejos de Menorca"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q59537",
+   "name": "Ca Mè Mallorquí",
+   "aliases": [
+    "Ca Me Mallorqui"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q819593",
+   "name": "Savoy Sheepdog",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q1770291",
+   "name": "Bakhmull",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q1821832",
+   "name": "Levesque",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q2943769",
+   "name": "Small Međimurje Dog",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q5032220",
+   "name": "Cane Toccatore",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q6737720",
+   "name": "Majestic Tree Hound",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q6924947",
+   "name": "Treeing Feist",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q10874713",
+   "name": "Xigou",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q13548384",
+   "name": "African village dog",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q13551303",
+   "name": "New Zealand Heading Dog",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q15789896",
+   "name": "Briquet de Provence",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q20379893",
+   "name": "odis",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q20735288",
+   "name": "Murcian Ratter",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q29033666",
+   "name": "Tahitian Dog",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q30891717",
+   "name": "Medelyan",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q107804694",
+   "name": "Sarail hound",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q111780168",
+   "name": "Tatranský durič",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q113697158",
+   "name": "Lài dog",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q123030292",
+   "name": "Laizhou Red Dog",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q38013",
+   "name": "Jonangi",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q38744",
+   "name": "Gull Dong",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q2961129",
+   "name": "French Charnaigre Dog",
+   "aliases": [
+    "Charnaigre",
+    "Charnegre",
+    "Charnique"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q18343866",
+   "name": "Rize Koyun",
+   "aliases": [
+    "Rize Koyan"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q21193030",
+   "name": "Sila Shepherd",
+   "aliases": [
+    "Sila Sheepdog"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q56325548",
+   "name": "American Wolfdog",
+   "aliases": [
+    "American Tundra Shepherd"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q4353893",
+   "name": "Gotland Hound",
+   "aliases": [
+    "Gotlandsstövare"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q12599182",
+   "name": "Bulgae",
+   "aliases": [
+    "Korean fire dog",
+    "Korean flame dog"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q14533392",
+   "name": "Miniature Shar Pei",
+   "aliases": [
+    "Mini Pei"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q14766993",
+   "name": "Bone-mouth",
+   "aliases": [
+    "Chinese Fighting Dog",
+    "Chinese Shar-pei",
+    "Guzui",
+    "Traditional Shar-pei"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q59617570",
+   "name": "Bulgarian Shepherd Dog",
+   "aliases": [
+    "Balgarsko ovcharsko kuche"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q107444250",
+   "name": "Staghound",
+   "aliases": [
+    "English Staghound"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q37964",
+   "name": "Lucernese Hound",
+   "aliases": [
+    "Lucern Hound"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q39045",
+   "name": "Murray River Curly Coated Retriever",
+   "aliases": [
+    "Murray River Retriever"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q1990683",
+   "name": "Pandikona",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q2910591",
+   "name": "Borador",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q7085403",
+   "name": "Old Welsh Grey Sheepdog",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q7579584",
+   "name": "Sporting Lucas Terrier",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q9058633",
+   "name": "Argentine Polar Dog",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q10519107",
+   "name": "Hedehund",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q11288588",
+   "name": "Welsh Hillman",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q11477572",
+   "name": "Kawakami Ken",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q11902355",
+   "name": "Westfal Terrier",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q12257588",
+   "name": "Erbi Txakur",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q15128787",
+   "name": "Perdigueiro Galego",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q16861551",
+   "name": "Smithfield (dog)",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q30594645",
+   "name": "Polynesian Dog",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q65229742",
+   "name": "Australian Cobberdog",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q107303989",
+   "name": "Buckhound",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q113403824",
+   "name": "Valdueza",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q37546",
+   "name": "Bisben",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q38560",
+   "name": "Chinese Imperial Dog",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q39118",
+   "name": "Old Croatian Sighthound",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q39280",
+   "name": "Schwyz Hound",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q2222597",
+   "name": "Sanshu",
+   "aliases": [
+    "Sanshu Inu"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q16830750",
+   "name": "Seskar Seal Dog",
+   "aliases": [
+    "Seskar Dog"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q18345166",
+   "name": "Lapponian Shepherd",
+   "aliases": [
+    "Cockhill's Finnish Lapphound"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q18464858",
+   "name": "Brazilian Bull-mastiff",
+   "aliases": [
+    "Brazilian Bullmastiff",
+    "Brazilian bandog",
+    "Redcapo bandog"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q25477063",
+   "name": "Anatolian Greyhound",
+   "aliases": [
+    "Anadolu Sultan Tazısı",
+    "Turkish Greyhound"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q25865",
+   "name": "Sertanejo Dog",
+   "aliases": [
+    "Brazilian Black-mouth Dog",
+    "Brazilian Cowboy dog"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q10345998",
+   "name": "Pyrenean Sheepdog Long-haired",
+   "aliases": [
+    "Chien de Berger des Pyrénées à poil long",
+    "Pyrenean Sheepdog Long-Haired"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q16039619",
+   "name": "Pyrenean Sheepdog Smooth-faced",
+   "aliases": [
+    "Chien de Berger des Pyrénées a face rase",
+    "Pyrenean Sheepdog, Smooth-Faced"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q107210039",
+   "name": "Mi-Ki",
+   "aliases": [
+    "Miki"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q107448399",
+   "name": "West Country Harrier",
+   "aliases": [
+    "Somerset Harrier"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q121384636",
+   "name": "Basati alaunt",
+   "aliases": [
+    "Presa navarro"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q38455",
+   "name": "Australasian Bosdog",
+   "aliases": [
+    "Australian Bulldog"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q38520",
+   "name": "Black Slovakian Shepherd",
+   "aliases": [
+    "Čierny šery"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q810500",
+   "name": "basset d'Artois",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q891548",
+   "name": "Bolonka Franzuska",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q898953",
+   "name": "Belgian Pointer",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q1423562",
+   "name": "U.S. state dogs",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q1796295",
+   "name": "Königsberger Paukenhund",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3272034",
+   "name": "Grecian Greyhound",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3655285",
+   "name": "Sicilian Sheepdog",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3955667",
+   "name": "Seppala Siberian Sleddog",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q4355059",
+   "name": "Double-nosed Andean tiger hound",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q5313816",
+   "name": "Dumfriesshire Hound",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q9190332",
+   "name": "Chorkie",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q10389421",
+   "name": "National Deerhound",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q10411807",
+   "name": "Anglo-Russian Hound",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q11474636",
+   "name": "Iwate Inu",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q11831662",
+   "name": "Toy Poodle",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q11854538",
+   "name": "Borneo dog",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q12390229",
+   "name": "Guicho",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q14309341",
+   "name": "Grand Gascon Saintongeois",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q15263587",
+   "name": "American Blue Gascon Hound",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q16892010",
+   "name": "Tibetan kyi apso",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q19283661",
+   "name": "Zuchon",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q19394150",
+   "name": "Vaghari Dog",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q30896831",
+   "name": "Lessinia and Lagorai Shepherd",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q60983318",
+   "name": "Chuandong Hound",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q101002797",
+   "name": "Kars dog",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q104806099",
+   "name": "Ratonero Palmero",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q107331639",
+   "name": "Perro pampa argentino",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q107448371",
+   "name": "Norman Hound",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q111913522",
+   "name": "Liangshan Dog",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q123807528",
+   "name": "Fu Quan",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q124022669",
+   "name": "Mojee",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q137826232",
+   "name": "Meitei Hui",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q38006",
+   "name": "Harlequin Pinscher",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q39265",
+   "name": "Waeller",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q39331",
+   "name": "Petit Gascon Saintongeois",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q1748928",
+   "name": "Turkmen Alabai",
+   "aliases": [
+    "Alabai",
+    "Alabay"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q21170233",
+   "name": "Irish Staffordshire Bull Terrier",
+   "aliases": [
+    "Irish Bull Terrier"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q28063845",
+   "name": "Pulin",
+   "aliases": [
+    "Serbian Shepherd",
+    "Serbian Shepherd Dog",
+    "Vojvodina Shepherd",
+    "Vojvodina Shepherd Dog"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q33989855",
+   "name": "Chinese Happa Dog",
+   "aliases": [
+    "Happa",
+    "Happa Dog"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11295077",
+   "name": "Kars dog",
+   "aliases": [
+    "Kars Sheepdog",
+    "Kars Shepherd",
+    "Kars Shepherd Dog"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11622336",
+   "name": "Satsuma Dog",
+   "aliases": [
+    "Satsuma",
+    "Satsuma Inu"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q57305587",
+   "name": "Bullbras",
+   "aliases": [
+    "Brazilian Bulldogge",
+    "New Age Bulldogge"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q107337867",
+   "name": "Chilean Dogo",
+   "aliases": [
+    "Dogo Chileno"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q107444456",
+   "name": "Chien Blanc du Roi",
+   "aliases": [
+    "King's White Hound"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q38436",
+   "name": "Schafpudel",
+   "aliases": [
+    "German Sheeppoodle"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q38741",
+   "name": "Gran Mastín de Borínquen",
+   "aliases": [
+    "Gran Mastin de Borinquen"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q516648",
+   "name": "Afghan mastiff",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q1398538",
+   "name": "gråhund",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q1485154",
+   "name": "Steinbracke",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q1779842",
+   "name": "Hairless Khala",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q3435318",
+   "name": "Valley Bulldog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q5435550",
+   "name": "Farm collie",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q7294537",
+   "name": "Rare breed",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q7446356",
+   "name": "Segugio Cravin",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q10428393",
+   "name": "Berger de Crau",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q10676839",
+   "name": "Serbian sheep dog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11299068",
+   "name": "Clallam-Indian Dog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11306146",
+   "name": "Circassian Orloff Wolfhound",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11322087",
+   "name": "Trailhound",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11323744",
+   "name": "Naga Dog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11347155",
+   "name": "Latvian Hound",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11349773",
+   "name": "Red Decoy Dog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11853557",
+   "name": "Australian Staghound",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11874326",
+   "name": "Labrit",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q11883725",
+   "name": "Mâtin",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q19704923",
+   "name": "North-Easthrly Haaling Laika",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q22286992",
+   "name": "Carea Castellano Manchego",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q28495327",
+   "name": "Auvergne Shepherd",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q30898772",
+   "name": "Spino siciliano",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q55664359",
+   "name": "Tuvinskaya ovcharka",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q56325365",
+   "name": "Branchiero siciliano",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q60691642",
+   "name": "Working Pit Bulldog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q60691679",
+   "name": "American Working Red",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q96379844",
+   "name": "Grand Fauve de Bretagne",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q110006522",
+   "name": "Silky Spitz",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q120207747",
+   "name": "Ramanadhapuram Mandai",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q123243328",
+   "name": "Patti",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q125867201",
+   "name": "Langqing Quan",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q135885052",
+   "name": "Kunma Dog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q23473",
+   "name": "Normand-Poitevin",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q38004",
+   "name": "Miniature Australian Shepherd",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q38134",
+   "name": "Antebellum Bulldog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q38353",
+   "name": "Black and Tan Virginia Foxhound",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q38773",
+   "name": "Berner Laufhund",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q39405",
+   "name": "White English Bulldog",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q44008",
+   "name": "Pastor Americano",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q18418019",
+   "name": "Chamuco",
+   "aliases": [
+    "Mexican Pitbull"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q19698220",
+   "name": "Poochon",
+   "aliases": [
+    "Poochon ("
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q6035138",
+   "name": "Zagar",
+   "aliases": [
+    "Turkish Chaser Dog of Zagar",
+    "Zağar"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q6535835",
+   "name": "Levriero meridionale",
+   "aliases": [
+    "levriero italiano centromeridionale",
+    "levriero italiano meridionale"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q12664827",
+   "name": "miniature dachshund",
+   "aliases": [
+    "mini dachshund"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11293235",
+   "name": "Australian Barb",
+   "aliases": [
+    "Black Kelpie"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11296921",
+   "name": "Cyprus Poodle",
+   "aliases": [
+    "Cyprus poodle, Cyprus poodle terrier"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11307797",
+   "name": "Braque Charles X",
+   "aliases": [
+    "Charles Pointer",
+    "Charlesinseisoja"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11314828",
+   "name": "St. Hubert Jura Hound",
+   "aliases": [
+    "Bruno Jura hound"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11316517",
+   "name": "tumbler",
+   "aliases": [
+    "Canis Saltator"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11324615",
+   "name": "Zande Dog",
+   "aliases": [
+    "Haute-Agooue Terrier",
+    "Nyam-Nyam"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11335964",
+   "name": "Plains-Indian Dog",
+   "aliases": [
+    "American Indian Dog"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q64828740",
+   "name": "Ramanathapuram mandai dog",
+   "aliases": [
+    "manthai dog"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q124212270",
+   "name": "St. Hubert",
+   "aliases": [
+    "St. Hubert Hound",
+    "St. Hubert's Bloodhound",
+    "St. Hubert's Hound"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q124986589",
+   "name": "Patagonian Bearded Greyhound",
+   "aliases": [
+    "Patagonian Greyhound"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q133854503",
+   "name": "Mexican lapdog",
+   "aliases": [
+    "Mexican lap dog",
+    "Mexican lap-dog"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q135329578",
+   "name": "Kattai dog",
+   "aliases": [
+    "Kattai Dog"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q141896006",
+   "name": "Boz Shepherd",
+   "aliases": [
+    "Boz Shepherd Dog",
+    "Guregh"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q44117",
+   "name": "Gos d'atura aranès",
+   "aliases": [
+    "Aranese Sheepdog"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q2356500",
+   "name": "Strobel",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q2446076",
+   "name": "Boerenfox terrier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3895786",
+   "name": "Pardog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5165328",
+   "name": "Continental Toy Spaniel",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5732926",
+   "name": "Boxador",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q7190591",
+   "name": "Piccolo Segugio dell'Appennino",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q8413492",
+   "name": "Illyrian Shepherd",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11139299",
+   "name": "Beskydský bundáš",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11286620",
+   "name": "Izcuintli, itzcuintli",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11288509",
+   "name": "West Greenland Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11289968",
+   "name": "Egyptian Hairless Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11293746",
+   "name": "Aurora Husky",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11294475",
+   "name": "Canis Panther",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11294788",
+   "name": "Comforter",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11299059",
+   "name": "Klamath-Indian Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11300750",
+   "name": "Gredin Spaniel",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11302708",
+   "name": "Common Indian Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11302754",
+   "name": "Colima Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11306443",
+   "name": "Zanzibar Greyhound",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11307644",
+   "name": "Shakhi",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11308054",
+   "name": "Shropshre Terrier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11308363",
+   "name": "Shilluk Greyhound",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11312417",
+   "name": "Strathdoon dingo killer",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11314025",
+   "name": "Sioux Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11314826",
+   "name": "St. Domingo Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11319007",
+   "name": "Timber-wolf Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11320176",
+   "name": "Dinka Greyhound",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11321010",
+   "name": "Toy Bull Terrier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11322026",
+   "name": "Tripuri Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11323390",
+   "name": "dropper",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11325171",
+   "name": "Nootka Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11325204",
+   "name": "Indian Husky",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11327165",
+   "name": "Han Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11327736",
+   "name": "Batak Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11330537",
+   "name": "Bisharin Greyhound",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11336781",
+   "name": "Bajan Toy Terrier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11339332",
+   "name": "Poltalloch Terrier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11349153",
+   "name": "Llewellin Setter",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11350379",
+   "name": "Rothbury Terrier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11350809",
+   "name": "Pueblo Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11574216",
+   "name": "Koshikiyama Inu",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11608113",
+   "name": "Jōmon Dog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11900149",
+   "name": "White Greek sheepdog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q16354627",
+   "name": "Decker Terrier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q16975130",
+   "name": "Beaglier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q17192231",
+   "name": "Albanian Wolfdog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q17192490",
+   "name": "Anglo-Spanish Greyhound",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q18126660",
+   "name": "Lottatore Brindisino",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q26272045",
+   "name": "Griffon Bruxellois",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q30898853",
+   "name": "Cane Pecoraio Varbutu",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q60792414",
+   "name": "Denmark Feist",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q99718718",
+   "name": "Gerberian Shepsky",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q104623400",
+   "name": "Lakeland Foxhound",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q105429234",
+   "name": "Shepweiler",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q113570342",
+   "name": "Assyrian Mastiff",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q123241766",
+   "name": "podenco palmero",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q124567699",
+   "name": "pocket beagle",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q124567716",
+   "name": "Welsh Black-and-Tan Sheepdog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q124567717",
+   "name": "Welsh Blue-Grey",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q124567726",
+   "name": "Lyme Mastiff",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q130313860",
+   "name": "Laconian",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q136400684",
+   "name": "Black Spitz",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25746",
+   "name": "Kitler",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25881",
+   "name": "Gegar",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q29106",
+   "name": "Damchi",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q38865",
+   "name": "Hungarian sheepdog",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q38894",
+   "name": "Mountain View Cur",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q38924",
+   "name": "Korean Mastiff",
+   "aliases": [],
+   "popularity": 2
+  }
+ ]
+}

@@ -1,0 +1,1886 @@
+{
+ "id": "cheese",
+ "prompt": "Name a cheese",
+ "source": "wikidata",
+ "built": "2026-11-21",
+ "answers": [
+  {
+   "qid": "Q14088",
+   "name": "mozzarella",
+   "aliases": [
+    "Cookbook:Mozzarella Cheese",
+    "mozzarella cheese"
+   ],
+   "popularity": 76
+  },
+  {
+   "qid": "Q155922",
+   "name": "Parmesan",
+   "aliases": [
+    "Parmesan cheese",
+    "Parmigiano",
+    "Parmigiano Reggiano",
+    "Parmigiano-Reggiano"
+   ],
+   "popularity": 71
+  },
+  {
+   "qid": "Q131480",
+   "name": "Camembert",
+   "aliases": [],
+   "popularity": 66
+  },
+  {
+   "qid": "Q189221",
+   "name": "Roquefort cheese",
+   "aliases": [
+    "Roquefort"
+   ],
+   "popularity": 59
+  },
+  {
+   "qid": "Q677640",
+   "name": "pecorino",
+   "aliases": [],
+   "popularity": 43
+  },
+  {
+   "qid": "Q940319",
+   "name": "Grana Padano PDO",
+   "aliases": [
+    "Grana Padano cheese"
+   ],
+   "popularity": 37
+  },
+  {
+   "qid": "Q698632",
+   "name": "Bryndza",
+   "aliases": [
+    "Brynza"
+   ],
+   "popularity": 34
+  },
+  {
+   "qid": "Q1113301",
+   "name": "kurt",
+   "aliases": [
+    "aarul",
+    "aaruul",
+    "aqet",
+    "chortan",
+    "dried yoghurt",
+    "kashk",
+    "keshk",
+    "khuruud",
+    "kishik",
+    "kishk",
+    "qurt"
+   ],
+   "popularity": 33
+  },
+  {
+   "qid": "Q1570052",
+   "name": "processed cheese",
+   "aliases": [
+    "cheese food",
+    "pasteurized process cheese",
+    "process cheese"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q776025",
+   "name": "Limburger",
+   "aliases": [],
+   "popularity": 32
+  },
+  {
+   "qid": "Q7220270",
+   "name": "kashkaval",
+   "aliases": [
+    "kaskavál",
+    "קאַשקאַוואַל",
+    "קאַשקאַוואַל קעז",
+    "קשקבל"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q249310",
+   "name": "Comté cheese",
+   "aliases": [
+    "Comte cheese"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q2433798",
+   "name": "Tilsit cheese",
+   "aliases": [],
+   "popularity": 29
+  },
+  {
+   "qid": "Q534043",
+   "name": "Fontina PDO",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q1246024",
+   "name": "Pecorino Romano PDO",
+   "aliases": [],
+   "popularity": 28
+  },
+  {
+   "qid": "Q322899",
+   "name": "abondance",
+   "aliases": [],
+   "popularity": 27
+  },
+  {
+   "qid": "Q775835",
+   "name": "Taleggio PDO",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q727210",
+   "name": "Asiago PDO",
+   "aliases": [],
+   "popularity": 25
+  },
+  {
+   "qid": "Q9017517",
+   "name": "khoa",
+   "aliases": [
+    "khoya",
+    "mawa"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q761524",
+   "name": "Brocciu",
+   "aliases": [],
+   "popularity": 23
+  },
+  {
+   "qid": "Q16359149",
+   "name": "Jāņi cheese",
+   "aliases": [
+    "caraway cheese"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q707630",
+   "name": "Obatzda",
+   "aliases": [
+    "Obatzter",
+    "Obazda"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q941068",
+   "name": "Mozzarella di Bufala Campana PDO",
+   "aliases": [],
+   "popularity": 20
+  },
+  {
+   "qid": "Q1411808",
+   "name": "sheep milk cheese",
+   "aliases": [
+    "sheep cheese",
+    "sheep's-milk cheese"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q3323634",
+   "name": "fresh cheese",
+   "aliases": [
+    "fresh cheeses"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q4117114",
+   "name": "Swiss cheese",
+   "aliases": [],
+   "popularity": 18
+  },
+  {
+   "qid": "Q3437219",
+   "name": "Livno cheese",
+   "aliases": [
+    "Livanjski sir"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q592173",
+   "name": "Pecorino Sardo PDO",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2632885",
+   "name": "smoked cheese",
+   "aliases": [
+    "Rauchkäse",
+    "uzené sýry"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q1193831",
+   "name": "Parenica",
+   "aliases": [],
+   "popularity": 17
+  },
+  {
+   "qid": "Q678297",
+   "name": "Raschera PDO",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1283428",
+   "name": "Pag cheese",
+   "aliases": [],
+   "popularity": 16
+  },
+  {
+   "qid": "Q5414737",
+   "name": "hebra cheese",
+   "aliases": [
+    "Queso oaxaca"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1897605",
+   "name": "beyaz peynir",
+   "aliases": [
+    "Turkish white cheese"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2962662",
+   "name": "Shanklish",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q879074",
+   "name": "Bitto PDO",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q896436",
+   "name": "Bra PDO",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1412674",
+   "name": "Granular cheese",
+   "aliases": [
+    "pressed cheese"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1249286",
+   "name": "Castelmagno PDO",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1943539",
+   "name": "whey cheese",
+   "aliases": [],
+   "popularity": 14
+  },
+  {
+   "qid": "Q19359994",
+   "name": "Swiss cheeses",
+   "aliases": [
+    "Swiss cheese",
+    "cheese from Switzerland"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1246800",
+   "name": "Afuega'l pitu",
+   "aliases": [
+    "Afuega'l pitu cheese"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q567516",
+   "name": "Milbenkäse",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q4121172",
+   "name": "Rumi cheese",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3312636",
+   "name": "Nisa cheese",
+   "aliases": [
+    "queijo de Nisa"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q3774485",
+   "name": "washed-rind cheese",
+   "aliases": [
+    "Washed-rind cheese",
+    "smear-ripened cheese",
+    "washed-rind hard cheese",
+    "washed-rind soft cheese"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q2227260",
+   "name": "acid-set cheese",
+   "aliases": [
+    "sour milk cheese"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1232535",
+   "name": "Kefalograviera",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q2122633",
+   "name": "Queijo de Azeitão",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q3183584",
+   "name": "tulum cheese",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q6812442",
+   "name": "Circassian cheese",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q3088336",
+   "name": "grated cheese",
+   "aliases": [
+    "shredded cheese"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q782709",
+   "name": "Valtellina Casera PDO",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1412505",
+   "name": "pasta filata",
+   "aliases": [
+    "plastic-curd cheese",
+    "plastic-curd cheeses",
+    "pulled-curd cheese",
+    "pulled-curd cheeses",
+    "spun paste cheese",
+    "spun paste cheeses",
+    "stretched-curd cheese",
+    "stretched-curd cheeses"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1223352",
+   "name": "Monte Veronese PDO",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q2277500",
+   "name": "Piave PDO",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1231562",
+   "name": "Queso Ibores",
+   "aliases": [
+    "DOP Queso Ibores"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q540837",
+   "name": "Kopanisti mykonou",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1047384",
+   "name": "J&L Grubb",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1086855",
+   "name": "camembert de Normandie",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q5290273",
+   "name": "Domiati",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q21029475",
+   "name": "Silter PDO",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q5620025",
+   "name": "brined cheese",
+   "aliases": [
+    "pickled cheese"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q6470962",
+   "name": "Vlašić cheese",
+   "aliases": [
+    "Travnik cheese"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q980288",
+   "name": "Pecorino Toscano PDO",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1811739",
+   "name": "Hermelín",
+   "aliases": [
+    "Hermelin"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1229737",
+   "name": "Ragusano PDO",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1238064",
+   "name": "Quartirolo Lombardo PDO",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q176236",
+   "name": "Fiore Sardo PDO",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q3088322",
+   "name": "Brussels cheese",
+   "aliases": [
+    "Brusselse kaas",
+    "ettekeis",
+    "fromage de Bruxelles"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q473202",
+   "name": "Majorero cheese PDO",
+   "aliases": [
+    "Majorero DOP",
+    "Queso Majorero DOP"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q9065235",
+   "name": "Palmero cheese",
+   "aliases": [
+    "La Palma cheese"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q2223649",
+   "name": "French cheese",
+   "aliases": [
+    "cheese from France"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q1246813",
+   "name": "Valdeón cheese PGI",
+   "aliases": [
+    "Valdeón PGI",
+    "queso Valdeón"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q655840",
+   "name": "San Simón da Costa",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q773695",
+   "name": "Quesillo",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q2587663",
+   "name": "Rollot",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q3748123",
+   "name": "Formaggio di Fossa",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q32361667",
+   "name": "Motal",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q3296415",
+   "name": "Sakura cheese",
+   "aliases": [
+    "Sakura"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q3898549",
+   "name": "Pecorino di Filiano PDO",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q6395121",
+   "name": "kesong puti",
+   "aliases": [
+    "quesong puti"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q7259285",
+   "name": "Pule cheese",
+   "aliases": [
+    "donkey cheese"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q9065233",
+   "name": "Transmontano goat cheese",
+   "aliases": [
+    "queijo de cabra transmontano"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q1061508",
+   "name": "Spressa delle Giudicarie PDO",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q1224461",
+   "name": "Valle d'Aosta Fromadzo PDO",
+   "aliases": [
+    "Vallée d'Aoste Fromadzo"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q436943",
+   "name": "Altenburger",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q3356849",
+   "name": "Fromage D'Orval",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q3427558",
+   "name": "requeijão",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q4219778",
+   "name": "Queso de Mano",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q5089407",
+   "name": "cheese spread",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q16637316",
+   "name": "soft cheese",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q131757744",
+   "name": "Hutsul bryndza",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q848380",
+   "name": "Formai de Mut dell'Alta Valle Brembana PDO",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q11001474",
+   "name": "Casín cheese",
+   "aliases": [
+    "Casin cheese"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q1046941",
+   "name": "Casciotta d'Urbino PDO",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q1062035",
+   "name": "Toma Piemontese PDO",
+   "aliases": [
+    "Toma Italiana",
+    "Toma d'Alpeggio"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q1238105",
+   "name": "Murazzano PDO",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q746638",
+   "name": "Norvegia",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q5016036",
+   "name": "Caciotta",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q7367025",
+   "name": "Rosa Camuna",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q11774318",
+   "name": "Datshi",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q11922606",
+   "name": "Tupí",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q12659878",
+   "name": "Žemaitiškas kastinys",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q17010024",
+   "name": "Egyptian cheese",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q123160832",
+   "name": "white cheese",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q58730",
+   "name": "Snøfrisk",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q775943",
+   "name": "Robiola di Roccaverano PDO",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q644682",
+   "name": "Délice de Bourgogne",
+   "aliases": [
+    "Delice de Bourgogne"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q11604445",
+   "name": "powdered cheese",
+   "aliases": [
+    "cheese powder"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q956024",
+   "name": "Allgäuer Emmentaler",
+   "aliases": [
+    "Allgau emmentaler"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q1215556",
+   "name": "Cheese from l'Alt Urgell y la Cerdanya",
+   "aliases": [
+    "Formatge de l'Alt Urgell i La Cerdanya"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q170049",
+   "name": "Reggianito",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q319716",
+   "name": "Abertam cheese",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q542046",
+   "name": "Brousse du Rove",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q4854506",
+   "name": "Bandel cheese",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q6094605",
+   "name": "Tronchon",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q12275182",
+   "name": "Abbey of Westmalle",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q16852388",
+   "name": "Kars gravyer cheese",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q3555005",
+   "name": "Vastedda della valle del Belice PDO",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q19341080",
+   "name": "queso blanco",
+   "aliases": [
+    "queso fresco"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q20009815",
+   "name": "Squacquerone di Romagna PDO",
+   "aliases": [
+    "Squacquarone",
+    "Squacquerone di Romagna",
+    "Squaquaròn"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q848331",
+   "name": "Canestrato Pugliese PDO",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q3886850",
+   "name": "Ossolano PDO",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q3898541",
+   "name": "Pecorino Crotonese PDO",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q5435749",
+   "name": "farmer cheese",
+   "aliases": [
+    "farmer's cheese",
+    "farmers' cheese"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q476512",
+   "name": "Aura",
+   "aliases": [
+    "Midnight Blue"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q6541482",
+   "name": "Caciocavallo Silano PDO",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q1772090",
+   "name": "Nøkkelost",
+   "aliases": [
+    "Nokkelost"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q391604",
+   "name": "mould cheese",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q647180",
+   "name": "Le Rustique",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q2744126",
+   "name": "Ardrahan Cheese",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q2937903",
+   "name": "Caravane",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q3926046",
+   "name": "Puzzone di Moena",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q4337660",
+   "name": "Ossetian cheese",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q5055615",
+   "name": "Caş",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q6744258",
+   "name": "Mallorca cheese",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q7780958",
+   "name": "Dali ni Horbo",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q17067155",
+   "name": "balkánský sýr",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q56877598",
+   "name": "Lori",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q3088300",
+   "name": "yak's milk cheese",
+   "aliases": [
+    "yak cheese"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q20009675",
+   "name": "Formaggella del Luinese PDO",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3878649",
+   "name": "Nostrano Valtrompia PDO",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3901812",
+   "name": "Piacentinu Ennese PDO",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3974593",
+   "name": "Strachitunt PDO",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q113988259",
+   "name": "Mozzarella di Gioia del Colle PDO",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q6005710",
+   "name": "Imokilly Regato",
+   "aliases": [
+    "Reigeató Uí Mhic Coille"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q6094372",
+   "name": "queijos da Beira Baixa",
+   "aliases": [
+    "Beira Baixa cheeses",
+    "queijo amarelo da Beira Baixa",
+    "queijo de Castelo Branco",
+    "queijo picante da Beira Baixa"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q7139760",
+   "name": "Parrano",
+   "aliases": [
+    "Parrano cheese"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q1737615",
+   "name": "kaşar",
+   "aliases": [
+    "kaşar cheese"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q325765",
+   "name": "Allgäuer Bergkäse",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q658814",
+   "name": "Pied-De-Vent",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q1192207",
+   "name": "A Filetta",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q1597325",
+   "name": "semi-hard cheese",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q1626037",
+   "name": "Maredsous cheese",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q2613548",
+   "name": "Chura kampo",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q2667800",
+   "name": "Chura loenpa",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q2947274",
+   "name": "Chabis",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3143234",
+   "name": "Humboldt Fog",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3531223",
+   "name": "fresh Tomme",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3539512",
+   "name": "triple cream",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3542650",
+   "name": "Tybo",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3992553",
+   "name": "Toma del Mottarone",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q4818570",
+   "name": "Queijo prata",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q4867632",
+   "name": "Basket cheese",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q4965959",
+   "name": "brick cheese",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q5589145",
+   "name": "Government cheese",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q7166384",
+   "name": "pepper jack cheese",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q8245014",
+   "name": "Bavaria blu",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q11159183",
+   "name": "Blaťácké zlato",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q11701587",
+   "name": "Acehúche cheese",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q43375194",
+   "name": "Pata de mulo cheese",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q85991120",
+   "name": "Hutsul sheep bryndzya",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q94702029",
+   "name": "Queso herreño",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q105926041",
+   "name": "Basa",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3088318",
+   "name": "farmstead cheese",
+   "aliases": [
+    "farmhouse cheese"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q12899215",
+   "name": "Casatella Trevigiana PDO",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q17006995",
+   "name": "reindeer cheese",
+   "aliases": [
+    "reindeer milk cheese"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q19361017",
+   "name": "British cheese",
+   "aliases": [
+    "UK cheese"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q3898544",
+   "name": "Pecorino di Carmasciano PAT",
+   "aliases": [
+    "Carmasciano"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q5089401",
+   "name": "Cheese in Canada",
+   "aliases": [
+    "Canadian cheese"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q5089436",
+   "name": "Mexican cheese",
+   "aliases": [
+    "Cheese of Mexico",
+    "Cheeses of Mexico"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q46477992",
+   "name": "Kenyan cheese",
+   "aliases": [
+    "Cheese in Kenya"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q111835885",
+   "name": "Argentine cheese",
+   "aliases": [
+    "Cheese in Argentina",
+    "Cheeses from Argentina",
+    "Cheeses of Argentina"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q117307294",
+   "name": "Schnittkäse Bela Badia PAT",
+   "aliases": [
+    "formaggio da taglio Bela Badia"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2925189",
+   "name": "brie noir",
+   "aliases": [
+    "black brie"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q1392479",
+   "name": "L’Etivaz",
+   "aliases": [
+    "L’Étivaz VD"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q747119",
+   "name": "Galotyri",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2829940",
+   "name": "Tibetan cheese",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2934036",
+   "name": "Calinzanincu",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q3076339",
+   "name": "Fontal",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q3388348",
+   "name": "Pikauba (cheese)",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q3531279",
+   "name": "Tomme de Gressoney",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q3594600",
+   "name": "Șvaițer",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q3655318",
+   "name": "Canestrato di Moliterno",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q4375641",
+   "name": "Poshekhonye cheese",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q5167429",
+   "name": "Cooleeney Farmhouse Cheese",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q5184120",
+   "name": "Cremoso cheese",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q5479342",
+   "name": "San Michali",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q8045571",
+   "name": "Xynotyro",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q8199534",
+   "name": "Anevato",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q9287233",
+   "name": "Rauchkäse",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q12040362",
+   "name": "Nakládaný hermelín",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q13212199",
+   "name": "Vezzena",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q14258350",
+   "name": "fromage frais",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q18470462",
+   "name": "Requeixo",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q33395610",
+   "name": "Alpkäse",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q63524591",
+   "name": "burrata di Andria",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q105512381",
+   "name": "Sbirro",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q109779130",
+   "name": "Palmito cheese",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q112673003",
+   "name": "Mutschli",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q126163056",
+   "name": "cheese horses",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q130303691",
+   "name": "Schnittkäse Marienberger PAT",
+   "aliases": [
+    "Formaggio da taglio Monte Maria"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3088299",
+   "name": "cow's-milk cheese",
+   "aliases": [
+    "cow cheese"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3748124",
+   "name": "Formaggio di malga dei sette comuni",
+   "aliases": [
+    "Malga Cheese"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q13135670",
+   "name": "Frico",
+   "aliases": [
+    "Friesche Coöperatieve Zuivel Export Vereniging"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q15875509",
+   "name": "cheese with holes",
+   "aliases": [
+    "Swiss cheese"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3775751",
+   "name": "Granone lodigiano PAT",
+   "aliases": [
+    "Grana Tipico Lodigiano"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3924731",
+   "name": "Provolone del Monaco PDO",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q48812916",
+   "name": "Caciocavallo di Castelfranco PAT",
+   "aliases": [
+    "Castelfranco in Miscano cheese"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q102297762",
+   "name": "Aschbacher magerkäse PAT",
+   "aliases": [
+    "Aschbach magro",
+    "Formaggio aschbach",
+    "Formaggio aschbach magro"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q104841993",
+   "name": "Swiss-type cheeses",
+   "aliases": [
+    "Alpine cheeses"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q106597731",
+   "name": "Moliterno",
+   "aliases": [
+    "pecorino Moliterno",
+    "pecorino di Moliterno"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q117307969",
+   "name": "Casàda PAT",
+   "aliases": [
+    "Casada",
+    "Colostra"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q117359905",
+   "name": "Schnittkäse Schlanderser leicht PAT",
+   "aliases": [
+    "Formaggio da taglio Silandro leggero"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5731192",
+   "name": "Boeren Leidenkaas",
+   "aliases": [
+    "Boeren-Leidse met Sleutels"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5996951",
+   "name": "Ezine peyniri",
+   "aliases": [
+    "Ezine cheese"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q1531597",
+   "name": "raw-milk cheese",
+   "aliases": [
+    "raw milk cheese"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q2069008",
+   "name": "abbey cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q2305824",
+   "name": "Ardi-Gasna",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q2944217",
+   "name": "Cendrillon",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q2961710",
+   "name": "Chaux-d'Abel",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3041621",
+   "name": "Durrus cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3080069",
+   "name": "Fourme de Rochefort",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3088371",
+   "name": "Portuguese cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3222418",
+   "name": "Le Douanier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3531281",
+   "name": "Tomme de l'Ubaye",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q3531285",
+   "name": "Tomme du Jura",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q4801204",
+   "name": "artisan cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5055515",
+   "name": "Cazelle de Saint Affrique",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5489566",
+   "name": "sfela",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5548067",
+   "name": "Georgian cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q6094556",
+   "name": "Chubut cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q7939018",
+   "name": "vlaskaas",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q9059385",
+   "name": "Pichtogalo Chanion",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q9065213",
+   "name": "Cabra La Collada",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q9065216",
+   "name": "La Chivita",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q10297320",
+   "name": "Hirtenkäse",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q10854293",
+   "name": "Apetito",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q12022214",
+   "name": "Jadel",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q12900108",
+   "name": "Graviera Agrafon",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q13054393",
+   "name": "Chanakh",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q16623823",
+   "name": "Qurut",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q16673751",
+   "name": "Rovethym",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q16952139",
+   "name": "Cougar Gold cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q19953055",
+   "name": "bouhezza",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q24636822",
+   "name": "Allgäuer Sennalpkäse",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25404591",
+   "name": "aarts",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q28057184",
+   "name": "Flandrien",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q28135696",
+   "name": "Serbian cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q29052719",
+   "name": "Bierkäse",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q48804095",
+   "name": "Cevrin",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q55600216",
+   "name": "Zacharie Cloutier",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q55753739",
+   "name": "Arseniko Naxou",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q79087543",
+   "name": "Camoscio d'oro",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q79090568",
+   "name": "Caciotta marchigiana",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q85998157",
+   "name": "Prljo cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q91901758",
+   "name": "Cookbook:Cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q97172601",
+   "name": "testun",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q97649599",
+   "name": "Pecorino del Monte Poro",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q106300633",
+   "name": "Queijo serrano",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q108112946",
+   "name": "Brânză de vaci",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q110273315",
+   "name": "Pategrás",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q110605440",
+   "name": "Abkhazian cheese",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q115294063",
+   "name": "Zaanlander",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q115314439",
+   "name": "Uniekaas",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q61612",
+   "name": "Balsfjordost",
+   "aliases": [],
+   "popularity": 2
+  }
+ ]
+}
