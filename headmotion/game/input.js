@@ -10,6 +10,8 @@
 // using the gravity vector, bias-removed and double-integrated with a leak so drift returns to 0.
 // A jump fires when Y rises past cfg.jumpLift (metres) while still moving up.
 const Input = (() => {
+  // Which player this page is. Open the game with ?p=2 (etc.) on another laptop; each streamer tags its packets with --player N.
+  const PLAYER = Math.max(1, parseInt(new URLSearchParams(location.search).get('p'), 10) || 1);
   const SAVED = ['flipX', 'flipY', 'sens', 'deadFrac', 'physJump', 'jumpLift', 'liftFlip'];
   const cfg = Object.assign({
     sens: 1,          // <1 = more sensitive (less lean needed), >1 = less sensitive
@@ -131,6 +133,7 @@ const Input = (() => {
   }
 
   function onSample(d) {
+    if ((d.p || 1) !== PLAYER) return;                       // another player's AirPod: not ours
     const now = performance.now(); s.lastPacket = now;
     if (d.type === 'button') return requestJump('stem');     // AirPod stem press (streamer --stem)
     if (d.gx === undefined) return;                          // old streamer build: restart it
@@ -189,7 +192,7 @@ const Input = (() => {
   });
   addEventListener('keyup', e => { s.keys[e.code] = false; });
 
-  return { s, cfg, save, stick, connected, getTmp: () => tmp, planeOf, hasCal: () => !!cal, getCal: () => cal, project, deadRadius, recenter, STEPS,
+  return { player: PLAYER, s, cfg, save, stick, connected, getTmp: () => tmp, planeOf, hasCal: () => !!cal, getCal: () => cal, project, deadRadius, recenter, STEPS,
            beginCalibration() { s.calStep = 'neutral'; s.calNote = ''; s.win = []; s.lock = performance.now() + 600; tmp = {}; s.events.length = 0; },
            cancelCalibration() { s.calStep = null; },
            takeEvents: () => s.events.splice(0),

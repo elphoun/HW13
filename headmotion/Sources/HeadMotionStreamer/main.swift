@@ -3,13 +3,17 @@ import CoreMotion
 import Network
 import MediaPlayer
 
-// Usage: HeadMotionStreamer [--port 9000] [--csv motion.csv] [--quiet] [--stem]
+// Usage: HeadMotionStreamer [--port 9000] [--csv motion.csv] [--quiet] [--stem] [--host 192.168.1.20] [--player 2]
+//   --host    send to another computer running the bridge (default 127.0.0.1). Use this on the second laptop.
+//   --player  which player this AirPod controls (1 or 2...). The game page opened with ?p=N listens to that player.
 //   --stem  forward AirPod stem presses (play/pause/next/previous) to the game as a jump button.
 //           Takes over media controls while running.
 var port: UInt16 = 9000
 var csvPath: String?
 var quiet = false
 var stem = false
+var host = "127.0.0.1"
+var player = 1
 var args = Array(CommandLine.arguments.dropFirst())
 while let a = args.first {
     args.removeFirst()
@@ -18,11 +22,13 @@ while let a = args.first {
     case "--csv": if let v = args.first { csvPath = v; args.removeFirst() }
     case "--quiet": quiet = true
     case "--stem": stem = true
+    case "--host": if let v = args.first { host = v; args.removeFirst() }
+    case "--player": if let v = args.first, let p = Int(v) { player = p; args.removeFirst() }
     default: print("Unknown arg \(a)"); exit(2)
     }
 }
 
-let udp = NWConnection(host: "127.0.0.1", port: NWEndpoint.Port(rawValue: port)!, using: .udp)
+let udp = NWConnection(host: NWEndpoint.Host(host), port: NWEndpoint.Port(rawValue: port)!, using: .udp)
 udp.start(queue: .global())
 
 var csv: FileHandle?
@@ -44,14 +50,14 @@ guard manager.isDeviceMotionAvailable else {
     print("Headphone motion unavailable. Need AirPods Pro/Max/3rd gen connected and in your ears.")
     exit(1)
 }
-print("Status: \(CMHeadphoneMotionManager.authorizationStatus().rawValue) (3 = authorized). Streaming UDP -> 127.0.0.1:\(port). Ctrl+C to stop.")
+print("Status: \(CMHeadphoneMotionManager.authorizationStatus().rawValue) (3 = authorized). Streaming UDP -> \(host):\(port) as player \(player). Ctrl+C to stop.")
 
 manager.startDeviceMotionUpdates(to: .main) { motion, error in
     if let error = error { print("Error: \(error.localizedDescription)"); return }
     guard let m = motion else { return }
     let t = m.timestamp
     let a = m.attitude, ua = m.userAcceleration, r = m.rotationRate, g = m.gravity
-    let json = String(format: "{\"t\":%.4f,\"roll\":%.4f,\"pitch\":%.4f,\"yaw\":%.4f,\"ax\":%.4f,\"ay\":%.4f,\"az\":%.4f,\"rx\":%.4f,\"ry\":%.4f,\"rz\":%.4f,\"gx\":%.4f,\"gy\":%.4f,\"gz\":%.4f}",
+    let json = "{\"p\":\(player)," + String(format: "\"t\":%.4f,\"roll\":%.4f,\"pitch\":%.4f,\"yaw\":%.4f,\"ax\":%.4f,\"ay\":%.4f,\"az\":%.4f,\"rx\":%.4f,\"ry\":%.4f,\"rz\":%.4f,\"gx\":%.4f,\"gy\":%.4f,\"gz\":%.4f}",
                       t, a.roll, a.pitch, a.yaw, ua.x, ua.y, ua.z, r.x, r.y, r.z, g.x, g.y, g.z)
     udp.send(content: json.data(using: .utf8), completion: .idempotent)
     csv?.write((String(format: "%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f,%.4f\n",
@@ -69,7 +75,7 @@ if stem {
                         ("next", cc.nextTrackCommand), ("previous", cc.previousTrackCommand)] {
         cmd.isEnabled = true
         cmd.addTarget { _ in
-            udp.send(content: "{\"type\":\"button\",\"src\":\"\(name)\"}".data(using: .utf8), completion: .idempotent)
+            udp.send(content: "{\"p\":\(player),\"type\":\"button\",\"src\":\"\(name)\"}".data(using: .utf8), completion: .idempotent)
             if !quiet { print("\nstem press (\(name)) -> jump") }
             return .success
         }

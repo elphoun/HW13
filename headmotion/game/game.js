@@ -8,6 +8,16 @@
   const BAR_H = 1.0, BAR_CHANCE = 0.3;           // jump barriers: height and share of spawns
   const $ = id => document.getElementById(id);
 
+  // Shared track: all players fetch the same seed from the bridge, so every laptop spawns identical obstacles.
+  let SEED = 12345, rng = () => Math.random();
+  const mulberry32 = a => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  rng = mulberry32(SEED);
+  let joinUrl = '';
+  if (typeof fetch !== 'undefined') {
+    fetch('/seed').then(r => r.json()).then(j => { SEED = j.seed; rng = mulberry32(SEED); }).catch(() => {});
+    fetch('/info').then(r => r.json()).then(j => { if (j.ips && j.ips[0]) joinUrl = `http://${j.ips[0]}:${j.port}/?p=2`; }).catch(() => {});
+  }
+
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(innerWidth, innerHeight); renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   document.body.prepend(renderer.domElement);
@@ -51,7 +61,7 @@
   const barMat = new THREE.MeshStandardMaterial({ color: 0xff8800, emissive: 0xff6600, emissiveIntensity: 0.6 });
   const barTopMat = new THREE.MeshBasicMaterial({ color: 0xffee66 });
   function spawn(z) {
-    if (z < -60 && Math.random() < BAR_CHANCE) {
+    if (z < -60 && rng() < BAR_CHANCE) {
       const mesh = new THREE.Group(), depth = 0.6;
       const body = new THREE.Mesh(new THREE.BoxGeometry(TRACK_W, BAR_H, depth), barMat); body.position.y = BAR_H / 2; mesh.add(body);
       const top = new THREE.Mesh(new THREE.BoxGeometry(TRACK_W, 0.08, depth + 0.05), barTopMat); top.position.y = BAR_H; mesh.add(top);
@@ -59,8 +69,8 @@
       obstacles.push({ mesh, x: 0, w: TRACK_W, depth, z, h: BAR_H, kind: 'bar' });
       return;
     }
-    const w = 2.5 + Math.random() * 2.5, h = 3, depth = 1.2;
-    const x = (Math.random() * 2 - 1) * (HALF - w / 2);
+    const w = 2.5 + rng() * 2.5, h = 3, depth = 1.2;
+    const x = (rng() * 2 - 1) * (HALF - w / 2);
     const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), new THREE.MeshStandardMaterial({ color: 0x8844ff, emissive: 0x8844ff, emissiveIntensity: 0.5 }));
     mesh.position.set(x, h / 2, z); scene.add(mesh);
     obstacles.push({ mesh, x, w, depth, z, h, kind: 'wall' });
@@ -69,6 +79,7 @@
   let st;
   function reset() {
     obstacles.forEach(o => scene.remove(o.mesh)); obstacles = [];
+    rng = mulberry32(SEED);                                  // same sequence of obstacles every run, on every laptop
     st = { z: 0, x: 0, vx: 0, h: 0, vh: 0, speed: 0, maxDist: 0, shield: 3, invuln: 0, nextSpawn: -50, mode: 'ready', best: st ? st.best : 0 };
     craft.visible = true;
   }
@@ -91,11 +102,12 @@
       const step = Input.s.calStep, [text, label] = CAL[step];
       m.innerHTML = `<h1>CALIBRATE</h1>Step ${Input.STEPS.indexOf(step) + 1} of 5<br><br>${text}<br><br><span style="font-size:44px;color:#f0f">${label}</span><br><br><small>Hold the pose until the next step appears · Esc to skip and use the keyboard</small><p id="calhint" style="color:#fc0;min-height:1.5em"></p>`;
     } else if (st.mode === 'calibrated') m.innerHTML = `<h1>CALIBRATED ✓</h1>Lean to steer and move. The small circle (bottom right) shows your stick.<br><br>Press <b>Enter</b> to start.<br><br><small>R to calibrate again</small>`;
-    else if (st.mode === 'ready') m.innerHTML = `<h1>AIRPOD WIPEOUT</h1>Press <b>Enter</b> to calibrate your AirPod joystick, then start.<br><br>
+    else if (st.mode === 'ready') m.innerHTML = `<h1>AIRPOD WIPEOUT <small style="font-size:16px">(you are P${Input.player})</small></h1>Press <b>Enter</b> to calibrate your AirPod joystick, then start.<br><br>
       <b>Lean left / right</b> steer &nbsp;·&nbsp; <b>Lean forward</b> move forward &nbsp;·&nbsp; <b>Lean back</b> move backward<br>
       <b>Jump</b> Space · AirPod stem press · lift the AirPod<br>
       Dodge the purple walls, jump the orange barriers. Level = stopped.<br><br>
       Keyboard: A/D or ←/→ steer · W/S or ↑/↓ forward/back · Space jump<br>
+      ${joinUrl ? `<b>2 players:</b> friend opens <b>${joinUrl}</b> on their laptop<br>` : ''}
       Tuning: F flip left/right · G flip forward/back · , . sensitivity · C recenter · R recalibrate · \` debug menu`;
     else m.innerHTML = `<h1>WIPEOUT</h1>Distance: ${Math.floor(st.maxDist)} m<br>Best: ${Math.floor(st.best)} m<br><br>Press <b>Enter</b> to race again`;
   }
@@ -141,6 +153,53 @@
     }
   });
 
+  // ---- Multiplayer ----
+  // Other laptops open this page with ?p=2 (etc.). Each page runs its own game and shares its craft position through the bridge;
+  // everyone else shows up here as a ghost craft on the same track.
+  const ME = Input.player, peers = {};
+  const GHOST = { 1: [0x2255ff, 0x00ffff], 2: [0xaa1166, 0xff44cc], 3: [0x226611, 0x66ff44], 4: [0x886600, 0xffcc33] };
+  function makeGhost(id) {
+    const [em, gl] = GHOST[id] || GHOST[2], grp = new THREE.Group();
+    const hullG = new THREE.Mesh(new THREE.ConeGeometry(0.6, 2.2, 4), new THREE.MeshStandardMaterial({ color: 0xeeeeff, emissive: em, transparent: true, opacity: 0.8 }));
+    hullG.rotation.x = -Math.PI / 2; hullG.scale.set(1.4, 1, 0.5); grp.add(hullG);
+    const glowG = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.08, 0.8), new THREE.MeshBasicMaterial({ color: gl }));
+    glowG.position.set(0, -0.15, 0.6); grp.add(glowG);
+    const cv = document.createElement('canvas'); cv.width = 128; cv.height = 48;
+    const cg = cv.getContext('2d'); cg.font = 'bold 34px monospace'; cg.textAlign = 'center'; cg.fillStyle = '#' + gl.toString(16).padStart(6, '0'); cg.fillText('P' + id, 64, 36);
+    const label = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), transparent: true }));
+    label.scale.set(2.4, 0.9, 1); label.position.y = 1.4; grp.add(label);
+    scene.add(grp); return grp;
+  }
+  if (typeof EventSource !== 'undefined') {
+    const net = new EventSource('/events');
+    net.addEventListener('state', e => {
+      let d; try { d = JSON.parse(e.data); } catch (_) { return; }
+      if (d.p === ME) return;
+      const pe = peers[d.p] || (peers[d.p] = { mesh: makeGhost(d.p), dx: d.x, dz: d.z, dh: d.h });
+      Object.assign(pe, { x: d.x, z: d.z, h: d.h, speed: d.speed, shield: d.shield, dist: d.dist, mode: d.mode, seen: performance.now() });
+    });
+  }
+  let lastSend = 0;
+  function netSend(now) {
+    if (typeof fetch === 'undefined' || now - lastSend < 66) return;      // ~15 updates per second
+    lastSend = now;
+    fetch('/state', { method: 'POST', keepalive: true, body: JSON.stringify({ p: ME, x: st.x, z: st.z, h: st.h, speed: st.speed, shield: st.shield, dist: st.maxDist, mode: st.mode }) }).catch(() => {});
+  }
+  function updatePeers(dt, now) {
+    const lines = [];
+    for (const id in peers) {
+      const pe = peers[id], age = now - pe.seen;
+      if (age > 3000) { pe.mesh.visible = false; continue; }              // that player left
+      const k = Math.min(1, dt * 12), lead = Math.min(age, 300) / 1000;   // glide toward the last known spot, nudged ahead by its speed
+      pe.dx += (pe.x - pe.dx) * k; pe.dz += (pe.z - lead * pe.speed - pe.dz) * k; pe.dh += (pe.h - pe.dh) * k;
+      pe.mesh.visible = pe.mode === 'playing' || pe.mode === 'paused';
+      pe.mesh.position.set(pe.dx, 0.5 + pe.dh, pe.dz);
+      const gap = pe.dist - st.maxDist;
+      lines.push(`P${id}: ${Math.floor(pe.dist)} m · ${'▮'.repeat(Math.max(0, pe.shield))}${pe.mode === 'over' ? ' OUT' : ''} · ${Math.abs(gap) < 1 ? 'level' : Math.floor(Math.abs(gap)) + ' m ' + (gap > 0 ? 'AHEAD ▲' : 'behind ▼')}`);
+    }
+    $('rival').innerHTML = lines.length ? lines.join('<br>') : `you are P${ME} · waiting for another player…`;
+  }
+
   let last = performance.now();
   function frame(now) {
     const dt = Math.min(0.05, (now - last) / 1000); last = now;
@@ -150,6 +209,7 @@
     else if (st.mode === 'calibrate' && ev.includes('calstep')) showMsg();
     else if (st.mode === 'playing') step(dt);
     render();
+    updatePeers(dt, performance.now()); netSend(performance.now());
     requestAnimationFrame(frame);
   }
 
@@ -168,7 +228,7 @@
     if (st.h <= 0 && Input.takeJump()) st.vh = JUMP_V;
     if (st.h > 0 || st.vh > 0) { st.vh -= GRAV * dt; st.h += st.vh * dt; if (st.h <= 0) { st.h = 0; st.vh = 0; } }
 
-    while (st.nextSpawn > -st.maxDist - AHEAD + 20) { spawn(st.nextSpawn); st.nextSpawn -= 22 + Math.random() * 14; }
+    while (st.nextSpawn > -st.maxDist - AHEAD + 20) { spawn(st.nextSpawn); st.nextSpawn -= 22 + rng() * 14; }
     obstacles = obstacles.filter(o => { if (o.z > st.z + 30) { scene.remove(o.mesh); return false; } return true; });
 
     for (const o of obstacles) {
