@@ -77,6 +77,7 @@
   }
 
   let st;
+  window.Game = { get mode() { return st && st.mode; } };
   function reset() {
     obstacles.forEach(o => scene.remove(o.mesh)); obstacles = [];
     rng = mulberry32(SEED);                                  // same sequence of obstacles every run, on every laptop
