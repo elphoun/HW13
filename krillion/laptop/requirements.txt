@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-rapidfuzz
-httpx
-pyserial
-faster-whisper
-sounddevice
-numpy
