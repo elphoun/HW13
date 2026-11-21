@@ -1,8 +1,10 @@
-# AirPod Wipeout (tilt joystick)
+# Slackoff web (AirPod Wipeout game)
 
-1. Terminal 1: `swift run HeadMotionStreamer` (AirPod connected; Automatic Ear Detection off to hold it in your hand).
+Run from the repo root. The AirPod streamer lives in `slackoff-airpod/`.
+
+1. Terminal 1: `cd slackoff-airpod && swift run HeadMotionStreamer` (AirPod connected; Automatic Ear Detection off to hold it in your hand).
    Add `--stem` to make AirPod stem presses jump (it takes over media controls while running).
-2. Terminal 2: `node bridge/server.js`, then open http://localhost:8080
+2. Terminal 2: `cd slackoff-web && node bridge/server.js`, then open http://localhost:8080
 3. Press Enter, follow the 5 calibration steps (hold still, lean left, right, forward, back), press Enter to race.
 
 Controls: lean left/right = steer, lean forward = move forward, lean back = move backward (level = stopped).
