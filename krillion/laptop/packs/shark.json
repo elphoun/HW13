@@ -1,0 +1,7242 @@
+{
+ "id": "shark",
+ "prompt": "Name a kind of shark",
+ "source": "wikidata",
+ "built": "2026-11-21",
+ "answers": [
+  {
+   "qid": "Q129026",
+   "name": "great white shark",
+   "aliases": [
+    "C. carcharias",
+    "Carcharodon carcharias",
+    "Great White Shark",
+    "Great white shark",
+    "great white",
+    "white death",
+    "white pointer",
+    "white shark"
+   ],
+   "popularity": 107
+  },
+  {
+   "qid": "Q80378",
+   "name": "whale shark",
+   "aliases": [
+    "Rhincodon typus",
+    "Whale Shark",
+    "Whale shark"
+   ],
+   "popularity": 95
+  },
+  {
+   "qid": "Q163873",
+   "name": "megalodon",
+   "aliases": [
+    "Carcharocles megalodon",
+    "Megalodon Carcharodon",
+    "Otodus megalodon",
+    "pachiclon megalodon"
+   ],
+   "popularity": 72
+  },
+  {
+   "qid": "Q26337",
+   "name": "Blue Shark",
+   "aliases": [
+    "Blue shark",
+    "Prionace glauca",
+    "blue shark"
+   ],
+   "popularity": 70
+  },
+  {
+   "qid": "Q188212",
+   "name": "tiger shark",
+   "aliases": [
+    "Galeocerdo cuvier",
+    "Tiger Shark",
+    "Tiger shark"
+   ],
+   "popularity": 67
+  },
+  {
+   "qid": "Q185260",
+   "name": "basking shark",
+   "aliases": [
+    "Basking Shark",
+    "Basking shark",
+    "Cetorhinus maximus"
+   ],
+   "popularity": 63
+  },
+  {
+   "qid": "Q190469",
+   "name": "Bull Shark",
+   "aliases": [
+    "Bolivian shark",
+    "Bull shark",
+    "Carcharhinus leucas",
+    "Nicaragua shark",
+    "Zambezi shark"
+   ],
+   "popularity": 59
+  },
+  {
+   "qid": "Q370444",
+   "name": "greenland shark",
+   "aliases": [
+    "Greenland shark",
+    "Somniosus microcephalus",
+    "grey shark",
+    "gurry shark"
+   ],
+   "popularity": 56
+  },
+  {
+   "qid": "Q499461",
+   "name": "goblin shark",
+   "aliases": [
+    "Elfin Shark",
+    "Elfin shark",
+    "Goblin Shark"
+   ],
+   "popularity": 53
+  },
+  {
+   "qid": "Q194312",
+   "name": "Frilled Shark",
+   "aliases": [
+    "Chlamydoselachus anguineus",
+    "Frilled shark",
+    "Lizard Shark",
+    "Scaffold Shark",
+    "frilled shark"
+   ],
+   "popularity": 51
+  },
+  {
+   "qid": "Q318090",
+   "name": "oceanic whitetip shark",
+   "aliases": [
+    "Carcharhinus longimanus",
+    "Crow de brass star",
+    "Oceanic Whitetip Shark",
+    "White-tipped Shark",
+    "Whitetip Oceanic Shark",
+    "Whitetip Shark"
+   ],
+   "popularity": 50
+  },
+  {
+   "qid": "Q136842",
+   "name": "porbeagle",
+   "aliases": [
+    "Lamna nasus",
+    "Porbeagle",
+    "porbeagle shark"
+   ],
+   "popularity": 47
+  },
+  {
+   "qid": "Q212694",
+   "name": "spiny dogfish shark",
+   "aliases": [
+    "Cape Shark",
+    "Piked Dogfish",
+    "Spiny Dogfish",
+    "Spiny dogfish",
+    "Spurdog",
+    "Squalus acanthias",
+    "spurdog"
+   ],
+   "popularity": 47
+  },
+  {
+   "qid": "Q169468",
+   "name": "zebra shark",
+   "aliases": [
+    "Leopard shark",
+    "Stegostoma fasciatum",
+    "Zebra Shark"
+   ],
+   "popularity": 47
+  },
+  {
+   "qid": "Q618595",
+   "name": "common thresher",
+   "aliases": [
+    "Alopias vulpinus",
+    "Common Thresher Shark",
+    "Thresher shark",
+    "thresher shark",
+    "tresher shark, tresher"
+   ],
+   "popularity": 47
+  },
+  {
+   "qid": "Q726384",
+   "name": "Blacktip reef shark",
+   "aliases": [
+    "Blacktip Reef Shark",
+    "Carcharhinus melanopterus"
+   ],
+   "popularity": 46
+  },
+  {
+   "qid": "Q106728",
+   "name": "Megamouth shark",
+   "aliases": [
+    "Megachasma pelagios",
+    "Megamouth Shark"
+   ],
+   "popularity": 45
+  },
+  {
+   "qid": "Q312293",
+   "name": "Bluntnose six-gill shark",
+   "aliases": [
+    "Bluntnose Sixgill Shark",
+    "Hexanchus griseus",
+    "Nomititis lovulitos"
+   ],
+   "popularity": 45
+  },
+  {
+   "qid": "Q192158",
+   "name": "shortfin mako shark",
+   "aliases": [
+    "Isurus oxyrinchus",
+    "Shortfin Mako",
+    "Shortfin mako",
+    "shortfin mako"
+   ],
+   "popularity": 45
+  },
+  {
+   "qid": "Q726259",
+   "name": "smooth hammerhead",
+   "aliases": [
+    "Smooth Hammerhead",
+    "Smooth hammerhead",
+    "Sphyrna zygaena"
+   ],
+   "popularity": 44
+  },
+  {
+   "qid": "Q757353",
+   "name": "great hammerhead",
+   "aliases": [
+    "Great Hammerhead",
+    "Great hammerhead",
+    "Hammerhead Shark",
+    "Sphyrna mokarran",
+    "Squat-headed Hammerhead Shark",
+    "great hammerhead shark"
+   ],
+   "popularity": 42
+  },
+  {
+   "qid": "Q625161",
+   "name": "sand tiger shark",
+   "aliases": [
+    "Carcharias taurus",
+    "Carcharias taurus (west coast population)",
+    "Grey Nurse Shark",
+    "Sand Tiger Shark",
+    "Sand tiger shark",
+    "Spotted Ragged-tooth Shark",
+    "Spotted Raggedtooth Shark"
+   ],
+   "popularity": 42
+  },
+  {
+   "qid": "Q125236",
+   "name": "blacktip shark",
+   "aliases": [
+    "Blacktip Shark",
+    "Blacktip shark",
+    "Carcharhinus limbatus"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q206495",
+   "name": "lemon shark",
+   "aliases": [
+    "Negaprion brevirostris"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q163523",
+   "name": "Gray Reef Shark",
+   "aliases": [
+    "Grey Reef Shark",
+    "Grey reef shark",
+    "gray reef shark",
+    "grey reef shark"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q586662",
+   "name": "Rig",
+   "aliases": [
+    "Galeorhinus galeus",
+    "Liver-oil Shark",
+    "Miller’s Dog",
+    "Oil Shark",
+    "Penny Dog",
+    "School Shark",
+    "School shark",
+    "Snapper Shark",
+    "Snapper shark",
+    "Soupfin",
+    "Soupfin shark",
+    "Soupie",
+    "Southern Tope",
+    "Sweet William",
+    "Tiburon",
+    "Tope",
+    "Tope Shark",
+    "Tope shark",
+    "Toper",
+    "Vaalhaai",
+    "Vitamin Shark",
+    "Whithound",
+    "tope"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q756859",
+   "name": "nurse shark",
+   "aliases": [
+    "Ginglymostoma cirratum",
+    "Nurse Shark",
+    "Nurse shark"
+   ],
+   "popularity": 41
+  },
+  {
+   "qid": "Q252029",
+   "name": "silky shark",
+   "aliases": [
+    "Carcharhinus falciformis",
+    "Silky Shark",
+    "Silky shark"
+   ],
+   "popularity": 40
+  },
+  {
+   "qid": "Q1126774",
+   "name": "sharpnose sevengill shark",
+   "aliases": [
+    "Heptranchias perlo",
+    "One-finned Shark",
+    "Perlon Shark",
+    "Sevengill Cow Shark",
+    "Sharpnose Sevengill Shark",
+    "Sharpnose seven-gill shark",
+    "Sharpnose sevengill shark",
+    "Sharpsnouted Sevengill",
+    "Slender Sevengill"
+   ],
+   "popularity": 40
+  },
+  {
+   "qid": "Q199372",
+   "name": "Cookie-cutter Shark",
+   "aliases": [
+    "Isistius brasiliensis",
+    "Luminous Shark",
+    "cookiecutter shark"
+   ],
+   "popularity": 39
+  },
+  {
+   "qid": "Q578842",
+   "name": "monkfish",
+   "aliases": [
+    "Angel Shark",
+    "Angel shark",
+    "Angelshark",
+    "Squatina squatina"
+   ],
+   "popularity": 39
+  },
+  {
+   "qid": "Q695344",
+   "name": "Whitetip Reef Shark",
+   "aliases": [
+    "Blunt-head Shark",
+    "Blunthead Shark",
+    "Carcharias obesus",
+    "Leptocharias obesus",
+    "Light-tip Shark",
+    "Reef Whitetip",
+    "Reef Whitetip Shark",
+    "Triaenodon apicalis",
+    "Triaenodon obesus",
+    "Trianodon obesus",
+    "White-tip Reef Shark",
+    "White-tip Shark",
+    "Whitetip reef shark"
+   ],
+   "popularity": 39
+  },
+  {
+   "qid": "Q84822",
+   "name": "dogfish",
+   "aliases": [
+    "Lesser Spotted Dogfish",
+    "Sandy dogfish",
+    "Scyliorhinus canicula",
+    "Small Spotted Catshark",
+    "small-spotted catshark"
+   ],
+   "popularity": 38
+  },
+  {
+   "qid": "Q207630",
+   "name": "longfin mako shark",
+   "aliases": [
+    "Isurus paucus",
+    "Longfin Mako",
+    "Longfin mako"
+   ],
+   "popularity": 38
+  },
+  {
+   "qid": "Q934615",
+   "name": "horn shark",
+   "aliases": [
+    "Bullhead Shark",
+    "California Horn Shark",
+    "California horn shark",
+    "Heterodontus francisci",
+    "Horn Shark",
+    "Horned Shark",
+    "Port Jackson Shark"
+   ],
+   "popularity": 37
+  },
+  {
+   "qid": "Q592165",
+   "name": "Caribbean reef shark",
+   "aliases": [
+    "Carcharhinus perezi",
+    "Carcharhinus perezii",
+    "Caribbean Reef Shark"
+   ],
+   "popularity": 37
+  },
+  {
+   "qid": "Q1118043",
+   "name": "Bignose shark",
+   "aliases": [
+    "Bignose Shark",
+    "Carcharhinus altimus",
+    "bignose shark"
+   ],
+   "popularity": 36
+  },
+  {
+   "qid": "Q833586",
+   "name": "Dusky shark",
+   "aliases": [
+    "Carcharhinus obscurus",
+    "Dusky Shark"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q873701",
+   "name": "scalloped hammerhead",
+   "aliases": [
+    "Scalloped Hammerhead",
+    "Scalloped hammerhead",
+    "Sp"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q890336",
+   "name": "Slender Hammerhead",
+   "aliases": [
+    "Eusphyra blochii",
+    "Winghead Shark",
+    "Winghead shark",
+    "winghead shark"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q304539",
+   "name": "sandbar shark",
+   "aliases": [
+    "Carcharhinus plumbeus",
+    "Sandbar Shark",
+    "Sandbar shark"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q1126782",
+   "name": "Silvertip shark",
+   "aliases": [
+    "Carcharhinus albimarginatus",
+    "Silvertip Shark",
+    "silvertip shark"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q1364894",
+   "name": "Port Jackson shark",
+   "aliases": [
+    "Heterodontus portusjacksoni",
+    "Port Jackson Shark"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q1478899",
+   "name": "leopard shark",
+   "aliases": [
+    "Leopard Shark",
+    "Leopard houndshark",
+    "Leopard shark",
+    "Triakis semifasciata"
+   ],
+   "popularity": 35
+  },
+  {
+   "qid": "Q400627",
+   "name": "Java Shark",
+   "aliases": [
+    "Carcharhinus amboinensis",
+    "Java shark",
+    "Pigeye Shark",
+    "Pigeye shark",
+    "pigeye shark"
+   ],
+   "popularity": 34
+  },
+  {
+   "qid": "Q74371",
+   "name": "salmon shark",
+   "aliases": [
+    "Lamna ditropis",
+    "Salmon Shark",
+    "Salmon shark"
+   ],
+   "popularity": 33
+  },
+  {
+   "qid": "Q83722",
+   "name": "Galapagos shark",
+   "aliases": [
+    "Carcharhinus galapagensis",
+    "Galapagos Shark"
+   ],
+   "popularity": 33
+  },
+  {
+   "qid": "Q928469",
+   "name": "Bronze whaler",
+   "aliases": [
+    "Bronze Whaler",
+    "Carcharhinus brachyurus",
+    "Cocktail Shark",
+    "Copper Shark",
+    "Narrowtooth Shark",
+    "New Zealand Whaler",
+    "bronze whaler",
+    "copper shark"
+   ],
+   "popularity": 33
+  },
+  {
+   "qid": "Q508067",
+   "name": "bigeye thresher",
+   "aliases": [
+    "Alopias superciliosus",
+    "Bigeye Thresher Shark",
+    "Bigeye thresher shark",
+    "False Thresher"
+   ],
+   "popularity": 33
+  },
+  {
+   "qid": "Q141060",
+   "name": "nursehound",
+   "aliases": [
+    "Dogfish",
+    "Nurse",
+    "Nursehound",
+    "Rock salmon",
+    "Roughhound",
+    "Scyliorhinus stellaris"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q1321783",
+   "name": "darkie charlie",
+   "aliases": [
+    "Dalatias licha",
+    "Kitefin Shark",
+    "Kitefin shark",
+    "kitefin shark",
+    "squale liche"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q338891",
+   "name": "bonnethead",
+   "aliases": [
+    "Bonnethead Shark",
+    "Sphyrna tiburo",
+    "shovelhead"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q1419686",
+   "name": "blacknose shark",
+   "aliases": [
+    "Blacknose Shark",
+    "Blacknose shark",
+    "Carcharhinus acronotus"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q751258",
+   "name": "tawny nurse shark",
+   "aliases": [
+    "Nebrius ferrugineus",
+    "Tawny Nurse Shark",
+    "Tawny nurse shark"
+   ],
+   "popularity": 32
+  },
+  {
+   "qid": "Q1368880",
+   "name": "crocodile shark",
+   "aliases": [
+    "Crocodile Shark",
+    "Crocodile shark",
+    "Pseudocarcharias kamoharai"
+   ],
+   "popularity": 31
+  },
+  {
+   "qid": "Q1110782",
+   "name": "smalltooth sand tiger",
+   "aliases": [
+    "Herbst's Nurse Shark",
+    "Odontaspis ferox",
+    "Ragged-tooth Shark",
+    "Sand Shark",
+    "Smalltooth Sand Tiger",
+    "Smalltooth Sand Tiger Shark",
+    "Smalltooth sand tiger",
+    "Smalltooth sand tiger shark"
+   ],
+   "popularity": 31
+  },
+  {
+   "qid": "Q1415012",
+   "name": "velvet belly lanternshark",
+   "aliases": [
+    "Etmopterus spinax",
+    "Velvet Belly Lanternshark",
+    "Velvet belly lantern shark"
+   ],
+   "popularity": 31
+  },
+  {
+   "qid": "Q604191",
+   "name": "sicklefin lemon shark",
+   "aliases": [
+    "Sharptooth Lemon Shark",
+    "Sharptooth lemon shark",
+    "sharptooth lemon shark"
+   ],
+   "popularity": 31
+  },
+  {
+   "qid": "Q260097",
+   "name": "common smooth-hound",
+   "aliases": [
+    "Common Smoothhound",
+    "Common smoothhound",
+    "Mustelus mustelus",
+    "smooth hound"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q1297550",
+   "name": "bramble shark",
+   "aliases": [
+    "Bramble Shark",
+    "Bramble shark",
+    "Echinorhinus brucus",
+    "Spinous Shark",
+    "Spiny Shark"
+   ],
+   "popularity": 30
+  },
+  {
+   "qid": "Q1587255",
+   "name": "Fish-shark",
+   "aliases": [
+    "Longman's Shark",
+    "Milk Shark",
+    "Milk shark",
+    "Rhizoprionodon acutus",
+    "White-eyed Shark",
+    "White-eyed shark"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q1471147",
+   "name": "Ganges shark",
+   "aliases": [
+    "Ganges Shark",
+    "Glyphis gangeticus"
+   ],
+   "popularity": 29
+  },
+  {
+   "qid": "Q893969",
+   "name": "Borneo Shark",
+   "aliases": [
+    "Borneo shark",
+    "Carcharhinus borneensis"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q1274522",
+   "name": "pelagic thresher",
+   "aliases": [
+    "Alopias pelagicus",
+    "Pelagic Thresher",
+    "Pelagic thresher",
+    "Thresher Shark",
+    "Whiptail Shark"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q1587674",
+   "name": "hardnose shark",
+   "aliases": [
+    "Carcharhinus macloti",
+    "Hardnose Shark",
+    "Hardnose shark"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q1480630",
+   "name": "Spinner shark",
+   "aliases": [
+    "Carcharhinus brevipinna",
+    "Spinner Shark",
+    "spinner shark"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q29243",
+   "name": "epaulette shark",
+   "aliases": [
+    "Epaulette Shark",
+    "Epaulette shark",
+    "Hemiscyllium ocellatum"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q40617",
+   "name": "barbeled houndshark",
+   "aliases": [
+    "Barbeled Houndshark",
+    "Leptocharias smithii"
+   ],
+   "popularity": 28
+  },
+  {
+   "qid": "Q141066",
+   "name": "blackmouth catshark",
+   "aliases": [
+    "Blackmouth Catshark",
+    "Blackmouth catshark",
+    "Galeus melastomus"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q377591",
+   "name": "broadnose sevengill shark",
+   "aliases": [
+    "Broadnose Sevengill Shark",
+    "Broadnose sevengill shark",
+    "Notorynchus cepedianus"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q1548052",
+   "name": "bigeyed sixgill shark",
+   "aliases": [
+    "Bigeyed Sixgill Shark",
+    "Hexanchus nakamurai"
+   ],
+   "popularity": 27
+  },
+  {
+   "qid": "Q1150019",
+   "name": "smalleye hammerhead",
+   "aliases": [
+    "Curry Shark",
+    "Golden Hammerhead",
+    "Smalleye Hammerhead Shark",
+    "Smalleye hammerhead",
+    "Sphyrna tudes"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q525968",
+   "name": "Night Shark",
+   "aliases": [
+    "Carcharhinus signatus",
+    "Night shark"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q684322",
+   "name": "Whitecheek shark",
+   "aliases": [
+    "Carcharhinus dussumieri",
+    "Whitecheek Shark",
+    "Widemouth Blackspot Shark"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q28802",
+   "name": "Monkfish",
+   "aliases": [
+    "Sawback Angelshark",
+    "Sawback angelshark",
+    "Spiny Angelshark",
+    "Squatina aculeata"
+   ],
+   "popularity": 26
+  },
+  {
+   "qid": "Q783306",
+   "name": "Australian Blacktip Shark",
+   "aliases": [
+    "Australian blacktip shark",
+    "Blacktip Whaler",
+    "Carcharhinus tilstoni"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q920569",
+   "name": "Spadenose Shark",
+   "aliases": [
+    "Scoliodon laticaudus",
+    "Spadenose shark"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q135369",
+   "name": "Graceful shark",
+   "aliases": [
+    "Carcharhinus amblyrhynchoides",
+    "Graceful Shark",
+    "graceful shark"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q140379",
+   "name": "prickly shark",
+   "aliases": [
+    "Echinorhinus cookei",
+    "Prickly Shark",
+    "Prickly shark",
+    "Spinous Shark"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q979951",
+   "name": "Night Shark",
+   "aliases": [
+    "Carcharhinus isodon",
+    "Eventooth Shark",
+    "Finetooth shark",
+    "Fintooth Shark",
+    "Smoothtooth Shark"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q169403",
+   "name": "zebra bullhead shark",
+   "aliases": [
+    "Barred Bull-head Shark",
+    "Barred Shark",
+    "Bullhead Shark",
+    "Cat Shark",
+    "Heterodontus zebra",
+    "Little Shark",
+    "Striped Bullhead Shark",
+    "Striped Cat Shark",
+    "Zebra Bullhead Shark",
+    "Zebra Horn Shark",
+    "Zebra Port Jackson Shark"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q498094",
+   "name": "Jordan's Blue Dogshark",
+   "aliases": [
+    "Loxodon macrorhinus",
+    "Slender Dogshark",
+    "Sliteye Shark",
+    "sliteye shark"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q29090",
+   "name": "Bearded wobbegong",
+   "aliases": [
+    "Eucrossorhinus dasypogon",
+    "Ogilbys Wobbegong",
+    "Tasselled wobbegong",
+    "tasselled wobbegong"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q29150",
+   "name": "Pacific angel shark",
+   "aliases": [
+    "Pacific Angel Shark",
+    "Pacific Angelshark",
+    "Squatina californica"
+   ],
+   "popularity": 25
+  },
+  {
+   "qid": "Q756989",
+   "name": "smalltail shark",
+   "aliases": [
+    "Carcharhinus porosus",
+    "Smalltail Shark"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q243971",
+   "name": "Dwarf Lanternshark",
+   "aliases": [
+    "Dwarf lanternshark",
+    "Etmopterus perryi"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q2419006",
+   "name": "starry smooth-hound",
+   "aliases": [
+    "M. asterias",
+    "Mustelus asterias",
+    "Starry Smoothhound",
+    "smooth hound, starry smooth hound"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q1153211",
+   "name": "crested bullhead shark",
+   "aliases": [
+    "Crested Bullhead Shark",
+    "Crested Hornshark",
+    "Crested Port Jackson Shark",
+    "Heterodontus galeatus"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q1516764",
+   "name": "Pondicherry shark",
+   "aliases": [
+    "Carcharhinus hemiodon",
+    "Pondicherry Shark"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q1529880",
+   "name": "Monkfish",
+   "aliases": [
+    "Smoothback Angel Shark",
+    "Smoothback angelshark",
+    "Squatina oculata"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q1544346",
+   "name": "Coral catshark",
+   "aliases": [
+    "Atelomycterus marmoratus",
+    "Coral Catshark"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q29113",
+   "name": "Japanese Sawshark",
+   "aliases": [
+    "Japanese sawshark",
+    "Pristiophorus japonicus"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q29121",
+   "name": "blind shark",
+   "aliases": [
+    "Blind Shark",
+    "Blind shark",
+    "Brachaelurus waddi"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q29227",
+   "name": "Brownbanded bamboo shark",
+   "aliases": [
+    "Brownbanded Bamboo Shark",
+    "Chiloscyllium punctatum",
+    "Grey Carpetshark"
+   ],
+   "popularity": 24
+  },
+  {
+   "qid": "Q1650961",
+   "name": "Speartooth shark",
+   "aliases": [
+    "Glyphis glyphis",
+    "Speartooth Shark",
+    "槍のサメ"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q1805360",
+   "name": "Common Sawshark",
+   "aliases": [
+    "Longnose Sawshark",
+    "Pristiophorus cirratus",
+    "longnose sawshark"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q1930228",
+   "name": "Blackspot Shark",
+   "aliases": [
+    "Carcharhinus sealei",
+    "blackspot shark"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q1978204",
+   "name": "nervous shark",
+   "aliases": [
+    "Carcharhinus cautus",
+    "Nervous Shark"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q175689",
+   "name": "Creek Whaler",
+   "aliases": [
+    "Carcharhinus fitzroyensis",
+    "Creek whaler"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q533894",
+   "name": "Pacific Sleeper Shark",
+   "aliases": [
+    "Pacific sleeper shark",
+    "Somniosus pacificus"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q1089264",
+   "name": "angular roughshark",
+   "aliases": [
+    "Angular Rough Shark",
+    "Angular rough shark",
+    "Angular roughshark",
+    "Oxynotus centrina"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q1529944",
+   "name": "Smoothtooth Blacktip",
+   "aliases": [
+    "Carcharhinus leiodon",
+    "Smoothtooth Blacktip Shark",
+    "Smoothtooth blacktip shark"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q1548048",
+   "name": "bigeye sand tiger",
+   "aliases": [
+    "Bigeye Sand Tiger",
+    "Odontaspis noronhai"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q592572",
+   "name": "gulper shark",
+   "aliases": [
+    "Centrophorus granulosus",
+    "Gulper shark"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q311680",
+   "name": "Chlamydoselachus africana",
+   "aliases": [
+    "Southern African frilled shark"
+   ],
+   "popularity": 23
+  },
+  {
+   "qid": "Q756958",
+   "name": "Atlantic Sharpnose Shark",
+   "aliases": [
+    "Atlantic sharpnose shark",
+    "Rhizoprionodon terraenovae"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q762929",
+   "name": "Japanese Bullhead Shark",
+   "aliases": [
+    "Heterodontus japonicus",
+    "Japanese bullhead shark"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q217719",
+   "name": "Broadfin Shark",
+   "aliases": [
+    "Lamiopsis temminckii",
+    "broadfin shark"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q942155",
+   "name": "Daggernose Shark",
+   "aliases": [
+    "Daggernose shark",
+    "Isogomphodon oxyrhynchus"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q952103",
+   "name": "spined pygmy shark",
+   "aliases": [
+    "Big-eye Dwarf Shark",
+    "Spined Pygmy Shark",
+    "Squaliolus laticaudus"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q978303",
+   "name": "false catshark",
+   "aliases": [
+    "False Catshark",
+    "Keel-dorsal Shark",
+    "Pseudotriakis microdon"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q28832",
+   "name": "Japanese angelshark",
+   "aliases": [
+    "Japanese Angelshark",
+    "Squatina japonica"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q40713",
+   "name": "Snaggletooth shark",
+   "aliases": [
+    "Hemipristis elongata",
+    "Hemipristis elongatus",
+    "fossil shark"
+   ],
+   "popularity": 22
+  },
+  {
+   "qid": "Q942277",
+   "name": "pygmy shark",
+   "aliases": [
+    "Euprotomicrus bispinatus",
+    "Pygmy Shark"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q957786",
+   "name": "smooth lanternshark",
+   "aliases": [
+    "Etmopterus pusillus",
+    "Smooth Lanternshark"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q2380356",
+   "name": "Black Dogfish",
+   "aliases": [
+    "Black dogfish",
+    "Centroscyllium fabricii"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q2420891",
+   "name": "cloudy catshark",
+   "aliases": [
+    "Cloudy Catshark",
+    "Scyliorhinus torazame"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q2639496",
+   "name": "swellshark",
+   "aliases": [
+    "Cephaloscyllium ventriosum",
+    "Swell Shark",
+    "Swell shark",
+    "Swellshark"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q2165509",
+   "name": "leafscale gulper shark",
+   "aliases": [
+    "Centrophorus squamosus",
+    "Deepwater Spiny Dogfish",
+    "Leafscale Gulper Shark",
+    "Nilson's Deepsea Dogfish"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q2323403",
+   "name": "Portuguese Dogfish",
+   "aliases": [
+    "Centroscymnus coelolepis",
+    "Portuguese dogfish"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q496641",
+   "name": "Whitenose Shark",
+   "aliases": [
+    "Nasolamia velox",
+    "whitenose shark"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q1424187",
+   "name": "viper dogfish",
+   "aliases": [
+    "Trigonognathus kabeyai",
+    "Viper Dogfish"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q612558",
+   "name": "Happy Eddie",
+   "aliases": [
+    "Haploblepharus edwardsii",
+    "Puffadder shyshark"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q31782",
+   "name": "spotted wobbegong",
+   "aliases": [
+    "Orectolobus maculatus",
+    "Spotted Wobbegong",
+    "Spotted wobbegong"
+   ],
+   "popularity": 21
+  },
+  {
+   "qid": "Q134587",
+   "name": "Pyjama shark",
+   "aliases": [
+    "Poroderma africanum",
+    "Pyjama Shark",
+    "Striped Catshark",
+    "pyjama shark"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q941962",
+   "name": "dusky smooth-hound",
+   "aliases": [
+    "Dusky Smoothhound",
+    "Dusky smoothhound",
+    "Mustelus canis"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q1729352",
+   "name": "Caribbean Sharpnose Shark",
+   "aliases": [
+    "Caribbean sharpnose shark",
+    "Rhizoprionodon porosus"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q2410653",
+   "name": "Little Sleeper Shark",
+   "aliases": [
+    "Little sleeper shark",
+    "Somniosus rostratus"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q1951902",
+   "name": "Arabian Smoothhound",
+   "aliases": [
+    "Arabian smooth-hound",
+    "Hardnose Smoothhound",
+    "Moses Smoothhound",
+    "Mustelus mosis"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q648208",
+   "name": "Chain Catshark",
+   "aliases": [
+    "Chain Dogfish",
+    "Chain catshark",
+    "Scyliorhinus retifer"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q111223800",
+   "name": "Birdbeak Dogfish",
+   "aliases": [
+    "Brier Shark",
+    "Deania calcea",
+    "Deania calceus",
+    "Shovelnose Spiny Dogfish",
+    "birdbeak dogfish"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q28880",
+   "name": "sixgill sawshark",
+   "aliases": [
+    "Pliotrema warreni",
+    "Sixgill Sawshark"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q29323",
+   "name": "Australian Angel Shark",
+   "aliases": [
+    "Squatina australis"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q1637270",
+   "name": "Longnose spurdog",
+   "aliases": [
+    "Squalus blainvillei"
+   ],
+   "popularity": 20
+  },
+  {
+   "qid": "Q770717",
+   "name": "Hoary Catshark",
+   "aliases": [
+    "Apristurus canutus",
+    "Hoary catshark"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q899320",
+   "name": "Brazilian Sharpnose Shark",
+   "aliases": [
+    "Brazilian sharpnose shark",
+    "Rhizoprionodon lalandei",
+    "Rhizoprionodon lalandii"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q3493586",
+   "name": "smallfin gulper shark",
+   "aliases": [
+    "Centrophorus moluccensis",
+    "Endeavour Dogfish",
+    "Smallfin Gulper Shark"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q311339",
+   "name": "New Guinea River Shark",
+   "aliases": [
+    "Glyphis garricki",
+    "Northern River Shark",
+    "Northern river shark"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q994653",
+   "name": "dwarf gulper shark",
+   "aliases": [
+    "Centrophorus atromarginatus",
+    "Dwarf Gulper Shark"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q1949737",
+   "name": "Japanese Swellshark",
+   "aliases": [
+    "Blotchy swell shark",
+    "Cephaloscyllium umbratile"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q1368149",
+   "name": "pocket shark",
+   "aliases": [
+    "Mollisquama parini",
+    "Pocket Shark"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q1069185",
+   "name": "Scoophead",
+   "aliases": [
+    "Scoophead Shark",
+    "Sphyrna media",
+    "scoophead"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q756873",
+   "name": "Atlantic Angel Shark",
+   "aliases": [
+    "Sand Devil",
+    "Squatina dumeril"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q686123",
+   "name": "Prickly Dogfish",
+   "aliases": [
+    "Oxynotus bruniensis",
+    "Prickly dogfish"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q28807",
+   "name": "shortnose sawshark",
+   "aliases": [
+    "Pristiophorus nudipinnis",
+    "Southern Sawshark",
+    "southern sawshark"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q28874",
+   "name": "Clouded Angelshark",
+   "aliases": [
+    "Clouded angelshark",
+    "Squatina nebulosa"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q29289",
+   "name": "Nurse Shark",
+   "aliases": [
+    "Catshark",
+    "Chiloscyllium indicum",
+    "Frog Shark",
+    "Ridge Back Shark",
+    "Ridgeback Catshark",
+    "Ridgebacked Bamboo Shark",
+    "Slender Bamboo Shark",
+    "Slender bamboo shark",
+    "Stone Shark",
+    "Time Teller Shark"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q31794",
+   "name": "Japanese Wobbegong",
+   "aliases": [
+    "Japanese wobbegong",
+    "Orectolobus japonicus"
+   ],
+   "popularity": 19
+  },
+  {
+   "qid": "Q783299",
+   "name": "Australian Sharpnose Shark",
+   "aliases": [
+    "Australian sharpnose shark",
+    "Rhizoprionodon taylori",
+    "Taylor's Shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q3234649",
+   "name": "Blackbelly Lanternshark",
+   "aliases": [
+    "Blackbelly lanternshark",
+    "Etmopterus lucifer"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q3442806",
+   "name": "Smallmouth Velvet Dogfish",
+   "aliases": [
+    "Velvet Dogfish",
+    "Velvet dogfish",
+    "Zameus squamulosus"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q4667506",
+   "name": "Southern Sleeper Shark",
+   "aliases": [
+    "Somniosus antarcticus",
+    "Southern sleeper shark",
+    "Whitely's Sleeper Shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q289691",
+   "name": "scalloped bonnethead",
+   "aliases": [
+    "Crown Shark",
+    "Mallethead Shark",
+    "Scalloped Bonnethead",
+    "Sphyrna corona"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q923964",
+   "name": "lowfin gulper shark",
+   "aliases": [
+    "Centrophorus lusitanicus",
+    "Lowfin Gulper Shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q2554167",
+   "name": "Sweet William",
+   "aliases": [
+    "Australian smooth hound",
+    "Flake",
+    "Gummy Shark",
+    "Gummy shark",
+    "Mustelus antarcticus",
+    "Smooth dog-shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q2601373",
+   "name": "hooktooth dogfish",
+   "aliases": [
+    "Aculeola nigra",
+    "Hooktooth Dogfish"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q1675845",
+   "name": "lollipop catshark",
+   "aliases": [
+    "Cephalurus cephalus",
+    "Lollipop Catshark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q1873234",
+   "name": "Longhead Catshark",
+   "aliases": [
+    "Apristurus longicephalus",
+    "Longhead catshark",
+    "Smoothbelly Catshark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q2625946",
+   "name": "Dogfish",
+   "aliases": [
+    "Lazy Shark",
+    "Scyliorhinus capensis",
+    "Spotted Lazyshark",
+    "White-spotted Dogfish",
+    "Yellowspotted Catshark",
+    "Yellowspotted catshark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q2024385",
+   "name": "banded houndshark",
+   "aliases": [
+    "Banded Houndshark",
+    "Triakis scyllium"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q2248971",
+   "name": "Japanese Catshark",
+   "aliases": [
+    "Apristurus japonicus",
+    "Japanese catshark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q511858",
+   "name": "mosaic gulper shark",
+   "aliases": [
+    "Centrophorus tessellatus",
+    "Mosaic Dogfish",
+    "Mosaic Gulper Shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q576911",
+   "name": "flathead catshark",
+   "aliases": [
+    "Apristurus macrorhynchus",
+    "Flathead Catshark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q1548981",
+   "name": "Great Lanternshark",
+   "aliases": [
+    "Etmopterus princeps",
+    "Great lanternshark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q1420774",
+   "name": "largetooth cookiecutter shark",
+   "aliases": [
+    "Bigtooth Cookiecutter",
+    "Gulf Dogfish",
+    "Isistius plutodus",
+    "Largetooth Cookiecutter Shark",
+    "Largetooth Cookiecutter shark",
+    "Longtooth Cookiecutter Shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q1543750",
+   "name": "Sailfin Roughshark",
+   "aliases": [
+    "Oxynotus paradoxus",
+    "Sailfin roughshark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q1543797",
+   "name": "Grey Sharpnose Shark",
+   "aliases": [
+    "Grey sharpnose shark",
+    "Rhizoprionodon oligolinx"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q3020517",
+   "name": "leopard catshark",
+   "aliases": [
+    "Leopard Catshark",
+    "Poroderma pantherinum"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q728294",
+   "name": "taillight shark",
+   "aliases": [
+    "Euprotomicroides zantedeschia",
+    "Taillight Shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q589103",
+   "name": "slender smooth-hound",
+   "aliases": [
+    "Gollum attenuatus",
+    "Slender Smoothhound"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q28977",
+   "name": "Grey Bamboo Shark",
+   "aliases": [
+    "Chiloscyllium griseum",
+    "Grey bamboo shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q29117",
+   "name": "short-tail nurse shark",
+   "aliases": [
+    "P. brevicaudatum",
+    "Pseudoginglymostoma brevicaudatum",
+    "Short-tail nurse shark",
+    "Shorttail Nurse Shark"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q29226",
+   "name": "Arabian carpetshark",
+   "aliases": [
+    "Arabian Carpetshark",
+    "Chiloscyllium arabicum"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q40565",
+   "name": "Australian Weasel Shark",
+   "aliases": [
+    "Australian weasel shark",
+    "Hemigaleus australiensis"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q576496",
+   "name": "Centroselachus crepidater",
+   "aliases": [
+    "longnose velvet dogfish"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q1870221",
+   "name": "Mustelus manazo",
+   "aliases": [
+    "starspotted smooth-hound"
+   ],
+   "popularity": 18
+  },
+  {
+   "qid": "Q906384",
+   "name": "Blotched Catshark",
+   "aliases": [
+    "Scyliorhinus meadi"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q4668216",
+   "name": "blackfin gulper shark",
+   "aliases": [
+    "Black Gulper Shark",
+    "Blackfin Gulper Shark",
+    "Centrophorus isodon",
+    "Longnose Gulper Shark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q6393810",
+   "name": "Western Gulper Shark",
+   "aliases": [
+    "Centrophorus westraliensis"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2510335",
+   "name": "Saldanha Catshark",
+   "aliases": [
+    "Apristurus saldanha",
+    "Saldanha catshark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2527263",
+   "name": "Bigeye Houndshark",
+   "aliases": [
+    "Bigeye houndshark",
+    "Iago omanensis"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2588881",
+   "name": "Spotless Smooth-hound",
+   "aliases": [
+    "Mustelus griseus",
+    "Spotless smooth-hound"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q994645",
+   "name": "Cuban Dogfish",
+   "aliases": [
+    "Cuban dogfish",
+    "Squalus cubensis"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q1950219",
+   "name": "longfin sawtail catshark",
+   "aliases": [
+    "Galeus cadenati"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2625944",
+   "name": "West African catshark",
+   "aliases": [
+    "Scyliorhinus cervigoni",
+    "West African Catshark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2625954",
+   "name": "Freckled Catshark",
+   "aliases": [
+    "Freckled catshark",
+    "Scyliorhinus haeckelii"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2639540",
+   "name": "African Sawtail Catshark",
+   "aliases": [
+    "African sawtail catshark",
+    "Galeus polli"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q1950352",
+   "name": "Antilles Catshark",
+   "aliases": [
+    "Antilles catshark",
+    "Galeus antillensis"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q1951342",
+   "name": "Izu Catshark",
+   "aliases": [
+    "Izu catshark",
+    "Scyliorhinus tokubee"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2065578",
+   "name": "Pacific sharpnose shark",
+   "aliases": [
+    "Pacific Sharpnose Shark",
+    "Rhizoprionodon longurio"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2124250",
+   "name": "spatulasnout catshark",
+   "aliases": [
+    "Apristurus platyrhynchus",
+    "Bigfin Catshark",
+    "Borneo Catshark",
+    "Flatnose Catshark",
+    "Spatula Catshark",
+    "Spatulasnout Catshark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2187592",
+   "name": "Smallbelly Catshark",
+   "aliases": [
+    "Apristurus indicus"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q377622",
+   "name": "roughskin spurdog",
+   "aliases": [
+    "Cirrhigaleus asper",
+    "Roughskin Dogfish",
+    "Roughskin Spiny Dogfish",
+    "Roughskin Spurdog"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q387836",
+   "name": "longnose pygmy shark",
+   "aliases": [
+    "Heteroscymnoides marleyi",
+    "Longnose Pygmy Shark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q499477",
+   "name": "Pygmy Ribbon Tail Catshark",
+   "aliases": [
+    "Eridacnis radcliffei",
+    "Pygmy ribbontail catshark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q998007",
+   "name": "Arrowhead Dogfish",
+   "aliases": [
+    "Arrowhead dogfish",
+    "Deania profundorum"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q1038834",
+   "name": "Splendid Lanternshark",
+   "aliases": [
+    "Etmopterus splendidus",
+    "Splendid lanternshark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q2719434",
+   "name": "Sleepy Joe",
+   "aliases": [
+    "Australian Swellshark",
+    "Australian swellshark",
+    "Cephaloscyllium laticeps",
+    "Draughtboard Shark",
+    "Nutcracker Shark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q28875",
+   "name": "Bluespotted bamboo shark",
+   "aliases": [
+    "Bluespotted Bamboo Shark",
+    "Chiloscyllium plagiosum",
+    "Whitespotted Bamboo Shark",
+    "Whitespotted bamboo shark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q31776",
+   "name": "cobbler wobbegong",
+   "aliases": [
+    "Cobbler Carpet Shark",
+    "Cobbler Wobbegong",
+    "Sutorectus tentaculatus"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q31788",
+   "name": "ornate wobbegong",
+   "aliases": [
+    "Orectolobus ornatus",
+    "Ornate Wobbegong",
+    "Ornate wobbegong"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q40568",
+   "name": "sicklefin weasel shark",
+   "aliases": [
+    "Hemigaleus microstoma",
+    "Sickelfin Weasel Shark",
+    "Sickle Fin Weasel Shark",
+    "Weasel Shark"
+   ],
+   "popularity": 17
+  },
+  {
+   "qid": "Q800203",
+   "name": "American Sawshark",
+   "aliases": [
+    "Bahamas Sawshark",
+    "Bahamas sawshark",
+    "Pristiophorus schroederi"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q3277389",
+   "name": "Blurred Lanternshark",
+   "aliases": [
+    "Blurred Smooth Lanternshark",
+    "Blurred lanternshark",
+    "Etmopterus bigelowi"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q4667770",
+   "name": "Frog Shark",
+   "aliases": [
+    "Frog shark",
+    "Somniosus longus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q4816649",
+   "name": "Atlantic Sawtail Catshark",
+   "aliases": [
+    "Atlantic sawtail catshark",
+    "Galeus atlanticus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q141374",
+   "name": "New Zealand lanternshark",
+   "aliases": [
+    "Baxter's Dogfish",
+    "Etmopterus baxteri",
+    "Giant Lanternshark",
+    "New Zealand Lanternshark",
+    "Southern Lanternshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q5032048",
+   "name": "Bluegray Carpetshark",
+   "aliases": [
+    "Bluegrey Carpetshark",
+    "Bluegrey carpetshark",
+    "Brachaelurus colcloughi",
+    "Colclough's Shark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2455594",
+   "name": "tropical sawshark",
+   "aliases": [
+    "Pristiophorus delicatus",
+    "Tropical Sawshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2510318",
+   "name": "Broadgill Catshark",
+   "aliases": [
+    "Apristurus riveri",
+    "Broadgill catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2510327",
+   "name": "Longfin Catshark",
+   "aliases": [
+    "Apristurus herklotsi",
+    "Longfin catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q953539",
+   "name": "Black Shark",
+   "aliases": [
+    "Centroscyllium nigrum",
+    "Combtooth Dogfish",
+    "Combtooth dogfish",
+    "Pacific Black Dogfish"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q980786",
+   "name": "Slender Sawtail Shark",
+   "aliases": [
+    "Galeus gracilis",
+    "Slender sawtail catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q994619",
+   "name": "Japanese Spurdog",
+   "aliases": [
+    "Japanese spurdog",
+    "Squalus japonicus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q994636",
+   "name": "Blacktailed Spurdog",
+   "aliases": [
+    "Blacktailed spurdog",
+    "Squalus melanurus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1683297",
+   "name": "Japanese Roughshark",
+   "aliases": [
+    "Japanese roughshark",
+    "Oxynotus japonicus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1950232",
+   "name": "Southern Sawtail Catshark",
+   "aliases": [
+    "Galeus mincaronei",
+    "Southern sawtail catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1950274",
+   "name": "White Ghost Catshark",
+   "aliases": [
+    "Apristurus aphyodes"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2399941",
+   "name": "Ornate Dogfish",
+   "aliases": [
+    "Centroscyllium ornatum",
+    "Ornate dogfish"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2402272",
+   "name": "Granular Dogfish",
+   "aliases": [
+    "Centroscyllium granulatum",
+    "Granular dogfish"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2414954",
+   "name": "Whitefin Dogfish",
+   "aliases": [
+    "Centroscyllium ritteri",
+    "Whitefin dogfish"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2420856",
+   "name": "South China catshark",
+   "aliases": [
+    "Apristurus sinensis",
+    "Freckled Catshark",
+    "South China Catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2420876",
+   "name": "Longnose Catshark",
+   "aliases": [
+    "Apristurus kampae",
+    "Longnose catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2616896",
+   "name": "Indian Swellshark",
+   "aliases": [
+    "Cephaloscyllium silasi",
+    "Indian swellshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2625937",
+   "name": "Whitesaddled Catshark",
+   "aliases": [
+    "Scyliorhinus hesperius",
+    "Whitesaddled catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2627685",
+   "name": "Blackgill Catshark",
+   "aliases": [
+    "Blackgill catshark",
+    "Parmaturus melanobranchus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2639993",
+   "name": "Geko Catshark",
+   "aliases": [
+    "Galeus eastmani",
+    "Gecko catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2640003",
+   "name": "Australian Spotted Catshark",
+   "aliases": [
+    "Asymbolus analis",
+    "Australian spotted catshark",
+    "Grey Spotted Catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2640016",
+   "name": "Smallfin Catshark",
+   "aliases": [
+    "Apristurus parvipinnis",
+    "Smallfin catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2702433",
+   "name": "Green Lanternshark",
+   "aliases": [
+    "Etmopterus virens",
+    "Green lanternshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2704826",
+   "name": "Tiger Catshark",
+   "aliases": [
+    "Halaelurus natalensis",
+    "Tiger catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2709696",
+   "name": "Filetail Catshark",
+   "aliases": [
+    "Filetail catshark",
+    "Parmaturus xaniurus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1951747",
+   "name": "Broadnose Catshark",
+   "aliases": [
+    "Apristurus investigatoris",
+    "Broadnose catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1951857",
+   "name": "grey roundfin catshark",
+   "aliases": [
+    "Apristurus albisoma",
+    "White-bodied Catshark",
+    "white-bodied catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1234291",
+   "name": "Irrawaddy River Shark",
+   "aliases": [
+    "Glyphis siamensis",
+    "Irrawaddy river shark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1409782",
+   "name": "mandarin dogfish",
+   "aliases": [
+    "Cirrhigaleus barbifer",
+    "Mandarin Shark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2243090",
+   "name": "sharptooth houndshark",
+   "aliases": [
+    "Spotted Gully Shark",
+    "Triakis megalopterus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2254620",
+   "name": "sharpfin houndshark",
+   "aliases": [
+    "Sharpfin Houndshark",
+    "Sharpfin houndshark",
+    "Tollo",
+    "Triakis acutipinna"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q520076",
+   "name": "Mouse Catshark",
+   "aliases": [
+    "Galeus murinus",
+    "Mouse catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q540549",
+   "name": "Gulf Catshark",
+   "aliases": [
+    "Asymbolus vincenti",
+    "Gulf catshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q997539",
+   "name": "Highfin Dogfish",
+   "aliases": [
+    "Centroscyllium excelsum",
+    "Highfin dogfish"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q999165",
+   "name": "Rough Longnose Dogfish",
+   "aliases": [
+    "Deania hystricosa",
+    "Rough longnose dogfish"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1039246",
+   "name": "Owston's Dogfish",
+   "aliases": [
+    "Centroscymnus owstonii",
+    "Roughskin Dogfish",
+    "Roughskin dogfish"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1110502",
+   "name": "Blacktip Sawtail Catshark",
+   "aliases": [
+    "Blacktip sawtail catshark",
+    "Galeus sauteri"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1444290",
+   "name": "Mexican Hornshark",
+   "aliases": [
+    "Heterodontus mexicanus",
+    "Mexican hornshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q1491708",
+   "name": "Galapagos bullhead shark",
+   "aliases": [
+    "Galapagos Bullhead Shark",
+    "Heterodontus quoyi",
+    "Peruvian Horn Shark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2719415",
+   "name": "Blackspotted Catshark",
+   "aliases": [
+    "Blackspotted catshark",
+    "Halaelurus buergeri"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q660343",
+   "name": "Dark Shyshark",
+   "aliases": [
+    "Dark shyshark",
+    "Haploblepharus pictus",
+    "Pretty Happy"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q14755901",
+   "name": "Halmahera Epaulette Shark",
+   "aliases": [
+    "Hemiscyllium halmahera"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q28842",
+   "name": "Hidden Angelshark",
+   "aliases": [
+    "Angular angel shark",
+    "Spiny Angel Shark",
+    "Spiny angel shark",
+    "Squatina guggenheim"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q28845",
+   "name": "Argentine Angel Shark",
+   "aliases": [
+    "Argentine angelshark",
+    "Longfin Angel Shark",
+    "Squatina argentina"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q28850",
+   "name": "African Angelshark",
+   "aliases": [
+    "Squatina africana"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q28872",
+   "name": "Taiwan Angelshark",
+   "aliases": [
+    "Squatina formosa"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q31753",
+   "name": "Taiwan Saddled Carpetshark",
+   "aliases": [
+    "Cirrhoscyllium formosanum",
+    "Taiwan saddled carpetshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q31838",
+   "name": "necklace carpetshark",
+   "aliases": [
+    "Necklace Carpetshark",
+    "Parascyllium variolatum",
+    "Varied Carpetshark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q40774",
+   "name": "Hooktooth Shark",
+   "aliases": [
+    "Chaenogaleus macrostoma",
+    "Hooktooth shark"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q613798",
+   "name": "Sphyrna couardi",
+   "aliases": [
+    "Whitefin hammerhead"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2609515",
+   "name": "Indian sand tiger",
+   "aliases": [
+    "Carcharias tricuspidatus"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q2625923",
+   "name": "Brownspotted catshark",
+   "aliases": [
+    "Scyliorhinus garmani"
+   ],
+   "popularity": 16
+  },
+  {
+   "qid": "Q3277595",
+   "name": "smalleye pygmy shark",
+   "aliases": [
+    "Smalleye Pygmy Shark",
+    "Squaliolus aliae"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q3757992",
+   "name": "African Lanternshark",
+   "aliases": [
+    "African lanternshark",
+    "Etmopterus polli"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q4546359",
+   "name": "Sarawak Pygmy Swell Shark",
+   "aliases": [
+    "Cephaloscyllium sarawakensis",
+    "Sarawak pygmy swellshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q5017665",
+   "name": "Seychelles Gulper Shark",
+   "aliases": [
+    "Centrophorus seychellorum"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2510286",
+   "name": "Deepwater Catshark",
+   "aliases": [
+    "Apristurus profundorum",
+    "Deepwater catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2510345",
+   "name": "Ghost Catshark",
+   "aliases": [
+    "Apristurus manis",
+    "Ghost catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2607925",
+   "name": "Whiskery Shark",
+   "aliases": [
+    "Furgaleus macki",
+    "Whiskery shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q943444",
+   "name": "Brown Catshark",
+   "aliases": [
+    "Bythaelurus lutarius",
+    "Mud Catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q994856",
+   "name": "Longnose Gulper Shark",
+   "aliases": [
+    "Centrophorus harrissoni",
+    "Dumb Gulper Shark",
+    "Dumb Shark",
+    "Dumb gulper shark",
+    "Harrison's deep-sea dogfish",
+    "Harrison's dogfish",
+    "Harrisson's Deepsea Dogfish",
+    "Harrisson's Dogfish",
+    "Harrisson's Gulper Shark",
+    "dumb gulper shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1914738",
+   "name": "Broadmouth Catshark",
+   "aliases": [
+    "Apristurus macrostomus",
+    "Broadmouth cat shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1949679",
+   "name": "Shortnose Demon Catshark",
+   "aliases": [
+    "Apristurus internatus"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2337557",
+   "name": "Flathead Catshark",
+   "aliases": [
+    "Apristurus atlanticus",
+    "Apristurus laurussonii",
+    "Iceland catshark",
+    "Icelandic Catshark",
+    "Madeira Catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2341869",
+   "name": "flapnose houndshark",
+   "aliases": [
+    "Flapnose Houndshark",
+    "Scylliogaleus quecketti"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2418914",
+   "name": "onefin catshark",
+   "aliases": [
+    "Onefin Catshark",
+    "Onefin catshark",
+    "Pentanchus profundicolus"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2438513",
+   "name": "Bareskin Dogfish",
+   "aliases": [
+    "Bareskin dogfish",
+    "Centroscyllium kamoharai",
+    "Jelly Shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2442153",
+   "name": "Pinocchio Catshark",
+   "aliases": [
+    "Apristurus australis"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2615056",
+   "name": "Australian Marbled Catshark",
+   "aliases": [
+    "Atelomycterus macleayi",
+    "Australian marbled catshark",
+    "Marbled Catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2617613",
+   "name": "Slender Catshark",
+   "aliases": [
+    "Schroederichthys tenuis",
+    "Slender catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2624374",
+   "name": "Striped Dogfish",
+   "aliases": [
+    "Mustelus fasciatus",
+    "Striped Smooth-hound",
+    "Striped smooth-hound"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2625931",
+   "name": "Boa Catshark",
+   "aliases": [
+    "Boa catshark",
+    "Scyliorhinus boa"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2640024",
+   "name": "Broadfin Sawtail Catshark",
+   "aliases": [
+    "Broadfin sawtail catshark",
+    "Galeus nipponensis"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2678564",
+   "name": "Caribbean Lanternshark",
+   "aliases": [
+    "Caribbean lanternshark",
+    "Etmopterus hillianus"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2702060",
+   "name": "Spotless Catshark",
+   "aliases": [
+    "Bythaelurus immaculatus",
+    "Spotless catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2716293",
+   "name": "Whitespot Smoothhound",
+   "aliases": [
+    "Mustelus palumbes",
+    "Whitespotted smooth-hound"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1950360",
+   "name": "Roughskin Catshark",
+   "aliases": [
+    "Apristurus ampliceps",
+    "Roughskin catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1951328",
+   "name": "Humpback Catshark",
+   "aliases": [
+    "Apristurus gibbosus",
+    "Humpback cat shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1951356",
+   "name": "Deepwater Catshark",
+   "aliases": [
+    "Apristurus exsanguis",
+    "New Zealand catshark",
+    "Pale Catshark",
+    "deepwater catshark",
+    "flaccid catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1951804",
+   "name": "Blotched Catshark",
+   "aliases": [
+    "Asymbolus funebris"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1951832",
+   "name": "Comoro Catshark",
+   "aliases": [
+    "Comoro cat shark",
+    "Scyliorhinus comoroensis"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1951846",
+   "name": "Bulldog Catshark",
+   "aliases": [
+    "Apristurus pinguis"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1951864",
+   "name": "Narrownose Smoothhound",
+   "aliases": [
+    "Mustelus schmitti",
+    "Narrownose smooth-hound"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1956916",
+   "name": "Pale Catshark Pale Catshark",
+   "aliases": [
+    "Apristurus sibogae",
+    "Pale catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1964311",
+   "name": "whitespotted bullhead shark",
+   "aliases": [
+    "Heterodontus ramalheira",
+    "Whitespotted Bullhead Shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1983448",
+   "name": "Smalleye Catshark",
+   "aliases": [
+    "Apristurus microps",
+    "Smalleye catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q145074",
+   "name": "Oman Bullhead Shark",
+   "aliases": [
+    "Heterodontus omanensis",
+    "Oman bullhead shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q145344",
+   "name": "Pink Lanternshark",
+   "aliases": [
+    "Etmopterus dianthus",
+    "Pink lanternshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q147167",
+   "name": "Blackmouth Lanternshark",
+   "aliases": [
+    "Blackmouth lanternshark",
+    "Etmopterus evansi"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2208155",
+   "name": "sailback houndshark",
+   "aliases": [
+    "Gogolia filewoodi",
+    "Sailback Houndshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2311047",
+   "name": "Spongehead Catshark",
+   "aliases": [
+    "Apristurus spongiceps",
+    "Spongehead catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2314437",
+   "name": "Green-eye Spurdog",
+   "aliases": [
+    "Shortspine Spurdog",
+    "Shortspine spurdog",
+    "Squalus mitsukurii"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2719410",
+   "name": "Marbled Catshark",
+   "aliases": [
+    "Galeus arae",
+    "Roughtail Catshark",
+    "Roughtail catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2719441",
+   "name": "Banded Catshark",
+   "aliases": [
+    "Halaelurus lineatus",
+    "Lined Catshark",
+    "Lined catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2719453",
+   "name": "Dwarf Catshark",
+   "aliases": [
+    "Cuban Catshark",
+    "Dwarf catshark",
+    "Scyliorhinus torrei",
+    "Whitespotted Catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2719460",
+   "name": "Speckled Catshark",
+   "aliases": [
+    "Halaelurus boesemani",
+    "Speckled catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2719468",
+   "name": "Dwarf Sawtail Catshark",
+   "aliases": [
+    "Dwarf sawtail catshark",
+    "Galeus schultzi"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q2988036",
+   "name": "Reticulate Swell Shark",
+   "aliases": [
+    "Cephaloscyllium fasciatum",
+    "Reticulated Swellshark",
+    "Reticulated swellshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q577761",
+   "name": "Quagga Catshark",
+   "aliases": [
+    "Halaelurus quagga",
+    "Quagga catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q748262",
+   "name": "Peppered Catshark",
+   "aliases": [
+    "Galeus piperatus",
+    "Peppered catshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q22078530",
+   "name": "Little Gulper Shark",
+   "aliases": [
+    "Centrophorus uyato",
+    "Southern Dogfish"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q28758",
+   "name": "Archbishop",
+   "aliases": [
+    "Ornate Angel Shark",
+    "Ornate angelshark",
+    "Squatina tergocellata"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q28757",
+   "name": "Chilean Angel Shark",
+   "aliases": [
+    "South Pacific Angel Shark",
+    "Squatina armata",
+    "Thornback Angel Shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q28847",
+   "name": "Indonesian Bambooshark",
+   "aliases": [
+    "Chiloscyllium hasselti",
+    "Hasselt's bamboo shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q29163",
+   "name": "Burmese Bambooshark",
+   "aliases": [
+    "Burmese bamboo shark",
+    "Chiloscyllium burmensis"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q29180",
+   "name": "Ocellated Angelshark",
+   "aliases": [
+    "Ocellated angelshark",
+    "Squatina tergocellatoides"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q29309",
+   "name": "Freycinet's Epaulette Shark",
+   "aliases": [
+    "Hemiscyllium freycineti",
+    "Indonesian Speckled Carpet Shark",
+    "Indonesian speckled carpetshark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q31784",
+   "name": "northern wobbegong",
+   "aliases": [
+    "Northern Wobbegong",
+    "Orectolobus wardi"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q31843",
+   "name": "saddle carpetshark",
+   "aliases": [
+    "Cirrhoscyllium japonicum",
+    "Saddled Carpet Shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q31857",
+   "name": "Rusty Carpetshark",
+   "aliases": [
+    "Parascyllium ferrugineum"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q32460",
+   "name": "spotted houndshark",
+   "aliases": [
+    "Spotted Houndshark",
+    "Spotted houndshark",
+    "Triakis maculata"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q40570",
+   "name": "straight-tooth weasel shark",
+   "aliases": [
+    "Paragaleus tengi",
+    "Straight-tooth Weasel Shark"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q797997",
+   "name": "graceful catshark",
+   "aliases": [
+    "Proscyllium habereri"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q1950250",
+   "name": "Springer's sawtail catshark",
+   "aliases": [
+    "Galeus springeri"
+   ],
+   "popularity": 15
+  },
+  {
+   "qid": "Q5027056",
+   "name": "Orectolobus leptolineatus",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q116178614",
+   "name": "Etmopterus sheikoi",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q28706",
+   "name": "Squatina legnota",
+   "aliases": [],
+   "popularity": 15
+  },
+  {
+   "qid": "Q3281142",
+   "name": "Fatspine Spurdog",
+   "aliases": [
+    "Fatspine spurdog",
+    "Squalus crassispinus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q3281172",
+   "name": "Western Highfin Spurdog",
+   "aliases": [
+    "Squalus altipinnis",
+    "Western highfin spurdog"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q3642123",
+   "name": "Cosmopolitan Spurdog",
+   "aliases": [
+    "Piked Spurdog",
+    "Shortnose Spurdog",
+    "Shortnose spurdog",
+    "Spikey dogfish",
+    "Squalus megalops",
+    "shortnose spurdug"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q3695209",
+   "name": "Smalldorsal Catshark",
+   "aliases": [
+    "Apristurus micropterygeus",
+    "Smalldorsal cat shark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q3753258",
+   "name": "Southern Lanternshark",
+   "aliases": [
+    "Etmopterus granulosus",
+    "Southern lanternshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q3759323",
+   "name": "West Indian lanternshark",
+   "aliases": [
+    "Etmopterus robinsi",
+    "West Indian Lanternshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q3760127",
+   "name": "Fringefin Lanternshark",
+   "aliases": [
+    "Etmopterus schultzi",
+    "Fringefin lanternshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q3760674",
+   "name": "Brown Lanternshark",
+   "aliases": [
+    "Brown lanternshark",
+    "Etmopterus unicolor"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q5026048",
+   "name": "Spiny Dogfish",
+   "aliases": [
+    "North Pacific Spiny Dogfish",
+    "Spotted Spiny Dogfish",
+    "Squalus suckleyi"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q139510",
+   "name": "Caribbean Roughshark",
+   "aliases": [
+    "Caribbean roughshark",
+    "Oxynotus caribbaeus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q245707",
+   "name": "Carter Gilbert's Lanternshark",
+   "aliases": [
+    "Cylindrical Lanternshark",
+    "Cylindrical lanternshark",
+    "Etmopterus carteri"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q936319",
+   "name": "Longnose Sawtail Catshark",
+   "aliases": [
+    "Galeus longirostris",
+    "Longnose sawtail catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2454192",
+   "name": "Blackspotted Smoothhound",
+   "aliases": [
+    "Blackspotted smooth-hound",
+    "Mustelus punctulatus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q956672",
+   "name": "Panama Ghost Catshark",
+   "aliases": [
+    "Apristurus stenseni",
+    "Panama ghost catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1871459",
+   "name": "Bighead Catshark",
+   "aliases": [
+    "Apristurus bucephalus",
+    "Bighead catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1935896",
+   "name": "Dwarf Smoothhound",
+   "aliases": [
+    "Mustelus minicanis",
+    "Venezuelan Dwarf Smoothhound"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1936194",
+   "name": "Blacktip topeshark",
+   "aliases": [
+    "Blacktip Topeshark",
+    "Blacktip tope",
+    "Hypogaleus hyugaensis",
+    "Pencil Shark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1946608",
+   "name": "ocellate topeshark",
+   "aliases": [
+    "Hemitriakis complicofasciata",
+    "Ocellate Topeshark",
+    "Ornate Topeshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1947188",
+   "name": "Australian Sawtail Shark",
+   "aliases": [
+    "Australian sawtail catshark",
+    "Banded Shark",
+    "Figaro boardmani",
+    "Sawtail Shark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2338968",
+   "name": "Bristly Catshark",
+   "aliases": [
+    "Bristly catshark",
+    "Bythaelurus hispidus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2399868",
+   "name": "Speckled Smoothhound",
+   "aliases": [
+    "Mustelus mento",
+    "Speckled smooth-hound"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2443086",
+   "name": "Short-tail Lanternshark",
+   "aliases": [
+    "Etmopterus brachyurus",
+    "Short-tail lanternshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2616799",
+   "name": "Narrowtail Catshark",
+   "aliases": [
+    "Narrowtail catshark",
+    "Schroederichthys maculatus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2639518",
+   "name": "draughtsboard shark",
+   "aliases": [
+    "Carpet Shark",
+    "Cephaloscyllium isabellum",
+    "Draughtboard Shark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2716612",
+   "name": "Chilean Catshark",
+   "aliases": [
+    "Redspotted catshark",
+    "Schroederichthys chilensis"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2716639",
+   "name": "Salamander Catshark",
+   "aliases": [
+    "Parmaturus pilosus",
+    "Salamander shark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1950318",
+   "name": "Reticulate Swellshark",
+   "aliases": [
+    "Australian reticulate swellshark",
+    "Cephaloscyllium hiscosellum"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1950344",
+   "name": "Stout Catshark",
+   "aliases": [
+    "Apristurus fedorovi"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1950369",
+   "name": "Whitefin Swellshark",
+   "aliases": [
+    "Cephaloscyllium albipinnum",
+    "Whitefin swellshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1951770",
+   "name": "Banded Catshark",
+   "aliases": [
+    "Atelomycterus fasciatus",
+    "Banded sand catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1951780",
+   "name": "Rusty Catshark",
+   "aliases": [
+    "Asymbolus rubiginosus",
+    "Orange Spotted Catshark",
+    "Orange spotted catshark",
+    "Spotted Catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1951792",
+   "name": "Western Spotted Catshark",
+   "aliases": [
+    "Asymbolus occiduus",
+    "Western spotted catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1951875",
+   "name": "Dwarf Catshark",
+   "aliases": [
+    "Asymbolus parvus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1951887",
+   "name": "Humpback smoothhoun",
+   "aliases": [
+    "Humpback Smoothhound",
+    "Humpback smooth-hound",
+    "Humpback smoothhound",
+    "Mustelus whitneyi"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1951893",
+   "name": "Lizard Catshark",
+   "aliases": [
+    "Lizard catshark",
+    "Schroederichthys saurisqualus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1951908",
+   "name": "Smalleye Smoothhound",
+   "aliases": [
+    "Mustelus higmani",
+    "Smalleye smooth-hound"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1956595",
+   "name": "Brown Catshark",
+   "aliases": [
+    "Apristurus brunneus",
+    "Brown catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q147182",
+   "name": "Pygmy Lanternshark",
+   "aliases": [
+    "Etmopterus fusus",
+    "Pygmy lanternshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2217100",
+   "name": "Lined Lanternshark",
+   "aliases": [
+    "Etmopterus bullisi",
+    "Lined lanternshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q401586",
+   "name": "harlequin catshark",
+   "aliases": [
+    "Ctenacis fehlmanni",
+    "Herlequin Catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1549548",
+   "name": "South China cookiecutter shark",
+   "aliases": [
+    "Isistius labialis",
+    "South China Cookiecutter Shark",
+    "South China Cookiecutter shark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1038804",
+   "name": "Moller's Lanternshark",
+   "aliases": [
+    "Etmopterus molleri",
+    "Slendertail Lanternshark",
+    "Slendertail lanternshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2719446",
+   "name": "Largenose Catshark",
+   "aliases": [
+    "Apristurus nasutus",
+    "Largenose catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2891490",
+   "name": "Eastern Highfin Spurdog",
+   "aliases": [
+    "Eastern highfin spurdog",
+    "Squalus albifrons"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q591597",
+   "name": "Densescale Lanternshark",
+   "aliases": [
+    "Dense-scale lantern shark",
+    "Etmopterus pycnolepis"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q28816",
+   "name": "Eastern angel shark",
+   "aliases": [
+    "Eastern Angel Shark",
+    "Eastern angelshark",
+    "Squatina albipunctata"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q28838",
+   "name": "speckled carpetshark",
+   "aliases": [
+    "Hemiscyllium trispeculare",
+    "Speckled Carpetshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q29368",
+   "name": "Papuan epaulette shark",
+   "aliases": [
+    "Hemiscyllium hallstromi",
+    "Papuan Epaulette Shark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q31497",
+   "name": "gulf wobbegong",
+   "aliases": [
+    "Banded Wobbegong",
+    "Gulf Wobbegong",
+    "Orectolobus halei",
+    "banded wobbegong"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q31750",
+   "name": "Barbelthroat Carpetshark",
+   "aliases": [
+    "Barbelthroat carpetshark",
+    "Cirrhoscyllium expolitum"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q31815",
+   "name": "dwarf spotted wobbegong",
+   "aliases": [
+    "Dwarf Spotted Wobbegong",
+    "Orectolobus parvimaculatus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q31841",
+   "name": "ginger carpetshark",
+   "aliases": [
+    "Ginger Carpetshark",
+    "Parascyllium sparsimaculatum"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q31851",
+   "name": "Collared Carpetshark",
+   "aliases": [
+    "Collared carpetshark",
+    "Parascyllium collare"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q40576",
+   "name": "Atlantic Weasel Shark",
+   "aliases": [
+    "Atlantic weasel shark",
+    "Little Tiger Shark",
+    "Paragaleus pectoralis"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1570451",
+   "name": "Natal shyshark",
+   "aliases": [
+    "Haploblepharus kistnasamyi"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q1614605",
+   "name": "Halaelurus alcockii",
+   "aliases": [
+    "Arabian catshark"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2278709",
+   "name": "needle dogfish",
+   "aliases": [
+    "Centrophorus acus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q2408359",
+   "name": "Combtooth lanternshark",
+   "aliases": [
+    "Etmopterus decacuspidatus"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q21841035",
+   "name": "Ninja lanternshark",
+   "aliases": [
+    "Etmopterus benchleyi"
+   ],
+   "popularity": 14
+  },
+  {
+   "qid": "Q901046",
+   "name": "Brown shyshark",
+   "aliases": [
+    "Brown Shyshark",
+    "Haploblepharus fuscus"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q922546",
+   "name": "Polkadot Catshark",
+   "aliases": [
+    "Polkadot catshark",
+    "Scyliorhinus besnardi"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3280990",
+   "name": "Eastern Longnose Spurdog",
+   "aliases": [
+    "Eastern longnose spurdog",
+    "Squalus grahami"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3758078",
+   "name": "Tailspot Lantern Shark",
+   "aliases": [
+    "Etmopterus caudistigmus",
+    "Tailspot lanternshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3758384",
+   "name": "Smalleye Lanternshark",
+   "aliases": [
+    "Etmopterus litvinovi",
+    "Smalleye lantern shark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3758660",
+   "name": "False Pygmy Shark",
+   "aliases": [
+    "Etmopterus pseudosqualiolus",
+    "False lanternshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3759798",
+   "name": "Thorny Lanternshark",
+   "aliases": [
+    "Etmopterus sentosus",
+    "Thorny lanternshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3761462",
+   "name": "Hawaiian Lanternshark",
+   "aliases": [
+    "Etmopterus villosus",
+    "Hawaiian lanternshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q286591",
+   "name": "Flagtail Swellshark",
+   "aliases": [
+    "Cephaloscyllium signourum",
+    "Flagtail swellshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2544976",
+   "name": "Gray Smooth-hound",
+   "aliases": [
+    "Grey smooth-hound",
+    "Mustelus californicus"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q994625",
+   "name": "Cyrano Spurdog",
+   "aliases": [
+    "Cyrano spurdog",
+    "Squalus rancureli"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1934128",
+   "name": "Beige Catshark",
+   "aliases": [
+    "Parmaturus bigus",
+    "Short-tail Catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1949644",
+   "name": "Saddled Catshark",
+   "aliases": [
+    "Asymbolus submaculatus",
+    "Variegated Catshark",
+    "Variegated catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1950300",
+   "name": "Starry Catshark",
+   "aliases": [
+    "Asymbolus galacticus",
+    "Starry catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2615018",
+   "name": "Black Spotted Catshark",
+   "aliases": [
+    "Aulohalaelurus labiosus",
+    "Australian blackspotted catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2615551",
+   "name": "Dusky Catshark",
+   "aliases": [
+    "Bythaelurus canescens",
+    "Dusky catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2616457",
+   "name": "Izak Catshark",
+   "aliases": [
+    "Holohalaelurus regani",
+    "Izak",
+    "Izak catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2619358",
+   "name": "Narrowfin Smooth Hound",
+   "aliases": [
+    "Mustelus norrisi",
+    "Narrowfin smooth-hound"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2657865",
+   "name": "brown smooth-hound",
+   "aliases": [
+    "Brown Smoothhound",
+    "Mustelus henlei"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2667532",
+   "name": "Broadbanded Lanternshark",
+   "aliases": [
+    "Broadbanded lanternshark",
+    "Etmopterus gracilispinis"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2673697",
+   "name": "Gulf of Mexico smoothhound",
+   "aliases": [
+    "Gulf Of Mexico Smoothhound",
+    "Gulf smoothhound",
+    "Mustelus sinusmexicanus"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2716617",
+   "name": "Campeche Catshark",
+   "aliases": [
+    "Campeche catshark",
+    "Parmaturus campechiensis"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2716635",
+   "name": "Narrowmouth Catshark",
+   "aliases": [
+    "Narrowmouthed catshark",
+    "Schroederichthys bivius"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1950326",
+   "name": "Speckled Swellshark",
+   "aliases": [
+    "Cephaloscyllium speccum",
+    "Speckled swellshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1950333",
+   "name": "Cook’s Swellshark",
+   "aliases": [
+    "Cephaloscyllium cooki",
+    "Cook's swellshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1951306",
+   "name": "Sicklefin Smoothhound",
+   "aliases": [
+    "Mustelus lunulatus",
+    "Sicklefin smooth-hound"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1951839",
+   "name": "Bali Catshark",
+   "aliases": [
+    "Atelomycterus baliensis",
+    "Bali catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1951968",
+   "name": "New Caledonia catshark",
+   "aliases": [
+    "Aulohalaelurus kanakorum",
+    "New Caledonia Catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2026135",
+   "name": "Longsnout Dogfish",
+   "aliases": [
+    "Deania quadrispinosa",
+    "Deania quadrispinosum"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q1151176",
+   "name": "Saddled Swellshark",
+   "aliases": [
+    "Cephaloscyllium variegatum",
+    "Saddled swellshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q145690",
+   "name": "Lined Lanternshark",
+   "aliases": [
+    "Etmopterus dislineatus"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2269753",
+   "name": "Sharptooth Smoothhound",
+   "aliases": [
+    "Mustelus dorsalis",
+    "Sharptooth smooth-hound"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2283863",
+   "name": "Rig",
+   "aliases": [
+    "Gummy Shark",
+    "Mustelus lenticulatus",
+    "Spotted Smoothhound",
+    "Spotted estuary smooth-hound"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2834676",
+   "name": "Pale Spotted Catshark",
+   "aliases": [
+    "Asymbolus pallidus",
+    "Pale spotted catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q617911",
+   "name": "Black Roughscale Catshark",
+   "aliases": [
+    "Apristurus melanoasper",
+    "Fleshynose Catshark",
+    "black roughscale catshark",
+    "fleshynose catshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q637037",
+   "name": "Mcmillan's Catshark",
+   "aliases": [
+    "McMillan's cat shark",
+    "Parmaturus macmillani"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q674076",
+   "name": "Longnose Hound Shark",
+   "aliases": [
+    "Iago garricki",
+    "Longnose houndshark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q28852",
+   "name": "hooded carpetshark",
+   "aliases": [
+    "Hemiscyllium strahani",
+    "Hooded Carpet Shark",
+    "Hooded carpet shark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q31495",
+   "name": "western wobbegong",
+   "aliases": [
+    "Orectolobus hutchinsi",
+    "Western Wobbegong"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q40487",
+   "name": "whitetip weasel shark",
+   "aliases": [
+    "Paragaleus leucolomatus",
+    "Whitetip Weasel Shark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q40573",
+   "name": "slender weasel shark",
+   "aliases": [
+    "Paragaleus randalli",
+    "Slender Weasel Shark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q246905",
+   "name": "Lamiopsis tephrodes",
+   "aliases": [
+    "Borneo broadfin shark"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q551403",
+   "name": "Carcharodon hubbelli",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q2779829",
+   "name": "Squatina mexicana",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q5017919",
+   "name": "Bighead spurdog",
+   "aliases": [
+    "Squalus bucephalus"
+   ],
+   "popularity": 13
+  },
+  {
+   "qid": "Q5038155",
+   "name": "Carcharocles chubutensis",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q29093",
+   "name": "Hemiscyllium galei",
+   "aliases": [],
+   "popularity": 13
+  },
+  {
+   "qid": "Q3659270",
+   "name": "Broad-snout Lanternshark",
+   "aliases": [
+    "Etmopterus burgessi"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q3769684",
+   "name": "Narrowbar Swellshark",
+   "aliases": [
+    "Cephaloscyllium zebrum",
+    "Narrowbar swellshark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q4667266",
+   "name": "Whitetail Dogfish",
+   "aliases": [
+    "Scymnodalatias albicauda",
+    "Whitetail dogfish"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q5027004",
+   "name": "Japanese Shortnose Spurdog",
+   "aliases": [
+    "Japanese shortnose spurdog",
+    "Squalus brevirostris"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q5033788",
+   "name": "Greeneye Spurdog",
+   "aliases": [
+    "Greeneye spurdog",
+    "Squalus chloroculus"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q2484171",
+   "name": "Knifetooth Dogfish",
+   "aliases": [
+    "Knifetooth dogfish",
+    "Scymnodon ringens"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q2614966",
+   "name": "New Zealand catshark",
+   "aliases": [
+    "Bythaelurus dawsoni",
+    "Dawson's Cat Shark",
+    "New Zealand Catshark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q975869",
+   "name": "Northern Sawtail Shark",
+   "aliases": [
+    "Figaro striatus",
+    "Northern sawtail catshark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1939376",
+   "name": "Sombre Catshark",
+   "aliases": [
+    "Bythaelurus incanus"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1949667",
+   "name": "Phallic Catshark",
+   "aliases": [
+    "Galeus priapus",
+    "phallic catshark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1951826",
+   "name": "Grey Gummy Shark",
+   "aliases": [
+    "Australian grey smooth-hound",
+    "Mustelus ravidus"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1952041",
+   "name": "White-clasper Catshark",
+   "aliases": [
+    "Parmaturus albipenis",
+    "White-clasper catshark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q2186345",
+   "name": "whitefin topeshark",
+   "aliases": [
+    "Hemitriakis leucoperiptera",
+    "Whitefin Topeshark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q2218159",
+   "name": "Sherwood Dogfish",
+   "aliases": [
+    "Scymnodalatias sherwoodi",
+    "Sherwood dogfish"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q576394",
+   "name": "Largespine Velvet Dogfish",
+   "aliases": [
+    "Largespine velvet dogfish",
+    "Proscymnodon macracanthus"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q577025",
+   "name": "plunket shark",
+   "aliases": [
+    "Plunket's Dogfish",
+    "Plunket's Shark",
+    "Plunket's shark",
+    "Proscymnodon plunketi",
+    "Waite's Dogfish"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q15139804",
+   "name": "Carolina hammerhead",
+   "aliases": [
+    "Sphyrna gilberti"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q28843",
+   "name": "Henry's epaulette shark",
+   "aliases": [
+    "Hemiscyllium henryi",
+    "Henry's Epaulette Shark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q29248",
+   "name": "Western Angel Shark",
+   "aliases": [
+    "Squatina pseudocellata"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q31490",
+   "name": "floral banded wobbegong",
+   "aliases": [
+    "Floral Banded Wobbegong",
+    "Orectolobus floridus"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q31597",
+   "name": "Network Wobbegong",
+   "aliases": [
+    "Orectolobus reticulatus",
+    "network wobbegong"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q866579",
+   "name": "Proscyllium venustum",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q893956",
+   "name": "Borneo river shark",
+   "aliases": [
+    "Glyphis fowlerae"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q994865",
+   "name": "taiwan gulper shark",
+   "aliases": [
+    "Centrophorus niaukang"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1035607",
+   "name": "Carcharhinus tjutjot",
+   "aliases": [],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1950311",
+   "name": "Painted swellshark",
+   "aliases": [
+    "Cephaloscyllium pictum"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q1952034",
+   "name": "White-tip catshark",
+   "aliases": [
+    "Parmaturus albimarginatus"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q7122789",
+   "name": "Pacific smalltail shark",
+   "aliases": [
+    "Carcharhinus cerdale"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q19813102",
+   "name": "Pacific nurse shark",
+   "aliases": [
+    "Ginglymostoma unami"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q60390440",
+   "name": "Carcharhinus obsoletus",
+   "aliases": [
+    "Carcharhinus obsolerus",
+    "false smalltail shark",
+    "lost shark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q29287",
+   "name": "Pristiophorus nancyae",
+   "aliases": [
+    "African dwarf sawshark",
+    "Dwarf sawshark"
+   ],
+   "popularity": 12
+  },
+  {
+   "qid": "Q769350",
+   "name": "African Ribbontail Catshark",
+   "aliases": [
+    "African ribbontail catshark",
+    "Eridacnis sinuans"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q3282649",
+   "name": "Western Longnose Spurdog",
+   "aliases": [
+    "Squalus nasutus",
+    "Western longnose spurdog"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q4667383",
+   "name": "Chinese Longnose Dogfish",
+   "aliases": [
+    "Squalus acutirostris"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q4667516",
+   "name": "Sparsetooth Dogfish",
+   "aliases": [
+    "Scymnodalatias oligodon",
+    "Sparsetooth dogfish"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q4668045",
+   "name": "Azores Dogfish",
+   "aliases": [
+    "Azores dogfish",
+    "Scymnodalatias garricki"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q5016962",
+   "name": "Philippine Spurdog",
+   "aliases": [
+    "Philippines spurdog",
+    "Squalus montalbani"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q5027316",
+   "name": "Kermadec Spiny Dogfish",
+   "aliases": [
+    "Kermadec spiny dogfish",
+    "Squalus raoulensis"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q5027754",
+   "name": "Brown Dogfish",
+   "aliases": [
+    "Greeneye",
+    "Grey Spiny Dogfish",
+    "Griffin's Dogfish",
+    "Northern Spiny Dogfish",
+    "Squalus griffini"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1949709",
+   "name": "Rusty Catshark",
+   "aliases": [
+    "Halaelurus sellus"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1949722",
+   "name": "Indonesian Speckled Catshark",
+   "aliases": [
+    "Halaelurus maculosus"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1949752",
+   "name": "Spotted Swellshark",
+   "aliases": [
+    "Cephaloscyllium maculatum",
+    "Spotted swellshark"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1950290",
+   "name": "Leopard-spotted Swellshark",
+   "aliases": [
+    "Cephaloscyllium pardelotum",
+    "Leopard-spotted swellshark"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q2616474",
+   "name": "White-spotted Izak",
+   "aliases": [
+    "African Spotted Catshark",
+    "Holohalaelurus punctatus",
+    "Whitespotted Izak"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q2616904",
+   "name": "Balloon Shark",
+   "aliases": [
+    "Balloon shark",
+    "Cephaloscyllium sufflans",
+    "Indian Swellshark",
+    "Swell Shark"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1951364",
+   "name": "Whitefin Smoothhound",
+   "aliases": [
+    "Mustelus widodoi",
+    "White-fin smooth-hound"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1951882",
+   "name": "Velvet Catshark",
+   "aliases": [
+    "Parmaturus lanatus",
+    "Velvet catshark"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1951950",
+   "name": "Broadhead Catshark",
+   "aliases": [
+    "Broadhead cat shark",
+    "Bythaelurus clevai"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1951957",
+   "name": "Honeycomb Izak",
+   "aliases": [
+    "Holohalaelurus favus",
+    "Natal Izak"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1952092",
+   "name": "Crying Izak",
+   "aliases": [
+    "Holohalaelurus melanostigma",
+    "Tropical Izak Catshark"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1964185",
+   "name": "Western Spotted Gummy Shark",
+   "aliases": [
+    "Mustelus stevensi"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q378551",
+   "name": "Southern Mandarin Shark",
+   "aliases": [
+    "Cirrhigaleus australis"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q421594",
+   "name": "Cuban Ribbontail Catshark",
+   "aliases": [
+    "Cuban ribbontail catshark",
+    "Eridacnis barbouri",
+    "Pygmy Dogfish"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q28711",
+   "name": "Leopard Epaulette Shark",
+   "aliases": [
+    "Michael's Epaulette Shark"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q29375",
+   "name": "Angular Angelshark",
+   "aliases": [
+    "Squatina punctata"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q82289",
+   "name": "Carcharhinus macrops",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q766699",
+   "name": "Galápagos catshark",
+   "aliases": [
+    "Bythaelurus giddingsi",
+    "Galapagos catshark"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q797790",
+   "name": "magnificent catshark",
+   "aliases": [
+    "Proscyllium magnificum"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q1229803",
+   "name": "Pacific spadenose shark",
+   "aliases": [
+    "Scoliodon macrorhynchos"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q3333217",
+   "name": "Squatina heteroptera",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q3760135",
+   "name": "Tasmanian lanternshark",
+   "aliases": [
+    "Etmopterus tasmaniensis"
+   ],
+   "popularity": 11
+  },
+  {
+   "qid": "Q5030071",
+   "name": "Etmopterus compagnoi",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q5031524",
+   "name": "Centrophorus zeehaani",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q5228189",
+   "name": "Squalus formosus",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q17275426",
+   "name": "Carcharhinus humani",
+   "aliases": [],
+   "popularity": 11
+  },
+  {
+   "qid": "Q3282659",
+   "name": "Bartail Spurdog",
+   "aliases": [
+    "Bartail spurdog",
+    "Squalus notocaudatus"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q4034516",
+   "name": "Eastern Banded Catshark",
+   "aliases": [
+    "Atelomycterus marnkalha",
+    "Eastern banded catshark"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q4667102",
+   "name": "Japanese Velvet Dogfish",
+   "aliases": [
+    "Japanese velvet dogfish",
+    "Zameus ichiharai"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q5032188",
+   "name": "Indonesian Shortsnout Spurdog",
+   "aliases": [
+    "Squalus hemipinnis"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q5035275",
+   "name": "Western Longnose Spurdog",
+   "aliases": [
+    "Edmund's spurdog",
+    "Squalus edmundsi"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q2524494",
+   "name": "Eastern Spotted Gummy Shark",
+   "aliases": [
+    "Mustelus walkeri"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1939995",
+   "name": "sicklefin hound shark",
+   "aliases": [
+    "Hemitriakis falcata",
+    "Sicklefin Hound Shark"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1940051",
+   "name": "deepwater sicklefin hound shark",
+   "aliases": [
+    "Darksnout Hound Shark",
+    "Deepwater Sicklefin Hound Shark",
+    "Hemitriakis abdita"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1942238",
+   "name": "White-margin Fin Hound Shark",
+   "aliases": [
+    "Mustelus albipinnis"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1951934",
+   "name": "Grinning Izak",
+   "aliases": [
+    "Holohalaelurus grennian"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q31500",
+   "name": "Elongate Carpetshark",
+   "aliases": [
+    "Elongate carpet shark",
+    "Parascyllium elongatum"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q845100",
+   "name": "Smallmouth velvet dogfish",
+   "aliases": [
+    "Scymnodon obscurus"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1035604",
+   "name": "Carcharhinus coatesi",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1108134",
+   "name": "Sulu gollumshark",
+   "aliases": [
+    "Gollum suluensis"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q1950240",
+   "name": "Cephaloscyllium stevensi",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q3324610",
+   "name": "Squatina caillieti",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q4040567",
+   "name": "Hemitriakis indroyonoi",
+   "aliases": [],
+   "popularity": 10
+  },
+  {
+   "qid": "Q5015825",
+   "name": "Etmopterus joungi",
+   "aliases": [
+    "Shortfin smooth lanternshark"
+   ],
+   "popularity": 10
+  },
+  {
+   "qid": "Q6393152",
+   "name": "Seychelles Spurdog",
+   "aliases": [
+    "Squalus lalannei"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q1950262",
+   "name": "Cephaloscyllium circulopullum",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q4394845",
+   "name": "Squatina occulta",
+   "aliases": [
+    "hidden angelshark"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q4516558",
+   "name": "Planonasus parini",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q63351186",
+   "name": "Alopias palatasi",
+   "aliases": [],
+   "popularity": 9
+  },
+  {
+   "qid": "Q65938991",
+   "name": "American pocket shark",
+   "aliases": [
+    "Mollisquama mississippiensis"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q28846",
+   "name": "Chiloscyllium caeruleopunctatum",
+   "aliases": [
+    "Bluespotted bamboo shark"
+   ],
+   "popularity": 9
+  },
+  {
+   "qid": "Q2124320",
+   "name": "Shortnose velvet dogfish",
+   "aliases": [
+    "Centroscymnus cryptacanthus"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q5034812",
+   "name": "Centrophorus robustus",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q7185389",
+   "name": "Philippine sawshark",
+   "aliases": [
+    "Pristiophorus lanae"
+   ],
+   "popularity": 8
+  },
+  {
+   "qid": "Q23829723",
+   "name": "Otodus obliquus",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q99602452",
+   "name": "Otodus angustidens",
+   "aliases": [],
+   "popularity": 8
+  },
+  {
+   "qid": "Q3130173",
+   "name": "Hemipristis serra",
+   "aliases": [],
+   "popularity": 7
+  },
+  {
+   "qid": "Q5038153",
+   "name": "Carcharocles auriculatus",
+   "aliases": [
+    "Otodus auriculatus"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q5850105",
+   "name": "Etmopterus sculptus",
+   "aliases": [
+    "Sculpted lanternshark"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q25520511",
+   "name": "Squatina david",
+   "aliases": [
+    "David's angel shark"
+   ],
+   "popularity": 7
+  },
+  {
+   "qid": "Q2258434",
+   "name": "flatnose cat shark",
+   "aliases": [
+    "Apristurus acanutus"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q13613561",
+   "name": "Etmopterus viator",
+   "aliases": [
+    "Blue-eye lanternshark"
+   ],
+   "popularity": 6
+  },
+  {
+   "qid": "Q13866375",
+   "name": "Mustelus mangalorensis",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q52413113",
+   "name": "Alopias grandis",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q120648608",
+   "name": "Heterodontus marshallae",
+   "aliases": [],
+   "popularity": 6
+  },
+  {
+   "qid": "Q16982212",
+   "name": "Garrick's catshark",
+   "aliases": [
+    "Apristurus garricki",
+    "Pinocchio catshark"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q88163382",
+   "name": "Kaja's sixgill sawshark",
+   "aliases": [
+    "Pliotrema kajae"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q744957",
+   "name": "Chlamydoselachus lawleyi",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q2858990",
+   "name": "Apristurus atlanticus",
+   "aliases": [
+    "Apristurus laurussonii"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q20648892",
+   "name": "Spotted-belly catshark",
+   "aliases": [
+    "Atelomycterus erdmanni"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q20686403",
+   "name": "Dark freckled catshark",
+   "aliases": [
+    "Scyliorhinus ugoi"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q22110879",
+   "name": "Hexanchus vitulus",
+   "aliases": [
+    "Atlantic sixgill shark"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q23055870",
+   "name": "Scyliorhinus cabofriensis",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q25406263",
+   "name": "Squalus albicaudus",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q60773445",
+   "name": "Pygmy false catshark",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q88163845",
+   "name": "Pliotrema annae",
+   "aliases": [],
+   "popularity": 5
+  },
+  {
+   "qid": "Q110752528",
+   "name": "Scyliorhinus hachijoensis",
+   "aliases": [
+    "Cinder cloudy catshark"
+   ],
+   "popularity": 5
+  },
+  {
+   "qid": "Q2964058",
+   "name": "Chlamydoselachus fiedleri",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q2964059",
+   "name": "Chlamydoselachus bracheri",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q2964061",
+   "name": "Chlamydoselachus goliath",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q3659115",
+   "name": "Eastern Australian sawshark",
+   "aliases": [
+    "Pristiophorus peroniensis"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q20720161",
+   "name": "Shortbelly catshark",
+   "aliases": [
+    "Apristurus breviventralis"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q25406245",
+   "name": "Squalus bahiensis",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q28598934",
+   "name": "Apristurus nakayai",
+   "aliases": [
+    "Milk-eye catshark"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q46644228",
+   "name": "Etmopterus lailae",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q52254211",
+   "name": "Centrophorus lesliei",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q55643380",
+   "name": "Squalus clarkae",
+   "aliases": [
+    "Genie's dogfish"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q55830858",
+   "name": "Eogaleus bolcensis",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q60144587",
+   "name": "Squalus hawaiiensis",
+   "aliases": [
+    "Hawaiian spurdog"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q60532113",
+   "name": "Cretoxyrhina mantelli",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q85750618",
+   "name": "Carcharocles sokolovi",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q99855325",
+   "name": "Scymnodon ichiharai",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q101194895",
+   "name": "Squalus shiraii",
+   "aliases": [],
+   "popularity": 4
+  },
+  {
+   "qid": "Q115942409",
+   "name": "Galeus friedrichi",
+   "aliases": [
+    "Philippines sawtail catshark"
+   ],
+   "popularity": 4
+  },
+  {
+   "qid": "Q107529928",
+   "name": "Manocherian’s Catshark",
+   "aliases": [
+    "Apristurus manocheriani"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q110703121",
+   "name": "small-crested angelshark",
+   "aliases": [
+    "Squatina mapama"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2562518",
+   "name": "little gulper shark",
+   "aliases": [
+    "Squalus uyato"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2937991",
+   "name": "Carcharhinus menisorrah",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2964063",
+   "name": "Chlamydoselachus thomsoni",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2964060",
+   "name": "Chlamydoselachus gracilis",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2964064",
+   "name": "Chlamydoselachus tobleri",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q6987106",
+   "name": "Negaprion eurybathrodon",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q15042122",
+   "name": "Palaeocarcharias stromeri",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q16641127",
+   "name": "Halaelurus lutarius",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q19683369",
+   "name": "Halaelurus hispidus",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q19689175",
+   "name": "Halaelurus canescens",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q19689185",
+   "name": "Halaelurus immaculatus",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q20686602",
+   "name": "Dusky snout catshark",
+   "aliases": [
+    "Bythaelurus naylori"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q21247732",
+   "name": "Bythaelurus tenuicephalus",
+   "aliases": [
+    "Narrowhead catshark"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q21345515",
+   "name": "Carcharomodus escheri",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q22104176",
+   "name": "Megachasma applegatei",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q25094566",
+   "name": "Isurus planus",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q25405573",
+   "name": "Megachasma alisonae",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q25406237",
+   "name": "Squalus lobularis",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q25406254",
+   "name": "Squalus quasimodo",
+   "aliases": [
+    "Humpback western dogfish"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q26240548",
+   "name": "Otodus aksuaticus",
+   "aliases": [
+    "Carcharocles aksuaticus"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q30971392",
+   "name": "Chlamydoselachus garmani",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q46262736",
+   "name": "Apristurus yangi",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q46388462",
+   "name": "Bythaelurus bachi",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q46388760",
+   "name": "Bythaelurus vivaldii",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q46644240",
+   "name": "Etmopterus samadiae",
+   "aliases": [
+    "Papuan lanternshark"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q52254214",
+   "name": "Galeus corriganae",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q56317385",
+   "name": "Isurus desori",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q59779220",
+   "name": "Bythaelurus stewarti",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q65063742",
+   "name": "Somniosus gonzalezi",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q97182925",
+   "name": "Ambon catshark",
+   "aliases": [
+    "Akheilos suwartanai"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q104850368",
+   "name": "Abdounia beaugei",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q104850503",
+   "name": "Abdounia recticonia",
+   "aliases": [
+    "Abdounia recticona"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q104850500",
+   "name": "Abdounia minutissima",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q108470791",
+   "name": "Somniosus cheni",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q109264723",
+   "name": "Mustelus andamanensis",
+   "aliases": [
+    "Andaman smooth-hound"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q118520687",
+   "name": "Apristurus ovicorrugatus",
+   "aliases": [
+    "Ridged-egg catshark"
+   ],
+   "popularity": 3
+  },
+  {
+   "qid": "Q130357373",
+   "name": "Sphyrna alleni",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q135471928",
+   "name": "Cretascymnus beauryi",
+   "aliases": [],
+   "popularity": 3
+  },
+  {
+   "qid": "Q2937992",
+   "name": "Carcharhinus wheeleri",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q2947094",
+   "name": "Cetorhinus parvus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q4041239",
+   "name": "Lowfin houndshark",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5066568",
+   "name": "Chaenogaleus affinis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5749004",
+   "name": "Carcharodon angustidens",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q5881534",
+   "name": "Glyphis hastalis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q7245905",
+   "name": "Pristiophorus striatus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q8343999",
+   "name": "Cephaloscyllium parvum",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q8843691",
+   "name": "Etmopterus schmidti",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q8963353",
+   "name": "Galeus piceus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q11039018",
+   "name": "Hemipristis elongatus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q16107846",
+   "name": "Carcharodon megalodon",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q19689120",
+   "name": "Halaelurus clevai",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q21239589",
+   "name": "Antrigoulia circumplicata",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q21346193",
+   "name": "Cetorhinus piersoni",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q22105313",
+   "name": "Cetorhinus huddlestoni",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q22106397",
+   "name": "Archaeogaleus lengadocensis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25363681",
+   "name": "Adnetoscyllium angloparisensis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25363697",
+   "name": "Chiloscyllium frequens",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25363700",
+   "name": "Chiloscyllium vulloi",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25363824",
+   "name": "Scyliorhinus monsaugustus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25363828",
+   "name": "Scyliorhinus muelleri",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25386375",
+   "name": "Echinorhinus wadanohanaensis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25399991",
+   "name": "Araloselachus cuspidatus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25400142",
+   "name": "Keasius parvus",
+   "aliases": [
+    "Kaesius parvus"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q25661318",
+   "name": "Otodus megalodon",
+   "aliases": [
+    "Otodus (Megaselachus) megalodon"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q27439685",
+   "name": "Glyphis pagoda",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q28746374",
+   "name": "Etmopterus alphus",
+   "aliases": [
+    "Whitecheek lanternshark"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q46736999",
+   "name": "Galeocerdo aduncus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q52254212",
+   "name": "Centrophorus longipinnis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q55612248",
+   "name": "Galeocerdo clarkensis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q61885698",
+   "name": "Etmopterus marshae",
+   "aliases": [
+    "Marsha's lanternshark"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q64554987",
+   "name": "Parmaturus angelae",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q67184040",
+   "name": "Parmaturus nigripalatum",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q118299234",
+   "name": "Dallasiella willistoni",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q122853049",
+   "name": "Squatina leae",
+   "aliases": [
+    "Saya de Malha angelshark"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q131407255",
+   "name": "Isistius triangulus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q131407287",
+   "name": "Isistius trituratus",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q134942365",
+   "name": "Rhincodon ferriolensis",
+   "aliases": [
+    "European Whale shark"
+   ],
+   "popularity": 2
+  },
+  {
+   "qid": "Q135234176",
+   "name": "Carcharodon plicatilis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q135450907",
+   "name": "Cretascymnus adonis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q135580563",
+   "name": "Protoxynotus misburgensis",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q136769400",
+   "name": "Pochitaserra patriciacanalae",
+   "aliases": [],
+   "popularity": 2
+  },
+  {
+   "qid": "Q1635240",
+   "name": "rasptooth dogfish",
+   "aliases": [
+    "Miroscyllium sheikoi",
+    "Rasptooth Dogfish"
+   ],
+   "popularity": 1
+  },
+  {
+   "qid": "Q106045144",
+   "name": "eagle shark",
+   "aliases": [
+    "A. milarcae",
+    "Aquilolamna milarcae"
+   ],
+   "popularity": 1
+  },
+  {
+   "qid": "Q882873",
+   "name": "Blauwgrijze blinde haai",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q1280679",
+   "name": "Echinorhinus pfauntschi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q2963631",
+   "name": "Chiloscyllium dolganovi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q2963632",
+   "name": "Chiloscyllium confusum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q3398212",
+   "name": "Poroderma variegatum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q5748827",
+   "name": "Hexanchus collinsonae",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q10887197",
+   "name": "Carcharhinus pleurotaenia",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q10890840",
+   "name": "Nebrius macrurus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q10899103",
+   "name": "Mustelus kanekonis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q10931285",
+   "name": "Physodon mulleri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q10934760",
+   "name": "Negogaleus macrostoma",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q10958650",
+   "name": "Negogaleus microstoma",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11037930",
+   "name": "Scoliodon sorrakowah",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11039047",
+   "name": "Paragaleus acutiventralis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11066195",
+   "name": "Scymnodon squamulasus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11090340",
+   "name": "Carcharhinus obscunella",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11099209",
+   "name": "Scoliodon dumerili",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11116716",
+   "name": "Figaro piceus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11122721",
+   "name": "Carcharias owstoni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11140792",
+   "name": "Carcharias arenarias",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11179071",
+   "name": "Scymnodon niger",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941399",
+   "name": "Physogaleus americanus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941402",
+   "name": "Physogaleus aduncus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941400",
+   "name": "Physogaleus cappetti",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941401",
+   "name": "Physogaleus aralensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941406",
+   "name": "Physogaleus latecuspidatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941407",
+   "name": "Physogaleus latus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941405",
+   "name": "Physogaleus rosehillensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941409",
+   "name": "Physogaleus springeri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q11941412",
+   "name": "Physogaleus tertius",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15226959",
+   "name": "Apristurus abbreriatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15227028",
+   "name": "Apristurus grbbosug",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15227461",
+   "name": "Aprionodon brevipenna",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15227510",
+   "name": "Carcharhinus latistomus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15233094",
+   "name": "Heptranchias dakini",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15233099",
+   "name": "Chiloscyllium colax",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15233101",
+   "name": "Ginglymostoma ferrugineum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15233111",
+   "name": "Carcharhinus remotoides",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15233114",
+   "name": "Negogaleus brachygnathus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15233113",
+   "name": "Hypoprion macloti",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15233116",
+   "name": "Scoliodon walbeehmi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15709159",
+   "name": "Thrinax baumgartneri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q15709157",
+   "name": "Hemipristis curvatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q16858721",
+   "name": "Cephaloscyllium formosanum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q19689054",
+   "name": "Halaelurus dawsoni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21082810",
+   "name": "Rhizoprionodon fischeuri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21086194",
+   "name": "Physogaleus secundus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21299439",
+   "name": "Prohaploblepharus riegrafi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21327371",
+   "name": "Pseudoechinorhinus mackinnoni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21345500",
+   "name": "Carcharhinus caquetius",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21346573",
+   "name": "Scyliorhinus kannenbergi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21347478",
+   "name": "Cretalamna appendiculata",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21347484",
+   "name": "Cretalamna borealis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21347490",
+   "name": "Cretalamna catoxodon",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21347496",
+   "name": "Cretalamna deschutteri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21347502",
+   "name": "Cretalamna ewelli",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21347508",
+   "name": "Cretalamna gertericorum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21347515",
+   "name": "Cretalamna hattini",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21347521",
+   "name": "Cretalamna sarcoportheta",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21348206",
+   "name": "Johnlongia allocotodon",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21354223",
+   "name": "Etmopterus bigelowei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21363132",
+   "name": "Pristiophorus lacipidinensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21363656",
+   "name": "Pristiophorus rupeliensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q21366529",
+   "name": "Chlamydoselachus keyesi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22102417",
+   "name": "Garrigascyllium aganticensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22102515",
+   "name": "Cantioscyllium grandis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22102882",
+   "name": "Squalicorax benguerirensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22102908",
+   "name": "Squalicorax microserratus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22103392",
+   "name": "Pseudorhina crocheti",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22104178",
+   "name": "Occitanodus sudrei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22104527",
+   "name": "Paracestracion pectinatus",
+   "aliases": [
+    "P. pectinatus"
+   ],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22104894",
+   "name": "Parahemiscyllium underwoodwardi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22105461",
+   "name": "Gladioserratus dentatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22105858",
+   "name": "Parascylloides turnerae",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22105975",
+   "name": "Parasquatina cappettai",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22105998",
+   "name": "Parasquatina jarvisi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22106017",
+   "name": "Parasquatina justinensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22106037",
+   "name": "Parasquatina zitteli",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22106509",
+   "name": "Ornatoscyllium freemani",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22106529",
+   "name": "Ornatoscyllium rugasimulatum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22106628",
+   "name": "Polyfaciodus pandus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22106830",
+   "name": "Magistrauia unicaplicata",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22107153",
+   "name": "Echinorhinus vielhus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22107344",
+   "name": "Chlamydoselachus landinii",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22108177",
+   "name": "Restesia americana",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22108512",
+   "name": "Cadiera camboensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22108881",
+   "name": "Keasius rhenanus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22108901",
+   "name": "Keasius septemtrionalis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22108921",
+   "name": "Keasius taylori",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22110106",
+   "name": "Pseudocetorhinus pickfordi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22110941",
+   "name": "Safrodus tozeri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22111611",
+   "name": "Thiesus concavus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22113564",
+   "name": "Scyliorhinus biformis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22113580",
+   "name": "Scyliorhinus suelstorfensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q22114375",
+   "name": "Synechodus seinstedtensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23055726",
+   "name": "Squaliomicrus sanadaensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23056048",
+   "name": "Squatina fortemordeo",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23056052",
+   "name": "Squatina filipi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23056056",
+   "name": "Squatina lundegreni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23057008",
+   "name": "Haimirichia amonensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654390",
+   "name": "Protosqualus argentinensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654432",
+   "name": "Protosqualus sigei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654436",
+   "name": "Scyliorhinus destombesi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654442",
+   "name": "Orectoloboides parvula",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654443",
+   "name": "Orectoloboides angulatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654446",
+   "name": "Eostriatolamia paucicorrugata",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654444",
+   "name": "Cretorectolobus robustus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654445",
+   "name": "Cretorectolobus olsoni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654450",
+   "name": "Roulletia bureaui",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654451",
+   "name": "Cretoxyrhina agassizensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654449",
+   "name": "Roulletia canadensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654452",
+   "name": "Cardabiodon ricki",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q23654460",
+   "name": "Squalicorax coquandi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25353958",
+   "name": "Physogaleus cuvieri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25357254",
+   "name": "Squalicorax deckeri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25360443",
+   "name": "Squaliolus schaubi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25360446",
+   "name": "Eosqualiolus skrovinai",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25360444",
+   "name": "Eosqualiolus aturensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25360450",
+   "name": "Angoumeius paradoxus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25360449",
+   "name": "Squaliodalatias weltoni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25360452",
+   "name": "Paraetmopterus nolfi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25360453",
+   "name": "Paraetmopterus horvathi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363684",
+   "name": "Anomotodon plicatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363688",
+   "name": "Anomotodon genaulti",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363692",
+   "name": "Cederstroemia siverssoni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363703",
+   "name": "Eoptolamna supracretacea",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363707",
+   "name": "Heterodontus boussioni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363711",
+   "name": "Heterodontus laevis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363716",
+   "name": "Palaeotriakis subserratus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363721",
+   "name": "Palaeotriakis curtirostris",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363726",
+   "name": "Paratriakis robustus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363724",
+   "name": "Pararhincodon ornatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363754",
+   "name": "Platyrhizodon gracilis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363757",
+   "name": "Platyrhizodon barbei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363761",
+   "name": "Cederstroemia nilsi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363765",
+   "name": "Cederstroemia triangulata",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363769",
+   "name": "Eoptolamna eccentrolopha",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363779",
+   "name": "Pararhincodon crochardi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363782",
+   "name": "Paratriakis bettrechiensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363815",
+   "name": "Protosqualus barringtonensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363822",
+   "name": "Pseudocorax duchaussoisi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363830",
+   "name": "Sigmoscyllium acuspidatum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363835",
+   "name": "Sigmoscyllium striatum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25363838",
+   "name": "Squalicorax bernardezi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25364060",
+   "name": "Cantioscyllium markaguntensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25399793",
+   "name": "Squalus acutipinnis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25399802",
+   "name": "Iago carlaluisai",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25399807",
+   "name": "Triakis muelleri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25399819",
+   "name": "Jaekelotodus trigonalis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25399826",
+   "name": "Jaekelotodus londonensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25399840",
+   "name": "Jaekelotodus borystenicus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25399974",
+   "name": "Mennerotodus glueckmani",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25399980",
+   "name": "Mennerotodus karpinsky",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400025",
+   "name": "Araloselachus agespensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400032",
+   "name": "Borealotodus borealis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400045",
+   "name": "Borealotodus benyamovski",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400054",
+   "name": "Odontaspis speyeri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400094",
+   "name": "Jaekelotodus bagualensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400147",
+   "name": "Striatolamia macrota",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400281",
+   "name": "Khuffia lenis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400290",
+   "name": "Khuffia prolixa",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400300",
+   "name": "Sphenacanthus serrulatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400347",
+   "name": "Hypotodus hopei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400435",
+   "name": "Wodnika borealis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400444",
+   "name": "Wodnika striatula",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400489",
+   "name": "Odontaspis aculeatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25400503",
+   "name": "Carcharias robustus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q25402906",
+   "name": "Scyliorhinotheca goederti",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q26221061",
+   "name": "Akaimia myriacuspis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q26416736",
+   "name": "Akaimia altucuspis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q27317504",
+   "name": "Lamna dubia",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q28431948",
+   "name": "Heptranchias howelli",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q30916944",
+   "name": "Heptranchias howelii",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q40477191",
+   "name": "Heterodontus zitteli",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q40478309",
+   "name": "Hexanchus microdon",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q41167516",
+   "name": "Pseudonotidanus semirugosus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q46639614",
+   "name": "Squalus bassi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q46639623",
+   "name": "Squalus mahia",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q46639631",
+   "name": "Squalus margaretsmithae",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q55612247",
+   "name": "Galeocerdo alabamensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q56317436",
+   "name": "Scyliorhinus distans",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q56317474",
+   "name": "Ginglymostoma delfortriei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q56317477",
+   "name": "Odontaspis contortidens",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q58498149",
+   "name": "Cardabiodon venator",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q63760017",
+   "name": "Rhizoprionodon taxandriae",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q65061580",
+   "name": "Hemipristis liui",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q65146496",
+   "name": "Plicatolamna semiplicatus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q67184111",
+   "name": "Vari's angelshark",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q83356635",
+   "name": "Turnovichtys magnus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q84588917",
+   "name": "Mitsukurina lineata",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q84588981",
+   "name": "Mitsukurina maslinensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q89269392",
+   "name": "Nemacanthus elegans",
+   "aliases": [
+    "N. elegans"
+   ],
+   "popularity": 1
+  },
+  {
+   "qid": "Q106445722",
+   "name": "Negaprion fronto",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q106446515",
+   "name": "Scymnodon macracanthus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q107055044",
+   "name": "Carcharhinus oxyrhynchus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q107055195",
+   "name": "Sphyrna vespertina",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108046528",
+   "name": "Abdounia lata",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108046536",
+   "name": "Abdounia vassilyevae",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060022",
+   "name": "Abdounia biauriculata",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060021",
+   "name": "Abdounia belselensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060024",
+   "name": "Abdounia enniskilleni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060043",
+   "name": "Abdounia finalis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060046",
+   "name": "Abdounia mesetae",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060044",
+   "name": "Abdounia furimskyi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060045",
+   "name": "Abdounia lapierrei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060048",
+   "name": "Abdounia osipovae",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108060049",
+   "name": "Abdounia richteri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108068375",
+   "name": "Abdounia africana",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q108073616",
+   "name": "Chlamydoselachus brancheri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q109106046",
+   "name": "Protolamna ricaurtei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q110796008",
+   "name": "Proteothrinax baumgartneri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q115484800",
+   "name": "Palaeocarcharodon orientalis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q116178609",
+   "name": "Etmopterus brosei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q119098291",
+   "name": "Dracipinna bracheri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q126600224",
+   "name": "Dichichthys satoi",
+   "aliases": [
+    "Roughback bristle shark"
+   ],
+   "popularity": 1
+  },
+  {
+   "qid": "Q127420109",
+   "name": "Agaleus dorsetensis",
+   "aliases": [
+    "A. dorsetensis"
+   ],
+   "popularity": 1
+  },
+  {
+   "qid": "Q130436488",
+   "name": "Otodus debrayi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q131909479",
+   "name": "Galeorhinus cuvieri",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q133844757",
+   "name": "Otodus minor",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q134675628",
+   "name": "Otodus limhamnensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q134904353",
+   "name": "Hemipristis plicatilis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135618272",
+   "name": "Eoetmopterus davidi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135687006",
+   "name": "Deania angoumeensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135687023",
+   "name": "Protocentrophorus steviae",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135687025",
+   "name": "Protocentrophorus balticus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135687036",
+   "name": "Centrophorus stehlini",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135792575",
+   "name": "Dalatias orientalis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135792601",
+   "name": "Dalatias turkmenicus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135792604",
+   "name": "Angoumeius sanadaensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135831173",
+   "name": "Squaliodalatias savoiei",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135831208",
+   "name": "Squaliolus gasconensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q135901835",
+   "name": "Oxynotus crochardi",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q136463682",
+   "name": "Etmopterus westraliensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q136844940",
+   "name": "Carcharhinus egertoni",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q137528608",
+   "name": "Cosmopolitodus planus",
+   "aliases": [
+    "Isurus planus",
+    "Oxyrhina plana"
+   ],
+   "popularity": 1
+  },
+  {
+   "qid": "Q139619916",
+   "name": "Odontaspis attenuata",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q141192831",
+   "name": "Eometlaouia menzeli",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q141197754",
+   "name": "Gryphodobatis rugosus",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q141198590",
+   "name": "Coelometlaouia pannucea",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q141199523",
+   "name": "Squatiscyllium atlanticum",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q141199841",
+   "name": "Cederstroemia ziaensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q141200172",
+   "name": "Cederstroemia havreensis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q141200418",
+   "name": "Cretorectolobus gracilis",
+   "aliases": [],
+   "popularity": 1
+  },
+  {
+   "qid": "Q141200861",
+   "name": "Cretorectolobus doylei",
+   "aliases": [],
+   "popularity": 1
+  }
+ ]
+}
