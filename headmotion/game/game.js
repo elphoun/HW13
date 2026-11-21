@@ -79,7 +79,7 @@
       <b>Lean left / right</b> steer &nbsp;·&nbsp; <b>Lean forward</b> move forward &nbsp;·&nbsp; <b>Lean back</b> move backward<br>
       Dodge the purple walls. Level = stopped.<br><br>
       Keyboard: A/D or ←/→ steer · W/S or ↑/↓ forward/back<br>
-      Tuning: F flip left/right · G flip forward/back · , . sensitivity · R recalibrate`;
+      Tuning: F flip left/right · G flip forward/back · , . sensitivity · C recenter · R recalibrate · \` debug menu`;
     else m.innerHTML = `<h1>WIPEOUT</h1>Distance: ${Math.floor(st.maxDist)} m<br>Best: ${Math.floor(st.best)} m<br><br>Press <b>Enter</b> to race again`;
   }
   showMsg();
@@ -108,10 +108,12 @@
     const { x: sx, y: sy } = Input.stick();
     const target = sy > 0 ? sy * MAX_FWD : sy * MAX_BACK;                 // level = stopped
     st.speed += (target - st.speed) * Math.min(1, dt * 4);
+    if (target === 0 && Math.abs(st.speed) < 0.5) st.speed = 0;            // settle fully: no creeping in the dead zone
     st.z -= st.speed * dt;
     if (st.z > 0) { st.z = 0; st.speed = Math.max(0, st.speed); }          // can't back up past the start line
     st.maxDist = Math.max(st.maxDist, -st.z);
     st.vx += (sx * 14 - st.vx) * Math.min(1, dt * 8);
+    if (sx === 0 && Math.abs(st.vx) < 0.2) st.vx = 0;
     st.x = Math.max(-HALF + 0.8, Math.min(HALF - 0.8, st.x + st.vx * dt));
     st.invuln = Math.max(0, st.invuln - dt);
 
@@ -152,7 +154,7 @@
     $('shield').textContent = 'SHIELD ' + '▮'.repeat(Math.max(0, st.shield)) + '▯'.repeat(3 - Math.max(0, st.shield));
     $('dot').style.left = (50 + stick.x * 40) + '%'; $('dot').style.top = (50 - stick.y * 40) + '%';
     $('status').innerHTML = (Input.connected() ? '● AirPod streaming' : '○ no AirPod data (keyboard works)') +
-      `<br>stick x ${stick.x.toFixed(2)} y ${stick.y.toFixed(2)} &nbsp;sensitivity ${Input.cfg.sens} (, more · . less) · F/G flip · R recalibrate`;
+      `<br>stick x ${stick.x.toFixed(2)} y ${stick.y.toFixed(2)} &nbsp;sensitivity ${Input.cfg.sens} (, more · . less) · F/G flip · C recenter · R recalibrate · \` debug`;
     renderer.render(scene, camera);
   }
   requestAnimationFrame(frame);

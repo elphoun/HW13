@@ -3,11 +3,14 @@
 //   stick.y  -1..1   lean back / forward
 // Tilt is read from the direction of gravity in the device frame, so it works for any grip.
 // Calibration: hold neutral, then lean LEFT, RIGHT, FORWARD, BACK (each held ~0.5s).
+// Dead zone: a circle around neutral where the stick reads exactly 0 (craft stands still). Its radius is
+// the larger of cfg.deadFrac and the hand jitter measured while holding neutral (x cfg.noiseK).
 const Input = (() => {
-  const SAVED = ['flipX', 'flipY', 'sens'];
+  const SAVED = ['flipX', 'flipY', 'sens', 'deadFrac'];
   const cfg = Object.assign({
     sens: 1,          // <1 = more sensitive (less lean needed), >1 = less sensitive
-    deadFrac: 0.15,   // dead zone as a fraction of your calibrated lean
+    deadFrac: 0.2,    // minimum dead-zone radius as a fraction of your calibrated lean
+    noiseK: 3,        // dead zone also covers this many times the jitter measured while holding neutral
     flipX: false, flipY: false,
     leanMin: 0.18,    // minimum tilt (unit-vector distance, ~10deg) that counts as a lean during calibration
     holdMs: 500,      // how long a pose must be held steady during calibration
@@ -21,8 +24,8 @@ const Input = (() => {
   const norm = a => scale(a, 1 / (len(a) || 1));
 
   const STEPS = ['neutral', 'left', 'right', 'forward', 'back'];
-  const s = { lastPacket: 0, x: 0, y: 0, calStep: null, calNote: '', events: [], keys: {}, win: [], lock: 0, g: [0, -1, 0] };
-  let cal = null;      // { neutral, axisX, axisY, halfX, halfY }
+  const s = { lastPacket: 0, x: 0, y: 0, rx: 0, ry: 0, dead: 0, tilt: 0, trail: [], calStep: null, calNote: '', events: [], keys: {}, win: [], lock: 0, g: [0, -1, 0] };
+  let cal = null;      // { neutral, axisX, axisY, halfX, halfY, noise, pts }
   let tmp = {};        // calibration scratch: captured lean vectors
 
   function stable(now) {
@@ -36,7 +39,10 @@ const Input = (() => {
     if (now < s.lock) return;
     const m = stable(now); if (!m) return;
     const step = s.calStep, accept = () => { s.win = []; s.lock = now + 900; s.calNote = ''; s.events.push('calstep'); };
-    if (step === 'neutral') { tmp.neutral = m; s.calStep = 'left'; return accept(); }
+    if (step === 'neutral') {
+      tmp.neutral = m; tmp.noise = Math.max(...s.win.map(p => len(sub(p.g, m))));
+      s.calStep = 'left'; return accept();
+    }
     const d = sub(m, tmp.neutral);
     if (len(d) < cfg.leanMin) return;                        // not leaning far enough yet
     const u = norm(d);
@@ -49,9 +55,19 @@ const Input = (() => {
     tmp.B = d;
     const axisX = norm(sub(tmp.R, tmp.L));
     let fb = sub(tmp.F, tmp.B); fb = sub(fb, scale(axisX, dot(fb, axisX)));
-    cal = { neutral: tmp.neutral, axisX, axisY: norm(fb), halfX: len(sub(tmp.R, tmp.L)) / 2, halfY: len(fb) / 2 };
+    cal = { neutral: tmp.neutral, noise: tmp.noise, axisX, axisY: norm(fb), halfX: len(sub(tmp.R, tmp.L)) / 2, halfY: len(fb) / 2,
+            pts: { L: tmp.L, R: tmp.R, F: tmp.F, B: tmp.B } };
     s.calStep = null; s.win = []; s.events.push('calibrated');
   }
+
+  // Tilt offset (from neutral) -> raw stick, where +-1 = your calibrated full lean. No dead zone applied.
+  function project(d) {
+    return [dot(d, cal.axisX) / (cal.halfX * cfg.sens) * (cfg.flipX ? -1 : 1),
+            dot(d, cal.axisY) / (cal.halfY * cfg.sens) * (cfg.flipY ? -1 : 1)];
+  }
+  // Dead-zone radius in raw stick units.
+  const deadRadius = () => !cal ? cfg.deadFrac :
+    Math.min(0.6, Math.max(cfg.deadFrac, cfg.noiseK * cal.noise / (Math.min(cal.halfX, cal.halfY) * cfg.sens)));
 
   function onSample(d) {
     const now = performance.now(); s.lastPacket = now;
@@ -59,13 +75,24 @@ const Input = (() => {
     const g = norm([d.gx, d.gy, d.gz]); s.g = g;
     s.win.push({ t: now, g });
     if (s.calStep) return calibrateSample(now);
+    s.win = s.win.filter(p => now - p.t < cfg.holdMs);
     if (!cal) return;
-    const dd = sub(g, cal.neutral), ramp = (v, h) => {
-      const a = Math.abs(v) / (h * cfg.sens), dead = cfg.deadFrac;
-      return Math.sign(v) * Math.min(1, Math.max(0, (a - dead) / (1 - dead)));
-    };
-    s.x = ramp(dot(dd, cal.axisX), cal.halfX) * (cfg.flipX ? -1 : 1);
-    s.y = ramp(dot(dd, cal.axisY), cal.halfY) * (cfg.flipY ? -1 : 1);
+    const [rx, ry] = project(sub(g, cal.neutral)), r = Math.hypot(rx, ry), dz = deadRadius();
+    s.rx = rx; s.ry = ry; s.dead = dz;
+    s.tilt = Math.acos(Math.max(-1, Math.min(1, dot(g, cal.neutral)))) * 180 / Math.PI;
+    s.trail.push([rx, ry]); if (s.trail.length > 90) s.trail.shift();
+    if (r <= dz) { s.x = s.y = 0; return; }                  // inside the dead zone: stand still
+    const k = Math.min(1, (r - dz) / (1 - dz)) / r;          // scaled radial: 0 at the edge, 1 at full lean
+    const clamp = v => Math.max(-1, Math.min(1, v));
+    s.x = clamp(rx * k); s.y = clamp(ry * k);
+  }
+
+  // Re-zero neutral to the current pose (fixes drift without a full recalibration).
+  function recenter() {
+    const now = performance.now(), w = s.win.filter(p => now - p.t < 250);
+    if (!cal || !w.length) return false;
+    cal.neutral = norm(scale(w.reduce((a, p) => [a[0] + p.g[0], a[1] + p.g[1], a[2] + p.g[2]], [0, 0, 0]), 1 / w.length));
+    s.trail = []; return true;
   }
 
   const connected = () => performance.now() - s.lastPacket < 600;
@@ -88,11 +115,12 @@ const Input = (() => {
     if (e.code === 'KeyG') { cfg.flipY = !cfg.flipY; save(); }
     if (e.code === 'Comma') { cfg.sens = Math.max(0.4, +(cfg.sens - 0.1).toFixed(2)); save(); }    // more sensitive
     if (e.code === 'Period') { cfg.sens = Math.min(2.5, +(cfg.sens + 0.1).toFixed(2)); save(); }   // less sensitive
+    if (e.code === 'KeyC') recenter();
     if (e.code.startsWith('Arrow')) e.preventDefault();
   });
   addEventListener('keyup', e => { s.keys[e.code] = false; });
 
-  return { s, cfg, stick, connected, hasCal: () => !!cal, STEPS,
+  return { s, cfg, save, stick, connected, hasCal: () => !!cal, getCal: () => cal, project, deadRadius, recenter, STEPS,
            beginCalibration() { s.calStep = 'neutral'; s.calNote = ''; s.win = []; s.lock = performance.now() + 600; tmp = {}; s.events.length = 0; },
            cancelCalibration() { s.calStep = null; },
            takeEvents: () => s.events.splice(0) };
