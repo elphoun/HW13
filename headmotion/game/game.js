@@ -86,6 +86,7 @@
     const m = $('msg');
     if (st.mode === 'playing') { m.style.display = 'none'; return; }
     m.style.display = 'flex';
+    if (st.mode === 'paused') { m.innerHTML = `<h1>PAUSED</h1>Press <b>Esc</b> (or <b>P</b>) to resume.`; return; }
     if (st.mode === 'calibrate') {
       const step = Input.s.calStep, [text, label] = CAL[step];
       m.innerHTML = `<h1>CALIBRATE</h1>Step ${Input.STEPS.indexOf(step) + 1} of 5<br><br>${text}<br><br><span style="font-size:44px;color:#f0f">${label}</span><br><br><small>Hold the pose until the next step appears · Esc to skip and use the keyboard</small><p id="calhint" style="color:#fc0;min-height:1.5em"></p>`;
@@ -99,11 +100,42 @@
     else m.innerHTML = `<h1>WIPEOUT</h1>Distance: ${Math.floor(st.maxDist)} m<br>Best: ${Math.floor(st.best)} m<br><br>Press <b>Enter</b> to race again`;
   }
   showMsg();
+  // Pause: squeeze the AirPod stem (sent to the Mac as a media play/pause key) or press P.
+  // A silent audio track makes this page the "now playing" app so the browser receives the AirPod media keys.
+  const togglePause = () => {
+    if (st.mode === 'playing') { st.mode = 'paused'; showMsg(); }
+    else if (st.mode === 'paused') { st.mode = 'playing'; showMsg(); }
+  };
+  let mediaReady = false, mediaState = 'off (press any key to arm)', mediaHits = 0;
+  function initMedia() {                                          // needs a user gesture, so call from the first keypress
+    if (mediaReady || typeof Audio === 'undefined' || typeof navigator === 'undefined' || !navigator.mediaSession) return;
+    mediaReady = true; mediaState = 'arming…';
+    try {
+      const rate = 8000, n = rate * 2, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf);
+      const w = (o, t) => [...t].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+      w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true);
+      v.setUint16(22, 1, true); v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+      w(36, 'data'); v.setUint32(40, n * 2, true);
+      for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, i % 2 ? 1 : -1, true);   // +-1 LSB: inaudible, but not digital silence
+      const a = new Audio(URL.createObjectURL(new Blob([buf], { type: 'audio/wav' }))); a.loop = true; a.volume = 1;
+      a.play().then(() => {
+        const ms = navigator.mediaSession;
+        ms.metadata = new MediaMetadata({ title: 'AirPod Wipeout', artist: 'Squeeze to pause' });
+        mediaState = 'armed, waiting for a squeeze';
+        const toggle = () => { mediaHits++; mediaState = `got ${mediaHits} media key press(es)`; flash('MEDIA KEY'); togglePause(); ms.playbackState = 'playing'; if (a.paused) a.play(); };   // keep the session "playing" so every squeeze sends an event
+        ms.setActionHandler('play', toggle); ms.setActionHandler('pause', toggle);
+        ms.setActionHandler('nexttrack', () => Input.recenter()); ms.setActionHandler('previoustrack', () => Input.recenter());
+        ms.playbackState = 'playing';
+      }).catch(e => { mediaReady = false; mediaState = 'blocked: ' + (e && e.name || 'play() failed') + ' (press a key)'; });
+    } catch (_) { mediaReady = false; mediaState = 'error'; }
+  }
   const startRun = () => { const best = st.best; reset(); st.best = best; st.mode = 'playing'; showMsg(); };
   addEventListener('keydown', e => {
     if (e.repeat) return;
     if (e.code === 'Escape' && st.mode === 'calibrate') { Input.cancelCalibration(); st.mode = 'ready'; showMsg(); }
-    if (e.code === 'KeyR' && st.mode !== 'playing' && st.mode !== 'calibrate') { Input.beginCalibration(); st.mode = 'calibrate'; showMsg(); }
+    initMedia();
+    if (e.code === 'KeyP' || (e.code === 'Escape' && (st.mode === 'playing' || st.mode === 'paused'))) togglePause();
+    if (e.code === 'KeyR' && st.mode !== 'playing' && st.mode !== 'paused' && st.mode !== 'calibrate') { Input.beginCalibration(); st.mode = 'calibrate'; showMsg(); }
     if (e.code === 'Enter' && (st.mode === 'ready' || st.mode === 'over' || st.mode === 'calibrated')) {
       if (Input.connected() && !Input.hasCal()) { Input.beginCalibration(); st.mode = 'calibrate'; showMsg(); } else startRun();
     }
@@ -176,7 +208,7 @@
     $('dot').style.left = (50 + stick.x * 40) + '%'; $('dot').style.top = (50 - stick.y * 40) + '%';
     const lj = Input.s.lastJump, jumpNote = performance.now() - lj.t < 1200 ? ` · JUMP (${{ key: 'space', stem: 'stem press', lift: 'lift' }[lj.src] || lj.src})` : '';
     $('status').innerHTML = (Input.connected() ? '● AirPod streaming' : '○ no AirPod data (keyboard works)') + jumpNote +
-      `<br>stick x ${stick.x.toFixed(2)} y ${stick.y.toFixed(2)} &nbsp;sensitivity ${Input.cfg.sens} (, more · . less) · Space jump · F/G flip · C recenter · R recalibrate · \` debug`;
+      `<br>media keys: ${mediaState}<br>stick x ${stick.x.toFixed(2)} y ${stick.y.toFixed(2)} &nbsp;sensitivity ${Input.cfg.sens} (, more · . less) · Space jump · F/G flip · C recenter · R recalibrate · \` debug`;
     renderer.render(scene, camera);
   }
   requestAnimationFrame(frame);
