@@ -1,11 +1,15 @@
 import Foundation
 import CoreMotion
 import Network
+import MediaPlayer
 
-// Usage: HeadMotionStreamer [--port 9000] [--csv motion.csv] [--quiet]
+// Usage: HeadMotionStreamer [--port 9000] [--csv motion.csv] [--quiet] [--stem]
+//   --stem  forward AirPod stem presses (play/pause/next/previous) to the game as a jump button.
+//           Takes over media controls while running.
 var port: UInt16 = 9000
 var csvPath: String?
 var quiet = false
+var stem = false
 var args = Array(CommandLine.arguments.dropFirst())
 while let a = args.first {
     args.removeFirst()
@@ -13,6 +17,7 @@ while let a = args.first {
     case "--port": if let v = args.first, let p = UInt16(v) { port = p; args.removeFirst() }
     case "--csv": if let v = args.first { csvPath = v; args.removeFirst() }
     case "--quiet": quiet = true
+    case "--stem": stem = true
     default: print("Unknown arg \(a)"); exit(2)
     }
 }
@@ -56,5 +61,21 @@ manager.startDeviceMotionUpdates(to: .main) { motion, error in
                      a.roll * 180 / .pi, a.pitch * 180 / .pi, ua.x, ua.y, ua.z), terminator: "")
         fflush(stdout)
     }
+}
+// AirPod stem press -> {"type":"button"} packet. macOS routes stem presses to the "now playing" app as media commands.
+if stem {
+    let cc = MPRemoteCommandCenter.shared()
+    for (name, cmd) in [("toggle", cc.togglePlayPauseCommand), ("play", cc.playCommand), ("pause", cc.pauseCommand),
+                        ("next", cc.nextTrackCommand), ("previous", cc.previousTrackCommand)] {
+        cmd.isEnabled = true
+        cmd.addTarget { _ in
+            udp.send(content: "{\"type\":\"button\",\"src\":\"\(name)\"}".data(using: .utf8), completion: .idempotent)
+            if !quiet { print("\nstem press (\(name)) -> jump") }
+            return .success
+        }
+    }
+    MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: "AirPod Wipeout"]
+    MPNowPlayingInfoCenter.default().playbackState = .playing
+    print("Stem presses -> jump (media controls are captured while this runs).")
 }
 RunLoop.main.run()

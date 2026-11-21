@@ -9,17 +9,32 @@
 
   const panel = $('debug'), canvas = $('joy'), ctx = canvas.getContext('2d');
   const cb = $('dbgJoy'), dead = $('dbgDead'), sens = $('dbgSens');
+  const phys = $('dbgPhys'), lift = $('dbgLift'), liftFlip = $('dbgLiftFlip'), rec = $('dbgRec'), xy = $('xy'), xctx = xy.getContext('2d');
   const sync = () => {
     panel.style.display = opts.open ? 'block' : 'none';
     canvas.style.display = opts.joystick ? 'block' : 'none';
     cb.checked = opts.joystick; dead.value = Input.cfg.deadFrac; sens.value = Input.cfg.sens;
+    phys.checked = Input.cfg.physJump; liftFlip.checked = Input.cfg.liftFlip; lift.value = Input.cfg.jumpLift;
   };
   sync();
 
   cb.addEventListener('change', () => { opts.joystick = cb.checked; saveOpts(); sync(); cb.blur(); });
   dead.addEventListener('input', () => { Input.cfg.deadFrac = +dead.value; Input.save(); });
   sens.addEventListener('input', () => { Input.cfg.sens = +sens.value; Input.save(); });
-  [dead, sens].forEach(el => el.addEventListener('change', () => el.blur()));   // give arrow keys back to the game
+  phys.addEventListener('change', () => { Input.cfg.physJump = phys.checked; Input.save(); phys.blur(); });
+  liftFlip.addEventListener('change', () => { Input.cfg.liftFlip = liftFlip.checked; Input.save(); liftFlip.blur(); });
+  lift.addEventListener('input', () => { Input.cfg.jumpLift = +lift.value; Input.save(); });
+  [dead, sens, lift].forEach(el => el.addEventListener('change', () => el.blur()));   // give arrow keys back to the game
+  // Record X/Y: click to start, click again to stop and download a CSV (t, accel, velocity, position, jump flag).
+  rec.addEventListener('click', () => {
+    rec.blur();
+    if (!Input.s.rec) { Input.startRecording(); rec.textContent = '■ Stop & save'; return; }
+    const csv = Input.stopRecording(), a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    a.download = 'xy-recording-' + new Date().toISOString().replace(/[:.]/g, '-') + '.csv'; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    rec.textContent = '● Record X/Y';
+  });
   $('dbgCenter').addEventListener('click', e => { Input.recenter(); e.target.blur(); });
   addEventListener('keydown', e => {
     if (e.code === 'Backquote' && !e.repeat) { opts.open = !opts.open; saveOpts(); sync(); }
@@ -100,11 +115,34 @@
     ctx.textAlign = 'left';
   }
 
+  // Scrolling X/Y motion plot (last 5 s): Y = up (green), X = sideways (blue), dashed line = jump threshold,
+  // magenta ticks = jumps fired by lifting. Use it to pick the "Lift needed" value: a real lift should cross the line, steering shouldn't.
+  function drawXY() {
+    const H = xy.height, mid = H / 2, s = Input.s, now = performance.now(), m = Input.s.m;
+    const yMax = Math.max(0.15, Input.cfg.jumpLift * 1.6), py = v => mid - v / yMax * (mid - 6), tx = t => W - (now - t) / 5000 * W;
+    xctx.clearRect(0, 0, W, H);
+    xctx.strokeStyle = '#0ff3'; xctx.beginPath(); xctx.moveTo(0, mid); xctx.lineTo(W, mid); xctx.stroke();
+    xctx.setLineDash([4, 4]); xctx.strokeStyle = '#fc0'; xctx.beginPath(); xctx.moveTo(0, py(Input.cfg.jumpLift)); xctx.lineTo(W, py(Input.cfg.jumpLift)); xctx.stroke(); xctx.setLineDash([]);
+    for (const [k, col] of [['x', '#4af'], ['y', '#4f8']]) {
+      xctx.strokeStyle = col; xctx.lineWidth = k === 'y' ? 2 : 1; xctx.beginPath();
+      s.hist.forEach((p, i) => { const X = tx(p.t), Y = py(p[k]); i ? xctx.lineTo(X, Y) : xctx.moveTo(X, Y); }); xctx.stroke();
+    }
+    xctx.lineWidth = 1; xctx.fillStyle = '#f0f';
+    for (const p of s.hist) if (p.jump) xctx.fillRect(tx(p.t) - 1, 0, 2, H);
+    const peak = s.hist.reduce((a, p) => Math.max(a, p.y), 0);
+    xctx.font = '11px ui-monospace,Menlo,monospace'; xctx.fillStyle = '#9ff';
+    xctx.fillText(`X ${(m.x * 100).toFixed(1)}cm  Y ${(m.y * 100).toFixed(1)}cm  peak ${(peak * 100).toFixed(1)}cm`, 4, 12);
+    xctx.fillStyle = '#fc0'; xctx.fillText(`jump ${(Input.cfg.jumpLift * 100).toFixed(1)}cm${Input.cfg.physJump ? '' : ' (off)'}`, 4, H - 4);
+    $('dbgRecInfo').textContent = s.rec ? `REC ${s.rec.length} samples` : '';
+  }
+
   function draw() {
     requestAnimationFrame(draw);
     if (!opts.open) return;
     $('dbgDeadVal').textContent = Input.cfg.deadFrac.toFixed(2);
     $('dbgSensVal').textContent = Input.cfg.sens.toFixed(1);
+    $('dbgLiftVal').textContent = (Input.cfg.jumpLift * 100).toFixed(1) + ' cm';
+    drawXY();
     if (!opts.joystick) return;
     ctx.clearRect(0, 0, W, W); ctx.font = '11px ui-monospace,Menlo,monospace';
     const cal = Input.getCal();

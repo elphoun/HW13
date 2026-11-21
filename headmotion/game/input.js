@@ -5,8 +5,12 @@
 // Calibration: hold neutral, then lean LEFT, RIGHT, FORWARD, BACK (each held ~0.5s).
 // Dead zone: a circle around neutral where the stick reads exactly 0 (craft stands still). Its radius is
 // the larger of cfg.deadFrac and the hand jitter measured while holding neutral (x cfg.noiseK).
+// Jump: Space, an AirPod stem press (streamer run with --stem), or a physical LIFT of the AirPod.
+// Lift is measured by X/Y motion tracking: user acceleration is split into world-vertical (Y) and sideways (X)
+// using the gravity vector, bias-removed and double-integrated with a leak so drift returns to 0.
+// A jump fires when Y rises past cfg.jumpLift (metres) while still moving up.
 const Input = (() => {
-  const SAVED = ['flipX', 'flipY', 'sens', 'deadFrac'];
+  const SAVED = ['flipX', 'flipY', 'sens', 'deadFrac', 'physJump', 'jumpLift', 'liftFlip'];
   const cfg = Object.assign({
     sens: 1,          // <1 = more sensitive (less lean needed), >1 = less sensitive
     deadFrac: 0.2,    // minimum dead-zone radius as a fraction of your calibrated lean
@@ -14,6 +18,11 @@ const Input = (() => {
     flipX: false, flipY: false,
     leanMin: 0.12,    // minimum tilt (unit-vector distance, ~7deg) that counts as a lean during calibration
     holdMs: 500,      // how long a pose must be held steady during calibration
+    physJump: true,   // lifting the AirPod triggers a jump
+    jumpLift: 0.15,   // metres of upward lift that count as a jump
+    liftFlip: false,  // invert the vertical axis if lifting reads as negative Y
+    leak: 1.0,        // seconds: X/Y position and velocity decay toward 0 with this time constant (kills drift)
+    jumpBufferMs: 150 // a jump pressed slightly before landing still counts
   }, JSON.parse(localStorage.getItem('wipeoutCfg4') || '{}'));
   const save = () => localStorage.setItem('wipeoutCfg4', JSON.stringify(Object.fromEntries(SAVED.map(k => [k, cfg[k]]))));
 
@@ -24,7 +33,10 @@ const Input = (() => {
   const norm = a => scale(a, 1 / (len(a) || 1));
 
   const STEPS = ['neutral', 'left', 'right', 'forward', 'back'];
-  const s = { lastPacket: 0, x: 0, y: 0, rx: 0, ry: 0, dead: 0, tilt: 0, trail: [], calStep: null, calNote: '', calHint: '', events: [], keys: {}, win: [], lock: 0, g: [0, -1, 0] };
+  const s = { lastPacket: 0, x: 0, y: 0, rx: 0, ry: 0, dead: 0, tilt: 0, trail: [], calStep: null, calNote: '', calHint: '', events: [], keys: {}, win: [], lock: 0, g: [0, -1, 0],
+             // X/Y motion: x sideways, y up (metres, leaky); hist for the debug plot; rec = recording or null
+             m: { t: 0, x: 0, y: 0, vx: 0, vy: 0, bx: 0, by: 0, ax: 0, ay: 0, armed: true },
+             hist: [], rec: null, jumpReq: -1e9, jumpSrc: '', lastJump: { src: '', t: -1e9 } };
   let cal = null;      // { neutral, axisX, axisY, halfX, halfY, noise, pts }
   let tmp = {};        // calibration scratch: captured lean vectors
 
@@ -95,10 +107,35 @@ const Input = (() => {
   const deadRadius = () => !cal ? cfg.deadFrac :
     Math.min(0.6, Math.max(cfg.deadFrac, cfg.noiseK * cal.noise * cal.gain / cfg.sens));
 
+  function requestJump(src) { s.jumpReq = performance.now(); s.jumpSrc = src; }
+
+  // X/Y motion tracking from user acceleration (CoreMotion: g units, device frame, sign opposite to the true
+  // acceleration). Up = -gravity; sideways = calibrated left/right axis flattened onto the horizontal plane.
+  function trackMotion(d, g, now) {
+    const m = s.m, dt = d.t - m.t; m.t = d.t;
+    if (!(dt > 0 && dt < 0.2)) return;                       // first packet or a gap: just resync the clock
+    const G = 9.81, ua = [d.ax, d.ay, d.az];
+    const base = cal ? cal.axisX : [1, 0, 0], lat = norm(sub(base, scale(g, dot(base, g))));
+    const rawY = dot(ua, g) * G * (cfg.liftFlip ? -1 : 1), rawX = -dot(ua, lat) * G;
+    const kb = 1 - Math.exp(-dt / 2);                        // slow bias estimate (2 s) so a sensor offset doesn't integrate
+    m.bx += (rawX - m.bx) * kb; m.by += (rawY - m.by) * kb;
+    m.ax = rawX - m.bx; m.ay = rawY - m.by;
+    const lk = Math.exp(-dt / cfg.leak);
+    m.vx = (m.vx + m.ax * dt) * lk; m.vy = (m.vy + m.ay * dt) * lk;
+    m.x = (m.x + m.vx * dt) * lk;   m.y = (m.y + m.vy * dt) * lk;
+    let jump = 0;
+    if (cfg.physJump && !s.calStep && m.armed && m.y > cfg.jumpLift && m.vy > 0) { requestJump('lift'); m.armed = false; jump = 1; }
+    if (!m.armed && m.y < cfg.jumpLift * 0.4) m.armed = true;   // re-arm once the AirPod comes back down
+    s.hist.push({ t: now, x: m.x, y: m.y, jump }); while (s.hist.length && now - s.hist[0].t > 5000) s.hist.shift();
+    if (s.rec) s.rec.push([d.t, m.ax, m.ay, m.vx, m.vy, m.x, m.y, jump]);
+  }
+
   function onSample(d) {
     const now = performance.now(); s.lastPacket = now;
+    if (d.type === 'button') return requestJump('stem');     // AirPod stem press (streamer --stem)
     if (d.gx === undefined) return;                          // old streamer build: restart it
     const g = norm([d.gx, d.gy, d.gz]); s.g = g;
+    trackMotion(d, g, now);
     s.win.push({ t: now, g });
     if (s.calStep) return calibrateSample(now);
     s.win = s.win.filter(p => now - p.t < cfg.holdMs);
@@ -147,6 +184,7 @@ const Input = (() => {
     if (e.code === 'Comma') { cfg.sens = Math.max(0.4, +(cfg.sens - 0.1).toFixed(2)); save(); }    // more sensitive
     if (e.code === 'Period') { cfg.sens = Math.min(2.5, +(cfg.sens + 0.1).toFixed(2)); save(); }   // less sensitive
     if (e.code === 'KeyC') recenter();
+    if (e.code === 'Space') { requestJump('key'); e.preventDefault(); }
     if (e.code.startsWith('Arrow')) e.preventDefault();
   });
   addEventListener('keyup', e => { s.keys[e.code] = false; });
@@ -154,5 +192,17 @@ const Input = (() => {
   return { s, cfg, save, stick, connected, getTmp: () => tmp, planeOf, hasCal: () => !!cal, getCal: () => cal, project, deadRadius, recenter, STEPS,
            beginCalibration() { s.calStep = 'neutral'; s.calNote = ''; s.win = []; s.lock = performance.now() + 600; tmp = {}; s.events.length = 0; },
            cancelCalibration() { s.calStep = null; },
-           takeEvents: () => s.events.splice(0) };
+           takeEvents: () => s.events.splice(0),
+           // Consume a pending jump (only call when the craft can jump). Presses older than the buffer are dropped.
+           takeJump() {
+             const now = performance.now();
+             if (now - s.jumpReq > cfg.jumpBufferMs) return false;
+             s.jumpReq = -1e9; s.lastJump = { src: s.jumpSrc, t: now }; return true;
+           },
+           startRecording() { s.rec = []; },
+           // Stop and return the X/Y recording as CSV text.
+           stopRecording() {
+             const rows = s.rec || []; s.rec = null;
+             return 't,ax,ay,vx,vy,x,y,jump\n' + rows.map(r => r.map((v, i) => i === 7 ? v : v.toFixed(4)).join(',')).join('\n') + '\n';
+           } };
 })();

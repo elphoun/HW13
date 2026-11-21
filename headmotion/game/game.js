@@ -1,8 +1,11 @@
 // Wipeout-style hover racer, controlled like a joystick:
 // lean left/right = steer, lean forward = move forward, lean back = move backward. Dodge the walls.
+// Jump (Space / AirPod stem press / lift the AirPod) over the low orange barriers that span the whole track.
 (() => {
   const TRACK_W = 12, HALF = TRACK_W / 2, AHEAD = 260;
   const MAX_FWD = 24, MAX_BACK = 10;
+  const JUMP_V = 8.5, GRAV = 16;                 // ~2.3 units high, ~1.05 s airtime
+  const BAR_H = 1.0, BAR_CHANCE = 0.3;           // jump barriers: height and share of spawns
   const $ = id => document.getElementById(id);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -40,21 +43,33 @@
   const glow = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.08, 0.8), new THREE.MeshBasicMaterial({ color: 0x00ffff }));
   glow.position.set(0, -0.15, 0.6); craft.add(glow);
   scene.add(craft);
+  const shadow = new THREE.Mesh(new THREE.CircleGeometry(0.9, 20), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.5 }));
+  shadow.rotation.x = -Math.PI / 2; scene.add(shadow);
 
-  // Obstacles: purple walls at random positions across the track
+  // Obstacles: tall purple walls at random positions (steer around), or low orange barriers across the whole track (jump)
   let obstacles = [];
+  const barMat = new THREE.MeshStandardMaterial({ color: 0xff8800, emissive: 0xff6600, emissiveIntensity: 0.6 });
+  const barTopMat = new THREE.MeshBasicMaterial({ color: 0xffee66 });
   function spawn(z) {
+    if (z < -60 && Math.random() < BAR_CHANCE) {
+      const mesh = new THREE.Group(), depth = 0.6;
+      const body = new THREE.Mesh(new THREE.BoxGeometry(TRACK_W, BAR_H, depth), barMat); body.position.y = BAR_H / 2; mesh.add(body);
+      const top = new THREE.Mesh(new THREE.BoxGeometry(TRACK_W, 0.08, depth + 0.05), barTopMat); top.position.y = BAR_H; mesh.add(top);
+      mesh.position.set(0, 0, z); scene.add(mesh);
+      obstacles.push({ mesh, x: 0, w: TRACK_W, depth, z, h: BAR_H, kind: 'bar' });
+      return;
+    }
     const w = 2.5 + Math.random() * 2.5, h = 3, depth = 1.2;
     const x = (Math.random() * 2 - 1) * (HALF - w / 2);
     const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), new THREE.MeshStandardMaterial({ color: 0x8844ff, emissive: 0x8844ff, emissiveIntensity: 0.5 }));
     mesh.position.set(x, h / 2, z); scene.add(mesh);
-    obstacles.push({ mesh, x, w, depth, z });
+    obstacles.push({ mesh, x, w, depth, z, h, kind: 'wall' });
   }
 
   let st;
   function reset() {
     obstacles.forEach(o => scene.remove(o.mesh)); obstacles = [];
-    st = { z: 0, x: 0, vx: 0, speed: 0, maxDist: 0, shield: 3, invuln: 0, nextSpawn: -50, mode: 'ready', best: st ? st.best : 0 };
+    st = { z: 0, x: 0, vx: 0, h: 0, vh: 0, speed: 0, maxDist: 0, shield: 3, invuln: 0, nextSpawn: -50, mode: 'ready', best: st ? st.best : 0 };
     craft.visible = true;
   }
   reset();
@@ -77,8 +92,9 @@
     } else if (st.mode === 'calibrated') m.innerHTML = `<h1>CALIBRATED ✓</h1>Lean to steer and move. The small circle (bottom right) shows your stick.<br><br>Press <b>Enter</b> to start.<br><br><small>R to calibrate again</small>`;
     else if (st.mode === 'ready') m.innerHTML = `<h1>AIRPOD WIPEOUT</h1>Press <b>Enter</b> to calibrate your AirPod joystick, then start.<br><br>
       <b>Lean left / right</b> steer &nbsp;·&nbsp; <b>Lean forward</b> move forward &nbsp;·&nbsp; <b>Lean back</b> move backward<br>
-      Dodge the purple walls. Level = stopped.<br><br>
-      Keyboard: A/D or ←/→ steer · W/S or ↑/↓ forward/back<br>
+      <b>Jump</b> Space · AirPod stem press · lift the AirPod<br>
+      Dodge the purple walls, jump the orange barriers. Level = stopped.<br><br>
+      Keyboard: A/D or ←/→ steer · W/S or ↑/↓ forward/back · Space jump<br>
       Tuning: F flip left/right · G flip forward/back · , . sensitivity · C recenter · R recalibrate · \` debug menu`;
     else m.innerHTML = `<h1>WIPEOUT</h1>Distance: ${Math.floor(st.maxDist)} m<br>Best: ${Math.floor(st.best)} m<br><br>Press <b>Enter</b> to race again`;
   }
@@ -117,15 +133,18 @@
     if (sx === 0 && Math.abs(st.vx) < 0.2) st.vx = 0;
     st.x = Math.max(-HALF + 0.8, Math.min(HALF - 0.8, st.x + st.vx * dt));
     st.invuln = Math.max(0, st.invuln - dt);
+    if (st.h <= 0 && Input.takeJump()) st.vh = JUMP_V;
+    if (st.h > 0 || st.vh > 0) { st.vh -= GRAV * dt; st.h += st.vh * dt; if (st.h <= 0) { st.h = 0; st.vh = 0; } }
 
     while (st.nextSpawn > -st.maxDist - AHEAD + 20) { spawn(st.nextSpawn); st.nextSpawn -= 22 + Math.random() * 14; }
     obstacles = obstacles.filter(o => { if (o.z > st.z + 30) { scene.remove(o.mesh); return false; } return true; });
 
     for (const o of obstacles) {
-      if (Math.abs(o.z - st.z) < o.depth / 2 + 0.9 && Math.abs(o.x - st.x) < o.w / 2 + 0.7) {
+      // craft underside sits ~0.2 above st.h, so it clears an obstacle once st.h > o.h - 0.2
+      if (Math.abs(o.z - st.z) < o.depth / 2 + 0.9 && Math.abs(o.x - st.x) < o.w / 2 + 0.7 && st.h < o.h - 0.2) {
         scene.remove(o.mesh); obstacles.splice(obstacles.indexOf(o), 1);
         if (st.invuln <= 0) {
-          st.shield--; st.invuln = 1.2; st.speed *= 0.3; flash('HIT');
+          st.shield--; st.invuln = 1.2; st.speed *= 0.3; flash(o.kind === 'bar' ? 'JUMP!' : 'HIT');
           if (st.shield <= 0) { st.mode = 'over'; st.best = Math.max(st.best, st.maxDist); showMsg(); }
         }
         break;
@@ -135,11 +154,12 @@
 
   function render() {
     const stick = Input.stick();
-    craft.position.set(st.x, 0.5, st.z);
-    craft.rotation.z = -st.vx * 0.04; craft.rotation.x = -st.speed * 0.004;
+    craft.position.set(st.x, 0.5 + st.h, st.z);
+    craft.rotation.z = -st.vx * 0.04; craft.rotation.x = -st.speed * 0.004 + st.vh * 0.03;
+    shadow.position.set(st.x, 0.02, st.z); shadow.scale.setScalar(1 / (1 + st.h * 0.4)); shadow.material.opacity = 0.5 / (1 + st.h * 0.6);
     craft.visible = st.invuln <= 0 || Math.floor(performance.now() / 80) % 2 === 0;
-    camera.position.set(st.x * 0.6, 3.2, st.z + 7.5);
-    camera.lookAt(st.x * 0.8, 1, st.z - 12);
+    camera.position.set(st.x * 0.6, 3.2 + st.h * 0.5, st.z + 7.5);
+    camera.lookAt(st.x * 0.8, 1 + st.h * 0.3, st.z - 12);
     camera.fov += ((68 + Math.abs(st.speed) * 0.3) - camera.fov) * 0.1; camera.updateProjectionMatrix();
 
     const cz = st.z - AHEAD + 40;
@@ -154,8 +174,9 @@
     $('dist').textContent = Math.floor(st.maxDist) + ' m';
     $('shield').textContent = 'SHIELD ' + '▮'.repeat(Math.max(0, st.shield)) + '▯'.repeat(3 - Math.max(0, st.shield));
     $('dot').style.left = (50 + stick.x * 40) + '%'; $('dot').style.top = (50 - stick.y * 40) + '%';
-    $('status').innerHTML = (Input.connected() ? '● AirPod streaming' : '○ no AirPod data (keyboard works)') +
-      `<br>stick x ${stick.x.toFixed(2)} y ${stick.y.toFixed(2)} &nbsp;sensitivity ${Input.cfg.sens} (, more · . less) · F/G flip · C recenter · R recalibrate · \` debug`;
+    const lj = Input.s.lastJump, jumpNote = performance.now() - lj.t < 1200 ? ` · JUMP (${{ key: 'space', stem: 'stem press', lift: 'lift' }[lj.src] || lj.src})` : '';
+    $('status').innerHTML = (Input.connected() ? '● AirPod streaming' : '○ no AirPod data (keyboard works)') + jumpNote +
+      `<br>stick x ${stick.x.toFixed(2)} y ${stick.y.toFixed(2)} &nbsp;sensitivity ${Input.cfg.sens} (, more · . less) · Space jump · F/G flip · C recenter · R recalibrate · \` debug`;
     renderer.render(scene, camera);
   }
   requestAnimationFrame(frame);
