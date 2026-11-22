@@ -1,4 +1,6 @@
 export type Level = 1 | 2 | 3;
+/** What a break asks of you: an active move, or a gentle stretch. Same story either way. */
+export type BreakType = 'activity' | 'stretch';
 export type AnimKey =
   | 'neck-tilt' | 'neck-circle' | 'seated-toe' | 'body-rotate'
   | 'squat' | 'stand-toe' | 'high-knees' | 'flowers'
@@ -14,20 +16,16 @@ export interface Exercise {
   instructions: string[];
 }
 
-/** Which kinds of moves your Wipeout breaks use. */
-export type ActivityMode = 'stretches' | 'activities' | 'both';
-
 export interface Settings {
   workSeconds: number;
   exerciseSeconds: number;
   intensity: Level;
-  disabledActivities: string[];
-  preferredMap: string;
+  story: string;            // id of the story breaks play through
+  breakType: BreakType;     // pre-selected when a break starts on its own
   dailyGoal: number;
   notifications: boolean;
   sound: boolean;
   autoCycle: boolean;
-  activityMode: ActivityMode;
   airpods: boolean;      // count reps from AirPod motion (when the streamer is running)
 }
 
@@ -43,6 +41,7 @@ export interface Completion {
 }
 
 export interface TimerSession { id: string; ts: number; kind: 'work' | 'exercise'; plannedSeconds: number; completed: boolean; }
+/** One play-through of a story. `map` is the story id (kept for stored data). */
 export interface GameRun { id: string; ts: number; map: string; score: number; completed: number; total: number; }
 
 export interface PersistedData {

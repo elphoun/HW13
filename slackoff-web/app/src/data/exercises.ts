@@ -10,6 +10,14 @@ export const pointsFor = (level: Level) => LEVELS[level - 1].points;
 
 export const EXERCISES: Exercise[] = [
   // Level 1
+  { id: 'sky-reach', name: 'Stretch to the Sky', level: 1, anim: 'body-rotate', amount: '5 reaches', seconds: 30,
+    instructions: ['Stand or sit tall.', 'Reach both arms up as high as you can.', 'Hold for a breath, then lower slowly.'] },
+  { id: 'side-stretch', name: 'Side Stretch', level: 1, anim: 'body-rotate', amount: '6 stretches', seconds: 40,
+    instructions: ['Raise one arm overhead.', 'Lean gently to the opposite side.', 'Come back up and switch sides.'] },
+  { id: 'forward-fold', name: 'Forward Fold', level: 1, anim: 'stand-toe', amount: '5 folds', seconds: 40,
+    instructions: ['Stand with soft knees.', 'Fold forward and let your arms hang toward your toes.', 'Roll up slowly.'] },
+  { id: 'shoulder-rolls', name: 'Shoulder Rolls', level: 1, anim: 'neck-circle', amount: '8 rolls', seconds: 25,
+    instructions: ['Lift your shoulders to your ears.', 'Roll them back and down.', 'Keep it slow.'] },
   { id: 'neck-tilts', name: 'Neck Tilts', level: 1, anim: 'neck-tilt', amount: '5 each side', seconds: 30,
     instructions: ['Sit tall and relax your shoulders.', 'Slowly tilt your ear toward your shoulder.', 'Hold for 2 seconds, then switch sides.'] },
   { id: 'neck-circles', name: 'Neck Circles', level: 1, anim: 'neck-circle', amount: '5 slow circles', seconds: 30,
@@ -19,6 +27,8 @@ export const EXERCISES: Exercise[] = [
   { id: 'body-rotations', name: 'Body Rotations', level: 1, anim: 'body-rotate', amount: '10 twists', seconds: 40,
     instructions: ['Stand with feet shoulder-width apart.', 'Let your arms swing loosely as you twist your torso.', 'Look over each shoulder as you turn.'] },
   // Level 2
+  { id: 'side-lunges', name: 'Side Lunges', level: 2, anim: 'squat', amount: '6 lunges', seconds: 40,
+    instructions: ['Step wide to one side.', 'Bend that knee and sit back.', 'Push back to the middle and switch sides.'] },
   { id: 'squats', name: 'Squats', level: 2, anim: 'squat', amount: '12 reps', seconds: 45,
     instructions: ['Feet shoulder-width apart, chest proud.', 'Push your hips back and bend your knees.', 'Drive through your heels to stand.'] },
   { id: 'standing-toe-touches', name: 'Standing Toe Touches', level: 2, anim: 'stand-toe', amount: '10 reps', seconds: 45,
@@ -28,6 +38,8 @@ export const EXERCISES: Exercise[] = [
   { id: 'pick-the-flowers', name: 'Pick the Flowers', level: 2, anim: 'flowers', amount: '10 flowers', seconds: 45,
     instructions: ['Imagine a meadow at your feet.', 'Squat down and pluck a flower.', 'Stand and reach up high to "toss" it. Repeat!'] },
   // Level 3
+  { id: 'jump-in-place', name: 'Jumps', level: 3, anim: 'hops', amount: '5 jumps', seconds: 20,
+    instructions: ['Bend your knees.', 'Jump straight up.', 'Land softly and go again.'] },
   { id: 'jumping-jacks', name: 'Jumping Jacks', level: 3, anim: 'jacks', amount: '20 reps', seconds: 40,
     instructions: ['Start with feet together, arms down.', 'Jump your feet wide as your arms swing overhead.', 'Jump back to start. Keep a steady rhythm.'] },
   { id: 'single-leg-hops', name: 'Single-Leg Hops', level: 3, anim: 'hops', amount: '10 each leg', seconds: 45,

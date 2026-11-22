@@ -1,25 +1,28 @@
 import { useCallback, useEffect, useState } from 'react';
-import { AppProvider } from './state/AppState';
+import { AppProvider, useApp } from './state/AppState';
 import { TimerProvider, useTimer } from './state/TimerContext';
-import { WipeoutGame } from './game/WipeoutGame';
-import { DIFFICULTY_BY_LEVEL } from './game/engine';
-import { useApp } from './state/AppState';
-import { Header, type Route } from './components/Header';
-import { Sidebar } from './components/Sidebar';
+import { StoryPlayer } from './components/StoryPlayer';
+import { storyById } from './data/stories';
+import { TopBar } from './components/TopBar';
+import { Rail, type Route } from './components/Rail';
+import type { SideTab } from './components/StatsPanel';
 import { SettingsModal } from './components/SettingsModal';
 import { Toasts } from './components/Toasts';
 import { Home } from './pages/Home';
-import { Wipeout } from './pages/Wipeout';
+import { Adventures } from './pages/Adventures';
+import type { BreakType } from './types';
 
-const parse = (): Route => (location.hash.startsWith('#/wipeout') ? 'wipeout' : 'home');
+const parse = (): Route => (location.hash.startsWith('#/adventures') ? 'adventures' : 'home');
 
-/** Exercise break: the whole page becomes the Wipeout game until the break clock runs out (or the user skips). */
-function BreakScreen() {
-  const t = useTimer();
+/**
+ * Exercise break: the whole page becomes your story until the break clock runs out (or you end it).
+ * `startWith` is set when you picked "Begin activity" / "Begin stretch"; a break that starts on its own asks first.
+ */
+function BreakScreen({ startWith, onEnd }: { startWith: BreakType | null; onEnd: () => void }) {
   const { data } = useApp();
   return (
     <div className="break-screen">
-      <WipeoutGame breakMode mapId={data.settings.preferredMap} difficulty={DIFFICULTY_BY_LEVEL[data.settings.intensity]} onExit={t.skip} />
+      <StoryPlayer breakMode story={storyById(data.settings.story)} startWith={startWith} onExit={onEnd} />
     </div>
   );
 }
@@ -28,15 +31,23 @@ function Shell() {
   const timer = useTimer();
   const [route, setRoute] = useState<Route>(parse);
   const [settings, setSettings] = useState(false);
+  const [sideTab, setSideTab] = useState<SideTab>('today');
+  const [breakType, setBreakType] = useState<BreakType | null>(null);
   useEffect(() => { const f = () => setRoute(parse()); addEventListener('hashchange', f); return () => removeEventListener('hashchange', f); }, []);
-  const go = useCallback((r: Route) => { location.hash = r === 'home' ? '#/' : '#/wipeout'; }, []);
-  if (timer.phase === 'exercise') return <><BreakScreen /><Toasts /></>;
+  useEffect(() => { if (timer.phase === 'work') setBreakType(null); }, [timer.phase]);
+  const go = useCallback((r: Route) => { location.hash = r === 'home' ? '#/' : '#/adventures'; }, []);
+  const beginBreak = (type: BreakType) => { setBreakType(type); timer.skip(); };
+
+  if (timer.phase === 'exercise') return <><BreakScreen startWith={breakType} onEnd={timer.skip} /><Toasts /></>;
   return (
     <div className="app">
-      <Header route={route} go={go} openSettings={() => setSettings(true)} />
-      {route === 'wipeout'
-        ? <Wipeout goHome={() => go('home')} />
-        : <div className="layout"><Home goWipeout={() => go('wipeout')} /><Sidebar /></div>}
+      <TopBar onShowWeek={() => { setSideTab('week'); go('home'); }} />
+      <Rail route={route} go={go} openSettings={() => setSettings(true)} />
+      <div className="app-body">
+        {route === 'adventures'
+          ? <Adventures goHome={() => go('home')} />
+          : <Home tab={sideTab} setTab={setSideTab} beginBreak={beginBreak} goAdventures={() => go('adventures')} />}
+      </div>
       {settings && <SettingsModal onClose={() => setSettings(false)} />}
       <Toasts />
     </div>
