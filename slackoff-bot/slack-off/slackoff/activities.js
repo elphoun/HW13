@@ -89,8 +89,8 @@ const activities = [...stretches, ...movements];
 
 const gifUrlFor = (activity, gifBaseUrl) => (gifBaseUrl ? `${gifBaseUrl.replace(/\/$/, '')}/${activity.id}.gif` : null);
 
-const pickActivity = (previousId, random = Math.random) => {
-  const candidates = activities.filter((activity) => activity.id !== previousId);
+const pickActivity = (category, previousId, random = Math.random) => {
+  const candidates = activities.filter((activity) => activity.category === category && activity.id !== previousId);
   return candidates[Math.floor(random() * candidates.length)];
 };
 

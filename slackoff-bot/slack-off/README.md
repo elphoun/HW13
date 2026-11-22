@@ -191,17 +191,17 @@ Take your exploration a step further and make this template an [AI app](https://
 Reminds you to stretch and move during the workday.
 
 1. At `SLACKOFF_DAY_START_HOUR` (default 9am, weekdays, server time) everyone subscribed gets a DM with a **Start session** button. Opening the app's Home tab, `/slackoff start`, or `/slackoff subscribe` subscribes you.
-2. Starting a session sets a work timer (`SLACKOFF_WORK_INTERVAL_MINUTES`, default 30).
+2. Starting a session posts a DM that becomes the session's thread; every break, result and the wrap-up is a reply in that thread. Sessions follow a pomodoro cycle: work 25 → sitting break 5 → work 25 → active break 5, repeat. Each person can change these lengths with **Pomodoro settings** on the Home tab or `/slackoff config` (defaults come from `SLACKOFF_WORK_MINUTES`, `SLACKOFF_SITTING_BREAK_MINUTES`, `SLACKOFF_ACTIVE_BREAK_MINUTES`).
 3. When it fires you get a DM with the activity, instructions, a GIF, and a progress bar. Reps are counted from your AirPods' motion. **Done** and **Skip** buttons work without headphones.
-4. After the target reps, **Done**, **Skip**, or a timeout (`SLACKOFF_ACTIVITY_TIMEOUT_MINUTES`), the next timer starts. This repeats until `SLACKOFF_DAY_END_HOUR` (default 5pm) or `/slackoff stop`.
+4. After the target reps, **Done**, **Skip**, or the end of the break, the next work block starts. This repeats until `SLACKOFF_DAY_END_HOUR` (default 5pm) or `/slackoff stop`.
 
 ### Headphone motion
 
-Slack has no API for headphone or AirPod motion. The bot instead listens on UDP `SLACKOFF_MOTION_UDP_PORT` (default 9001) for packets from `slackoff-airpod`'s HeadMotionStreamer, which must run on a Mac with AirPods Pro, Max, or 3rd gen in your ears:
+Slack has no API for headphone or AirPod motion. The bot instead listens on UDP `SLACKOFF_MOTION_UDP_PORT` (default 9001) for packets from `slackoff-airpod`'s HeadMotionStreamer, which must run on a Mac with AirPods Pro, Max, or 3rd gen in your ears. The streamer sends every packet to both the web game (UDP 9000) and the bot (UDP 9001), so you can run the game and the bot at the same time:
 
-    swift run HeadMotionStreamer --port 9001 --player 1
+    swift run HeadMotionStreamer --player 1
 
-If the bot runs on another machine, add `--host <bot-ip>`. `/slackoff pair <n>` maps your Slack user to `--player <n>` (default 1). If no motion is arriving, the bot says so in your DMs and `/slackoff status`.
+If you change `SLACKOFF_MOTION_UDP_PORT`, pass the same number as `--bot-port`. If the bot runs on another machine, add `--bot-host <bot-ip>`. `/slackoff pair <n>` maps your Slack user to `--player <n>` (default 1). If no motion is arriving, the bot says so in your DMs and `/slackoff status`.
 
 ### GIFs
 

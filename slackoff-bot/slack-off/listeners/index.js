@@ -11,5 +11,5 @@ export const registerListeners = (app, dependencies) => {
   events.register(app, dependencies);
   messages.register(app);
   shortcuts.register(app);
-  views.register(app);
+  views.register(app, dependencies);
 };

@@ -1,8 +1,11 @@
+import { pomodoroConfigModal, pomodoroCycle } from '../../slackoff/messages.js';
+
 const HELP_TEXT = [
   '*Slack Off commands*',
   '`/slackoff start` – start a session (movement breaks until end of day)',
   '`/slackoff stop` – end your session',
-  '`/slackoff now` – take a movement break right now',
+  '`/slackoff now` – take the next break right now',
+  '`/slackoff config` – set your work and break lengths',
   '`/slackoff status` – session and headphone status',
   '`/slackoff pair <n>` – use HeadMotionStreamer `--player <n>` as your headphones',
   '`/slackoff subscribe` / `unsubscribe` – daily morning reminder on or off',
@@ -12,14 +15,15 @@ const statusText = (status) => {
   const headphones = status.headphonesStreaming
     ? `:headphones: headphone motion is streaming (player ${status.player}).`
     : `:warning: no headphone motion from player ${status.player}. Start HeadMotionStreamer, or tap Done after each break.`;
-  if (!status.active) return `No session running. ${headphones}`;
+  const cycle = `\n*Pomodoro:* ${pomodoroCycle(status.pomodoro)}`;
+  if (!status.active) return `No session running. ${headphones}${cycle}`;
   const phase = status.phase === 'moving' ? `on a break: *${status.activityName}*` : 'working';
-  return `Session running: ${phase}. ${status.completed} breaks done. ${headphones}`;
+  return `Session running: ${phase}. ${status.completed} breaks done. ${headphones}${cycle}`;
 };
 
 const createSlackoffCommandCallback =
   (sessions) =>
-  async ({ ack, command, respond, logger }) => {
+  async ({ ack, command, respond, client, logger }) => {
     try {
       await ack();
       const userId = command.user_id;
@@ -36,6 +40,11 @@ const createSlackoffCommandCallback =
       } else if (subcommand === 'now') {
         const triggered = await sessions.triggerActivity(userId);
         await respond(triggered ? 'Break time! Check your DMs.' : 'Start a session first with `/slackoff start`.');
+      } else if (subcommand === 'config') {
+        await client.views.open({
+          trigger_id: command.trigger_id,
+          view: pomodoroConfigModal(sessions.getPomodoro(userId)),
+        });
       } else if (subcommand === 'status') {
         await respond(statusText(sessions.getStatus(userId)));
       } else if (subcommand === 'pair') {

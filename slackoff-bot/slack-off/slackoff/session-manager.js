@@ -1,9 +1,10 @@
 import { pickActivity } from './activities.js';
-import { activityFinished, activityPrompt, dayWrapped, sessionStarted } from './messages.js';
+import { activityFinished, activityPrompt, dayWrapped, sessionEndedSummary, sessionStarted } from './messages.js';
 import { createRepCounter } from './rep-counter.js';
 
 const MINUTE_MS = 60_000;
 const PROGRESS_UPDATE_GAP_MS = 1500;
+const BREAK_CYCLE = ['stretch', 'activity'];
 
 const createSessionManager = ({
   client,
@@ -17,9 +18,14 @@ const createSessionManager = ({
   const sessions = new Map();
   const subscribers = new Set(config.subscriberIds);
   const playersByUser = new Map();
+  const pomodoroByUser = new Map();
 
   const playerFor = (userId) => playersByUser.get(userId) ?? 1;
   const headphonesStreaming = (userId) => motion.isStreaming(playerFor(userId));
+  const getPomodoro = (userId) => pomodoroByUser.get(userId) ?? config.pomodoro;
+  const nextBreakCategory = (session) => BREAK_CYCLE[session.breaksStarted % BREAK_CYCLE.length];
+  const breakMinutesFor = (userId, category) =>
+    category === 'stretch' ? getPomodoro(userId).sittingBreakMinutes : getPomodoro(userId).activeBreakMinutes;
 
   const clearTimer = (session) => {
     if (session.timer) timers.clearTimeout(session.timer);
@@ -31,41 +37,45 @@ const createSessionManager = ({
     session.unsubscribe = null;
   };
 
-  const minutesUntilDayEnd = () => {
-    const current = now();
-    const end = new Date(current);
-    end.setHours(config.dayEndHour, 0, 0, 0);
-    return (end.getTime() - current.getTime()) / MINUTE_MS;
+  const minutesUntil = (time) => (time.getTime() - now().getTime()) / MINUTE_MS;
+
+  const sessionEndTime = (workMinutes) => {
+    const dayEnd = new Date(now());
+    dayEnd.setHours(config.dayEndHour, 0, 0, 0);
+    return minutesUntil(dayEnd) >= workMinutes ? dayEnd : null;
   };
 
-  const post = (userId, message) => client.chat.postMessage({ channel: userId, ...message });
+  const postInThread = (session, message) =>
+    client.chat.postMessage({ channel: session.channel, thread_ts: session.threadTs, ...message });
 
   const scheduleNextBreak = (userId) => {
     const session = sessions.get(userId);
     if (!session) return false;
-    if (minutesUntilDayEnd() < config.workIntervalMinutes) return false;
+    const { workMinutes } = getPomodoro(userId);
+    if (session.endsAt && minutesUntil(session.endsAt) < workMinutes) return false;
     session.phase = 'working';
     session.timer = timers.setTimeout(() => {
       triggerActivity(userId).catch((error) => logger.error(error));
-    }, config.workIntervalMinutes * MINUTE_MS);
+    }, workMinutes * MINUTE_MS);
     return true;
   };
 
   const startSession = async (userId) => {
     subscribers.add(userId);
     if (sessions.has(userId)) return { alreadyRunning: true };
-    sessions.set(userId, { userId, phase: 'working', completed: 0, timer: null, lastActivityId: null });
+    const pomodoro = getPomodoro(userId);
+    const endsAt = sessionEndTime(pomodoro.workMinutes);
+    const session = { userId, phase: 'working', completed: 0, breaksStarted: 0, timer: null, endsAt };
+    sessions.set(userId, session);
     const streaming = headphonesStreaming(userId);
     if (!streaming) logger.warn(`No headphone motion from player ${playerFor(userId)} for ${userId}`);
-    await post(
-      userId,
-      sessionStarted({
-        workIntervalMinutes: config.workIntervalMinutes,
-        headphonesStreaming: streaming,
-        motionPort: config.motionPort,
-      }),
-    );
-    if (!scheduleNextBreak(userId)) await endSession(userId);
+    const response = await client.chat.postMessage({
+      channel: userId,
+      ...sessionStarted({ pomodoro, headphonesStreaming: streaming, motionPort: config.motionPort, endsAt }),
+    });
+    session.channel = response?.channel ?? userId;
+    session.threadTs = response?.ts;
+    scheduleNextBreak(userId);
     return { alreadyRunning: false, headphonesStreaming: streaming };
   };
 
@@ -75,14 +85,21 @@ const createSessionManager = ({
     clearTimer(session);
     detachMotion(session);
     sessions.delete(userId);
-    await post(userId, dayWrapped(session.completed));
+    await postInThread(session, dayWrapped(session.completed));
+    if (session.threadTs) {
+      await client.chat
+        .update({ channel: session.channel, ts: session.threadTs, ...sessionEndedSummary(session.completed) })
+        .catch((error) => logger.error(error));
+    }
     return true;
   };
 
   const renderPrompt = (userId, session) =>
     activityPrompt({
+      userId,
       activity: session.activity,
       reps: session.counter.reps,
+      breakMinutes: session.breakMinutes,
       headphonesStreaming: headphonesStreaming(userId),
       gifBaseUrl: session.gifBaseUrl,
       motionPort: config.motionPort,
@@ -91,19 +108,19 @@ const createSessionManager = ({
   const postPrompt = async (userId, session) => {
     session.gifBaseUrl = config.gifBaseUrl;
     try {
-      return await post(userId, renderPrompt(userId, session));
+      return await postInThread(session, renderPrompt(userId, session));
     } catch (error) {
       if (!session.gifBaseUrl) throw error;
       logger.warn(`Activity prompt failed (likely the GIF URL), retrying without image: ${error.message}`);
       session.gifBaseUrl = null;
-      return post(userId, renderPrompt(userId, session));
+      return postInThread(session, renderPrompt(userId, session));
     }
   };
 
   const updatePrompt = (userId, session) => {
     if (!session.promptTs) return Promise.resolve();
     return client.chat
-      .update({ channel: session.promptChannel, ts: session.promptTs, ...renderPrompt(userId, session) })
+      .update({ channel: session.channel, ts: session.promptTs, ...renderPrompt(userId, session) })
       .catch((error) => logger.error(error));
   };
 
@@ -112,14 +129,16 @@ const createSessionManager = ({
     if (!session) return false;
     clearTimer(session);
     detachMotion(session);
+    const category = nextBreakCategory(session);
+    session.breaksStarted += 1;
     session.phase = 'moving';
-    session.activity = pickActivity(session.lastActivityId, random);
+    session.activity = pickActivity(category, session.lastActivityId, random);
     session.lastActivityId = session.activity.id;
+    session.breakMinutes = breakMinutesFor(userId, category);
     session.counter = createRepCounter(session.activity.rule);
     session.lastProgressUpdate = 0;
 
     const response = await postPrompt(userId, session);
-    session.promptChannel = response?.channel;
     session.promptTs = response?.ts;
 
     const player = playerFor(userId);
@@ -141,7 +160,7 @@ const createSessionManager = ({
 
     session.timer = timers.setTimeout(() => {
       finishActivity(userId, 'timeout').catch((error) => logger.error(error));
-    }, config.activityTimeoutMinutes * MINUTE_MS);
+    }, session.breakMinutes * MINUTE_MS);
     return true;
   };
 
@@ -154,13 +173,14 @@ const createSessionManager = ({
     if (outcome !== 'skipped') session.completed += 1;
     await updatePrompt(userId, session);
     const scheduled = scheduleNextBreak(userId);
-    await post(
-      userId,
+    await postInThread(
+      session,
       activityFinished({
         activity: session.activity,
         reps: session.counter.reps,
         outcome,
-        nextBreakMinutes: scheduled ? config.workIntervalMinutes : null,
+        nextBreakMinutes: scheduled ? getPomodoro(userId).workMinutes : null,
+        nextBreakCategory: nextBreakCategory(session),
       }),
     );
     if (!scheduled) await endSession(userId);
@@ -176,6 +196,7 @@ const createSessionManager = ({
       completed: session?.completed ?? 0,
       player: playerFor(userId),
       headphonesStreaming: headphonesStreaming(userId),
+      pomodoro: getPomodoro(userId),
     };
   };
 
@@ -186,6 +207,8 @@ const createSessionManager = ({
     markDone: (userId) => finishActivity(userId, 'manual'),
     skip: (userId) => finishActivity(userId, 'skipped'),
     getStatus,
+    getPomodoro,
+    setPomodoro: (userId, pomodoro) => pomodoroByUser.set(userId, pomodoro),
     pairPlayer: (userId, player) => playersByUser.set(userId, player),
     subscribe: (userId) => subscribers.add(userId),
     unsubscribe: (userId) => subscribers.delete(userId),

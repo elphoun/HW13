@@ -14,7 +14,8 @@ echo "$HOST" > .last_host
 
 echo
 echo "Streaming to $HOST as player $PLAYER."
-echo "Now open:  http://$HOST:8080/?p=$PLAYER"
+echo "Game:       http://$HOST:8080/?p=$PLAYER"
+echo "Slack bot:  motion also goes to $HOST:9001 (in Slack: /slackoff pair $PLAYER)"
 echo "(Hold Ctrl+C to stop. If macOS asks about local network or motion, click Allow.)"
 echo
 ./HeadMotionStreamer --host "$HOST" --player "$PLAYER" --quiet
