@@ -34,19 +34,21 @@ const Exercises = (() => {
       }, get reps() { return reps; }, get note() { return note; } };
   };
 
-  // Count sharp bursts of head acceleration (jump landings, steps). Bursts spaced more than `maxGap` apart start a new streak;
-  // a streak only counts once it reaches `streak` bursts (so lone bumps don't count as jumping jacks / high knees).
+  // Count sharp bursts of head acceleration (landings). A burst must beat the dead zone `thr`, and after one is counted
+  // nothing counts for `gap` seconds (one landing often rings twice). Bursts spaced more than `maxGap` apart start a new
+  // streak, and a streak only counts once it reaches `streak` bursts (lone bumps are ignored). `perRep` bursts make one
+  // rep: a jumping jack is two bounces (out, then in).
   const peaks = P => {
-    let tn = 0, last = -1e9, streak = 0, reps = 0, above = false;
+    let tn = 0, last = -1e9, streak = 0, bounces = 0, above = false;
     return { update(s) {
         tn += s.dt; const hi = s.mag > P.thr;
         if (hi && !above && tn - last >= P.gap) {
           streak = tn - last <= P.maxGap ? streak + 1 : 1; last = tn;
-          if (streak === P.streak) reps += P.streak; else if (streak > P.streak) reps++;
+          if (streak === P.streak) bounces += P.streak; else if (streak > P.streak) bounces++;
         }
         if (s.mag < P.thr * 0.6) above = false; else if (hi) above = true;
-      }, get reps() { return reps; },
-      get note() { return streak < P.streak ? (streak ? `${streak} of ${P.streak} to start counting` : 'Go!') : `streak of ${streak}`; } };
+      }, get reps() { return Math.floor(bounces / P.perRep); },
+      get note() { return streak < P.streak ? (streak ? `${streak} of ${P.streak} to start counting` : 'Go!') : `${bounces} bounces`; } };
   };
   // Count up/down OSCILLATIONS of the head (high knees): vertical acceleration, minus its slow average, swings above +amp
   // and below -amp. One full swing = 1 step. Steps closer than `gap` are ignored; a streak must reach `streak` steps to count.
@@ -64,8 +66,10 @@ const Exercises = (() => {
       get note() { return streak < P.streak ? (streak ? `${streak} of ${P.streak} to start counting` : 'Go!') : `streak of ${streak}`; } };
   };
 
-  const peakParams = (thr, gap, maxGap, streak) => ({ thr: p(thr, 0.1, 3, 0.05, 'Burst size (g)'), gap: p(gap, 0.1, 1.5, 0.05, 'Min time between (s)'),
-                                                     maxGap: p(maxGap, 0.3, 3, 0.1, 'Max time between in a streak (s)'), streak: p(streak, 1, 8, 1, 'Bursts to start counting') });
+  const peakParams = (thr, gap, maxGap, streak, perRep) => ({
+    thr: p(thr, 0.1, 3, 0.05, 'Dead zone: ignore bounces under (g)'), gap: p(gap, 0.1, 1.5, 0.05, 'Dead time after a bounce (s)'),
+    maxGap: p(maxGap, 0.3, 3, 0.1, 'Max time between bounces in a streak (s)'), streak: p(streak, 1, 8, 1, 'Bounces to start counting'),
+    perRep: p(perRep, 1, 4, 1, 'Bounces per rep') });
 
   const DEFS = [
     { id: 'tilt', group: 'Stretches', name: 'Neck tilts', chart: 'roll',
@@ -101,11 +105,11 @@ const Exercises = (() => {
                  }, get reps() { return cw + ccw; }, get note() { return `↻ clockwise ${cw}  ·  ↺ counter-clockwise ${ccw}`; } }; } },
 
     { id: 'jacks', group: 'Activities', name: 'Jumping jacks', chart: 'mag',
-      how: 'Jumping jacks. To the AirPods this is just a bounce: each landing counts (they can\'t see your arms).',
-      params: peakParams(0.5, 0.3, 1.2, 2), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
+      how: 'Jumping jacks. Each landing is a bounce and a jack is two (out, then in), so 2 bounces = 1 rep. Change "Bounces per rep" if yours differs.',
+      params: peakParams(0.5, 0.3, 1.2, 2, 2), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
     { id: 'hop', group: 'Activities', name: '1-leg hop', chart: 'mag',
       how: 'Hop on one leg. Same head bounce as jumping jacks, so it uses the same counting (it can\'t tell which leg).',
-      params: peakParams(0.5, 0.3, 1.2, 2), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
+      params: peakParams(0.5, 0.3, 1.2, 2, 1), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
     { id: 'knees', group: 'Activities', name: 'High knees', chart: 'up',
       how: 'Run in place bringing your knees up. Counts the up/down wobble of your head, one per step.',
       params: { amp: p(0.12, 0.03, 0.8, 0.01, 'Swing size (g)'), tau: p(0.5, 0.2, 2, 0.1, 'Slow-average time (s)'), gap: p(0.2, 0.1, 0.8, 0.05, 'Min time between steps (s)'),
