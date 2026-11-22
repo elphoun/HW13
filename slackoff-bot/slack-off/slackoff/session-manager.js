@@ -1,5 +1,6 @@
 import { pickActivity } from './activities.js';
 import { activityFinished, activityPrompt, dayWrapped, sessionEndedSummary, sessionStarted } from './messages.js';
+import { pickReactionGif } from './reaction-gifs.js';
 import { createRepCounter } from './rep-counter.js';
 
 const MINUTE_MS = 60_000;
@@ -173,16 +174,21 @@ const createSessionManager = ({
     if (outcome !== 'skipped') session.completed += 1;
     await updatePrompt(userId, session);
     const scheduled = scheduleNextBreak(userId);
-    await postInThread(
-      session,
-      activityFinished({
-        activity: session.activity,
-        reps: session.counter.reps,
-        outcome,
-        nextBreakMinutes: scheduled ? getPomodoro(userId).workMinutes : null,
-        nextBreakCategory: nextBreakCategory(session),
-      }),
-    );
+    const result = {
+      activity: session.activity,
+      reps: session.counter.reps,
+      outcome,
+      nextBreakMinutes: scheduled ? getPomodoro(userId).workMinutes : null,
+      nextBreakCategory: nextBreakCategory(session),
+    };
+    const gifUrl = pickReactionGif(outcome, config.reactionGifs, random);
+    try {
+      await postInThread(session, activityFinished({ ...result, gifUrl }));
+    } catch (error) {
+      if (!gifUrl) throw error;
+      logger.warn(`Result message failed (likely the GIF URL), retrying without image: ${error.message}`);
+      await postInThread(session, activityFinished(result));
+    }
     if (!scheduled) await endSession(userId);
     return true;
   };

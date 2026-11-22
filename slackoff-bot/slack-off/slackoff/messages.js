@@ -103,7 +103,7 @@ const activityPrompt = ({ userId, activity, reps, breakMinutes, headphonesStream
   };
 };
 
-const activityFinished = ({ activity, reps, outcome, nextBreakMinutes, nextBreakCategory }) => {
+const activityFinished = ({ activity, reps, outcome, nextBreakMinutes, nextBreakCategory, gifUrl }) => {
   const headline = {
     detected: `:tada: Nice! ${activity.name} done (${reps} reps detected).`,
     manual: `:white_check_mark: ${activity.name} marked done.`,
@@ -113,7 +113,15 @@ const activityFinished = ({ activity, reps, outcome, nextBreakMinutes, nextBreak
   const next = nextBreakMinutes
     ? ` Back to work: ${BREAK_LABELS[nextBreakCategory].toLowerCase()} in ${nextBreakMinutes} minutes.`
     : '';
-  return { text: `${headline}${next}`, blocks: [section(`${headline}${next}`)] };
+  return {
+    text: `${headline}${next}`,
+    blocks: [
+      section(`${headline}${next}`),
+      ...(gifUrl
+        ? [{ type: 'image', image_url: gifUrl, alt_text: outcome === 'timeout' ? 'Sad reaction' : 'Happy reaction' }]
+        : []),
+    ],
+  };
 };
 
 const dayWrapped = (completedCount) => ({

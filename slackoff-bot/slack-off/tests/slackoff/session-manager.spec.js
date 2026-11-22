@@ -212,4 +212,69 @@ describe('session manager', () => {
     assert.strictEqual(client.chat.postMessage.mock.calls[1].arguments[0].thread_ts, '1.0');
     assert.strictEqual(gifSessions.getStatus('U1').phase, 'moving');
   });
+  describe('reaction gifs', () => {
+    const reactionGifs = { happy: ['https://gifs.test/happy.gif'], sad: ['https://gifs.test/sad.gif'] };
+    const lastImage = () =>
+      postedArgs()
+        .at(-1)
+        .blocks.find((block) => block.type === 'image')?.image_url;
+
+    it('sends a happy gif when the break is finished from detected motion', async () => {
+      const gifSessions = createManager({ reactionGifs });
+      motion.receive({ p: 1, t: 0, ...neutral });
+      await gifSessions.startSession('U1');
+      await timers.runNext();
+      [0, 0.4, -0.4, 0.4, -0.4, 0.4, -0.4, 0.4].forEach((roll, index) => {
+        motion.receive({ p: 1, t: index + 1, ...neutral, roll });
+      });
+      await settle();
+
+      assert.match(posts().at(-1), /done/);
+      assert.strictEqual(lastImage(), 'https://gifs.test/happy.gif');
+    });
+
+    it('sends a happy gif when the user taps Done', async () => {
+      const gifSessions = createManager({ reactionGifs });
+      await gifSessions.startSession('U1');
+      await gifSessions.triggerActivity('U1');
+      await gifSessions.markDone('U1');
+
+      assert.strictEqual(lastImage(), 'https://gifs.test/happy.gif');
+    });
+
+    it('sends a sad gif when the break time runs out', async () => {
+      const gifSessions = createManager({ reactionGifs });
+      await gifSessions.startSession('U1');
+      await gifSessions.triggerActivity('U1');
+      await timers.runNext();
+
+      assert.match(posts().at(-1), /Time's up/);
+      assert.strictEqual(lastImage(), 'https://gifs.test/sad.gif');
+    });
+
+    it('sends no gif when the user skips', async () => {
+      const gifSessions = createManager({ reactionGifs });
+      await gifSessions.startSession('U1');
+      await gifSessions.triggerActivity('U1');
+      await gifSessions.skip('U1');
+
+      assert.strictEqual(lastImage(), undefined);
+    });
+
+    it('retries the result without the gif when Slack rejects the image', async () => {
+      const gifSessions = createManager({ reactionGifs });
+      await gifSessions.startSession('U1');
+      await gifSessions.triggerActivity('U1');
+      const before = client.chat.postMessage.mock.callCount();
+      client.chat.postMessage = mock.fn(async ({ blocks }) => {
+        if (blocks.some((block) => block.type === 'image')) throw new Error('invalid_blocks');
+        return { channel: 'D1', ts: '9.0' };
+      });
+      await gifSessions.markDone('U1');
+
+      assert.strictEqual(client.chat.postMessage.mock.callCount(), 2);
+      assert.ok(before > 0);
+      assert.match(client.chat.postMessage.mock.calls[1].arguments[0].text, /marked done/);
+    });
+  });
 });

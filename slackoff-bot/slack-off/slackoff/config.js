@@ -1,3 +1,5 @@
+import { loadReactionGifs } from './reaction-gifs.js';
+
 const numberFromEnv = (value, fallback) => {
   const parsed = Number(value);
   return value !== undefined && value !== '' && Number.isFinite(parsed) ? parsed : fallback;
@@ -13,6 +15,7 @@ const loadConfig = (env = process.env) => ({
   },
   motionPort: numberFromEnv(env.SLACKOFF_MOTION_UDP_PORT, 9001),
   gifBaseUrl: env.SLACKOFF_GIF_BASE_URL || null,
+  reactionGifs: loadReactionGifs(env),
   subscriberIds: (env.SLACKOFF_USER_IDS || '')
     .split(',')
     .map((id) => id.trim())
