@@ -16,9 +16,9 @@ const CLEARED_MS = 1100;          // how long "Nice!" shows before the next scen
 
 /** Which AirPod detector counts each exercise. Exercises not listed are counted with Space / the button only. */
 const DETECTOR: Record<string, MoveKind> = {
-  'jump-in-place': 'jump', 'jumping-jacks': 'jump', squats: 'duck', 'high-knees': 'run',
-  'pick-the-flowers': 'collect', 'forward-fold': 'collect', 'neck-tilts': 'tilt', 'side-stretch': 'tilt',
-  'neck-circles': 'circle', 'seated-toe-touches': 'toes', 'body-rotations': 'rotate',
+  'jumping-jacks': 'jump', 'single-leg-hops': 'hop', squats: 'duck', 'squat-challenge': 'duck',
+  'high-knees': 'run', 'high-knees-fast': 'run', 'pick-the-flowers': 'collect', 'standing-toe-touches': 'toes',
+  'neck-tilts': 'tilt', 'neck-circles': 'circle', 'seated-toe-touches': 'toes', 'body-rotations': 'rotate',
 };
 
 const TYPES: { id: BreakType; label: string; note: string }[] = [
