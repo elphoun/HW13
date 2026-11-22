@@ -87,30 +87,19 @@
   reset();
   const flash = t => { const el = $('gesture'); el.textContent = t; el.style.opacity = 1; setTimeout(() => el.style.opacity = 0, 350); };
 
-  const CAL = {
-    neutral: ['Hold the AirPod <b>still</b> in a comfortable neutral position', '● HOLD STILL ●'],
-    left: ['Now lean it to the left and <b>hold</b>', '◀ LEAN LEFT'],
-    right: ['Now lean it to the right and <b>hold</b>', 'LEAN RIGHT ▶'],
-    forward: ['Now lean it forward and <b>hold</b>', '▲ LEAN FORWARD'],
-    back: ['Now lean it back and <b>hold</b>', '▼ LEAN BACK'],
-  };
   function showMsg() {
     const m = $('msg');
     if (st.mode === 'playing') { m.style.display = 'none'; return; }
     m.style.display = 'flex';
     if (st.mode === 'paused') { m.innerHTML = `<h1>PAUSED</h1>Press <b>Esc</b> (or <b>P</b>) to resume.`; return; }
-    if (st.mode === 'calibrate') {
-      const step = Input.s.calStep, [text, label] = CAL[step];
-      m.innerHTML = `<h1>CALIBRATE</h1>Step ${Input.STEPS.indexOf(step) + 1} of 5<br><br>${text}<br><br><span style="font-size:44px;color:#f0f">${label}</span><br><br><small>Hold the pose until the next step appears · Esc to skip and use the keyboard</small><p id="calhint" style="color:#fc0;min-height:1.5em"></p>`;
-    } else if (st.mode === 'calibrated') m.innerHTML = `<h1>CALIBRATED ✓</h1>Lean to steer and move. The small circle (bottom right) shows your stick.<br><br>Press <b>Enter</b> to start.<br><br><small>R to calibrate again</small>`;
-    else if (st.mode === 'ready') m.innerHTML = `<h1>AIRPOD WIPEOUT <small style="font-size:16px">(you are P${Input.player})</small></h1>Press <b>Enter</b> to calibrate your AirPod joystick, then start.<br><br>
-      <b>Lean left / right</b> steer &nbsp;·&nbsp; <b>Lean forward</b> move forward &nbsp;·&nbsp; <b>Lean back</b> move backward<br>
-      <b>Jump</b> Space · AirPod stem press · lift the AirPod<br>
+    if (st.mode === 'ready') m.innerHTML = `<h1>AIRPOD WIPEOUT <small style="font-size:16px">(you are P${Input.player})</small></h1>Wear your AirPods, look straight ahead and press <b>Enter</b>. That pose becomes neutral.<br><br>
+      <b>Tilt head left / right</b> steer &nbsp;·&nbsp; <b>Nod forward</b> move forward &nbsp;·&nbsp; <b>Tilt head back</b> move backward<br>
+      <b>Jump</b> Space · AirPod stem press · hop<br>
       Dodge the purple walls, jump the orange barriers. Level = stopped.<br><br>
       Keyboard: A/D or ←/→ steer · W/S or ↑/↓ forward/back · Space jump<br>
       ${joinUrl ? `<b>2 players:</b> friend opens <b>${joinUrl}</b> on their laptop<br>` : ''}
-      Tuning: F flip left/right · G flip forward/back · , . sensitivity · C recenter · R recalibrate · \` debug menu`;
-    else m.innerHTML = `<h1>WIPEOUT</h1>Distance: ${Math.floor(st.maxDist)} m<br>Best: ${Math.floor(st.best)} m<br><br>Press <b>Enter</b> to race again`;
+      Tuning: F flip left/right · G flip forward/back · , . sensitivity · C re-zero · \` debug menu`;
+    else m.innerHTML = `<h1>WIPEOUT</h1>Distance: ${Math.floor(st.maxDist)} m<br>Best: ${Math.floor(st.best)} m<br><br>Look straight ahead and press <b>Enter</b> to race again`;
   }
   showMsg();
   // Pause: squeeze the AirPod stem (sent to the Mac as a media play/pause key) or press P.
@@ -142,16 +131,12 @@
       }).catch(e => { mediaReady = false; mediaState = 'blocked: ' + (e && e.name || 'play() failed') + ' (press a key)'; });
     } catch (_) { mediaReady = false; mediaState = 'error'; }
   }
-  const startRun = () => { const best = st.best; reset(); st.best = best; st.mode = 'playing'; showMsg(); };
+  const startRun = () => { const best = st.best; reset(); st.best = best; Input.zero(); st.mode = 'playing'; showMsg(); };   // current head pose = neutral for this run
   addEventListener('keydown', e => {
     if (e.repeat) return;
-    if (e.code === 'Escape' && st.mode === 'calibrate') { Input.cancelCalibration(); st.mode = 'ready'; showMsg(); }
     initMedia();
     if (e.code === 'KeyP' || (e.code === 'Escape' && (st.mode === 'playing' || st.mode === 'paused'))) togglePause();
-    if (e.code === 'KeyR' && st.mode !== 'playing' && st.mode !== 'paused' && st.mode !== 'calibrate') { Input.beginCalibration(); st.mode = 'calibrate'; showMsg(); }
-    if (e.code === 'Enter' && (st.mode === 'ready' || st.mode === 'over' || st.mode === 'calibrated')) {
-      if (Input.connected() && !Input.hasCal()) { Input.beginCalibration(); st.mode = 'calibrate'; showMsg(); } else startRun();
-    }
+    if (e.code === 'Enter' && (st.mode === 'ready' || st.mode === 'over')) startRun();
   });
 
   // ---- Multiplayer ----
@@ -204,11 +189,7 @@
   let last = performance.now();
   function frame(now) {
     const dt = Math.min(0.05, (now - last) / 1000); last = now;
-    const ev = Input.takeEvents();
-    if (st.mode === 'calibrate') { const h = $('calhint'); if (h) h.textContent = Input.s.calHint; }
-    if (st.mode === 'calibrate' && ev.includes('calibrated')) { st.mode = 'calibrated'; showMsg(); }
-    else if (st.mode === 'calibrate' && ev.includes('calstep')) showMsg();
-    else if (st.mode === 'playing') step(dt);
+    if (st.mode === 'playing') step(dt);
     render();
     updatePeers(dt, performance.now()); netSend(performance.now());
     requestAnimationFrame(frame);
@@ -269,7 +250,7 @@
     $('dot').style.left = (50 + stick.x * 40) + '%'; $('dot').style.top = (50 - stick.y * 40) + '%';
     const lj = Input.s.lastJump, jumpNote = performance.now() - lj.t < 1200 ? ` · JUMP (${{ key: 'space', stem: 'stem press', lift: 'lift' }[lj.src] || lj.src})` : '';
     $('status').innerHTML = (Input.connected() ? '● AirPod streaming' : '○ no AirPod data (keyboard works)') + jumpNote +
-      `<br>media keys: ${mediaState}<br>stick x ${stick.x.toFixed(2)} y ${stick.y.toFixed(2)} &nbsp;sensitivity ${Input.cfg.sens} (, more · . less) · Space jump · F/G flip · C recenter · R recalibrate · \` debug`;
+      `<br>media keys: ${mediaState}<br>stick x ${stick.x.toFixed(2)} y ${stick.y.toFixed(2)} &nbsp;sensitivity ${Input.cfg.sens} (, more · . less) · Space jump · F/G flip · C re-zero · \` debug`;
     renderer.render(scene, camera);
   }
   requestAnimationFrame(frame);
