@@ -180,7 +180,7 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
 /* ---------- home ---------- */
 .home { position: relative; height: calc(100vh - var(--bar-h)); min-height: 640px; overflow: hidden; background: #d4ebee; font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; }
 .home-side { position: absolute; left: 0; top: 0; bottom: 0; pointer-events: none; width: 314px; background: #1f0e21; padding: 14px 10px 0; }
-.home-timer { position: absolute; z-index: 3; right: 105px; top: 35.3%; width: 563px; display: flex; flex-direction: column; gap: 18px; }
+.home-timer { position: absolute; z-index: 5; right: 105px; top: 35.3%; width: 563px; display: flex; flex-direction: column; gap: 18px; }
 .home-timer { pointer-events: none; } .home-timer > * { pointer-events: auto; }
 .home-status { position: absolute; right: 0; top: -22px; display: flex; align-items: center; gap: 8px; color: #280228; font-size: 17px; font-weight: 700; }
 .home-status > span { opacity: .72; margin-right: 6px; }
@@ -209,23 +209,8 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
 .home-card.both::after { top: 50%; margin-top: -6px; }
 .home-card:focus-visible, .home-ctl:focus-visible, .rail-btn:focus-visible, .tb-rank:focus-visible, .sb-head:focus-visible, .sb-btn:focus-visible, .sb-mini:focus-visible, .home-mascot-btn:focus-visible { outline: 3px solid #5eff69; outline-offset: 2px; }
 .home-bush { position: absolute; z-index: 4; left: 61px; bottom: calc(-69px * var(--home-scale, 1)); width: 905px; height: 645px; pointer-events: none; transform: scale(var(--home-scale, 1)); transform-origin: 0 100%; }
-.home-bush-img { position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 -6px 18px rgba(31, 14, 33, .18)); }
-.home-title { position: absolute; left: 208px; top: 272px; margin: 0; color: #280228; font-size: 69px; font-weight: 700; line-height: normal; white-space: nowrap; }
-.home-mascot { position: absolute; left: 185px; top: 370px; width: 201px; height: 169px; }
-.hm { position: absolute; display: block; max-width: none; }
-.hm-head { left: 27.5px; top: 7px; }
-.hm-leaf-l { left: 47.81px; top: 12.64px; transform: rotate(48.55deg); }
-.hm-leaf-r { left: 140.32px; top: 56.19px; transform: rotate(142.52deg); }
-.hm-pill { border-radius: 19px; }
-.hm-green { left: 104px; top: 7px; width: 38px; height: 96px; background: #00a96a; }
-.hm-coral { left: 0; top: 65px; width: 96px; height: 38px; background: #ff947d; }
-.hm-yellow { left: 102px; top: 118px; width: 96px; height: 38px; background: #eca000; }
-.hm-eye { transform: rotate(84.29deg); }
-.hm-eye-1 { left: 130.47px; top: 134.25px; }
-.hm-eye-2 { left: 151.98px; top: 134.5px; }
-.hm-smile { left: 32.61px; top: 78.12px; transform: rotate(-18.49deg); }
-.hm-smile-sm { left: 63.57px; top: 31.76px; transform: rotate(-18.49deg); }
-.hm-stem { left: 19.19px; top: 14.96px; }
+.home-bush-img { position: absolute; left: 0; bottom: 0; width: 880px; height: auto; max-width: none; filter: drop-shadow(0 -4px 14px rgba(31, 14, 33, .15)); }
+.home-title { position: absolute; left: 330px; top: 372px; margin: 0; color: #280228; font-size: 69px; font-weight: 700; line-height: normal; white-space: nowrap; }
 
 @media (max-width: 1100px) {
   .home-timer { right: 40px; width: min(563px, calc(100% - 380px)); }
@@ -261,9 +246,9 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
 .home-side .stats-panel { pointer-events: auto; position: relative; z-index: 2; }
 
 /* mascot: click to practice Wipeout */
-.home-mascot-btn { position: absolute; left: 185px; top: 370px; width: 201px; height: 169px; padding: 0; border: 0; background: none; pointer-events: auto; border-radius: 12px; }
-.home-mascot-btn .home-mascot { left: 0; top: 0; transition: transform .2s cubic-bezier(.3, 1.6, .5, 1); }
-.home-mascot-btn:hover .home-mascot, .home-mascot-btn:focus-visible .home-mascot { transform: translateY(-8px) rotate(-3deg); }
+.home-mascot-btn { position: absolute; left: 486px; top: 128px; width: 190px; height: 155px; padding: 0; border: 0; background: none; pointer-events: auto; border-radius: 12px; }
+.home-logo { display: block; width: 100%; height: auto; transform-origin: 50% 100%; transition: transform .2s cubic-bezier(.3, 1.6, .5, 1); filter: drop-shadow(0 6px 0 rgba(40, 70, 10, .25)); }
+.home-mascot-btn:hover .home-logo, .home-mascot-btn:focus-visible .home-logo { transform: translateY(-8px) rotate(-3deg); }
 .home-bubble { position: absolute; left: 150px; top: -6px; padding: 8px 12px; border-radius: 6px 6px 6px 0; background: #fff; color: #280228; font: 700 14px/1 Inter, system-ui, sans-serif; white-space: nowrap; box-shadow: 0 4px 14px rgba(31, 14, 33, .2); opacity: 0; transform: translateY(4px); transition: opacity .15s, transform .15s; pointer-events: none; }
 .home-mascot-btn:hover .home-bubble, .home-mascot-btn:focus-visible .home-bubble { opacity: 1; transform: none; }
 @media (max-width: 900px) {

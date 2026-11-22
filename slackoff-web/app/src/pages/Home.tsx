@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { StatsPanel, type SideTab } from '../components/StatsPanel';
-import { HomeMascot } from '../components/HomeMascot';
 import { useUpcomingBreaks } from '../components/TopBar';
 import { useTimer } from '../state/TimerContext';
 import { useApp } from '../state/AppState';
@@ -10,7 +9,8 @@ import { movesFor, storyById } from '../data/stories';
 import { exerciseById } from '../data/exercises';
 import type { BreakType } from '../types';
 import { CloudSky } from '../components/CloudSky';
-import bush from '../assets/home/bush.svg';
+import bush from '../assets/home/bush.png';
+import logo from '../assets/home/logo.png';
 
 const DESIGN_H = 918;   // height of the home area in the Figma frame
 const clockTime = (t: number) => new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
@@ -85,9 +85,9 @@ export function Home({ tab, setTab, beginBreak, goAdventures }: { tab: SideTab; 
       </div>
       <div className="home-bush">
         <img className="home-bush-img" src={bush} alt="" />
-        <h1 className="home-title">Slack Off</h1>
+
         <button className="home-mascot-btn" onClick={goAdventures} aria-label="Pick an adventure">
-          <HomeMascot />
+          <img className="home-logo" src={logo} alt="" />
           <span className="home-bubble" aria-hidden>Pick an adventure</span>
         </button>
       </div>
