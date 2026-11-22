@@ -171,7 +171,7 @@ const createSessionManager = ({
     clearTimer(session);
     detachMotion(session);
     session.phase = 'working';
-    if (outcome !== 'skipped') session.completed += 1;
+    if (outcome === 'detected' || outcome === 'manual') session.completed += 1; // timeouts and skips don't count
     await updatePrompt(userId, session);
     const scheduled = scheduleNextBreak(userId);
     const result = {

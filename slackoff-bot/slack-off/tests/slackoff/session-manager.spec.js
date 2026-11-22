@@ -171,6 +171,21 @@ describe('session manager', () => {
     assert.strictEqual(sessions.getStatus('U1').phase, 'working');
   });
 
+  it('only counts finished breaks: not timeouts and not skips', async () => {
+    await sessions.startSession('U1');
+    await sessions.triggerActivity('U1');
+    await timers.runNext();
+    assert.strictEqual(sessions.getStatus('U1').completed, 0);
+
+    await sessions.triggerActivity('U1');
+    await sessions.skip('U1');
+    assert.strictEqual(sessions.getStatus('U1').completed, 0);
+
+    await sessions.triggerActivity('U1');
+    await sessions.markDone('U1');
+    assert.strictEqual(sessions.getStatus('U1').completed, 1);
+  });
+
   it('ends the session when the next work block would run past the end of day', async () => {
     await sessions.startSession('U1');
     await sessions.triggerActivity('U1');
