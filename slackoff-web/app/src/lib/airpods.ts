@@ -48,11 +48,24 @@ class AirPodsClient {
     this.y = this.vy = 0; return true;
   }
 
+  private retryTimer: ReturnType<typeof setTimeout> | null = null;
+
+  /**
+   * Open the stream, and keep it open. If the page loads before the bridge is running, or the bridge restarts, the dev
+   * proxy answers with an error and EventSource gives up for good (it only retries dropped connections). So whenever the
+   * stream ends up closed, try again shortly, for as long as anything is subscribed.
+   */
   private open() {
-    if (this.es || typeof EventSource === 'undefined') return;
+    if (this.es || this.retryTimer || typeof EventSource === 'undefined') return;
     const base = (import.meta.env.VITE_BRIDGE_URL as string | undefined) ?? '';
-    this.es = new EventSource(`${base}/events`);
-    this.es.onmessage = e => { try { this.onPacket(JSON.parse(e.data) as Packet); } catch { /* ignore a bad packet */ } };
+    const es = new EventSource(`${base}/events`);
+    this.es = es;
+    es.onmessage = e => { try { this.onPacket(JSON.parse(e.data) as Packet); } catch { /* ignore a bad packet */ } };
+    es.onerror = () => {
+      if (es.readyState !== EventSource.CLOSED) return;          // the browser is already retrying a dropped connection
+      es.close(); if (this.es === es) this.es = null;
+      this.retryTimer = setTimeout(() => { this.retryTimer = null; if (this.subs.size) this.open(); }, 2000);
+    };
   }
 
   private onPacket(d: Packet) {

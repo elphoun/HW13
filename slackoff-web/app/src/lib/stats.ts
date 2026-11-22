@@ -1,5 +1,5 @@
 import type { PersistedData } from '../types';
-import { addDays, dayKey, startOfDay, startOfWeek } from './dates';
+import { DAY_MS, addDays, dayKey, startOfDay, startOfWeek } from './dates';
 
 export function computeStats(d: PersistedData, now = Date.now()) {
   const { completions } = d;
@@ -32,3 +32,27 @@ export function computeStats(d: PersistedData, now = Date.now()) {
   };
 }
 export type Stats = ReturnType<typeof computeStats>;
+
+/** Averages for the Today panel. Daily numbers cover the last 30 days (fewer if you started recently, so new users aren't diluted). */
+export function computeAverages(d: PersistedData, now = Date.now()) {
+  const today0 = startOfDay(now);
+  const firsts = [...d.completions.map(c => c.ts), ...d.breaks, ...d.sessions.map(s => s.ts)];
+  const first = firsts.length ? Math.min(...firsts) : now;
+  const days = Math.max(1, Math.min(30, Math.round((today0 - startOfDay(first)) / DAY_MS) + 1));
+  const since = addDays(today0, -(days - 1));
+  const acts = d.completions.filter(c => c.ts >= since);
+  const seconds = acts.reduce((sum, c) => sum + c.seconds, 0);
+  const breaks = d.breaks.filter(b => b >= since).length;
+  const focus = d.sessions.filter(s => s.kind === 'work' && s.completed && s.ts >= since).length;
+
+  const monthStart = (t: number) => { const m = new Date(t); m.setHours(0, 0, 0, 0); m.setDate(1); return m.getTime(); };
+  const thisMonth = d.completions.filter(c => c.ts >= monthStart(now)).length;
+  const fm = new Date(first), nm = new Date(now);
+  const months = Math.max(1, (nm.getFullYear() - fm.getFullYear()) * 12 + nm.getMonth() - fm.getMonth() + 1);
+  return {
+    days, thisMonth, months,
+    dailyActivities: acts.length / days, dailyMinutes: seconds / 60 / days, dailyBreaks: breaks / days, dailyFocus: focus / days,
+    monthlyActivities: d.completions.length / months,
+  };
+}
+export type Averages = ReturnType<typeof computeAverages>;

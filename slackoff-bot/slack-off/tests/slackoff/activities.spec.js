@@ -17,10 +17,12 @@ describe('activities', () => {
     }
   });
 
-  it('never picks the same activity twice in a row', () => {
+  it('picks from the requested category and never repeats the previous activity', () => {
     for (let i = 0; i < 50; i += 1) {
-      const previous = activities[i % activities.length].id;
-      assert.notStrictEqual(pickActivity(previous).id, previous);
+      const previous = activities[i % activities.length];
+      const picked = pickActivity(previous.category, previous.id);
+      assert.strictEqual(picked.category, previous.category);
+      assert.notStrictEqual(picked.id, previous.id);
     }
   });
 

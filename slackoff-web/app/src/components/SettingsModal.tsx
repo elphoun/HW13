@@ -3,13 +3,26 @@ import { useApp } from '../state/AppState';
 import { useTimer } from '../state/TimerContext';
 import { DurationStepper, PRESETS } from './Controls';
 import { Avatar, AVATARS } from './Mascots';
-import { LEVELS, exerciseById } from '../data/exercises';
-import { CHALLENGE_DEFS, ACTIVITY_KINDS, STRETCH_KINDS } from '../game/engine';
-import { MAPS } from '../data/maps';
+import { LEVELS } from '../data/exercises';
+import { STORIES } from '../data/stories';
 import { notify, permission } from '../lib/notify';
 import { sfx } from '../lib/sfx';
 import { airpods } from '../lib/airpods';
-import type { ActivityMode, Level } from '../types';
+import type { BreakType, Level } from '../types';
+
+/** Live check that AirPod motion is reaching this page (streamer -> bridge -> /events). */
+function AirPodStatus() {
+  const [on, setOn] = useState(airpods.connected());
+  const [rate, setRate] = useState(0);
+  useEffect(() => {
+    const unsub = airpods.subscribe(() => {});
+    const t = setInterval(() => { setOn(airpods.connected()); setRate(Math.round(airpods.rate)); }, 500);
+    return () => { unsub(); clearInterval(t); };
+  }, []);
+  return <p className={`muted small pod-status${on ? ' on' : ''}`} role="status">{on
+    ? `AirPods connected: receiving motion (${rate} updates a second).`
+    : 'No AirPod data yet. Start the streamer (swift run HeadMotionStreamer) and the bridge (node bridge/server.js). This page reconnects on its own.'}</p>;
+}
 
 export function SettingsModal({ onClose }: { onClose: () => void }) {
   const { data, updateSettings, updateProfile, resetAllData, toast } = useApp();
@@ -21,13 +34,6 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     addEventListener('keydown', onKey); return () => removeEventListener('keydown', onKey);
   }, [onClose]);
-
-  const toggleActivity = (id: string, on: boolean) => {
-    const disabled = on ? s.disabledActivities.filter(x => x !== id) : [...s.disabledActivities, id];
-    const pool = s.activityMode === 'stretches' ? STRETCH_KINDS : s.activityMode === 'activities' ? ACTIVITY_KINDS : [...STRETCH_KINDS, ...ACTIVITY_KINDS];
-    if (!on && pool.every(k => disabled.includes(CHALLENGE_DEFS[k].exerciseId))) { toast({ emoji: '🙅', title: 'Keep at least one', body: 'Wipeout needs at least one move in this mode.' }); return; }
-    updateSettings({ disabledActivities: disabled });
-  };
 
   const onNotifToggle = async (on: boolean) => {
     updateSettings({ notifications: on });
@@ -55,42 +61,32 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
               <DurationStepper label="Exercise duration" value={s.exerciseSeconds} onChange={v => updateSettings({ exerciseSeconds: v })} />
             </div>
             <label className="switch"><input type="checkbox" checked={s.airpods} onChange={e => updateSettings({ airpods: e.target.checked })} /><span />Count reps with AirPods (when the streamer is running)</label>
+            {s.airpods && <AirPodStatus />}
             <label className="switch"><input type="checkbox" defaultChecked={airpods.flipUp} onChange={e => airpods.setFlipUp(e.target.checked)} /><span />Flip AirPod up/down (turn on if squats don't count)</label>
             <label className="switch"><input type="checkbox" checked={s.autoCycle} onChange={e => updateSettings({ autoCycle: e.target.checked })} /><span />Automatic timer cycling</label>
             <label className="field">Exercise intensity
               <select value={s.intensity} onChange={e => updateSettings({ intensity: +e.target.value as Level })}>
                 {LEVELS.map(l => <option key={l.level} value={l.level}>Level {l.level} — {l.name}</option>)}
               </select>
-              <small>Sets how many reps each Wipeout obstacle asks for during your breaks: Level 1 easy, 2 normal, 3 hard.</small></label>
+              <small>Sets how many reps each story scene asks for: level 1 asks for fewer, level 3 for more.</small></label>
             <label className="field">Daily movement goal (activities)
               <input type="number" min={1} max={50} value={s.dailyGoal} onChange={e => updateSettings({ dailyGoal: Math.max(1, Math.min(50, Math.round(+e.target.value) || 1)) })} /></label>
           </section>
 
           <section>
-            <h3>Enabled activities</h3>
-            <label className="field">Breaks include
-              <select value={s.activityMode} onChange={e => updateSettings({ activityMode: e.target.value as ActivityMode })}>
-                <option value="both">Stretches + activities</option>
-                <option value="stretches">Stretches only</option>
-                <option value="activities">Activities only</option>
-              </select></label>
-            <p className="muted small">Wipeout turns these moves into obstacles. Untick any you'd rather skip.</p>
-            {([['Stretches', STRETCH_KINDS, 'stretches'], ['Activities', ACTIVITY_KINDS, 'activities']] as const).map(([label, kinds, mode]) => (
-              <div key={label} style={{ opacity: s.activityMode === 'both' || s.activityMode === mode ? 1 : 0.45 }}>
-                <p className="muted small"><b>{label}</b></p>
-                <div className="checks">{kinds.map(k => { const d = CHALLENGE_DEFS[k], ex = exerciseById(d.exerciseId); return (
-                  <label key={k} className="check"><input type="checkbox" checked={!s.disabledActivities.includes(d.exerciseId)} onChange={ev => toggleActivity(d.exerciseId, ev.target.checked)} />{ex?.name ?? d.move} <small className="muted">→ {d.obstacle}</small></label>
-                ); })}</div>
-              </div>
-            ))}
-          </section>
-
-          <section>
-            <h3>Wipeout</h3>
-            <label className="field">Preferred map
-              <select value={s.preferredMap} onChange={e => updateSettings({ preferredMap: e.target.value })}>
-                {MAPS.map(m => <option key={m.id} value={m.id} disabled={!m.playable}>{m.name}{m.playable ? '' : ' (coming soon)'}</option>)}
-              </select></label>
+            <h3>Breaks</h3>
+            <label className="field">Story
+              <select value={s.story} onChange={e => updateSettings({ story: e.target.value })}>
+                {STORIES.map(st => <option key={st.id} value={st.id} disabled={!st.playable}>{st.name}{st.playable ? '' : ' (coming soon)'}</option>)}
+              </select>
+              <small>Every break plays through this story, one scene at a time.</small></label>
+            <label className="field">When a break starts on its own
+              <select value={s.breakType} onChange={e => updateSettings({ breakType: e.target.value as BreakType })}>
+                <option value="activity">Activity: get moving</option>
+                <option value="stretch">Stretch: loosen up</option>
+                <option value="both">Activity + stretch: both moves in every scene, twice the break time</option>
+              </select>
+              <small>The story stays the same. Only the exercise in each scene changes.</small></label>
           </section>
 
           <section>

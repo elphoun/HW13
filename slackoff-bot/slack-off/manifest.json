@@ -30,7 +30,7 @@
       {
         "command": "/slackoff",
         "description": "Start, stop, or check your movement session",
-        "usage_hint": "start | stop | now | status | pair <n>",
+        "usage_hint": "start | stop | now | config | status | pair <n>",
         "should_escape": false
       }
     ]

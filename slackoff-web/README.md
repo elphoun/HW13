@@ -4,7 +4,7 @@ Two things live here:
 
 | Folder | What it is |
 | --- | --- |
-| `app/` | **The SlackOff web app** (React + TypeScript + Vite): work/exercise timer, stats sidebar, leaderboard, notifications, settings, and the Wipeout game. |
+| `app/` | **The SlackOff web app** (React + TypeScript + Vite): focus timer, today's stats, weekly leaderboard, notifications, settings, and story-based exercise breaks. |
 | `lab/`, `bridge/` | The **exercise lab**: a testing page for the AirPod stretch and activity detectors, and the Node bridge that serves it (see "Exercise lab" below). |
 
 ## SlackOff app
@@ -14,15 +14,13 @@ Two things live here:
     npm run dev          # http://localhost:5173
     npm run build        # type-check + production build
 
-- **Home**: sidebar (profile, stats, daily-goal ring, this-week-vs-last-week chart, weekly leaderboard, achievements), an hours-of-the-day strip showing when your next breaks will go off, and the timer. Timer length, presets (incl. **Demo 30s / 15s**), intensity and enabled activities live in **Settings** (the gear).
-- **Breaks are Wipeout**: when the work timer ends, the whole page becomes the Wipeout game until the break clock runs out (Pause also pauses the break; "Skip break" returns to work). Intensity sets the difficulty (Level 1 easy, 2 normal, 3 hard).
-- **Wipeout**: pick a map (Forest for now; `src/data/maps.ts` is the registry) and difficulty for free play. Do the real move, then press **Space** / tap once per rep before the obstacle arrives: jumping jacks jump boulders, squats duck branches, high knees sprint over ponds, picking flowers collects them. Every cleared obstacle is added to your SlackOff stats.
-- **Stretches, activities or both**: Settings → "Breaks include" (also three pills on the Wipeout menu) chooses what your breaks and Wipeout runs are made of. Stretches: neck tilts (vines), neck circles (bubbles), seated toe touches (stepping stones), body rotations (gate). Activities: jumping jacks (boulders), squats (branches), high knees (ponds), pick the flowers. Each move can still be switched off individually.
-- **AirPod rep counting** (Wipeout and breaks): with the streamer and bridge running, reps are counted from your AirPods instead of Space. Stretches use head angle (tilt, turn, forward bend); activities use head motion: jumping jacks (head bounces), squats (head up/down), high knees (head wobble), pick the flowers (forward bend). Space / tap still work as a backup, and a 🎧 chip shows whether AirPod data is arriving. Toggle it in Settings. Setup: `cd slackoff-airpod && swift run HeadMotionStreamer`, `cd slackoff-web && node bridge/server.js`, then `npm run dev` (vite proxies `/events` to the bridge on :8080; set `VITE_BRIDGE_URL` to use another address). The detectors are in `app/src/lib/detectors.ts`, a copy of the ones in `lab/exercises.js`, so tune thresholds in the lab and copy them over.
+- **Home**: today's stats and the weekly leaderboard on the left, upcoming breaks along the top bar, and the focus timer. **Begin activity** / **Begin stretch** start a break right away; the line above the clock starts and pauses the focus timer. Timer length, presets (incl. **Demo 30s / 15s**), intensity and the break story live in **Settings** (the gear).
+- **Breaks are stories**: a break plays through a story one scene at a time. Each scene has a picture, a story line ("Jump on the red balls") and one exercise. The story is the same for activity and stretch breaks; only the exercise changes ("Jump 5 times" vs "Stretch to the sky 5 times"). Press **Space** or **Done one** per rep; the next scene appears once you've done them all. **Activity + stretch** mode asks for both moves in every scene (the activity, then the stretch) and doubles the break clock so there is time for them. A break that starts when the timer runs out asks activity, stretch or both first. Intensity scales the reps (level 1 fewer, level 3 more).
+- **Adventures** (flag in the left rail): play any story outside a break. Stories live in `src/data/stories.ts`. Scene pictures go in `src/assets/stories/<story id>/1.png`, `2.png`, ... (png, jpg, webp or svg) and are picked up automatically; scenes without a picture show a sky backdrop.
 - **Notifications**: Notification API through a service worker (`public/sw.js`), asked for when you first press Start. They fire from a Web Worker clock, so they still arrive in background tabs. Notifications while the site is fully closed need a push server (VAPID keys); `sw.js` already has the `push` handler, but nothing sends pushes yet.
 - **Persistence**: localStorage, all behind `src/lib/storage.ts`. `supabase/schema.sql` has the matching tables; it is not wired up yet.
 - The leaderboard rivals are mock data that reset every Monday (or with "Reset week").
-- Without AirPods, reps in Wipeout are self-reported; the 0.2 s minimum gap between presses just stops key-mashing.
+- Reps are self-reported (no camera or sensor detection yet); the 0.2 s minimum gap between presses just stops key-mashing.
 
 ## Exercise lab (AirPod testing page)
 

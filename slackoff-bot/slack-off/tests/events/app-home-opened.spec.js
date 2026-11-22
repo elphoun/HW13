@@ -15,7 +15,12 @@ describe('events', () => {
     fakeLogger = { error: mock.fn() };
     fakeSessions = {
       subscribe: mock.fn(),
-      getStatus: () => ({ active: false, completed: 0, headphonesStreaming: false }),
+      getStatus: () => ({
+        active: false,
+        completed: 0,
+        headphonesStreaming: false,
+        pomodoro: { workMinutes: 25, sittingBreakMinutes: 5, activeBreakMinutes: 5 },
+      }),
     };
     appHomeOpenedCallback = createAppHomeOpenedCallback(fakeSessions);
   });

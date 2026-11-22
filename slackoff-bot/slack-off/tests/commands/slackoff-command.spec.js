@@ -7,8 +7,16 @@ describe('/slackoff command', () => {
   let respond;
   let callback;
 
+  let client;
+
   const run = (text) =>
-    callback({ ack: mock.fn(), command: { user_id: 'U1', text }, respond, logger: { error: mock.fn() } });
+    callback({
+      ack: mock.fn(),
+      command: { user_id: 'U1', text, trigger_id: 'T-1' },
+      respond,
+      client,
+      logger: { error: mock.fn() },
+    });
 
   beforeEach(() => {
     sessions = {
@@ -18,8 +26,16 @@ describe('/slackoff command', () => {
       pairPlayer: mock.fn(),
       subscribe: mock.fn(),
       unsubscribe: mock.fn(),
-      getStatus: () => ({ active: false, player: 1, headphonesStreaming: false, completed: 0 }),
+      getPomodoro: () => ({ workMinutes: 25, sittingBreakMinutes: 5, activeBreakMinutes: 5 }),
+      getStatus: () => ({
+        active: false,
+        player: 1,
+        headphonesStreaming: false,
+        completed: 0,
+        pomodoro: { workMinutes: 25, sittingBreakMinutes: 5, activeBreakMinutes: 5 },
+      }),
     };
+    client = { views: { open: mock.fn() } };
     respond = mock.fn();
     callback = createSlackoffCommandCallback(sessions);
   });
@@ -42,6 +58,13 @@ describe('/slackoff command', () => {
   it('rejects an invalid player number', async () => {
     await run('pair abc');
     assert.strictEqual(sessions.pairPlayer.mock.callCount(), 0);
+  });
+
+  it('opens the pomodoro settings modal', async () => {
+    await run('config');
+    const [args] = client.views.open.mock.calls[0].arguments;
+    assert.strictEqual(args.trigger_id, 'T-1');
+    assert.strictEqual(args.view.callback_id, 'slackoff_pomodoro_config');
   });
 
   it('shows help for unknown input', async () => {

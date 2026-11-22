@@ -4,7 +4,7 @@
 import type { Sample } from './airpods';
 
 export interface Detector { update(s: Sample): void; readonly reps: number; }
-export type MoveKind = 'jump' | 'duck' | 'run' | 'collect' | 'tilt' | 'circle' | 'toes' | 'rotate';
+export type MoveKind = 'jump' | 'hop' | 'duck' | 'run' | 'collect' | 'tilt' | 'circle' | 'toes' | 'rotate';
 
 /** Jumping jacks: bursts of head acceleration (landings). A jack = 2 bounces. Lone bumps don't count (needs a streak of 2). */
 const JACKS = { thr: 0.5, gap: 0.3, maxGap: 1.2, streak: 2, perRep: 2 };
@@ -124,6 +124,7 @@ function toeTouches(): Detector {
 export const makeDetector = (kind: MoveKind): Detector => {
   switch (kind) {
     case 'jump': return peaks();
+    case 'hop': return peaks({ ...JACKS, perRep: 1 });
     case 'duck': return squat();
     case 'run': return oscillation();
     case 'collect': return flowers();
