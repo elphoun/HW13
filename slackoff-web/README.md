@@ -1,4 +1,27 @@
-# Slackoff web (AirPod Wipeout game)
+# Slackoff web
+
+Two things live here:
+
+| Folder | What it is |
+| --- | --- |
+| `app/` | **The SlackOff web app** (React + TypeScript + Vite): work/exercise timer, stats sidebar, leaderboard, notifications, settings, and the Wipeout game. |
+| `game/`, `bridge/` | The original AirPod hover-racer prototype and its Node bridge (see "AirPod Wipeout" below). Untouched. |
+
+## SlackOff app
+
+    cd slackoff-web/app
+    npm install
+    npm run dev          # http://localhost:5173
+    npm run build        # type-check + production build
+
+- **Home**: sidebar (profile, stats, daily-goal ring, this-week-vs-last-week chart, weekly leaderboard, achievements), day tracker, timer, exercise breaks, intensity/activity picker. Use the **Demo (30s / 15s)** preset to see the whole loop quickly.
+- **Wipeout**: pick a map (Forest for now; `src/data/maps.ts` is the registry) and difficulty. Do the real move, then press **Space** / tap once per rep before the obstacle arrives: jumping jacks jump boulders, squats duck branches, high knees sprint over ponds, picking flowers collects them. Every cleared obstacle is added to your SlackOff stats.
+- **Notifications**: Notification API through a service worker (`public/sw.js`), asked for when you first press Start. They fire from a Web Worker clock, so they still arrive in background tabs. Notifications while the site is fully closed need a push server (VAPID keys); `sw.js` already has the `push` handler, but nothing sends pushes yet.
+- **Persistence**: localStorage, all behind `src/lib/storage.ts`. `supabase/schema.sql` has the matching tables; it is not wired up yet.
+- The leaderboard rivals are mock data that reset every Monday (or with "Reset week").
+- Reps in Wipeout are self-reported (no camera or sensor detection yet); the 0.2 s minimum gap between presses just stops key-mashing.
+
+## AirPod Wipeout (original prototype)
 
 Run from the repo root. The AirPod streamer lives in `slackoff-airpod/`.
 
