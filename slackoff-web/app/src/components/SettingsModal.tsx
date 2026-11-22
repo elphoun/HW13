@@ -7,7 +7,6 @@ import { LEVELS } from '../data/exercises';
 import { STORIES } from '../data/stories';
 import { notify, permission } from '../lib/notify';
 import { sfx } from '../lib/sfx';
-import { airpods } from '../lib/airpods';
 import type { BreakType, Level } from '../types';
 
 /** Live check that AirPod motion is reaching this page (streamer -> bridge -> /events). */
@@ -25,7 +24,7 @@ function AirPodStatus() {
 }
 
 export function SettingsModal({ onClose }: { onClose: () => void }) {
-  const { data, updateSettings, updateProfile, resetAllData, toast } = useApp();
+  const { data, user, updateSettings, updateProfile, resetAllData, signOut, toast } = useApp();
   const t = useTimer();
   const s = data.settings;
   const [perm, setPerm] = useState(permission());
@@ -61,8 +60,7 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
               <DurationStepper label="Exercise duration" value={s.exerciseSeconds} onChange={v => updateSettings({ exerciseSeconds: v })} />
             </div>
             <label className="switch"><input type="checkbox" checked={s.airpods} onChange={e => updateSettings({ airpods: e.target.checked })} /><span />Count reps with AirPods (when the streamer is running)</label>
-            {s.airpods && <AirPodStatus />}
-            <label className="switch"><input type="checkbox" defaultChecked={airpods.flipUp} onChange={e => airpods.setFlipUp(e.target.checked)} /><span />Flip AirPod up/down (turn on if squats don't count)</label>
+            <label className="switch"><input type="checkbox" checked={s.airpodsFlipUp} onChange={e => updateSettings({ airpodsFlipUp: e.target.checked })} /><span />Flip AirPod up/down (turn on if squats don't count)</label>
             <label className="switch"><input type="checkbox" checked={s.autoCycle} onChange={e => updateSettings({ autoCycle: e.target.checked })} /><span />Automatic timer cycling</label>
             <label className="field">Exercise intensity
               <select value={s.intensity} onChange={e => updateSettings({ intensity: +e.target.value as Level })}>
@@ -105,8 +103,9 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
 
           <section>
             <h3>Data</h3>
-            <p className="muted small">Everything is stored in this browser (localStorage).</p>
+            <p className="muted small">Saved to your account{user.username ? <> (<b>{user.username}</b>)</> : null}, so it follows you to any device you sign in on.</p>
             <button className="btn danger" onClick={() => { if (confirm('Erase all your stats, streaks and game history? Settings are kept.')) { resetAllData(); t.reset(); toast({ emoji: '🧹', title: 'Stats cleared' }); } }}>Reset my stats</button>
+            <button className="btn secondary" onClick={() => void signOut()}>Sign out</button>
           </section>
         </div>
       </div>

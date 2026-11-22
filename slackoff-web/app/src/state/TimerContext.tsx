@@ -1,6 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { useApp } from './AppState';
-import { loadJSON, saveJSON } from '../lib/storage';
 import { createTicker } from '../lib/ticker';
 import { notify, registerSW, requestPermission } from '../lib/notify';
 import { sfx } from '../lib/sfx';
@@ -29,15 +28,13 @@ interface TimerCtx extends TimerState {
 const Ctx = createContext<TimerCtx | null>(null);
 export const useTimer = () => { const c = useContext(Ctx); if (!c) throw new Error('useTimer outside provider'); return c; };
 
-const SAVE_KEY = 'slackoff:timer:v1';
-
 export function TimerProvider({ children }: { children: ReactNode }) {
   const app = useApp();
   const { settings } = app.data;
   const appRef = useRef(app); appRef.current = app;
 
   const [s, setS] = useState<TimerState>(() => {
-    const saved = loadJSON<TimerState>(SAVE_KEY);
+    const saved = app.savedTimer as TimerState | null;   // loaded from Supabase with the rest of your data
     const base: TimerState = { phase: 'work', status: 'idle', endAt: 0, remainingMs: 0, breakCredited: false };
     if (!saved) return base;
     if (saved.status === 'running' && saved.endAt <= Date.now()) return { ...saved, status: 'idle', endAt: 0 };   // expired while the tab was closed
@@ -46,7 +43,7 @@ export function TimerProvider({ children }: { children: ReactNode }) {
   const sRef = useRef(s); sRef.current = s;
   const [, force] = useState(0);
 
-  useEffect(() => saveJSON(s, SAVE_KEY), [s]);
+  useEffect(() => appRef.current.saveTimer(s), [s]);
   useEffect(() => { void registerSW(); }, []);
 
   const durMs = useCallback((phase: Phase) => (phase === 'work' ? settings.workSeconds : settings.exerciseSeconds) * 1000, [settings.workSeconds, settings.exerciseSeconds]);

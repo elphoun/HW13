@@ -29,6 +29,7 @@ export interface Settings {
   sound: boolean;
   autoCycle: boolean;
   airpods: boolean;      // count reps from AirPod motion (when the streamer is running)
+  airpodsFlipUp: boolean; // invert up/down if squats read backwards on your AirPods
 }
 
 export interface Profile { name: string; avatar: string; }

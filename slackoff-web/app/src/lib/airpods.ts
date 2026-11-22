@@ -16,7 +16,6 @@ const dot = (a: Vec, b: Vec) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 const len = (a: Vec) => Math.hypot(a[0], a[1], a[2]);
 const norm = (a: Vec): Vec => { const l = len(a) || 1; return [a[0] / l, a[1] / l, a[2] / l]; };
 const wrap = (a: number) => Math.atan2(Math.sin(a), Math.cos(a));
-const FLIP_KEY = 'slackoff:airpods:flipUp';
 
 class AirPodsClient {
   private subs = new Set<(s: Sample) => void>();
@@ -26,9 +25,9 @@ class AirPodsClient {
   private prevT = 0; private by = 0; private vy = 0; private y = 0;
   private lastPacket = 0; private rateT = 0; private rateN = 0;
   rate = 0;
-  /** Set to true if squats / up-down read backwards on your AirPods. */
-  flipUp = (() => { try { return localStorage.getItem(FLIP_KEY) === '1'; } catch { return false; } })();
-  setFlipUp(v: boolean) { this.flipUp = v; try { localStorage.setItem(FLIP_KEY, v ? '1' : '0'); } catch { /* private mode */ } }
+  /** Set to true if squats / up-down read backwards on your AirPods. Saved as the airpodsFlipUp setting (AppState syncs it). */
+  flipUp = false;
+  setFlipUp(v: boolean) { this.flipUp = v; }
 
   /** True while packets are arriving. */
   connected() { return performance.now() - this.lastPacket < 800; }

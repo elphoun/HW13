@@ -104,9 +104,9 @@ function Week() {
         <li>
           {confirming ? (
             <div className="sb-row confirm">
-              <Icon name="reset" /><span className="sb-label">Points go back to 0</span>
+              <Icon name="reset" /><span className="sb-label">Your points go back to 0</span>
               <button className="sb-mini" onClick={() => setConfirming(false)}>Keep</button>
-              <button className="sb-mini danger" onClick={() => { resetLeaderboard(); setConfirming(false); toast({ emoji: '🔄', title: 'Week reset', body: 'Everyone starts from 0.' }); }}>Reset</button>
+              <button className="sb-mini danger" onClick={() => { resetLeaderboard(); setConfirming(false); toast({ emoji: '🔄', title: 'Week reset', body: 'Your weekly points start from 0.' }); }}>Reset</button>
             </div>
           ) : (
             <button className="sb-row sb-btn muted" onClick={() => setConfirming(true)}><Icon name="reset" /><span className="sb-label">Reset week</span></button>
