@@ -69,10 +69,10 @@ export class Game {
     this.onEvent('next');
   }
 
-  /** One real-world rep happened. Returns true if it counted. */
-  rep(): boolean {
+  /** One real-world rep happened. Returns true if it counted. `fromSensor` skips the anti-mash gap: AirPod reps are real. */
+  rep(fromSensor = false): boolean {
     if (this.mode !== 'approach' || this.finished) return false;
-    if (this.clock - this.lastRepAt < MIN_REP_GAP) return false;
+    if (!fromSensor && this.clock - this.lastRepAt < MIN_REP_GAP) return false;
     this.lastRepAt = this.clock;
     this.reps++; this.pulse = 1;
     this.burst(PLAYER_X, GROUND - 130, '+1', '#fff176', 1);

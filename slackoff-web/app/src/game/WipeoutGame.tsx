@@ -7,6 +7,8 @@ import { useApp } from '../state/AppState';
 import { sfx } from '../lib/sfx';
 import { useTimer } from '../state/TimerContext';
 import { fmtClock } from '../lib/dates';
+import { airpods } from '../lib/airpods';
+import { makeDetector, type Detector } from '../lib/detectors';
 
 type Screen = 'ready' | 'playing' | 'paused' | 'over';
 interface Hud { idx: number; total: number; reps: number; need: number; lives: number; score: number; combo: number; title: string; unit: string; kind: Kind; }
@@ -28,6 +30,8 @@ export function WipeoutGame({ mapId, difficulty, onExit, breakMode = false }: { 
   const screen = useRef<Screen>(initial);
   const [scr, setScr] = useState<Screen>(initial);
   const [hud, setHud] = useState<Hud | null>(null);
+  const useAir = app.data.settings.airpods;
+  const [podsOn, setPodsOn] = useState(false);     // AirPod packets are arriving
   const [summary, setSummary] = useState<{ result: 'win' | 'lose'; score: number; results: Result[]; best: boolean; bestCombo: number } | null>(null);
 
   const setScreen = useCallback((s: Screen) => { screen.current = s; setScr(s); }, []);
@@ -76,6 +80,23 @@ export function WipeoutGame({ mapId, difficulty, onExit, breakMode = false }: { 
     return () => { cancelAnimationFrame(raf); clearInterval(poll); };
   }, [map]);
 
+  // AirPods count the reps: while an obstacle is approaching, the detector for its move runs on every motion sample and each
+  // detected rep is a game rep. Space / tap still work as a backup. The pose is zeroed at the start of every obstacle.
+  useEffect(() => {
+    if (!useAir) { setPodsOn(false); return; }
+    let det: Detector | null = null, key = '', seen = 0;
+    const unsub = airpods.subscribe(s => {
+      const g = game.current;
+      if (!g || screen.current !== 'playing' || g.finished || g.mode !== 'approach') { det = null; return; }
+      const k = `${g.idx}:${g.kind}`;
+      if (!det || k !== key) { airpods.zero(); det = makeDetector(g.kind); key = k; seen = 0; }
+      det.update(s);
+      while (seen < det.reps) { seen++; g.rep(true); }
+    });
+    const poll = setInterval(() => setPodsOn(airpods.connected()), 500);
+    return () => { unsub(); clearInterval(poll); };
+  }, [useAir]);
+
   const rep = useCallback(() => { if (screen.current === 'playing') game.current.rep(); }, []);
   const start = useCallback(() => { sfx.unlock(); if (breakMode && timerRef.current.status === 'idle') timerRef.current.start(); setScreen('playing'); }, [setScreen, breakMode]);
   // Pausing the game also pauses the break clock, so you can't lose break time by stopping for a drink.
@@ -111,6 +132,7 @@ export function WipeoutGame({ mapId, difficulty, onExit, breakMode = false }: { 
               <span className="hud-chip hearts" aria-label={`${hud.lives} lives`}>{Array.from({ length: LIVES }, (_, i) => <i key={i} className={i < hud.lives ? 'full' : ''}>♥</i>)}</span>
               <span className="hud-chip">🏁 {Math.min(hud.idx + 1, hud.total)}/{hud.total}</span>
               {breakMode && <span className="hud-chip break-clock" title="Time left in your break">⏱ {fmtClock(timer.remainingNow)}</span>}
+              {useAir && <span className="hud-chip" title={podsOn ? 'Reps are counted from your AirPods' : 'No AirPod data: press Space or tap for each rep'}>{podsOn ? '🎧 AirPods on' : '🎧 no signal'}</span>}
               {hud.combo > 1 && <span className="hud-chip combo">🔥 x{hud.combo}</span>}
               <span className="spacer" />
               <button className="hud-btn" onClick={togglePause} disabled={scr === 'ready' || scr === 'over'}>{scr === 'paused' ? '▶ Resume' : '⏸ Pause'}</button>
@@ -134,7 +156,9 @@ export function WipeoutGame({ mapId, difficulty, onExit, breakMode = false }: { 
               <li>🏃 <b>High knees</b> → sprint across ponds</li>
               <li>🌼 <b>Pick the flowers</b> → collect them</li>
             </ul>
-            <p className="small">Do the move for real, then press <kbd>Space</kbd> (or tap the screen / button) <b>once per rep</b> before the obstacle reaches you.<br />Clear space around you and stay hydrated!</p>
+            {useAir && podsOn
+              ? <p className="small">🎧 <b>AirPods connected.</b> Just do the moves and your reps count automatically (<kbd>Space</kbd> still works as a backup).<br />Clear space around you and stay hydrated!</p>
+              : <p className="small">Do the move for real, then press <kbd>Space</kbd> (or tap the screen / button) <b>once per rep</b> before the obstacle reaches you.{useAir && <><br />🎧 No AirPod data yet: is the streamer and bridge running?</>}<br />Clear space around you and stay hydrated!</p>}
             <button className="btn primary big" onClick={start}>{breakMode ? '▶ Start my break (Space)' : '▶ Start (Space)'}</button>
           </div>
         )}

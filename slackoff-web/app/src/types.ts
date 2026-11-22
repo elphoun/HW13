@@ -24,6 +24,7 @@ export interface Settings {
   notifications: boolean;
   sound: boolean;
   autoCycle: boolean;
+  airpods: boolean;      // count reps from AirPod motion (when the streamer is running)
 }
 
 export interface Profile { name: string; avatar: string; }

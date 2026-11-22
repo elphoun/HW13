@@ -8,6 +8,7 @@ import { CHALLENGE_DEFS, ALL_KINDS } from '../game/engine';
 import { MAPS } from '../data/maps';
 import { notify, permission } from '../lib/notify';
 import { sfx } from '../lib/sfx';
+import { airpods } from '../lib/airpods';
 import type { Level } from '../types';
 
 export function SettingsModal({ onClose }: { onClose: () => void }) {
@@ -52,6 +53,8 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
               <DurationStepper label="Work duration" value={s.workSeconds} onChange={v => updateSettings({ workSeconds: v })} />
               <DurationStepper label="Exercise duration" value={s.exerciseSeconds} onChange={v => updateSettings({ exerciseSeconds: v })} />
             </div>
+            <label className="switch"><input type="checkbox" checked={s.airpods} onChange={e => updateSettings({ airpods: e.target.checked })} /><span />Count reps with AirPods (when the streamer is running)</label>
+            <label className="switch"><input type="checkbox" defaultChecked={airpods.flipUp} onChange={e => airpods.setFlipUp(e.target.checked)} /><span />Flip AirPod up/down (turn on if squats don't count)</label>
             <label className="switch"><input type="checkbox" checked={s.autoCycle} onChange={e => updateSettings({ autoCycle: e.target.checked })} /><span />Automatic timer cycling</label>
             <label className="field">Exercise intensity
               <select value={s.intensity} onChange={e => updateSettings({ intensity: +e.target.value as Level })}>
