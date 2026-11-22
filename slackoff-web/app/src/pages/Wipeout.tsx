@@ -3,7 +3,12 @@ import { useApp } from '../state/AppState';
 import { MAPS, mapById } from '../data/maps';
 import { WipeoutGame } from '../game/WipeoutGame';
 import { DIFFICULTY_BY_LEVEL, type Difficulty } from '../game/engine';
+import type { ActivityMode } from '../types';
 import { MascotGang } from '../components/Mascots';
+
+const MODES: { id: ActivityMode; label: string }[] = [
+  { id: 'stretches', label: '🧘 Stretches' }, { id: 'activities', label: '🏃 Activities' }, { id: 'both', label: '✨ Both' },
+];
 
 const DIFFS: { id: Difficulty; label: string; note: string }[] = [
   { id: 'easy', label: '🐢 Easy', note: 'fewer reps' },
@@ -36,6 +41,7 @@ export function Wipeout({ goHome }: { goHome: () => void }) {
             </button>
           ))}
         </div>
+        <div className="diffs">{MODES.map(m => <button key={m.id} className={`pill ${data.settings.activityMode === m.id ? 'on' : ''}`} onClick={() => updateSettings({ activityMode: m.id })}>{m.label}</button>)}</div>
         <div className="diffs">{DIFFS.map(d => <button key={d.id} className={`pill ${diff === d.id ? 'on' : ''}`} onClick={() => setDiff(d.id)}>{d.label} <small>{d.note}</small></button>)}</div>
         <div className="row-wrap center">
           <button className="btn primary big" onClick={() => setPlaying(true)}>🎮 Wipe out!</button>

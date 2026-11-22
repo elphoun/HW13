@@ -14,8 +14,10 @@ type Screen = 'ready' | 'playing' | 'paused' | 'over';
 interface Hud { idx: number; total: number; reps: number; need: number; lives: number; score: number; combo: number; title: string; unit: string; kind: Kind; }
 
 const snap = (g: Game): Hud => ({ idx: g.idx, total: g.challenges.length, reps: g.reps, need: g.current.reps, lives: g.lives, score: g.score, combo: g.combo, title: g.current.def.title, unit: g.current.def.unit, kind: g.kind });
-const KIND_EMOJI: Record<Kind, string> = { jump: '🦘', duck: '🦆', run: '🏃', collect: '🌼' };
-const KIND_SFX: Record<Kind, () => void> = { jump: sfx.jump, duck: sfx.duck, run: sfx.run, collect: sfx.collect };
+const KIND_EMOJI: Record<Kind, string> = { jump: '🦘', duck: '🦆', run: '🏃', collect: '🌼', tilt: '🌿', circle: '🫧', toes: '🪨', rotate: '🚪' };
+const MODE_LABEL = { stretches: 'stretches', activities: 'activities', both: 'stretches + activities' } as const;
+const HOWTO: Record<Kind, string> = { jump: 'jump over boulders', duck: 'duck under branches', run: 'sprint across ponds', collect: 'collect the flowers', tilt: 'sway under the vines', circle: 'pop the bubbles', toes: 'touch the stepping stones', rotate: 'twist the gate open' };
+const KIND_SFX: Record<Kind, () => void> = { jump: sfx.jump, duck: sfx.duck, run: sfx.run, collect: sfx.collect, tilt: sfx.duck, circle: sfx.collect, toes: sfx.duck, rotate: sfx.run };
 
 /** `breakMode`: this run IS the exercise break. It starts straight away, shares the break countdown, pauses it with the game, and "quit" skips the break. */
 export function WipeoutGame({ mapId, difficulty, onExit, breakMode = false }: { mapId: string; difficulty: Difficulty; onExit: () => void; breakMode?: boolean }) {
@@ -37,7 +39,7 @@ export function WipeoutGame({ mapId, difficulty, onExit, breakMode = false }: { 
   const setScreen = useCallback((s: Screen) => { screen.current = s; setScr(s); }, []);
 
   const newGame = useCallback(() => {
-    const g = new Game(difficulty, Math.random, enabledKinds(appRef.current.data.settings.disabledActivities));
+    const g = new Game(difficulty, Math.random, enabledKinds(appRef.current.data.settings.disabledActivities, appRef.current.data.settings.activityMode));
     g.onEvent = (e, data) => {
       const a = appRef.current;
       if (e === 'rep') sfx.tick(((data as number) ?? 1) - 1);
@@ -149,12 +151,9 @@ export function WipeoutGame({ mapId, difficulty, onExit, breakMode = false }: { 
         {scr === 'ready' && (
           <div className="overlay">
             <h2>{breakMode ? 'Time to move! 🏃' : 'Wipeout!!'}</h2>
-            <p className="big">{map.name} · {COURSE_LENGTH} obstacles · {LIVES} hearts</p>
+            <p className="big">{map.name} · {COURSE_LENGTH} obstacles · {LIVES} hearts · {MODE_LABEL[app.data.settings.activityMode]}</p>
             <ul className="howto">
-              <li>🦘 <b>Jumping jacks</b> → jump over boulders</li>
-              <li>🦆 <b>Squats</b> → duck under branches</li>
-              <li>🏃 <b>High knees</b> → sprint across ponds</li>
-              <li>🌼 <b>Pick the flowers</b> → collect them</li>
+              {enabledKinds(app.data.settings.disabledActivities, app.data.settings.activityMode).map(k => <li key={k}>{KIND_EMOJI[k]} <b>{CHALLENGE_DEFS[k].move}</b> → {HOWTO[k]}</li>)}
             </ul>
             {useAir && podsOn
               ? <p className="small">🎧 <b>AirPods connected.</b> Just do the moves and your reps count automatically (<kbd>Space</kbd> still works as a backup).<br />Clear space around you and stay hydrated!</p>

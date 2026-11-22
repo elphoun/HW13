@@ -4,12 +4,12 @@ import { useTimer } from '../state/TimerContext';
 import { DurationStepper, PRESETS } from './Controls';
 import { Avatar, AVATARS } from './Mascots';
 import { LEVELS, exerciseById } from '../data/exercises';
-import { CHALLENGE_DEFS, ALL_KINDS } from '../game/engine';
+import { CHALLENGE_DEFS, ACTIVITY_KINDS, STRETCH_KINDS } from '../game/engine';
 import { MAPS } from '../data/maps';
 import { notify, permission } from '../lib/notify';
 import { sfx } from '../lib/sfx';
 import { airpods } from '../lib/airpods';
-import type { Level } from '../types';
+import type { ActivityMode, Level } from '../types';
 
 export function SettingsModal({ onClose }: { onClose: () => void }) {
   const { data, updateSettings, updateProfile, resetAllData, toast } = useApp();
@@ -24,7 +24,8 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
 
   const toggleActivity = (id: string, on: boolean) => {
     const disabled = on ? s.disabledActivities.filter(x => x !== id) : [...s.disabledActivities, id];
-    if (!on && ALL_KINDS.every(k => disabled.includes(CHALLENGE_DEFS[k].exerciseId))) { toast({ emoji: '🙅', title: 'Keep at least one', body: 'Wipeout needs at least one activity.' }); return; }
+    const pool = s.activityMode === 'stretches' ? STRETCH_KINDS : s.activityMode === 'activities' ? ACTIVITY_KINDS : [...STRETCH_KINDS, ...ACTIVITY_KINDS];
+    if (!on && pool.every(k => disabled.includes(CHALLENGE_DEFS[k].exerciseId))) { toast({ emoji: '🙅', title: 'Keep at least one', body: 'Wipeout needs at least one move in this mode.' }); return; }
     updateSettings({ disabledActivities: disabled });
   };
 
@@ -67,10 +68,21 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
 
           <section>
             <h3>Enabled activities</h3>
+            <label className="field">Breaks include
+              <select value={s.activityMode} onChange={e => updateSettings({ activityMode: e.target.value as ActivityMode })}>
+                <option value="both">Stretches + activities</option>
+                <option value="stretches">Stretches only</option>
+                <option value="activities">Activities only</option>
+              </select></label>
             <p className="muted small">Wipeout turns these moves into obstacles. Untick any you'd rather skip.</p>
-            <div className="checks">{ALL_KINDS.map(k => { const d = CHALLENGE_DEFS[k], ex = exerciseById(d.exerciseId); return (
-              <label key={k} className="check"><input type="checkbox" checked={!s.disabledActivities.includes(d.exerciseId)} onChange={ev => toggleActivity(d.exerciseId, ev.target.checked)} />{ex?.name ?? d.move} <small className="muted">→ {d.obstacle}</small></label>
-            ); })}</div>
+            {([['Stretches', STRETCH_KINDS, 'stretches'], ['Activities', ACTIVITY_KINDS, 'activities']] as const).map(([label, kinds, mode]) => (
+              <div key={label} style={{ opacity: s.activityMode === 'both' || s.activityMode === mode ? 1 : 0.45 }}>
+                <p className="muted small"><b>{label}</b></p>
+                <div className="checks">{kinds.map(k => { const d = CHALLENGE_DEFS[k], ex = exerciseById(d.exerciseId); return (
+                  <label key={k} className="check"><input type="checkbox" checked={!s.disabledActivities.includes(d.exerciseId)} onChange={ev => toggleActivity(d.exerciseId, ev.target.checked)} />{ex?.name ?? d.move} <small className="muted">→ {d.obstacle}</small></label>
+                ); })}</div>
+              </div>
+            ))}
           </section>
 
           <section>

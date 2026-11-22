@@ -4,7 +4,10 @@
 // Do the real-life move (jumping jacks, squats, high knees, picking flowers) and press once per rep before it arrives:
 // finish in time and the character clears it; run out of time and it wipes out (lose a heart).
 
-export type Kind = 'jump' | 'duck' | 'run' | 'collect';
+import type { ActivityMode } from '../types';
+
+// jump/duck/run/collect are the ACTIVITIES; tilt/circle/toes/rotate are the STRETCHES.
+export type Kind = 'jump' | 'duck' | 'run' | 'collect' | 'tilt' | 'circle' | 'toes' | 'rotate';
 export type Difficulty = 'easy' | 'normal' | 'hard';
 
 export interface ChallengeDef { kind: Kind; exerciseId: string; title: string; move: string; unit: string; obstacle: string; secPerRep: number; reps: Record<Difficulty, number>; }
@@ -14,11 +17,21 @@ export const CHALLENGE_DEFS: Record<Kind, ChallengeDef> = {
   duck: { kind: 'duck', exerciseId: 'squats', title: 'Duck under the branch!', move: 'squats', unit: 'squats', obstacle: 'branch', secPerRep: 2.3, reps: { easy: 3, normal: 5, hard: 8 } },
   run: { kind: 'run', exerciseId: 'high-knees', title: 'Sprint over the pond!', move: 'high knees', unit: 'high knees', obstacle: 'pond', secPerRep: 0.95, reps: { easy: 8, normal: 12, hard: 20 } },
   collect: { kind: 'collect', exerciseId: 'pick-the-flowers', title: 'Pick the flowers!', move: 'flower picks', unit: 'flowers', obstacle: 'flowers', secPerRep: 2.1, reps: { easy: 3, normal: 5, hard: 8 } },
+  tilt: { kind: 'tilt', exerciseId: 'neck-tilts', title: 'Sway under the vines!', move: 'neck tilts', unit: 'neck tilts', obstacle: 'vines', secPerRep: 3.2, reps: { easy: 2, normal: 4, hard: 6 } },
+  circle: { kind: 'circle', exerciseId: 'neck-circles', title: 'Roll the bubbles away!', move: 'neck circles', unit: 'neck circles', obstacle: 'bubbles', secPerRep: 4.2, reps: { easy: 2, normal: 3, hard: 5 } },
+  toes: { kind: 'toes', exerciseId: 'seated-toe-touches', title: 'Touch the stepping stones!', move: 'toe touches', unit: 'toe touches', obstacle: 'stones', secPerRep: 3.2, reps: { easy: 3, normal: 5, hard: 8 } },
+  rotate: { kind: 'rotate', exerciseId: 'body-rotations', title: 'Twist the gate open!', move: 'body rotations', unit: 'body twists', obstacle: 'gate', secPerRep: 3.2, reps: { easy: 3, normal: 5, hard: 8 } },
 };
 
+export const ACTIVITY_KINDS: Kind[] = ['jump', 'duck', 'run', 'collect'];
+export const STRETCH_KINDS: Kind[] = ['tilt', 'circle', 'toes', 'rotate'];
 export const ALL_KINDS = Object.keys(CHALLENGE_DEFS) as Kind[];
-/** Wipeout challenges the user hasn't switched off in settings (never empty). */
-export const enabledKinds = (disabled: string[]): Kind[] => { const k = ALL_KINDS.filter(x => !disabled.includes(CHALLENGE_DEFS[x].exerciseId)); return k.length ? k : ALL_KINDS; };
+/** Wipeout challenges for the chosen mode (stretches / activities / both) that the user hasn't switched off (never empty). */
+export const enabledKinds = (disabled: string[], mode: ActivityMode = 'both'): Kind[] => {
+  const pool = mode === 'stretches' ? STRETCH_KINDS : mode === 'activities' ? ACTIVITY_KINDS : ALL_KINDS;
+  const k = pool.filter(x => !disabled.includes(CHALLENGE_DEFS[x].exerciseId));
+  return k.length ? k : pool;
+};
 export const DIFFICULTY_BY_LEVEL: Record<1 | 2 | 3, Difficulty> = { 1: 'easy', 2: 'normal', 3: 'hard' };
 
 export const W = 960, H = 540, GROUND = 430, PLAYER_X = 230, HIT_X = PLAYER_X + 55, START_X = W + 120;

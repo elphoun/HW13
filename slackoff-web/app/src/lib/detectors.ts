@@ -4,7 +4,7 @@
 import type { Sample } from './airpods';
 
 export interface Detector { update(s: Sample): void; readonly reps: number; }
-export type MoveKind = 'jump' | 'duck' | 'run' | 'collect';
+export type MoveKind = 'jump' | 'duck' | 'run' | 'collect' | 'tilt' | 'circle' | 'toes' | 'rotate';
 
 /** Jumping jacks: bursts of head acceleration (landings). A jack = 2 bounces. Lone bumps don't count (needs a streak of 2). */
 const JACKS = { thr: 0.5, gap: 0.3, maxGap: 1.2, streak: 2, perRep: 2 };
@@ -64,5 +64,72 @@ function flowers(P = FLOWERS): Detector {
   };
 }
 
-export const makeDetector = (kind: MoveKind): Detector =>
-  kind === 'jump' ? peaks() : kind === 'duck' ? squat() : kind === 'run' ? oscillation() : flowers();
+const wrapDeg = (a: number) => { a = ((a + 180) % 360 + 360) % 360 - 180; return a; };
+
+/** "One side, then the other" = 1 rep. A side counts after being held past `on` for `hold` s; re-arms inside `off`. */
+function pairs(feed: (s: Sample) => number, on: number, off: number, hold: number): Detector {
+  let first = 0, reps = 0; const armed: Record<string, boolean> = { '-1': true, '1': true }, held: Record<string, number> = { '-1': 0, '1': 0 };
+  return {
+    update(s) {
+      const v = feed(s);
+      for (const side of [-1, 1]) {
+        const m = v * side;
+        held[side] = m > on ? held[side] + s.dt : 0;
+        if (held[side] >= hold && armed[side]) { armed[side] = false; if (first === 0) first = side; else if (first !== side) { reps++; first = 0; } }
+        if (m < off) armed[side] = true;
+      }
+    },
+    get reps() { return reps; },
+  };
+}
+
+/** Neck tilts: ear toward one shoulder, then the other. 15 degrees of roll, held a quarter second. */
+const tilts = (): Detector => pairs(s => s.roll, 15, 6, 0.25);
+
+/** Body rotations: turn 30 degrees one way then the other (yaw drifts, so it's measured from a slowly-following baseline). */
+function rotations(): Detector {
+  let base = 0, rel = 0; const inner = pairs(() => rel, 30, 12, 0.25);
+  return { update(s) { const d = wrapDeg(s.yaw - base); base += d * (1 - Math.exp(-s.dt / 60)); rel = d; inner.update(s); }, get reps() { return inner.reps; } };
+}
+
+/** Neck circles: roll your head round; every full 340 degrees (either direction) is one circle. */
+function circles(): Detector {
+  const R = 12, KEEP = 6, TURN = 340 * Math.PI / 180;
+  let acc = 0, prev = 0, active = false, reps = 0;
+  const wrap = (a: number) => Math.atan2(Math.sin(a), Math.cos(a));
+  return {
+    update(s) {
+      const x = s.roll, y = -s.pitch, r = Math.hypot(x, y), a = Math.atan2(y, x);
+      if (!active) { if (r > R) { active = true; prev = a; acc = 0; } return; }
+      if (r < KEEP) { active = false; acc = 0; return; }
+      const da = wrap(a - prev); prev = a; if (acc * da < 0) acc = 0; acc += da;
+      if (Math.abs(acc) >= TURN) { reps++; acc = 0; }
+    },
+    get reps() { return reps; },
+  };
+}
+
+/** Seated toe touches: bend forward past 45 degrees, hold a second, sit back up. */
+function toeTouches(): Detector {
+  let held = 0, armed = true, reps = 0;
+  return {
+    update(s) {
+      if (s.bend > 45) { if (armed) { held += s.dt; if (held >= 1) { reps++; armed = false; held = 0; } } }
+      else { held = 0; if (s.bend < 20) armed = true; }
+    },
+    get reps() { return reps; },
+  };
+}
+
+export const makeDetector = (kind: MoveKind): Detector => {
+  switch (kind) {
+    case 'jump': return peaks();
+    case 'duck': return squat();
+    case 'run': return oscillation();
+    case 'collect': return flowers();
+    case 'tilt': return tilts();
+    case 'circle': return circles();
+    case 'toes': return toeTouches();
+    case 'rotate': return rotations();
+  }
+};

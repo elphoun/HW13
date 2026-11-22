@@ -93,6 +93,31 @@ function drawObstacle(c: CanvasRenderingContext2D, g: Game, m: GameMap) {
       const drop = hit ? 0 : Math.min(1, (u - 0.2) / 0.15);
       for (let k = 0; k < 7; k++) { const px = x - half + 6 + k * 28; c.fillStyle = k % 2 ? '#c08a52' : '#a9733e'; c.fillRect(px, GROUND - 6 - (1 - drop) * 120, 24, 10); }
     }
+  } else if (kind === 'tilt') {                       // vines hang down; they swing aside once you've cleared them
+    const swing = hit ? 0 : Math.sin(Math.min(1, u * 1.5) * Math.PI) * 40;
+    for (let k = 0; k < 6; k++) {
+      const vx = x - 90 + k * 36, len = 230 + hash(k + 20) * 70, sway = Math.sin(g.clock * 2 + k) * 6 + (u > 0.15 ? swing * (k % 2 ? 1 : -1) : 0), ex = vx + sway * 1.5;
+      c.strokeStyle = '#2f9e44'; c.lineWidth = 7; c.beginPath(); c.moveTo(vx, 0); c.quadraticCurveTo(vx + sway, len / 2, ex, len); c.stroke();
+      poly(c, [[ex - 9, len], [ex, len + 22], [ex + 9, len]], m.leaf[k % 3]);
+    }
+  } else if (kind === 'circle') {                     // bubbles float in front of you and pop
+    if (u > 0.5) return;
+    for (let k = 0; k < 7; k++) {
+      const bx = x - 80 + hash(k + 30) * 160, by = GROUND - 110 - hash(k + 40) * 120 + Math.sin(g.clock * 2 + k) * 8, r = 16 + hash(k + 50) * 16;
+      c.fillStyle = hit ? 'rgba(160,160,170,.4)' : 'rgba(143,211,255,.45)'; c.strokeStyle = 'rgba(255,255,255,.9)'; c.lineWidth = 3;
+      c.beginPath(); c.arc(bx, by, r, 0, 6.283); c.fill(); c.stroke();
+    }
+  } else if (kind === 'toes') {                       // stepping stones to reach down and touch
+    for (let k = 0; k < 3; k++) {
+      const sx = x - 60 + k * 60, done = u > 0.45;
+      poly(c, [[sx - 24, GROUND], [sx - 16, GROUND - 26], [sx + 16, GROUND - 30], [sx + 26, GROUND]], done ? '#ffd23f' : '#9aa0b4');
+      poly(c, [[sx - 16, GROUND - 26], [sx + 16, GROUND - 30], [sx + 4, GROUND - 14]], done ? '#ffe58a' : '#b6bbcc');
+    }
+  } else if (kind === 'rotate') {                     // a wooden gate that swings open
+    const open = hit ? 0 : Math.min(1, u * 1.6), w = 70 * Math.cos(open * 1.45);
+    c.fillStyle = shade(m.trunk, -0.1); c.fillRect(x - 84, GROUND - 190, 18, 190); c.fillRect(x + 66, GROUND - 190, 18, 190);
+    c.fillStyle = m.trunk; c.fillRect(x - w, GROUND - 170, w * 2, 150);
+    c.fillStyle = shade(m.trunk, 0.2); for (let k = 0; k < 4; k++) c.fillRect(x - w, GROUND - 160 + k * 36, w * 2, 6);
   } else {
     const wilt = hit;
     for (let k = 0; k < 5; k++) {
@@ -108,17 +133,25 @@ function drawObstacle(c: CanvasRenderingContext2D, g: Game, m: GameMap) {
 
 function drawPlayer(c: CanvasRenderingContext2D, g: Game) {
   const t = g.clock, u = g.resolveU, k = g.kind, p = g.pulse;
-  let lift = 0, crouch = 0, bend = 0, armsUp = 0, legPh = t * 6, legAmp = 8, spin = 0, lean = 0, sink = 0, dizzy = false;
+  let lift = 0, crouch = 0, bend = 0, twist = 0, armsUp = 0, legPh = t * 6, legAmp = 8, spin = 0, lean = 0, sink = 0, dizzy = false;
   const bob = Math.sin(t * 5) * 2;
   if (g.mode === 'approach') {
     if (k === 'jump') { lift = p * 26; armsUp = p; legAmp = 6 + p * 14; }
     else if (k === 'duck') crouch = p * 0.85;
     else if (k === 'run') { legPh = t * 16; legAmp = 20 + p * 8; lean = 0.12; }
+    else if (k === 'tilt') lean = Math.sin(t * 3) * 0.22 * (0.4 + p);
+    else if (k === 'circle') lean = Math.sin(t * 4) * 0.16 * (0.4 + p);
+    else if (k === 'toes') { bend = p; crouch = p * 0.15; }
+    else if (k === 'rotate') twist = t * 3 * (0.4 + p);
     else { bend = p; crouch = p * 0.4; }
   } else if (g.mode === 'resolve') {
     if (k === 'jump') { lift = 190 * 4 * u * (1 - u); armsUp = 1; legAmp = 18; spin = 0; }
     else if (k === 'duck') crouch = 0.88 * Math.min(1, Math.sin(Math.min(1, u * 1.15) * Math.PI) * 3);
     else if (k === 'run') { legPh = t * 30; legAmp = 28; lean = 0.3; lift = Math.abs(Math.sin(t * 15)) * 5; }
+    else if (k === 'tilt') lean = Math.sin(u * Math.PI * 3) * 0.32;
+    else if (k === 'circle') { lean = Math.sin(u * Math.PI * 4) * 0.26; armsUp = u > 0.4 ? 1 : 0; }
+    else if (k === 'toes') { bend = Math.sin(Math.min(1, u * 1.2) * Math.PI); crouch = bend * 0.15; }
+    else if (k === 'rotate') { twist = u * Math.PI * 2; armsUp = 0; }
     else { bend = Math.sin(Math.min(1, u * 1.2) * Math.PI); crouch = bend * 0.5; armsUp = u > 0.55 ? 1 : 0; }
   } else if (g.mode === 'hit') {
     const m = g.modeT; dizzy = true;
@@ -140,7 +173,7 @@ function drawPlayer(c: CanvasRenderingContext2D, g: Game) {
     c.fillStyle = '#7a3dd1'; c.beginPath(); c.ellipse(fx + 3, fy, 10, 5, 0, 0, 6.283); c.fill();
   }
   // body
-  c.save(); c.translate(0, hipY); c.scale(1 + crouch * 0.12, 1 - crouch * 0.28); c.rotate(bend * 0.7);
+  c.save(); c.translate(0, hipY); c.scale((1 + crouch * 0.12) * (twist ? Math.max(0.25, Math.abs(Math.cos(twist))) : 1), 1 - crouch * 0.28); c.rotate(bend * 0.7);
   const body = [[-30, 0], [-34, -34], [-20, -66], [0, -76], [20, -66], [34, -34], [30, 0]];
   const cols = ['#ff8fa3', '#ff7a93', '#ffa3b3', '#f2688a', '#ff8fa3', '#ff7a93'];
   for (let i = 0; i < body.length - 1; i++) poly(c, [[0, -34], body[i], body[i + 1]], cols[i]);

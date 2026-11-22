@@ -14,6 +14,9 @@ export interface Exercise {
   instructions: string[];
 }
 
+/** Which kinds of moves your Wipeout breaks use. */
+export type ActivityMode = 'stretches' | 'activities' | 'both';
+
 export interface Settings {
   workSeconds: number;
   exerciseSeconds: number;
@@ -24,6 +27,7 @@ export interface Settings {
   notifications: boolean;
   sound: boolean;
   autoCycle: boolean;
+  activityMode: ActivityMode;
   airpods: boolean;      // count reps from AirPod motion (when the streamer is running)
 }
 

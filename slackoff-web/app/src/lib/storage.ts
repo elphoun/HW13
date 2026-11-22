@@ -6,7 +6,7 @@ const TIMER_KEY = 'slackoff:timer:v1';
 
 export const DEFAULT_SETTINGS: Settings = {
   workSeconds: 25 * 60, exerciseSeconds: 5 * 60, intensity: 2, disabledActivities: [],
-  preferredMap: 'forest', dailyGoal: 5, notifications: true, sound: true, autoCycle: true, airpods: true,
+  preferredMap: 'forest', dailyGoal: 5, notifications: true, sound: true, autoCycle: true, airpods: true, activityMode: 'both',
 };
 
 export const defaultData = (): PersistedData => ({
