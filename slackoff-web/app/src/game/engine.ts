@@ -16,6 +16,11 @@ export const CHALLENGE_DEFS: Record<Kind, ChallengeDef> = {
   collect: { kind: 'collect', exerciseId: 'pick-the-flowers', title: 'Pick the flowers!', move: 'flower picks', unit: 'flowers', obstacle: 'flowers', secPerRep: 2.1, reps: { easy: 3, normal: 5, hard: 8 } },
 };
 
+export const ALL_KINDS = Object.keys(CHALLENGE_DEFS) as Kind[];
+/** Wipeout challenges the user hasn't switched off in settings (never empty). */
+export const enabledKinds = (disabled: string[]): Kind[] => { const k = ALL_KINDS.filter(x => !disabled.includes(CHALLENGE_DEFS[x].exerciseId)); return k.length ? k : ALL_KINDS; };
+export const DIFFICULTY_BY_LEVEL: Record<1 | 2 | 3, Difficulty> = { 1: 'easy', 2: 'normal', 3: 'hard' };
+
 export const W = 960, H = 540, GROUND = 430, PLAYER_X = 230, HIT_X = PLAYER_X + 55, START_X = W + 120;
 export const COURSE_LENGTH = 8, LIVES = 3;
 export const MIN_REP_GAP = 0.2;      // seconds; stops key-mashing from counting as exercise
@@ -42,11 +47,10 @@ export class Game {
   shake = 0;
   onEvent: (e: GameEvent, data?: unknown) => void = () => {};
 
-  constructor(public difficulty: Difficulty, rnd: () => number = Math.random) {
-    const kinds = Object.keys(CHALLENGE_DEFS) as Kind[];
+  constructor(public difficulty: Difficulty, rnd: () => number = Math.random, kinds: Kind[] = ALL_KINDS) {
     let prev: Kind | null = null;
     for (let i = 0; i < COURSE_LENGTH; i++) {
-      let k: Kind; do { k = kinds[Math.floor(rnd() * kinds.length)]; } while (k === prev);
+      let k: Kind; do { k = kinds[Math.floor(rnd() * kinds.length)]; } while (k === prev && kinds.length > 1);
       prev = k;
       const def = CHALLENGE_DEFS[k], reps = def.reps[difficulty];
       this.challenges.push({ def, reps, budget: Math.round((reps * def.secPerRep + 4) * 10) / 10 });

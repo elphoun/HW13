@@ -19,7 +19,6 @@ export interface Settings {
   exerciseSeconds: number;
   intensity: Level;
   disabledActivities: string[];
-  pickedActivity: string | 'random';   // a specific exercise id, or SlackOff chooses
   preferredMap: string;
   dailyGoal: number;
   notifications: boolean;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useApp } from '../state/AppState';
 import { MAPS, mapById } from '../data/maps';
 import { WipeoutGame } from '../game/WipeoutGame';
-import type { Difficulty } from '../game/engine';
+import { DIFFICULTY_BY_LEVEL, type Difficulty } from '../game/engine';
 import { MascotGang } from '../components/Mascots';
 
 const DIFFS: { id: Difficulty; label: string; note: string }[] = [
@@ -14,7 +14,7 @@ const DIFFS: { id: Difficulty; label: string; note: string }[] = [
 export function Wipeout({ goHome }: { goHome: () => void }) {
   const { data, updateSettings } = useApp();
   const [playing, setPlaying] = useState(false);
-  const [diff, setDiff] = useState<Difficulty>('normal');
+  const [diff, setDiff] = useState<Difficulty>(DIFFICULTY_BY_LEVEL[data.settings.intensity]);
   const [runKey, setRunKey] = useState(0);
   const mapId = mapById(data.settings.preferredMap).id;
   const best = data.runs.filter(r => r.map === mapId).reduce((m, r) => Math.max(m, r.score), 0);

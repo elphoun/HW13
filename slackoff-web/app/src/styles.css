@@ -94,15 +94,21 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
 /* ---------- main: header, tracker ---------- */
 .hero-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
 .tagline { color: var(--muted); font-weight: 500; font-size: 1.05rem; }
-.day-tracker { position: relative; display: flex; justify-content: space-between; padding: 12px 26px; background: #fff; border-radius: 999px; box-shadow: var(--shadow); }
-.dt-track { position: absolute; left: 44px; right: 44px; top: 29px; height: 6px; border-radius: 6px; background: repeating-linear-gradient(90deg, #dfe3f6 0 10px, transparent 10px 18px); }
-.dt-stop { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.dt-dot { width: 36px; height: 36px; border-radius: 50%; background: #eef0fa; border: 3px solid #dfe3f6; display: grid; place-items: center; font-weight: 600; font-size: .95rem; color: var(--muted); }
-.dt-stop.some .dt-dot { background: #ffe9a8; border-color: #ffd23f; color: #8a6400; }
-.dt-stop.goal .dt-dot { background: var(--mint); border-color: #1f9a38; color: #fff; font-size: 1.1rem; }
-.dt-stop.today .dt-dot { box-shadow: 0 0 0 4px rgba(74, 168, 255, .35); }
-.dt-stop.future { opacity: .55; }
-.dt-label { font-size: .75rem; color: var(--muted); font-weight: 500; } .dt-stop.today .dt-label { color: var(--ink); font-weight: 700; }
+
+.hour-strip { background: #fff; border-radius: 26px; box-shadow: var(--shadow); padding: 12px 22px 8px; }
+.hs-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.hs-head span { color: var(--muted); font-size: .92rem; font-weight: 500; }
+.hs-track { position: relative; height: 62px; margin: 0 14px; }
+.hs-track::before { content: ''; position: absolute; left: 0; right: 0; top: 22px; height: 8px; border-radius: 8px; background: #eaedf9; }
+.hs-tick { position: absolute; top: 0; bottom: 0; width: 0; }
+.hs-tick i { position: absolute; left: -1px; top: 14px; width: 2px; height: 24px; background: #d3d8ef; border-radius: 2px; }
+.hs-tick em { position: absolute; top: 42px; left: 0; transform: translateX(-50%); font-style: normal; font-size: .72rem; color: var(--muted); white-space: nowrap; }
+.hs-break { position: absolute; top: 14px; height: 24px; border-radius: 8px; background: var(--coral); box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .15); }
+.hs-break.proj { background: repeating-linear-gradient(-45deg, #ffb08f 0 5px, #ffd2bd 5px 10px); box-shadow: none; outline: 2px dashed #ff9b72; outline-offset: -2px; }
+.hs-done { position: absolute; top: 14px; width: 22px; height: 24px; margin-left: -11px; display: grid; place-items: center; background: var(--mint); color: #fff; border-radius: 8px; font-size: .8rem; font-weight: 700; }
+.hs-now { position: absolute; top: 4px; bottom: 6px; width: 3px; margin-left: -1.5px; background: var(--sky); border-radius: 3px; }
+.hs-now b { position: absolute; top: -4px; left: 50%; transform: translate(-50%, -100%); background: var(--sky); color: #fff; font-size: .68rem; padding: 0 7px; border-radius: 99px; white-space: nowrap; }
+.hs-track { margin-top: 18px; }
 
 /* ---------- hero: scene + timer ---------- */
 .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, 1fr); gap: 20px; align-items: stretch; }
@@ -135,66 +141,7 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
 .controls .btn.primary { width: 100%; }
 .hint { font-size: .8rem; color: var(--muted); } .hint.ok { color: #2a8a3e; }
 
-/* ---------- exercise card ---------- */
-.exercise-card { height: 100%; background: #fff; border-radius: 30px; box-shadow: var(--shadow); padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; border: 4px solid #ffd7bd; animation: slide .4s ease-out; }
-@keyframes slide { from { opacity: 0; transform: translateY(14px) scale(.98); } }
-.ex-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
-.lvl-badge { padding: 4px 12px; border-radius: 99px; font-weight: 600; font-size: .85rem; background: #e7f9ea; color: #1f7a33; }
-.lvl-badge.l2 { background: #fff1c9; color: #8a6400; } .lvl-badge.l3 { background: #ffe0e0; color: #b3261e; }
-.pts-badge { background: var(--sun); color: #5c4200; font-weight: 700; padding: 4px 12px; border-radius: 99px; }
-.ex-body { display: flex; gap: 14px; align-items: center; flex: 1; flex-wrap: wrap; justify-content: center; }
-.ex-info { flex: 1; min-width: 200px; } .ex-info h2 { font-size: 1.7rem; }
-.ex-amount { display: inline-block; margin: 6px 0 8px; padding: 3px 14px; border-radius: 99px; background: #e1f1ff; color: #1f6fb8; font-weight: 600; }
-.ex-info ol { margin: 0; padding-left: 20px; color: #4a4d70; line-height: 1.5; font-size: .95rem; }
-.ex-done { display: flex; flex-direction: column; gap: 8px; align-items: center; }
-.burst { font-size: 1.3rem; font-weight: 700; color: #1f9a38; animation: pop .5s; }
-
-/* ---------- exercise figure animations ---------- */
-.fig { background: radial-gradient(circle at 50% 60%, #fff4e8, #ffe4cf); border-radius: 50%; flex: none; }
-.fig svg * { transform-box: view-box; }
-.fig path { fill: none; stroke: #2b2d4f; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
-.fig .fig-head path { stroke-width: 2.2; }
-.fig .chair { stroke: #b08968; stroke-width: 5; }
-.fig .head { fill: #ffd8b5; stroke: #2b2d4f; stroke-width: 4; } .fig .torso-line { stroke: #ff6b3d; stroke-width: 15; }
-.fig .fig-arm path { stroke: #ff8fa3; stroke-width: 8; } .fig .fig-leg path { stroke: #4aa8ff; stroke-width: 10; }
-.fig-hip, .fig-body, .fig-torso, .fig-head, .fig-arm, .fig-leg { animation-duration: 1.6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-.fig-head { transform-origin: 100px 71px; } .fig-torso { transform-origin: 100px 118px; } .fig-hip { transform-origin: 100px 118px; }
-.armL, .armR { transform-origin: 100px 76px; } .legL, .legR { transform-origin: 100px 118px; } .fig-body { transform-origin: 100px 184px; }
-.fig .fig-flowers path { stroke: #2f9e44; stroke-width: 3; }
-.fig .fig-flowers circle { stroke: none; }
-
-.ex-neck-tilt .fig-head { animation-name: neckTilt; } @keyframes neckTilt { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-32deg); } 75% { transform: rotate(32deg); } }
-.ex-neck-circle .fig-head { animation-name: neckCircle; animation-timing-function: linear; animation-duration: 2.4s; } @keyframes neckCircle { 0% { transform: rotate(-20deg) translateY(0); } 25% { transform: rotate(0) translateY(5px); } 50% { transform: rotate(20deg) translateY(0); } 75% { transform: rotate(0) translateY(-3px); } 100% { transform: rotate(-20deg); } }
-.ex-seated-toe .legL { transform: rotate(26deg); } .ex-seated-toe .legR { transform: rotate(-26deg); }
-.ex-seated-toe .fig-torso { animation-name: seatedBend; animation-duration: 3.2s; } @keyframes seatedBend { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(80deg); } 50% { transform: rotate(0); } 75% { transform: rotate(-80deg); } }
-.ex-seated-toe .fig-arm { animation: none; transform: rotate(40deg); }
-.ex-body-rotate .fig-torso { animation-name: twist; animation-duration: 2s; } @keyframes twist { 0%, 100% { transform: scaleX(1); } 25% { transform: scaleX(.45); } 75% { transform: scaleX(-.45); } 50% { transform: scaleX(1); } }
-.ex-body-rotate .armL { animation-name: swingL; animation-duration: 2s; } .ex-body-rotate .armR { animation-name: swingR; animation-duration: 2s; }
-@keyframes swingL { 0%, 100% { transform: rotate(10deg); } 25% { transform: rotate(80deg); } 75% { transform: rotate(-30deg); } } @keyframes swingR { 0%, 100% { transform: rotate(-10deg); } 25% { transform: rotate(30deg); } 75% { transform: rotate(-80deg); } }
-.ex-squat .fig-hip, .ex-flowers .fig-hip { animation-name: squatHip; } .ex-squat .fig-leg, .ex-flowers .fig-leg { animation-name: squatLeg; }
-@keyframes squatHip { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(36px); } } @keyframes squatLeg { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(.42); } }
-.ex-squat .armL { animation-name: squatArmL; } .ex-squat .armR { animation-name: squatArmR; }
-@keyframes squatArmL { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(75deg); } } @keyframes squatArmR { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-75deg); } }
-.ex-stand-toe .fig-torso { animation-name: toeBend; animation-duration: 2.4s; } @keyframes toeBend { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(140deg); } }
-.ex-stand-toe .fig-arm { animation-name: toeArm; animation-duration: 2.4s; } @keyframes toeArm { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-10deg); } }
-.ex-flowers .armR { animation-name: pickR; } @keyframes pickR { 0%, 100% { transform: rotate(-150deg); } 50% { transform: rotate(10deg); } }
-.ex-flowers .armL { animation-name: pickL; } @keyframes pickL { 0%, 100% { transform: rotate(20deg); } 50% { transform: rotate(-10deg); } }
-.ex-high-knees .legL { animation-name: kneeL; animation-duration: .7s; } .ex-high-knees .legR { animation-name: kneeR; animation-duration: .7s; }
-@keyframes kneeL { 0%, 50%, 100% { transform: rotate(0); } 25% { transform: rotate(80deg); } } @keyframes kneeR { 0%, 25%, 75%, 100% { transform: rotate(0); } 75% { transform: rotate(-80deg); } }
-.ex-high-knees .armL { animation-name: pumpL; animation-duration: .7s; } .ex-high-knees .armR { animation-name: pumpR; animation-duration: .7s; }
-@keyframes pumpL { 0%, 100% { transform: rotate(70deg); } 50% { transform: rotate(10deg); } } @keyframes pumpR { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(-70deg); } }
-.ex-high-knees .fig-body { animation: bounce .35s ease-in-out infinite; } @keyframes bounce { 50% { transform: translateY(-6px); } }
-.ex-jacks .fig-body { animation-name: jackHop; animation-duration: 1s; } @keyframes jackHop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-.ex-jacks .armL { animation-name: jackArmL; animation-duration: 1s; } .ex-jacks .armR { animation-name: jackArmR; animation-duration: 1s; }
-.ex-jacks .legL { animation-name: jackLegL; animation-duration: 1s; } .ex-jacks .legR { animation-name: jackLegR; animation-duration: 1s; }
-@keyframes jackArmL { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(145deg); } } @keyframes jackArmR { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-145deg); } }
-@keyframes jackLegL { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(26deg); } } @keyframes jackLegR { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-26deg); } }
-.ex-hops .fig-body { animation-name: hop; animation-duration: .8s; } @keyframes hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-34px); } }
-.ex-hops .legR { transform: rotate(-70deg); } .ex-hops .armL { animation-name: hopArm; animation-duration: .8s; } .ex-hops .armR { animation-name: hopArm2; animation-duration: .8s; }
-@keyframes hopArm { 50% { transform: rotate(70deg); } } @keyframes hopArm2 { 50% { transform: rotate(-70deg); } }
-
 /* ---------- config cards ---------- */
-.config-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 18px; }
 .presets, .acts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .steppers { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
 .stepper { background: #f6f7fd; border-radius: 18px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; align-items: center; }
@@ -209,12 +156,6 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
 .switch span::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, .2); transition: transform .2s; }
 .switch input:checked + span { background: var(--mint); } .switch input:checked + span::after { transform: translateX(18px); }
 .switch input:focus-visible + span { outline: 3px solid var(--grape); outline-offset: 2px; }
-.levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
-.level { text-align: left; border: 3px solid var(--line); background: #fff; border-radius: 20px; padding: 10px 12px; display: flex; flex-direction: column; gap: 1px; transition: all .15s; }
-.level .lv-emoji { font-size: 1.4rem; } .level small { color: var(--muted); font-size: .72rem; line-height: 1.2; } .level span:not(.lv-emoji) { font-size: .82rem; }
-.level:hover { transform: translateY(-2px); } .level.on { transform: translateY(-2px); }
-.level.l1.on { border-color: #4cc15a; background: #effaf0; } .level.l2.on { border-color: #ffc928; background: #fff9e3; } .level.l3.on { border-color: #ff6b6b; background: #fff0f0; }
-.act-head { font-weight: 600; font-size: .9rem; margin-bottom: 6px; } .act-head small { color: var(--muted); font-weight: 400; }
 .promo { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: linear-gradient(120deg, #e7ddff, #d4f4ff); }
 .promo h3 { margin-bottom: 2px; }
 
@@ -277,15 +218,14 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
 .rep-btn:disabled { filter: grayscale(.7); }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1100px) { .hero { grid-template-columns: 1fr; } .scene { min-height: 320px; } .config-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .hero { grid-template-columns: 1fr; } .scene { min-height: 320px; } }
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; grid-template-areas: 'main' 'side'; padding: 14px; }
   .sidebar { position: static; max-height: none; overflow: visible; }
   .topbar { padding: 8px 12px; gap: 8px; flex-wrap: wrap; } .tab { padding: 7px 12px; } .logo-sm .logo-letters span { font-size: 1.3rem; }
 }
 @media (max-width: 560px) {
-  .levels { grid-template-columns: 1fr; } .steppers { grid-template-columns: 1fr; } .howto { grid-template-columns: 1fr; } .end-cols { grid-template-columns: 1fr; }
-  .day-tracker { padding: 10px 12px; } .dt-dot { width: 30px; height: 30px; } .dt-track { left: 28px; right: 28px; top: 25px; }
+    .hour-strip { padding: 10px 12px 6px; } .hs-track { margin: 18px 10px 0; } .hs-tick:nth-child(even) em { display: none; }
   .wipeout { padding: 12px; } .hud-chip { padding: 2px 10px; font-size: .85rem; } .logo-letters span { font-size: 2rem; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition: none !important; } }
@@ -295,3 +235,9 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
   .hud-challenge { width: 100%; box-shadow: none; background: #fff; }
   .overlay { justify-content: flex-start; padding: 14px; gap: 8px; } .overlay h2 { font-size: 1.8rem; } .howto li { padding: 5px 10px; font-size: .9rem; } .end-score { font-size: 2.6rem; }
 }
+
+/* ---------- break = full-page Wipeout ---------- */
+.break-screen { position: fixed; inset: 0; z-index: 30; overflow-y: auto; display: flex; align-items: center; justify-content: center; padding: 14px; background: linear-gradient(180deg, #ffc9a3 0, #ffe9d2 45%, #fff6ea 100%); }
+.break-screen .game-wrap { width: min(100%, calc((100vh - 120px) * 16 / 9)); }
+.break-clock { background: #ffe4d1 !important; font-variant-numeric: tabular-nums; }
+.field small { font-weight: 400; line-height: 1.3; }

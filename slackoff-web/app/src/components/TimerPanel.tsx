@@ -10,7 +10,7 @@ export function TimerPanel() {
   const perm = permission();
   const primary = t.status === 'running' ? { label: '⏸ Pause', fn: t.pause }
     : t.status === 'paused' ? { label: '▶ Resume', fn: t.resume }
-    : { label: working ? '▶ Start working' : '🏃 Begin your stretch', fn: t.start };
+    : { label: working ? '▶ Start working' : '🏃 Begin your break', fn: t.start };
   return (
     <div className={`timer-panel ${working ? 'is-work' : 'is-move'}`}>
       <div className="phase-pill">{working ? '💼 Working' : '🏃 Move time!'}{t.status === 'paused' && ' · paused'}</div>
@@ -21,7 +21,7 @@ export function TimerPanel() {
         <button className="btn primary big" onClick={primary.fn}>{primary.label}</button>
         <div className="row">
           <button className="btn secondary" onClick={t.reset}>↺ Reset</button>
-          <button className="btn ghost" onClick={t.skip} title={working ? 'Jump straight to the exercise break' : 'Skip the rest of this break'}>⏭ Skip</button>
+          <button className="btn ghost" onClick={t.skip} title="Jump straight to your Wipeout break">⏭ Skip to break</button>
         </div>
       </div>
       {data.settings.notifications && perm === 'default' && <button className="link-btn" onClick={t.enableNotifications}>🔔 Turn on break reminders</button>}

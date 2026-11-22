@@ -39,17 +39,3 @@ export const EXERCISES: Exercise[] = [
 ];
 
 export const exerciseById = (id: string) => EXERCISES.find(e => e.id === id);
-
-/** Pick an exercise honoring the user's settings. `avoid` prevents immediate repeats when there is a choice. */
-export function pickExercise(intensity: Level, disabled: string[], picked: string, avoid?: string): Exercise {
-  if (picked !== 'random') {
-    const e = exerciseById(picked);
-    if (e && !disabled.includes(e.id)) return e;
-  }
-  let pool = EXERCISES.filter(e => e.level === intensity && !disabled.includes(e.id));
-  if (!pool.length) pool = EXERCISES.filter(e => !disabled.includes(e.id));
-  if (!pool.length) pool = EXERCISES.filter(e => e.level === intensity);
-  const fresh = pool.filter(e => e.id !== avoid);
-  const list = fresh.length ? fresh : pool;
-  return list[Math.floor(Math.random() * list.length)];
-}

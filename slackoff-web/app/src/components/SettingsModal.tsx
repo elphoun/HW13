@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useApp } from '../state/AppState';
 import { useTimer } from '../state/TimerContext';
-import { DurationStepper } from './Controls';
+import { DurationStepper, PRESETS } from './Controls';
 import { Avatar, AVATARS } from './Mascots';
-import { EXERCISES, LEVELS } from '../data/exercises';
+import { LEVELS, exerciseById } from '../data/exercises';
+import { CHALLENGE_DEFS, ALL_KINDS } from '../game/engine';
 import { MAPS } from '../data/maps';
 import { notify, permission } from '../lib/notify';
 import { sfx } from '../lib/sfx';
@@ -22,10 +23,8 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
 
   const toggleActivity = (id: string, on: boolean) => {
     const disabled = on ? s.disabledActivities.filter(x => x !== id) : [...s.disabledActivities, id];
-    // Keep at least one activity per level enabled so every intensity has something to offer.
-    const lvl = EXERCISES.find(e => e.id === id)!.level;
-    if (!on && EXERCISES.filter(e => e.level === lvl && !disabled.includes(e.id)).length === 0) { toast({ emoji: '🙅', title: 'Keep at least one', body: `Level ${lvl} needs an activity.` }); return; }
-    updateSettings({ disabledActivities: disabled, pickedActivity: !on && s.pickedActivity === id ? 'random' : s.pickedActivity });
+    if (!on && ALL_KINDS.every(k => disabled.includes(CHALLENGE_DEFS[k].exerciseId))) { toast({ emoji: '🙅', title: 'Keep at least one', body: 'Wipeout needs at least one activity.' }); return; }
+    updateSettings({ disabledActivities: disabled });
   };
 
   const onNotifToggle = async (on: boolean) => {
@@ -45,28 +44,30 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
           </section>
 
           <section>
-            <h3>Timer</h3>
+            <h3>Your rhythm</h3>
+            <div className="presets">
+              {PRESETS.map(p => <button key={p.name} className={`pill ${s.workSeconds === p.w && s.exerciseSeconds === p.e ? 'on' : ''}`} onClick={() => updateSettings({ workSeconds: p.w, exerciseSeconds: p.e })}>{p.name}</button>)}
+            </div>
             <div className="steppers">
               <DurationStepper label="Work duration" value={s.workSeconds} onChange={v => updateSettings({ workSeconds: v })} />
               <DurationStepper label="Exercise duration" value={s.exerciseSeconds} onChange={v => updateSettings({ exerciseSeconds: v })} />
             </div>
             <label className="switch"><input type="checkbox" checked={s.autoCycle} onChange={e => updateSettings({ autoCycle: e.target.checked })} /><span />Automatic timer cycling</label>
             <label className="field">Exercise intensity
-              <select value={s.intensity} onChange={e => updateSettings({ intensity: +e.target.value as Level, pickedActivity: 'random' })}>
+              <select value={s.intensity} onChange={e => updateSettings({ intensity: +e.target.value as Level })}>
                 {LEVELS.map(l => <option key={l.level} value={l.level}>Level {l.level} — {l.name}</option>)}
-              </select></label>
+              </select>
+              <small>Sets how many reps each Wipeout obstacle asks for during your breaks: Level 1 easy, 2 normal, 3 hard.</small></label>
             <label className="field">Daily movement goal (activities)
               <input type="number" min={1} max={50} value={s.dailyGoal} onChange={e => updateSettings({ dailyGoal: Math.max(1, Math.min(50, Math.round(+e.target.value) || 1)) })} /></label>
           </section>
 
           <section>
             <h3>Enabled activities</h3>
-            {LEVELS.map(l => (
-              <div key={l.level} className="act-group"><b>{l.emoji} Level {l.level}</b>
-                <div className="checks">{EXERCISES.filter(e => e.level === l.level).map(e => (
-                  <label key={e.id} className="check"><input type="checkbox" checked={!s.disabledActivities.includes(e.id)} onChange={ev => toggleActivity(e.id, ev.target.checked)} />{e.name}</label>
-                ))}</div></div>
-            ))}
+            <p className="muted small">Wipeout turns these moves into obstacles. Untick any you'd rather skip.</p>
+            <div className="checks">{ALL_KINDS.map(k => { const d = CHALLENGE_DEFS[k], ex = exerciseById(d.exerciseId); return (
+              <label key={k} className="check"><input type="checkbox" checked={!s.disabledActivities.includes(d.exerciseId)} onChange={ev => toggleActivity(d.exerciseId, ev.target.checked)} />{ex?.name ?? d.move} <small className="muted">→ {d.obstacle}</small></label>
+            ); })}</div>
           </section>
 
           <section>

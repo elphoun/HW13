@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { CHALLENGE_DEFS, COURSE_LENGTH, Game, H, LIVES, W, type Difficulty, type Kind, type Result } from './engine';
+import { CHALLENGE_DEFS, COURSE_LENGTH, Game, H, LIVES, W, enabledKinds, type Difficulty, type Kind, type Result } from './engine';
 import { render } from './render';
 import { mapById } from '../data/maps';
 import { exerciseById, pointsFor } from '../data/exercises';
 import { useApp } from '../state/AppState';
 import { sfx } from '../lib/sfx';
+import { useTimer } from '../state/TimerContext';
+import { fmtClock } from '../lib/dates';
 
 type Screen = 'ready' | 'playing' | 'paused' | 'over';
 interface Hud { idx: number; total: number; reps: number; need: number; lives: number; score: number; combo: number; title: string; unit: string; kind: Kind; }
@@ -13,21 +15,25 @@ const snap = (g: Game): Hud => ({ idx: g.idx, total: g.challenges.length, reps: 
 const KIND_EMOJI: Record<Kind, string> = { jump: '🦘', duck: '🦆', run: '🏃', collect: '🌼' };
 const KIND_SFX: Record<Kind, () => void> = { jump: sfx.jump, duck: sfx.duck, run: sfx.run, collect: sfx.collect };
 
-export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; difficulty: Difficulty; onExit: () => void }) {
+/** `breakMode`: this run IS the exercise break. It starts straight away, shares the break countdown, pauses it with the game, and "quit" skips the break. */
+export function WipeoutGame({ mapId, difficulty, onExit, breakMode = false }: { mapId: string; difficulty: Difficulty; onExit: () => void; breakMode?: boolean }) {
   const app = useApp();
   const appRef = useRef(app); appRef.current = app;
+  const timer = useTimer();
+  const timerRef = useRef(timer); timerRef.current = timer;
   const map = mapById(mapId);
   const canvas = useRef<HTMLCanvasElement>(null);
   const game = useRef<Game>(null as unknown as Game);
-  const screen = useRef<Screen>('ready');
-  const [scr, setScr] = useState<Screen>('ready');
+  const initial: Screen = breakMode && timer.status === 'running' ? 'playing' : 'ready';
+  const screen = useRef<Screen>(initial);
+  const [scr, setScr] = useState<Screen>(initial);
   const [hud, setHud] = useState<Hud | null>(null);
   const [summary, setSummary] = useState<{ result: 'win' | 'lose'; score: number; results: Result[]; best: boolean; bestCombo: number } | null>(null);
 
   const setScreen = useCallback((s: Screen) => { screen.current = s; setScr(s); }, []);
 
   const newGame = useCallback(() => {
-    const g = new Game(difficulty);
+    const g = new Game(difficulty, Math.random, enabledKinds(appRef.current.data.settings.disabledActivities));
     g.onEvent = (e, data) => {
       const a = appRef.current;
       if (e === 'rep') sfx.tick(((data as number) ?? 1) - 1);
@@ -35,6 +41,7 @@ export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; diff
         const { challenge } = data as { challenge: { def: { kind: Kind; exerciseId: string }; reps: number } };
         KIND_SFX[challenge.def.kind](); setTimeout(sfx.success, 180);
         const ex = exerciseById(challenge.def.exerciseId);
+        if (breakMode) timerRef.current.creditBreak();
         if (ex) a.addCompletion({ exerciseId: ex.id, points: pointsFor(ex.level), seconds: Math.round(challenge.reps * 2.5), source: 'wipeout' });
       }
       else if (e === 'hit') sfx.hit();
@@ -48,7 +55,7 @@ export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; diff
       setHud(snap(g));
     };
     game.current = g; setHud(snap(g)); setSummary(null);
-  }, [difficulty, mapId, setScreen]);
+  }, [difficulty, mapId, setScreen, breakMode]);
 
   useEffect(() => { newGame(); }, [newGame]);
 
@@ -70,8 +77,11 @@ export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; diff
   }, [map]);
 
   const rep = useCallback(() => { if (screen.current === 'playing') game.current.rep(); }, []);
-  const start = useCallback(() => { sfx.unlock(); setScreen('playing'); }, [setScreen]);
-  const togglePause = useCallback(() => { if (screen.current === 'playing') setScreen('paused'); else if (screen.current === 'paused') setScreen('playing'); }, [setScreen]);
+  const start = useCallback(() => { sfx.unlock(); if (breakMode && timerRef.current.status === 'idle') timerRef.current.start(); setScreen('playing'); }, [setScreen, breakMode]);
+  // Pausing the game also pauses the break clock, so you can't lose break time by stopping for a drink.
+  const pause = useCallback(() => { if (screen.current !== 'playing') return; setScreen('paused'); if (breakMode) timerRef.current.pause(); }, [setScreen, breakMode]);
+  const resume = useCallback(() => { if (screen.current !== 'paused') return; setScreen('playing'); if (breakMode) timerRef.current.resume(); }, [setScreen, breakMode]);
+  const togglePause = useCallback(() => { if (screen.current === 'playing') pause(); else resume(); }, [pause, resume]);
   const again = useCallback(() => { newGame(); setScreen('playing'); }, [newGame, setScreen]);
 
   useEffect(() => {
@@ -83,10 +93,10 @@ export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; diff
       } else if (e.code === 'KeyP' || e.code === 'Escape') togglePause();
       else if (e.code === 'Enter') { if (screen.current === 'ready') start(); else if (screen.current === 'over') again(); }
     };
-    const onHide = () => { if (document.hidden && screen.current === 'playing') setScreen('paused'); };
+    const onHide = () => { if (document.hidden) pause(); };
     addEventListener('keydown', onKey); document.addEventListener('visibilitychange', onHide);
     return () => { removeEventListener('keydown', onKey); document.removeEventListener('visibilitychange', onHide); };
-  }, [rep, start, togglePause, again, setScreen]);
+  }, [rep, start, togglePause, again, pause]);
 
   const completed = summary?.results.filter(r => r.success) ?? [];
 
@@ -100,10 +110,11 @@ export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; diff
               <span className="hud-chip">⭐ {hud.score}</span>
               <span className="hud-chip hearts" aria-label={`${hud.lives} lives`}>{Array.from({ length: LIVES }, (_, i) => <i key={i} className={i < hud.lives ? 'full' : ''}>♥</i>)}</span>
               <span className="hud-chip">🏁 {Math.min(hud.idx + 1, hud.total)}/{hud.total}</span>
+              {breakMode && <span className="hud-chip break-clock" title="Time left in your break">⏱ {fmtClock(timer.remainingNow)}</span>}
               {hud.combo > 1 && <span className="hud-chip combo">🔥 x{hud.combo}</span>}
               <span className="spacer" />
               <button className="hud-btn" onClick={togglePause} disabled={scr === 'ready' || scr === 'over'}>{scr === 'paused' ? '▶ Resume' : '⏸ Pause'}</button>
-              <button className="hud-btn" onClick={onExit}>✕ Quit</button>
+              <button className="hud-btn" onClick={onExit}>{breakMode ? '⏭ Skip break' : '✕ Quit'}</button>
             </div>
             <div className="hud-challenge">
               <div className="hc-title">{KIND_EMOJI[hud.kind]} {hud.title}</div>
@@ -115,7 +126,7 @@ export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; diff
 
         {scr === 'ready' && (
           <div className="overlay">
-            <h2>Wipeout!!</h2>
+            <h2>{breakMode ? 'Time to move! 🏃' : 'Wipeout!!'}</h2>
             <p className="big">{map.name} · {COURSE_LENGTH} obstacles · {LIVES} hearts</p>
             <ul className="howto">
               <li>🦘 <b>Jumping jacks</b> → jump over boulders</li>
@@ -124,12 +135,12 @@ export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; diff
               <li>🌼 <b>Pick the flowers</b> → collect them</li>
             </ul>
             <p className="small">Do the move for real, then press <kbd>Space</kbd> (or tap the screen / button) <b>once per rep</b> before the obstacle reaches you.<br />Clear space around you and stay hydrated!</p>
-            <button className="btn primary big" onClick={start}>▶ Start (Space)</button>
+            <button className="btn primary big" onClick={start}>{breakMode ? '▶ Start my break (Space)' : '▶ Start (Space)'}</button>
           </div>
         )}
         {scr === 'paused' && (
-          <div className="overlay"><h2>Paused ⏸</h2><p className="big">Catch your breath.</p>
-            <div className="row-wrap"><button className="btn primary big" onClick={togglePause}>▶ Resume</button><button className="btn secondary" onClick={onExit}>Quit</button></div></div>
+          <div className="overlay"><h2>Paused ⏸</h2><p className="big">Catch your breath.{breakMode && ' Your break clock is paused too.'}</p>
+            <div className="row-wrap"><button className="btn primary big" onClick={togglePause}>▶ Resume</button><button className="btn secondary" onClick={onExit}>{breakMode ? 'Skip break' : 'Quit'}</button></div></div>
         )}
         {scr === 'over' && summary && (
           <div className="overlay end">
@@ -140,7 +151,7 @@ export function WipeoutGame({ mapId, difficulty, onExit }: { mapId: string; diff
                 {completed.length ? <ul>{completed.map((r, i) => <li key={i}>{KIND_EMOJI[r.kind]} {r.reps}× {CHALLENGE_DEFS[r.kind].unit} <b>+{r.points}</b></li>)}</ul> : <p className="small">None this time — you'll get it!</p>}</div>
               <div><h4>Stats</h4><ul><li>Best combo: <b>x{summary.bestCombo}</b></li><li>Hearts left: <b>{hud?.lives ?? 0}</b></li><li>Added to your SlackOff stats ✅</li></ul></div>
             </div>
-            <div className="row-wrap"><button className="btn primary big" onClick={again}>↻ Play again (Enter)</button><button className="btn secondary" onClick={onExit}>Back to maps</button></div>
+            <div className="row-wrap"><button className="btn primary big" onClick={again}>↻ Play again (Enter)</button><button className="btn secondary" onClick={onExit}>{breakMode ? 'Back to work' : 'Back to maps'}</button></div>
           </div>
         )}
       </div>
