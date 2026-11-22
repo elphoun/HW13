@@ -1,4 +1,4 @@
-import type { BreakType, Level } from '../types';
+import type { BreakType, Level, MoveType } from '../types';
 
 /** One exercise for a scene. `say` turns the rep count into the instruction shown to the user. */
 export interface SceneMove { exerciseId: string; reps: number; say: (n: number) => string; }
@@ -7,7 +7,10 @@ export interface SceneMove { exerciseId: string; reps: number; say: (n: number) 
  * One beat of the story. The line and picture are the same for everyone;
  * only the move changes with the break type (activity vs stretch).
  */
-export interface Scene { line: string; moves: Record<BreakType, SceneMove>; }
+export interface Scene { line: string; moves: Record<MoveType, SceneMove>; }
+
+/** The moves a scene asks for with this break type, in order: one move, or the activity then the stretch for `both`. */
+export const movesFor = (scene: Scene, type: BreakType): SceneMove[] => type === 'both' ? [scene.moves.activity, scene.moves.stretch] : [scene.moves[type]];
 
 export interface Story { id: string; name: string; blurb: string; intro: string; playable: boolean; scenes: Scene[]; }
 

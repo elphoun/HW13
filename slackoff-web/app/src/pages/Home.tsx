@@ -6,7 +6,7 @@ import { useTimer } from '../state/TimerContext';
 import { useApp } from '../state/AppState';
 import { fmtClock } from '../lib/dates';
 import { permission } from '../lib/notify';
-import { storyById } from '../data/stories';
+import { movesFor, storyById } from '../data/stories';
 import { exerciseById } from '../data/exercises';
 import type { BreakType } from '../types';
 import { CloudSky } from '../components/CloudSky';
@@ -34,17 +34,18 @@ function TimerStatus() {
   );
 }
 
-/** The two ways to take a break. Both play the same story; the card says which moves you'll get. */
+/** The ways to take a break. All play the same story; the card says which moves you'll get. */
 function BreakCard({ type, title, onClick }: { type: BreakType; title: string; onClick: () => void }) {
   const { data } = useApp();
   const story = storyById(data.settings.story);
-  const moves = [...new Set(story.scenes.map(sc => exerciseById(sc.moves[type].exerciseId)?.name).filter(Boolean))] as string[];
-  const preview = moves.slice(0, 3).join(', ').toLowerCase();
+  const moves = [...new Set(story.scenes.flatMap(sc => movesFor(sc, type)).map(m => exerciseById(m.exerciseId)?.name).filter(Boolean))] as string[];
+  const preview = type === 'both' ? 'every scene: the activity, then the stretch. About twice as long' : moves.slice(0, 3).join(', ').toLowerCase();
+  const count = story.scenes.length * (type === 'both' ? 2 : 1);
   return (
     <button className={`home-card ${type}`} onClick={onClick}>
       <b>{title}</b>
-      <span>{preview.charAt(0).toUpperCase() + preview.slice(1)}{moves.length > 3 ? ' and more' : ''}</span>
-      <small>{story.name}, {story.scenes.length} scenes</small>
+      <span>{preview.charAt(0).toUpperCase() + preview.slice(1)}{type !== 'both' && moves.length > 3 ? ' and more' : ''}</span>
+      <small>{story.name}, {count} moves</small>
     </button>
   );
 }
@@ -78,6 +79,7 @@ export function Home({ tab, setTab, beginBreak, goAdventures }: { tab: SideTab; 
         <div className="home-cards">
           <BreakCard type="activity" title="Begin activity" onClick={() => beginBreak('activity')} />
           <BreakCard type="stretch" title="Begin stretch" onClick={() => beginBreak('stretch')} />
+          <BreakCard type="both" title="Activity + stretch" onClick={() => beginBreak('both')} />
         </div>
         <ReminderPrompt />
       </div>

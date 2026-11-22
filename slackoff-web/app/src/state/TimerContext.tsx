@@ -19,6 +19,8 @@ interface TimerState {
 interface TimerCtx extends TimerState {
   totalMs: number; remainingNow: number; progress: number;
   start: () => void; pause: () => void; resume: () => void; reset: () => void; skip: () => void;
+  /** Add time to the current countdown (used to lengthen a break that runs activity + stretch). */
+  extend: (ms: number) => void;
   /** Call when the user does something during a break; the first call counts the break as completed. */
   creditBreak: () => void;
   enableNotifications: () => Promise<void>;
@@ -114,6 +116,7 @@ export function TimerProvider({ children }: { children: ReactNode }) {
     resume: () => setS(p => p.status === 'paused' ? { ...p, status: 'running', endAt: Date.now() + p.remainingMs } : p),
     reset: () => setS({ phase: 'work', status: 'idle', endAt: 0, remainingMs: 0, breakCredited: false }),
     skip: () => advance(false),
+    extend: ms => setS(p => p.status === 'running' ? { ...p, endAt: p.endAt + ms } : p.status === 'paused' ? { ...p, remainingMs: p.remainingMs + ms } : p),
     creditBreak: () => {
       if (sRef.current.phase !== 'exercise' || sRef.current.breakCredited) return;
       app.addBreak();

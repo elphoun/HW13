@@ -69,6 +69,7 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
               <select value={s.breakType} onChange={e => updateSettings({ breakType: e.target.value as BreakType })}>
                 <option value="activity">Activity: get moving</option>
                 <option value="stretch">Stretch: loosen up</option>
+                <option value="both">Activity + stretch: both moves in every scene, twice the break time</option>
               </select>
               <small>The story stays the same. Only the exercise in each scene changes.</small></label>
           </section>

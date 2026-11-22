@@ -1,6 +1,8 @@
 export type Level = 1 | 2 | 3;
 /** What a break asks of you: an active move, or a gentle stretch. Same story either way. */
-export type BreakType = 'activity' | 'stretch';
+export type MoveType = 'activity' | 'stretch';
+/** `both`: every scene asks for its activity move, then its stretch move, so the break runs about twice as long. */
+export type BreakType = MoveType | 'both';
 export type AnimKey =
   | 'neck-tilt' | 'neck-circle' | 'seated-toe' | 'body-rotate'
   | 'squat' | 'stand-toe' | 'high-knees' | 'flowers'

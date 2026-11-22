@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { repsFor, scenePicture, type Story } from '../data/stories';
+import { movesFor, repsFor, scenePicture, type Story } from '../data/stories';
 import { exerciseById, pointsFor } from '../data/exercises';
 import { useApp } from '../state/AppState';
 import { useTimer } from '../state/TimerContext';
@@ -24,11 +24,12 @@ const DETECTOR: Record<string, MoveKind> = {
 const TYPES: { id: BreakType; label: string; note: string }[] = [
   { id: 'activity', label: 'Activity', note: 'Get moving' },
   { id: 'stretch', label: 'Stretch', note: 'Loosen up' },
+  { id: 'both', label: 'Both', note: 'Move, then stretch' },
 ];
 
 /**
- * Plays a story scene by scene. Each scene shows its picture and story line, asks for one exercise,
- * and moves on once you've counted every rep.
+ * Plays a story scene by scene. Each scene shows its picture and story line and asks for one exercise (two with `both`:
+ * the activity, then the stretch), and moves on once you've counted every rep.
  * `breakMode`: this run is the exercise break. It shares the break clock and "exit" ends the break.
  * `startWith`: skip the intro and go straight in with this break type.
  */
@@ -39,6 +40,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
   const [type, setType] = useState<BreakType>(startWith ?? app.data.settings.breakType);
   const [phase, setPhase] = useState<Phase>(startWith ? 'scene' : 'intro');
   const [idx, setIdx] = useState(0);
+  const [part, setPart] = useState(0);              // which of the scene's moves (0, or 0..1 with `both`)
   const [reps, setReps] = useState(0);
   const [earned, setEarned] = useState(0);
   const [done, setDone] = useState<string[]>([]);       // instructions completed, for the summary
@@ -47,18 +49,27 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
   const repsRef = useRef(0);        // the live rep count (AirPods can report several reps in one tick, before React re-renders)
 
   const scene = story.scenes[Math.min(idx, story.scenes.length - 1)];
-  const move = scene.moves[type];
+  const parts = movesFor(scene, type);
+  const move = parts[Math.min(part, parts.length - 1)];
+  const totalMoves = story.scenes.length * parts.length;
   const need = repsFor(move.reps, level);
   const picture = scenePicture(story.id, idx);
 
-  // A break that starts with the story should also start the break clock.
+  // A break that starts with the story should also start the break clock. Activity + stretch is twice the moves,
+  // so it gets twice the break time (once per break).
+  const extended = useRef(false);
+  const startClock = useCallback((t: BreakType) => {
+    if (!breakMode) return;
+    if (timer.status === 'idle') timer.start();
+    if (t === 'both' && !extended.current) { extended.current = true; timer.extend(app.data.settings.exerciseSeconds * 1000); }
+  }, [breakMode, timer, app.data.settings.exerciseSeconds]);
   const start = useCallback(() => {
     sfx.unlock();
     if (type !== app.data.settings.breakType) app.updateSettings({ breakType: type });
-    if (breakMode && timer.status === 'idle') timer.start();
-    repsRef.current = 0; setIdx(0); setReps(0); setEarned(0); setDone([]); setPhase('scene');
-  }, [type, app, breakMode, timer]);
-  useEffect(() => { if (startWith && breakMode && timer.status === 'idle') timer.start(); }, []);   // eslint-disable-line react-hooks/exhaustive-deps
+    startClock(type);
+    repsRef.current = 0; setIdx(0); setPart(0); setReps(0); setEarned(0); setDone([]); setPhase('scene');
+  }, [type, app, startClock]);
+  useEffect(() => { if (startWith) startClock(startWith); }, []);   // eslint-disable-line react-hooks/exhaustive-deps
 
   const finishScene = useCallback((credit: boolean) => {
     if (credit) {
@@ -69,23 +80,25 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
       setEarned(e => e + pts); setDone(d => [...d, move.say(need)]);
       sfx.success();
     }
-    setClearedMsg(credit ? 'Nice!' : 'Skipped');
+    setClearedMsg(credit ? (part + 1 < parts.length ? 'Nice! Now stretch' : 'Nice!') : 'Skipped');
     setPhase('cleared');
-  }, [move, need, app, breakMode, timer]);
+  }, [move, need, app, breakMode, timer, part, parts.length]);
 
   // After "Nice!", move to the next scene or wrap up the story.
   useEffect(() => {
     if (phase !== 'cleared') return;
     const t = setTimeout(() => {
-      if (idx + 1 < story.scenes.length) { repsRef.current = 0; setIdx(i => i + 1); setReps(0); setPhase('scene'); return; }
+      repsRef.current = 0; setReps(0);
+      if (part + 1 < parts.length) { setPart(p => p + 1); setPhase('scene'); return; }
+      if (idx + 1 < story.scenes.length) { setIdx(i => i + 1); setPart(0); setPhase('scene'); return; }
       setPhase('done'); sfx.win();
     }, CLEARED_MS);
     return () => clearTimeout(t);
-  }, [phase, idx, story.scenes.length]);
+  }, [phase, idx, part, parts.length, story.scenes.length]);
 
   // Log the run once, when the story ends.
   useEffect(() => {
-    if (phase === 'done') app.addRun({ map: story.id, score: earned, completed: done.length, total: story.scenes.length });
+    if (phase === 'done') app.addRun({ map: story.id, score: earned, completed: done.length, total: totalMoves });
   }, [phase]);
 
   /** One rep happened. `fromSensor` skips the anti-mash gap: AirPod reps are real. */
@@ -115,7 +128,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
       while (seen < det.reps) { seen++; repRef.current(true); }
     });
     return unsub;
-  }, [useAir, phase, idx, detectorKind]);
+  }, [useAir, phase, idx, part, detectorKind]);
   useEffect(() => {
     if (!useAir) { setPodsOn(false); return; }
     const unsub = airpods.subscribe(() => {});        // open the stream so we can show whether data is arriving
@@ -170,7 +183,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
         {phase === 'done' && (
           <div className="story-overlay">
             <h2>{done.length ? 'You made it!' : 'Story over'}</h2>
-            <p>{done.length === story.scenes.length ? `Every scene of ${story.name}, done.` : `${done.length} of ${story.scenes.length} scenes done.`} You earned {earned} points.</p>
+            <p>{done.length === totalMoves ? `Every scene of ${story.name}, done.` : `${done.length} of ${totalMoves} ${parts.length > 1 ? 'moves' : 'scenes'} done.`} You earned {earned} points.</p>
             {done.length > 0 && <ul className="story-recap">{done.map((d, i) => <li key={i}>{d}</li>)}</ul>}
             <div className="row-wrap">
               <button className="ov-btn" onClick={start}>Play again</button>
@@ -182,13 +195,14 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
 
       <div className={`story-move${phase === 'scene' || phase === 'cleared' ? '' : ' idle'}`} aria-live="polite">
         <div className="sm-ask">
+          {parts.length > 1 && <span className="sm-part">{part === 0 ? 'Activity' : 'Stretch'}, move {part + 1} of {parts.length}</span>}
           <b>{move.say(need)}</b>
           <span className="sm-dots" aria-label={`${Math.min(reps, need)} of ${need} done`}>
             {Array.from({ length: need }, (_, i) => <i key={i} className={i < reps ? 'on' : ''} />)}
           </span>
         </div>
         <button className="rep-btn" onClick={() => rep()} disabled={phase !== 'scene'}>Done one <kbd>Space</kbd></button>
-        <button className="sm-skip" onClick={() => finishScene(false)} disabled={phase !== 'scene'}>Skip this scene</button>
+        <button className="sm-skip" onClick={() => finishScene(false)} disabled={phase !== 'scene'}>{parts.length > 1 ? 'Skip this move' : 'Skip this scene'}</button>
       </div>
     </div>
   );
