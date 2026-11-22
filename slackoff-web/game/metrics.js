@@ -1,6 +1,6 @@
 // Run metrics from head movement (AirPods in your ears). Counts head tilts left/right, nods forward/back and jumps,
-// plus time spent leaning and your biggest tilt. Uses the same calibrated stick as the game, so it works the same
-// whether you hold the AirPod or wear it. Live HUD while playing, summary on the game-over screen, lifetime totals saved.
+// plus time spent leaning and your biggest tilt. Uses the same head-tilt stick as the game (relative to the pose at
+// the start of the run). Live HUD while playing, summary on the game-over screen, lifetime totals saved.
 (() => {
   const $ = id => document.getElementById(id);
   const ON = 0.5, OFF = 0.2;                                   // stick level that counts as a tilt / re-arms it
