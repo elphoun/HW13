@@ -1,6 +1,6 @@
-// Zero-dependency bridge. Serves the game and relays data between the AirPod streamers and the browsers.
+// Zero-dependency bridge. Serves the exercise lab and relays data between the AirPod streamers and the browsers.
 //   UDP :9000  <- HeadMotionStreamer (each laptop's streamer, tagged with its player number "p")
-//   HTTP :8080 -> game files, GET /events (Server-Sent Events), GET /seed, GET /info, POST /state
+//   HTTP :8080 -> lab files, GET /events (Server-Sent Events), GET /seed, GET /info, POST /state
 // Multiplayer: every player's browser POSTs its craft position to /state; the bridge relays it to the other browsers
 // as an SSE "state" event so they can draw it as a ghost. All browsers get the same /seed so the track is identical.
 const dgram = require('dgram');
@@ -11,7 +11,7 @@ const path = require('path');
 
 const UDP_PORT = +process.env.UDP_PORT || 9000;
 const HTTP_PORT = +process.env.HTTP_PORT || 8080;
-const GAME_DIR = path.join(__dirname, '..', 'game');
+const GAME_DIR = path.join(__dirname, '..', 'lab');
 const SEED = Math.floor(Math.random() * 2 ** 31);      // new track layout each time the bridge starts
 const clients = new Set();
 
@@ -59,6 +59,6 @@ http.createServer((req, res) => {
     res.end(data);
   });
 }).listen(HTTP_PORT, () => {
-  console.log(`Game (this laptop):  http://localhost:${HTTP_PORT}/?p=1`);
+  console.log(`Lab (this laptop):   http://localhost:${HTTP_PORT}/?p=1`);
   for (const ip of lanIPs()) console.log(`Friend opens:        http://${ip}:${HTTP_PORT}/?p=2   and runs: swift run HeadMotionStreamer --host ${ip} --player 2`);
 });
