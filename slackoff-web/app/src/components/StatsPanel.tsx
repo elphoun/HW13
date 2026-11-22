@@ -1,7 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { useApp } from '../state/AppState';
-import { nextResetLabel, startOfDay } from '../lib/dates';
-import { nextResetMs } from '../lib/rivals';
+import { nextResetLabel, nextResetMs, startOfDay } from '../lib/dates';
 import { computeAverages } from '../lib/stats';
 import { Avatar } from './Mascots';
 
@@ -104,12 +103,12 @@ function Week() {
         <li>
           {confirming ? (
             <div className="sb-row confirm">
-              <Icon name="reset" /><span className="sb-label">Points go back to 0</span>
+              <Icon name="reset" /><span className="sb-label">Your points go back to 0</span>
               <button className="sb-mini" onClick={() => setConfirming(false)}>Keep</button>
-              <button className="sb-mini danger" onClick={() => { resetLeaderboard(); setConfirming(false); toast({ emoji: '🔄', title: 'Week reset', body: 'Everyone starts from 0.' }); }}>Reset</button>
+              <button className="sb-mini danger" onClick={() => { resetLeaderboard(); setConfirming(false); toast({ emoji: '🔄', title: 'Week reset', body: 'Your points this week start from 0.' }); }}>Reset</button>
             </div>
           ) : (
-            <button className="sb-row sb-btn muted" onClick={() => setConfirming(true)}><Icon name="reset" /><span className="sb-label">Reset week</span></button>
+            <button className="sb-row sb-btn muted" onClick={() => setConfirming(true)}><Icon name="reset" /><span className="sb-label">Reset my week</span></button>
           )}
         </li>
       </ul>

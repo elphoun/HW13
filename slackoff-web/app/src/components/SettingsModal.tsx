@@ -25,7 +25,7 @@ function AirPodStatus() {
 }
 
 export function SettingsModal({ onClose }: { onClose: () => void }) {
-  const { data, updateSettings, updateProfile, resetAllData, toast } = useApp();
+  const { data, updateSettings, updateProfile, resetAllData, toast, signOut } = useApp();
   const t = useTimer();
   const s = data.settings;
   const [perm, setPerm] = useState(permission());
@@ -62,7 +62,7 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
             </div>
             <label className="switch"><input type="checkbox" checked={s.airpods} onChange={e => updateSettings({ airpods: e.target.checked })} /><span />Count reps with AirPods (when the streamer is running)</label>
             {s.airpods && <AirPodStatus />}
-            <label className="switch"><input type="checkbox" defaultChecked={airpods.flipUp} onChange={e => airpods.setFlipUp(e.target.checked)} /><span />Flip AirPod up/down (turn on if squats don't count)</label>
+            <label className="switch"><input type="checkbox" checked={s.airpodsFlipUp} onChange={e => updateSettings({ airpodsFlipUp: e.target.checked })} /><span />Flip AirPod up/down (turn on if squats don't count)</label>
             <label className="switch"><input type="checkbox" checked={s.autoCycle} onChange={e => updateSettings({ autoCycle: e.target.checked })} /><span />Automatic timer cycling</label>
             <label className="field">Exercise intensity
               <select value={s.intensity} onChange={e => updateSettings({ intensity: +e.target.value as Level })}>
@@ -105,8 +105,11 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
 
           <section>
             <h3>Data</h3>
-            <p className="muted small">Everything is stored in this browser (localStorage).</p>
-            <button className="btn danger" onClick={() => { if (confirm('Erase all your stats, streaks and game history? Settings are kept.')) { resetAllData(); t.reset(); toast({ emoji: '🧹', title: 'Stats cleared' }); } }}>Reset my stats</button>
+            <p className="muted small">Saved to your SlackOff account in Supabase.</p>
+            <div className="row-wrap">
+              <button className="btn secondary" onClick={() => void signOut()}>Sign out</button>
+              <button className="btn danger" onClick={() => { if (confirm('Erase all your stats, streaks and game history? Settings are kept.')) { resetAllData(); t.reset(); toast({ emoji: '🧹', title: 'Stats cleared' }); } }}>Reset my stats</button>
+            </div>
           </section>
         </div>
       </div>

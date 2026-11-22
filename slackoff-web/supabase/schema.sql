@@ -1,5 +1,7 @@
--- SlackOff schema for Supabase. NOT wired up yet: the web app currently persists to localStorage
--- through src/lib/storage.ts. These tables mirror the shapes in src/types.ts so the swap is mechanical.
+-- Original SlackOff schema sketch. The live project has since grown (user_settings.story/break_type/airpods/
+-- airpods_flip_up/timer_state, profiles.leaderboard_reset_at/resets, breaks, game_runs, achievements, RLS
+-- policies, handle_new_user trigger); see migrations/ for changes made from this repo. The web app talks to it
+-- through app/src/lib/storage.ts.
 create table profiles (
   id uuid primary key references auth.users on delete cascade,
   username text not null unique,

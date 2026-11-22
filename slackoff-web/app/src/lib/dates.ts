@@ -13,3 +13,5 @@ export const fmtDuration = (sec: number) => {
 };
 export const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
 export const nextResetLabel = (ms: number) => { const h = Math.floor(ms / 3_600_000); return h >= 24 ? `${Math.floor(h / 24)}d ${h % 24}h` : `${h}h ${Math.floor((ms % 3_600_000) / 60_000)}m`; };
+/** Next Monday 00:00 local time, when the weekly leaderboard starts over. */
+export const nextResetMs = (now: number) => addDays(startOfWeek(now), 7);
