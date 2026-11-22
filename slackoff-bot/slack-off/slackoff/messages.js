@@ -31,6 +31,11 @@ const button = (text, actionId, style) => ({
 
 const section = (text) => ({ type: 'section', text: { type: 'mrkdwn', text } });
 
+const header = (text) => ({
+  type: 'header',
+  text: { type: 'plain_text', text: text.length > 150 ? `${text.slice(0, 149)}…` : text, emoji: true },
+});
+
 const morningReminder = (userId) => ({
   text: 'Good morning! Ready to start your Slack Off session?',
   blocks: [
@@ -153,14 +158,21 @@ const sessionEndedSummary = (completedCount) => ({
 const homeView = ({ userId, status }) => ({
   type: 'home',
   blocks: [
-    { type: 'header', text: { type: 'plain_text', text: 'Slack Off :man-cartwheeling:' } },
+    header('Slack Off'),
     section(`Hi <@${userId}>! I remind you to stretch and move during the workday.`),
-    section(
+    header(
       status.active
-        ? `*Status:* ${status.phase === 'moving' ? `on a break (${status.activityName})` : 'working'} · ${status.completed} breaks done · headphones ${status.headphonesStreaming ? 'connected :headphones:' : 'not detected :warning:'}`
-        : '*Status:* no session running',
+        ? `Status: ${status.phase === 'moving' ? `on a break (${status.activityName})` : 'working'}`
+        : 'Status: no session running',
     ),
-    section(`*Pomodoro:* ${pomodoroCycle(status.pomodoro)}`),
+    ...(status.active
+      ? [
+          header(
+            `✅ ${status.completed} breaks done · ${status.headphonesStreaming ? '🎧 headphones connected' : '⚠️ headphones not detected'}`,
+          ),
+        ]
+      : []),
+    header(`Pomodoro: ${pomodoroCycle(status.pomodoro)}`),
     {
       type: 'actions',
       elements: [
