@@ -184,9 +184,17 @@ kbd { background: rgba(0, 0, 0, .12); border-radius: 6px; padding: 1px 7px; font
 .sp-tab { height: 32px; border: 0; border-radius: 4px; background: transparent; color: #b9a6c6; font: 600 14px/1 Inter, system-ui, sans-serif; transition: background .15s, color .15s; }
 .sp-tab:hover { color: #fff; }
 .sp-tab[aria-selected="true"] { background: #470d4a; color: #fff; }
+<<<<<<< HEAD
 .sp-body { padding: 14px 6px 12px; }
 .sp-list { list-style: none; margin: 0; padding: 0 0 0 6px; display: flex; flex-direction: column; gap: 14px; }
 .sp-row { display: flex; align-items: center; gap: 14px; }
+=======
+.sp-body { min-height: 312px; padding: 22px 6px 24px; }
+.sp-list { list-style: none; margin: 0; padding: 0 0 0 6px; display: flex; flex-direction: column; gap: 32px; }
+.sp-row { display: flex; align-items: center; gap: 19px; }
+.sp-avg { list-style: none; margin: 26px 0 0; padding: 18px 0 0 6px; border-top: 1px solid #3a2a45; display: flex; flex-direction: column; gap: 11px; }
+.sp-avgrow { display: flex; justify-content: space-between; gap: 12px; color: #b9a6c6; font-size: 14px; } .sp-avgrow b { color: #fff; font-weight: 700; }
+>>>>>>> 74abdcd (Web: daily and monthly averages in the Today panel)
 .sp-icon { flex: none; width: 24px; height: 24px; }
 .sp-text { display: flex; flex-direction: column; gap: 1px; line-height: 1.15; }
 .sp-label { color: #b9a6c6; font-size: 14px; }

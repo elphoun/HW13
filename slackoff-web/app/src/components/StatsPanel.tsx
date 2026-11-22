@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { useApp } from '../state/AppState';
 import { nextResetLabel, startOfDay } from '../lib/dates';
 import { nextResetMs } from '../lib/rivals';
+import { computeAverages } from '../lib/stats';
 import { Avatar } from './Mascots';
 
 export type SideTab = 'today' | 'week';
@@ -22,21 +23,38 @@ function Row({ icon, label, value }: { icon: keyof typeof ICONS; label: string; 
   );
 }
 
+/** Whole numbers stay whole; everything else gets one decimal. */
+const num = (n: number) => (Number.isInteger(Math.round(n * 10) / 10) ? String(Math.round(n * 10) / 10) : (Math.round(n * 10) / 10).toFixed(1));
+function AvgRow({ label, value }: { label: string; value: string }) {
+  return <li className="sp-avgrow"><span>{label}</span><b>{value}</b></li>;
+}
+
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
 function Today() {
   const { data, stats } = useApp();
+  const avg = computeAverages(data);
   const today0 = startOfDay(Date.now());
   const focus = data.sessions.filter(s => s.kind === 'work' && s.completed && s.ts >= today0).length;
   const activeMin = Math.round(data.completions.filter(c => c.ts >= today0).reduce((sum, c) => sum + c.seconds, 0) / 60);
   const breaks = data.breaks.filter(b => b >= today0).length;
   return (
-    <ul className="sp-list">
-      <Row icon="check" label="Focus sessions" value={`${focus} today`} />
-      <Row icon="drop" label="Active minutes" value={`${activeMin} min`} />
-      <Row icon="flame" label="Current streak" value={plural(stats.streak, 'day')} />
-      <Row icon="cup" label="Breaks taken" value={`${breaks} today`} />
-    </ul>
+    <>
+      <ul className="sp-list">
+        <Row icon="check" label="Focus sessions" value={`${focus} today`} />
+        <Row icon="drop" label="Active minutes" value={`${activeMin} min`} />
+        <Row icon="flame" label="Current streak" value={plural(stats.streak, 'day')} />
+        <Row icon="cup" label="Breaks taken" value={`${breaks} today`} />
+      </ul>
+      <ul className="sp-avg" aria-label="Averages">
+        <AvgRow label="Daily avg · activities" value={num(avg.dailyActivities)} />
+        <AvgRow label="Daily avg · active min" value={`${num(avg.dailyMinutes)} min`} />
+        <AvgRow label="Daily avg · breaks" value={num(avg.dailyBreaks)} />
+        <AvgRow label="Daily avg · focus sessions" value={num(avg.dailyFocus)} />
+        <AvgRow label="Activities this month" value={String(avg.thisMonth)} />
+        <AvgRow label="Monthly avg · activities" value={num(avg.monthlyActivities)} />
+      </ul>
+    </>
   );
 }
 
