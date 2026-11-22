@@ -11,6 +11,7 @@ const ICONS: Record<string, ReactNode> = {
   check: <><circle cx="12" cy="12" r="9" stroke="#8a9e80" strokeWidth="1.8" /><path d="m8 12.2 2.7 2.6L16 9.6" stroke="#8a9e80" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></>,
   drop: <path d="M12 3.5c3 3.6 5.5 7 5.5 10.1a5.5 5.5 0 0 1-11 0C6.5 10.5 9 7.1 12 3.5z" stroke="#a9d08e" strokeWidth="1.8" strokeLinejoin="round" />,
   flame: <path d="M12 3.5c3.2 3.3 5.2 6.2 5.2 9.2A5.2 5.2 0 0 1 12 18a5.2 5.2 0 0 1-5.2-5.4c0-2 1-3.8 2.5-5.3.3 1.6 1 2.5 2 2.7C11 8 11.2 5.7 12 3.5z" fill="#e9b54f" />,
+  bars: <path d="M6 18v-5m6 5V7m6 11v-8" stroke="#8fb4d9" strokeWidth="2.2" strokeLinecap="round" />,
   cup: <path d="M5 8h10.5v5.5a4.5 4.5 0 0 1-4.5 4.5h-1.5A4.5 4.5 0 0 1 5 13.5zm10.5 1.5h1.8a2 2 0 0 1 0 4h-1.9" stroke="#e0937b" strokeWidth="1.8" strokeLinejoin="round" />,
 };
 
@@ -25,10 +26,6 @@ function Row({ icon, label, value }: { icon: keyof typeof ICONS; label: string; 
 
 /** Whole numbers stay whole; everything else gets one decimal. */
 const num = (n: number) => (Number.isInteger(Math.round(n * 10) / 10) ? String(Math.round(n * 10) / 10) : (Math.round(n * 10) / 10).toFixed(1));
-function AvgRow({ label, value }: { label: string; value: string }) {
-  return <li className="sp-avgrow"><span>{label}</span><b>{value}</b></li>;
-}
-
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 
 function Today() {
@@ -39,22 +36,20 @@ function Today() {
   const activeMin = Math.round(data.completions.filter(c => c.ts >= today0).reduce((sum, c) => sum + c.seconds, 0) / 60);
   const breaks = data.breaks.filter(b => b >= today0).length;
   return (
-    <>
+    <div className="sp-scroll" tabIndex={0} aria-label="Today's stats (scroll for more)">
       <ul className="sp-list">
         <Row icon="check" label="Focus sessions" value={`${focus} today`} />
         <Row icon="drop" label="Active minutes" value={`${activeMin} min`} />
         <Row icon="flame" label="Current streak" value={plural(stats.streak, 'day')} />
         <Row icon="cup" label="Breaks taken" value={`${breaks} today`} />
+        <Row icon="bars" label="Daily avg · activities" value={num(avg.dailyActivities)} />
+        <Row icon="bars" label="Daily avg · active min" value={`${num(avg.dailyMinutes)} min`} />
+        <Row icon="bars" label="Daily avg · breaks" value={num(avg.dailyBreaks)} />
+        <Row icon="bars" label="Daily avg · focus sessions" value={num(avg.dailyFocus)} />
+        <Row icon="bars" label="Activities this month" value={String(avg.thisMonth)} />
+        <Row icon="bars" label="Monthly avg · activities" value={num(avg.monthlyActivities)} />
       </ul>
-      <ul className="sp-avg" aria-label="Averages">
-        <AvgRow label="Daily avg · activities" value={num(avg.dailyActivities)} />
-        <AvgRow label="Daily avg · active min" value={`${num(avg.dailyMinutes)} min`} />
-        <AvgRow label="Daily avg · breaks" value={num(avg.dailyBreaks)} />
-        <AvgRow label="Daily avg · focus sessions" value={num(avg.dailyFocus)} />
-        <AvgRow label="Activities this month" value={String(avg.thisMonth)} />
-        <AvgRow label="Monthly avg · activities" value={num(avg.monthlyActivities)} />
-      </ul>
-    </>
+    </div>
   );
 }
 
