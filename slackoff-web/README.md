@@ -31,7 +31,7 @@ The old AirPod hover-racer game was removed (it is in git history). `lab/` is no
 3. Pick an exercise on the left. After a 1.5 s "hold still" your current pose becomes neutral (no calibration), then do it.
 
 - **Stretches** (measured by head angle, accurate): neck tilts, body rotations, touch your toes (sitting), neck circles.
-- **Activities** (measured by head acceleration, approximate): jumps, jumping jacks, 1-leg hop, high knees, squats,
+- **Activities** (measured by head acceleration, approximate): jumping jacks, 1-leg hop (same head bounce), high knees (up/down wobble), squats,
   touch your toes (standing), pick the flowers. The AirPods only feel your head, so they can't see arms or legs and
   can't tell which leg you hopped on.
 - The page shows the rep count, six live charts (roll, pitch, yaw, forward bend, acceleration, up/down) and the

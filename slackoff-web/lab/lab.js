@@ -7,7 +7,8 @@
     { k: 'pitch', label: 'Pitch: nod down (−) / up (+) (°)', min: -60, max: 60 },
     { k: 'yaw', label: 'Yaw: turning (°)', min: -90, max: 90 },
     { k: 'bend', label: 'Bend: forward lean (°)', min: -30, max: 100 },
-    { k: 'mag', label: 'Head acceleration (g)', min: 0, max: 3 },
+    { k: 'mag', label: 'Head acceleration, any direction (g)', min: 0, max: 3 },
+    { k: 'up', label: 'Up/down acceleration (g)', min: -1.5, max: 1.5 },
     { k: 'y', label: 'Up/down position, rough (m)', min: -0.3, max: 0.3 },
   ];
   const load = () => { try { return JSON.parse(localStorage.getItem('slackoffLabParams') || '{}'); } catch (_) { return {}; } };
@@ -80,7 +81,7 @@
     SERIES.forEach((s, i) => {
       const top = i * RH + PAD, h = RH - PAD - 6, Y = v => top + h - (Math.max(s.min, Math.min(s.max, v)) - s.min) / (s.max - s.min) * h;
       const main = cur && cur.chart === s.k;
-      c.fillStyle = main ? '#f0f' : '#7cc'; c.fillText(s.label + (hist.length ? '   ' + hist[hist.length - 1][s.k].toFixed(s.k === 'y' || s.k === 'mag' ? 2 : 0) : ''), 4, top - 5);
+      c.fillStyle = main ? '#f0f' : '#7cc'; c.fillText(s.label + (hist.length ? '   ' + hist[hist.length - 1][s.k].toFixed(['y', 'mag', 'up'].includes(s.k) ? 2 : 0) : ''), 4, top - 5);
       c.strokeStyle = '#0ff3'; c.strokeRect(0.5, top, W - 1, h);
       c.beginPath(); c.moveTo(0, Y(0)); c.lineTo(W, Y(0)); c.setLineDash([2, 4]); c.stroke(); c.setLineDash([]);
       c.strokeStyle = '#fc0'; c.setLineDash([6, 4]);

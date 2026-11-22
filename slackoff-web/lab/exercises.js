@@ -48,6 +48,22 @@ const Exercises = (() => {
       }, get reps() { return reps; },
       get note() { return streak < P.streak ? (streak ? `${streak} of ${P.streak} to start counting` : 'Go!') : `streak of ${streak}`; } };
   };
+  // Count up/down OSCILLATIONS of the head (high knees): vertical acceleration, minus its slow average, swings above +amp
+  // and below -amp. One full swing = 1 step. Steps closer than `gap` are ignored; a streak must reach `streak` steps to count.
+  const osc = P => {
+    let tn = 0, ema = 0, init = false, high = false, last = -1e9, streak = 0, reps = 0;
+    return { update(s) {
+        tn += s.dt; if (!init) { ema = s.up; init = true; }
+        ema += (s.up - ema) * (1 - Math.exp(-s.dt / P.tau)); const v = s.up - ema;
+        if (!high && v > P.amp) {
+          high = true;
+          if (tn - last >= P.gap) { streak = tn - last <= P.maxGap ? streak + 1 : 1; last = tn;
+                                    if (streak === P.streak) reps += P.streak; else if (streak > P.streak) reps++; }
+        } else if (high && v < -P.amp) high = false;
+      }, get reps() { return reps; },
+      get note() { return streak < P.streak ? (streak ? `${streak} of ${P.streak} to start counting` : 'Go!') : `streak of ${streak}`; } };
+  };
+
   const peakParams = (thr, gap, maxGap, streak) => ({ thr: p(thr, 0.1, 3, 0.05, 'Burst size (g)'), gap: p(gap, 0.1, 1.5, 0.05, 'Min time between (s)'),
                                                      maxGap: p(maxGap, 0.3, 3, 0.1, 'Max time between in a streak (s)'), streak: p(streak, 1, 8, 1, 'Bursts to start counting') });
 
@@ -84,14 +100,17 @@ const Exercises = (() => {
                    if (Math.abs(acc) >= P.turn * Math.PI / 180) { if (acc > 0) ccw++; else cw++; acc = 0; }
                  }, get reps() { return cw + ccw; }, get note() { return `↻ clockwise ${cw}  ·  ↺ counter-clockwise ${ccw}`; } }; } },
 
-    { id: 'jumps', group: 'Activities', name: 'Jumps', chart: 'mag', how: 'Jump straight up and land. Each landing = 1.',
-      params: peakParams(1.0, 0.7, 99, 1), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
-    { id: 'jacks', group: 'Activities', name: 'Jumping jacks', chart: 'mag', how: 'Jumping jacks. The AirPods can only feel the bounce, not your arms.',
-      params: peakParams(0.5, 0.35, 1.2, 3), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
-    { id: 'hop', group: 'Activities', name: '1-leg hop', chart: 'mag', how: 'Hop on one leg. The AirPods can\'t tell which leg, it counts like a jump.',
-      params: peakParams(0.8, 0.5, 99, 1), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
-    { id: 'knees', group: 'Activities', name: 'High knees', chart: 'mag', how: 'Run in place bringing your knees up. Counts the steps.',
-      params: peakParams(0.3, 0.2, 0.8, 4), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
+    { id: 'jacks', group: 'Activities', name: 'Jumping jacks', chart: 'mag',
+      how: 'Jumping jacks. To the AirPods this is just a bounce: each landing counts (they can\'t see your arms).',
+      params: peakParams(0.5, 0.3, 1.2, 2), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
+    { id: 'hop', group: 'Activities', name: '1-leg hop', chart: 'mag',
+      how: 'Hop on one leg. Same head bounce as jumping jacks, so it uses the same counting (it can\'t tell which leg).',
+      params: peakParams(0.5, 0.3, 1.2, 2), marks: P => [{ s: 'mag', v: P.thr }], make: peaks },
+    { id: 'knees', group: 'Activities', name: 'High knees', chart: 'up',
+      how: 'Run in place bringing your knees up. Counts the up/down wobble of your head, one per step.',
+      params: { amp: p(0.12, 0.03, 0.8, 0.01, 'Swing size (g)'), tau: p(0.5, 0.2, 2, 0.1, 'Slow-average time (s)'), gap: p(0.2, 0.1, 0.8, 0.05, 'Min time between steps (s)'),
+                maxGap: p(0.9, 0.3, 2, 0.1, 'Max time between steps (s)'), streak: p(4, 1, 10, 1, 'Steps to start counting') },
+      marks: P => [{ s: 'up', v: P.amp }, { s: 'up', v: -P.amp }], make: osc },
     { id: 'squat', group: 'Activities', name: 'Squats', chart: 'y', how: 'Squat down and stand back up. Head drops, then rises = 1 rep.',
       params: { dip: p(0.08, 0.02, 0.3, 0.01, 'Drop needed (m)'), back: p(0.03, 0.0, 0.15, 0.01, 'Back up within (m)') },
       marks: P => [{ s: 'y', v: -P.dip }],
@@ -103,8 +122,8 @@ const Exercises = (() => {
       params: { angle: p(60, 20, 100, 1, 'Bend needed (°)'), back: p(25, 5, 45, 1, 'Stand up past (°)'), hold: p(0.5, 0, 3, 0.1, 'Hold (s)') },
       marks: P => [{ s: 'bend', v: P.angle }], make: bend },
     { id: 'flowers', group: 'Activities', name: 'Pick the flowers', chart: 'bend',
-      how: 'Bend down to pick a flower and straighten up. Down and up = 1.',
-      params: { angle: p(40, 15, 90, 1, 'Bend needed (°)'), back: p(20, 5, 45, 1, 'Stand up past (°)'), hold: p(0, 0, 2, 0.1, 'Hold (s)') },
+      how: 'Sweep down toward the flowers and back up. Each down-and-up sweep = 1.',
+      params: { angle: p(30, 15, 90, 1, 'Bend needed (°)'), back: p(15, 5, 45, 1, 'Stand up past (°)'), hold: p(0, 0, 2, 0.1, 'Hold (s)') },
       marks: P => [{ s: 'bend', v: P.angle }], make: bend },
   ];
   return { DEFS };
