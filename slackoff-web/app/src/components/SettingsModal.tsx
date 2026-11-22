@@ -10,6 +10,20 @@ import { sfx } from '../lib/sfx';
 import { airpods } from '../lib/airpods';
 import type { BreakType, Level } from '../types';
 
+/** Live check that AirPod motion is reaching this page (streamer -> bridge -> /events). */
+function AirPodStatus() {
+  const [on, setOn] = useState(airpods.connected());
+  const [rate, setRate] = useState(0);
+  useEffect(() => {
+    const unsub = airpods.subscribe(() => {});
+    const t = setInterval(() => { setOn(airpods.connected()); setRate(Math.round(airpods.rate)); }, 500);
+    return () => { unsub(); clearInterval(t); };
+  }, []);
+  return <p className={`muted small pod-status${on ? ' on' : ''}`} role="status">{on
+    ? `AirPods connected: receiving motion (${rate} updates a second).`
+    : 'No AirPod data yet. Start the streamer (swift run HeadMotionStreamer) and the bridge (node bridge/server.js). This page reconnects on its own.'}</p>;
+}
+
 export function SettingsModal({ onClose }: { onClose: () => void }) {
   const { data, updateSettings, updateProfile, resetAllData, toast } = useApp();
   const t = useTimer();
@@ -47,6 +61,7 @@ export function SettingsModal({ onClose }: { onClose: () => void }) {
               <DurationStepper label="Exercise duration" value={s.exerciseSeconds} onChange={v => updateSettings({ exerciseSeconds: v })} />
             </div>
             <label className="switch"><input type="checkbox" checked={s.airpods} onChange={e => updateSettings({ airpods: e.target.checked })} /><span />Count reps with AirPods (when the streamer is running)</label>
+            {s.airpods && <AirPodStatus />}
             <label className="switch"><input type="checkbox" defaultChecked={airpods.flipUp} onChange={e => airpods.setFlipUp(e.target.checked)} /><span />Flip AirPod up/down (turn on if squats don't count)</label>
             <label className="switch"><input type="checkbox" checked={s.autoCycle} onChange={e => updateSettings({ autoCycle: e.target.checked })} /><span />Automatic timer cycling</label>
             <label className="field">Exercise intensity

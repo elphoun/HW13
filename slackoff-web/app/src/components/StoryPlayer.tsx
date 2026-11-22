@@ -44,6 +44,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
   const [reps, setReps] = useState(0);
   const [earned, setEarned] = useState(0);
   const [done, setDone] = useState<string[]>([]);       // instructions completed, for the summary
+  const [results, setResults] = useState<('done' | 'skipped')[]>([]);   // one per move, in order
   const [clearedMsg, setClearedMsg] = useState('');
   const lastRep = useRef(0);
   const repsRef = useRef(0);        // the live rep count (AirPods can report several reps in one tick, before React re-renders)
@@ -67,7 +68,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
     sfx.unlock();
     if (type !== app.data.settings.breakType) app.updateSettings({ breakType: type });
     startClock(type);
-    repsRef.current = 0; setIdx(0); setPart(0); setReps(0); setEarned(0); setDone([]); setPhase('scene');
+    repsRef.current = 0; setIdx(0); setPart(0); setReps(0); setEarned(0); setDone([]); setResults([]); setPhase('scene');
   }, [type, app, startClock]);
   useEffect(() => { if (startWith) startClock(startWith); }, []);   // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -80,6 +81,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
       setEarned(e => e + pts); setDone(d => [...d, move.say(need)]);
       sfx.success();
     }
+    setResults(r => [...r, credit ? 'done' : 'skipped']);
     setClearedMsg(credit ? (part + 1 < parts.length ? 'Nice! Now stretch' : 'Nice!') : 'Skipped');
     setPhase('cleared');
   }, [move, need, app, breakMode, timer, part, parts.length]);
@@ -88,9 +90,8 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
   useEffect(() => {
     if (phase !== 'cleared') return;
     const t = setTimeout(() => {
-      repsRef.current = 0; setReps(0);
-      if (part + 1 < parts.length) { setPart(p => p + 1); setPhase('scene'); return; }
-      if (idx + 1 < story.scenes.length) { setIdx(i => i + 1); setPart(0); setPhase('scene'); return; }
+      if (part + 1 < parts.length) { repsRef.current = 0; setReps(0); setPart(p => p + 1); setPhase('scene'); return; }
+      if (idx + 1 < story.scenes.length) { repsRef.current = 0; setReps(0); setIdx(i => i + 1); setPart(0); setPhase('scene'); return; }
       setPhase('done'); sfx.win();
     }, CLEARED_MS);
     return () => clearTimeout(t);
@@ -155,7 +156,11 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
 
         <div className="story-top">
           <ol className="story-steps" aria-label={`Scene ${idx + 1} of ${story.scenes.length}`}>
-            {story.scenes.map((_, i) => <li key={i} className={i < idx || (i === idx && (phase === 'cleared' || phase === 'done')) ? 'done' : i === idx && phase !== 'intro' ? 'now' : ''} />)}
+            {story.scenes.map((_, i) => {
+              const r = results.slice(i * parts.length, (i + 1) * parts.length);
+              const state = r.length < parts.length ? (i === idx && phase !== 'intro' && phase !== 'done' ? 'now' : '') : r.every(x => x === 'done') ? 'done' : r.some(x => x === 'done') ? 'part' : 'skipped';
+              return <li key={i} className={state} title={state === 'skipped' ? 'Skipped' : state === 'part' ? 'Partly done' : undefined} />;
+            })}
           </ol>
           {useAir && <span className={`story-chip pods${podsOn && detectorKind ? ' on' : ''}`} title={!podsOn ? 'No AirPod data: press Space or Done one for each rep' : detectorKind ? 'Reps are counted from your AirPods' : 'This move has no AirPod detector yet: press Space or Done one for each rep'}>{!podsOn ? 'No AirPod signal' : detectorKind ? 'AirPods counting' : 'Tap Done for this move'}</span>}
           {breakMode && <span className="story-chip" title="Time left in your break">{fmtClock(timer.remainingNow)} left</span>}
@@ -193,14 +198,25 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
         )}
       </div>
 
-      <div className={`story-move${phase === 'scene' || phase === 'cleared' ? '' : ' idle'}`} aria-live="polite">
-        <div className="sm-ask">
-          {parts.length > 1 && <span className="sm-part">{part === 0 ? 'Activity' : 'Stretch'}, move {part + 1} of {parts.length}</span>}
-          <b>{move.say(need)}</b>
-          <span className="sm-dots" aria-label={`${Math.min(reps, need)} of ${need} done`}>
-            {Array.from({ length: need }, (_, i) => <i key={i} className={i < reps ? 'on' : ''} />)}
-          </span>
-        </div>
+      <div className={`story-move${phase === 'intro' ? ' idle' : ''}`} aria-live="polite">
+        {phase === 'done' ? (
+          <div className="sm-ask">
+            <span className="sm-part">Story finished</span>
+            <b>{results.filter(r => r === 'done').length} of {totalMoves} moves done</b>
+            <span className="sm-dots" aria-label={`${results.filter(r => r === 'done').length} of ${totalMoves} moves done`}>
+              {Array.from({ length: totalMoves }, (_, i) => <i key={i} className={results[i] === 'done' ? 'on' : results[i] === 'skipped' ? 'skip' : ''} />)}
+            </span>
+          </div>
+        ) : (
+          <div className="sm-ask">
+            {phase === 'intro' && <span className="sm-part">First up</span>}
+            {phase !== 'intro' && parts.length > 1 && <span className="sm-part">{part === 0 ? 'Activity' : 'Stretch'}, move {part + 1} of {parts.length}</span>}
+            <b>{move.say(need)}</b>
+            <span className="sm-dots" aria-label={`${Math.min(reps, need)} of ${need} done`}>
+              {Array.from({ length: need }, (_, i) => <i key={i} className={i < reps ? 'on' : ''} />)}
+            </span>
+          </div>
+        )}
         <button className="rep-btn" onClick={() => rep()} disabled={phase !== 'scene'}>Done one <kbd>Space</kbd></button>
         <button className="sm-skip" onClick={() => finishScene(false)} disabled={phase !== 'scene'}>{parts.length > 1 ? 'Skip this move' : 'Skip this scene'}</button>
       </div>
