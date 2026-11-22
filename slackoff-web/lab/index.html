@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Slackoff Exercise Lab</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  html,body{margin:0;min-height:100%;background:#05060f;font-family:ui-monospace,Menlo,monospace;color:#9ff}
+  header{display:flex;gap:16px;align-items:center;padding:10px 16px;border-bottom:1px solid #0ff3}
+  header h1{font-size:18px;margin:0;color:#0ff;letter-spacing:2px}
+  #status.ok{color:#6f6}#status.bad{color:#fc0}
+  button{font:inherit;color:#9ff;background:#123;border:1px solid #0ff6;padding:6px 10px;cursor:pointer;border-radius:4px}
+  button.on{background:#0ff;color:#012}
+  .wrap{display:flex;gap:16px;padding:16px}
+  #menu{width:230px;flex:none;display:flex;flex-direction:column;gap:6px}
+  #menu h3{margin:12px 0 2px;color:#f0f;font-size:13px;letter-spacing:2px;text-transform:uppercase}
+  #menu button{text-align:left}
+  #content{flex:1;min-width:0}
+  #empty{opacity:.7;padding:30px 0}
+  #main{display:none}
+  #name{font-size:26px;color:#0ff;margin:0 0 4px}
+  #reps{font-size:96px;line-height:1;color:#f0f;text-shadow:0 0 18px #f0f8}
+  #note{font-size:20px;color:#fc0;min-height:1.6em}
+  #params label{display:flex;gap:10px;align-items:center;font-size:13px;line-height:2}
+  #params input{width:160px;accent-color:#f0f}
+  #params b{color:#fff;width:50px}
+  #log{font-size:12px;opacity:.85;min-height:3em}
+  canvas{background:#020310;border:1px solid #0ff3;max-width:100%;margin-top:10px}
+  small{opacity:.7}
+</style></head>
+<body>
+<header><h1>SLACKOFF EXERCISE LAB</h1><span id="status" class="bad">…</span>
+  <button id="zero" title="Make your current pose neutral (C)">Zero pose (C)</button>
+  <label><input type="checkbox" id="flipUp"> flip up/down</label></header>
+<div class="wrap">
+  <div id="menu"></div>
+  <div id="content">
+    <div id="empty">Pick a stretch or an activity on the left. After a 1.5 s "hold still" your pose becomes neutral, then do the exercise.</div>
+    <div id="main">
+      <h2 id="name"></h2><div id="how"></div>
+      <div id="reps">0</div><div id="note"></div>
+      <p><button id="reset">Restart (re-zero)</button> <small>Yellow dashed lines on the charts are what a rep has to reach.</small></p>
+      <div id="params"></div>
+      <canvas id="charts" width="760"></canvas>
+      <div id="log"></div>
+    </div>
+  </div>
+</div>
+<script src="sensor.js"></script>
+<script src="exercises.js"></script>
+<script src="lab.js"></script>
+</body></html>
