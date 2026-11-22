@@ -180,6 +180,8 @@ const createSessionManager = ({
       outcome,
       nextBreakMinutes: scheduled ? getPomodoro(userId).workMinutes : null,
       nextBreakCategory: nextBreakCategory(session),
+      completedCount: session.completed,
+      variant: Math.floor(random() * 1000),
     };
     const gifUrl = pickReactionGif(outcome, config.reactionGifs, random);
     try {

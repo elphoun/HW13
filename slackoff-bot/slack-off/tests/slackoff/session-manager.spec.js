@@ -148,7 +148,10 @@ describe('session manager', () => {
     });
     await settle();
 
-    assert.match(posts().at(-1), /Neck tilts done \(6 reps detected\)/);
+    assert.match(
+      posts().at(-1),
+      /\*Nice work!\* Neck tilts done \(6 reps detected\)\. You've finished \*1\* break today\./,
+    );
     assert.strictEqual(sessions.getStatus('U1').completed, 1);
   });
 
@@ -263,7 +266,10 @@ describe('session manager', () => {
       await gifSessions.triggerActivity('U1');
       await timers.runNext();
 
-      assert.match(posts().at(-1), /Time's up/);
+      assert.match(
+        posts().at(-1),
+        /\*Time's up!\* You didn't finish .* \(0\/\d+ reps\), so it doesn't count\. Try again next break!/,
+      );
       assert.strictEqual(lastImage(), 'https://gifs.test/sad.gif');
     });
 

@@ -103,18 +103,32 @@ const activityPrompt = ({ userId, activity, reps, breakMinutes, headphonesStream
   };
 };
 
-const activityFinished = ({ activity, reps, outcome, nextBreakMinutes, nextBreakCategory, gifUrl }) => {
+const SUCCESS_OPENERS = [':tada: *Nice work!*', ':fire: *Crushed it!*', ':muscle: *That is how it is done!*'];
+const FAILURE_OPENERS = [":hourglass: *Time's up!*", ":disappointed: *Time's up.*", ":cry: *Time's up...*"];
+const choose = (options, variant) => options[Math.abs(variant) % options.length];
+
+const activityFinished = ({
+  activity,
+  reps,
+  outcome,
+  nextBreakMinutes,
+  nextBreakCategory,
+  gifUrl,
+  completedCount = 0,
+  variant = 0,
+}) => {
+  const plural = completedCount === 1 ? 'break' : 'breaks';
   const headline = {
-    detected: `:tada: Nice! ${activity.name} done (${reps} reps detected).`,
-    manual: `:white_check_mark: ${activity.name} marked done.`,
-    skipped: `:fast_forward: Skipped ${activity.name}.`,
-    timeout: `:hourglass: Time's up on ${activity.name} (${reps}/${activity.targetReps} reps detected).`,
+    detected: `${choose(SUCCESS_OPENERS, variant)} ${activity.name} done (${reps} reps detected).\nYou've finished *${completedCount}* ${plural} today.`,
+    manual: `${choose(SUCCESS_OPENERS, variant)} ${activity.name} marked done.\nYou've finished *${completedCount}* ${plural} today.`,
+    skipped: `:fast_forward: Skipped ${activity.name}. No worries, the next one is coming up.`,
+    timeout: `${choose(FAILURE_OPENERS, variant)} You didn't finish ${activity.name} (${reps}/${activity.targetReps} reps), so it doesn't count. Try again next break!`,
   }[outcome];
   const next = nextBreakMinutes
-    ? ` Back to work: ${BREAK_LABELS[nextBreakCategory].toLowerCase()} in ${nextBreakMinutes} minutes.`
+    ? `\nBack to work: ${BREAK_LABELS[nextBreakCategory].toLowerCase()} in ${nextBreakMinutes} minutes.`
     : '';
   return {
-    text: `${headline}${next}`,
+    text: `${headline.replaceAll('\n', ' ')}${next.replaceAll('\n', ' ')}`,
     blocks: [
       section(`${headline}${next}`),
       ...(gifUrl
