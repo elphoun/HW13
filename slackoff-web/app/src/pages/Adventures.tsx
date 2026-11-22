@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useApp } from '../state/AppState';
 import { STORIES, type Story } from '../data/stories';
 import { StoryPlayer } from '../components/StoryPlayer';
-import clouds from '../assets/home/clouds.png';
+import { CloudSky } from '../components/CloudSky';
 
 /** Rolling hill behind the menu (the dashed mound in the sketch). */
 const Hill = () => (
@@ -30,7 +30,7 @@ export function Adventures({ goHome }: { goHome: () => void }) {
 
   return (
     <main className="wipeout">
-      <img className="wo-clouds" src={clouds} alt="" />
+      <CloudSky />
       <Hill />
       <div className="wo-menu">
         <h1 className="wo-title">Begin your adventure</h1>

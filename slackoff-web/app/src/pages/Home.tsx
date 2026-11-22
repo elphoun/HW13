@@ -7,25 +7,45 @@ import { useApp } from '../state/AppState';
 import { fmtClock } from '../lib/dates';
 import { permission } from '../lib/notify';
 import { storyById } from '../data/stories';
+import { exerciseById } from '../data/exercises';
 import type { BreakType } from '../types';
-import clouds from '../assets/home/clouds.png';
-import bush from '../assets/home/bush.png';
+import { CloudSky } from '../components/CloudSky';
+import bush from '../assets/home/bush.svg';
 
 const DESIGN_H = 918;   // height of the home area in the Figma frame
 const clockTime = (t: number) => new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
-/** One line above the clock: what the focus timer is doing, plus the control for it. */
+const Icon = ({ d }: { d: string }) => <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d={d} /></svg>;
+const PLAY = 'M8 5.5v13l10-6.5z', PAUSE = 'M9 5.5v13M15 5.5v13', RESET = 'M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v3.5H8';
+
+/** Above the clock: what the focus timer is doing, and its two controls. */
 function TimerStatus() {
   const t = useTimer();
   const { breaks } = useUpcomingBreaks();
-  const [text, action] = t.status === 'running' ? [`Next break at ${clockTime(breaks[0] ?? t.endAt)}`, { label: 'Pause', fn: t.pause }]
-    : t.status === 'paused' ? ['Focus timer paused', { label: 'Resume', fn: t.resume }]
-    : ['Ready to focus?', { label: 'Start timer', fn: t.start }];
+  const [text, action] = t.status === 'running' ? [`Next break at ${clockTime(breaks[0] ?? t.endAt)}`, { label: 'Pause', icon: PAUSE, fn: t.pause }]
+    : t.status === 'paused' ? ['Focus timer paused', { label: 'Resume', icon: PLAY, fn: t.resume }]
+    : ['Ready to focus?', { label: 'Start', icon: PLAY, fn: t.start }];
   return (
     <div className="home-status" aria-live="polite">
       <span>{text}</span>
-      <button className="home-status-btn" onClick={action.fn}>{action.label}</button>
+      <button className={`home-ctl${t.status === 'running' ? '' : ' strong'}`} onClick={action.fn}><Icon d={action.icon} />{action.label}</button>
+      <button className="home-ctl" onClick={t.reset} disabled={t.status === 'idle'} title="Reset the focus timer"><Icon d={RESET} />Reset</button>
     </div>
+  );
+}
+
+/** The two ways to take a break. Both play the same story; the card says which moves you'll get. */
+function BreakCard({ type, title, onClick }: { type: BreakType; title: string; onClick: () => void }) {
+  const { data } = useApp();
+  const story = storyById(data.settings.story);
+  const moves = [...new Set(story.scenes.map(sc => exerciseById(sc.moves[type].exerciseId)?.name).filter(Boolean))] as string[];
+  const preview = moves.slice(0, 3).join(', ').toLowerCase();
+  return (
+    <button className={`home-card ${type}`} onClick={onClick}>
+      <b>{title}</b>
+      <span>{preview.charAt(0).toUpperCase() + preview.slice(1)}{moves.length > 3 ? ' and more' : ''}</span>
+      <small>{story.name}, {story.scenes.length} scenes</small>
+    </button>
   );
 }
 
@@ -38,8 +58,6 @@ function ReminderPrompt() {
 
 export function Home({ tab, setTab, beginBreak, goAdventures }: { tab: SideTab; setTab: (t: SideTab) => void; beginBreak: (type: BreakType) => void; goAdventures: () => void }) {
   const t = useTimer();
-  const { data } = useApp();
-  const story = storyById(data.settings.story);
   // Shrink the bush + mascot on shorter screens so they don't cover the buttons.
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -49,14 +67,18 @@ export function Home({ tab, setTab, beginBreak, goAdventures }: { tab: SideTab; 
   }, []);
   return (
     <main className="home" ref={ref}>
-      <img className="home-clouds" src={clouds} alt="" />
+      <CloudSky />
       <aside className="home-side"><StatsPanel tab={tab} setTab={setTab} /></aside>
       <div className={`home-timer is-${t.status}`}>
         <TimerStatus />
         <div className="home-clock" role="timer" aria-label={`${fmtClock(t.remainingNow)} remaining`}>{fmtClock(t.remainingNow)}</div>
-        <button className="home-btn" onClick={() => beginBreak('activity')} title={`Start an activity break: ${story.name}`}>Begin activity</button>
-        <button className="home-btn" onClick={() => beginBreak('stretch')} title={`Start a stretch break: ${story.name}`}>Begin stretch</button>
-        <button className="home-btn" onClick={t.reset} disabled={t.status === 'idle'}>Reset</button>
+        <div className="home-progress" role="progressbar" aria-label="Focus session progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(t.progress * 100)}>
+          <i style={{ width: `${t.progress * 100}%` }} />
+        </div>
+        <div className="home-cards">
+          <BreakCard type="activity" title="Begin activity" onClick={() => beginBreak('activity')} />
+          <BreakCard type="stretch" title="Begin stretch" onClick={() => beginBreak('stretch')} />
+        </div>
         <ReminderPrompt />
       </div>
       <div className="home-bush">
