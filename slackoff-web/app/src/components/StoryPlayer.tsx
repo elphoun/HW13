@@ -44,6 +44,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
   const [done, setDone] = useState<string[]>([]);       // instructions completed, for the summary
   const [clearedMsg, setClearedMsg] = useState('');
   const lastRep = useRef(0);
+  const repsRef = useRef(0);        // the live rep count (AirPods can report several reps in one tick, before React re-renders)
 
   const scene = story.scenes[Math.min(idx, story.scenes.length - 1)];
   const move = scene.moves[type];
@@ -55,7 +56,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
     sfx.unlock();
     if (type !== app.data.settings.breakType) app.updateSettings({ breakType: type });
     if (breakMode && timer.status === 'idle') timer.start();
-    setIdx(0); setReps(0); setEarned(0); setDone([]); setPhase('scene');
+    repsRef.current = 0; setIdx(0); setReps(0); setEarned(0); setDone([]); setPhase('scene');
   }, [type, app, breakMode, timer]);
   useEffect(() => { if (startWith && breakMode && timer.status === 'idle') timer.start(); }, []);   // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -76,7 +77,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
   useEffect(() => {
     if (phase !== 'cleared') return;
     const t = setTimeout(() => {
-      if (idx + 1 < story.scenes.length) { setIdx(i => i + 1); setReps(0); setPhase('scene'); return; }
+      if (idx + 1 < story.scenes.length) { repsRef.current = 0; setIdx(i => i + 1); setReps(0); setPhase('scene'); return; }
       setPhase('done'); sfx.win();
     }, CLEARED_MS);
     return () => clearTimeout(t);
@@ -92,11 +93,12 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
     if (phase !== 'scene') return;
     const now = performance.now();
     if (!fromSensor && now - lastRep.current < MIN_REP_GAP_MS) return;
+    if (repsRef.current >= need) return;               // scene already cleared (extra reps can land in the same tick)
     lastRep.current = now;
-    const n = reps + 1;
+    const n = ++repsRef.current;
     setReps(n); sfx.tick(Math.min(n - 1, 8));
     if (n >= need) finishScene(true);
-  }, [phase, reps, need, finishScene]);
+  }, [phase, need, finishScene]);
   const repRef = useRef(rep); repRef.current = rep;
 
   // AirPods count the reps: during a scene, the detector for its exercise runs on every motion sample and each detected rep
@@ -142,7 +144,7 @@ export function StoryPlayer({ story, onExit, breakMode = false, startWith }: { s
           <ol className="story-steps" aria-label={`Scene ${idx + 1} of ${story.scenes.length}`}>
             {story.scenes.map((_, i) => <li key={i} className={i < idx || (i === idx && (phase === 'cleared' || phase === 'done')) ? 'done' : i === idx && phase !== 'intro' ? 'now' : ''} />)}
           </ol>
-          {useAir && <span className={`story-chip pods${podsOn ? ' on' : ''}`} title={podsOn ? 'Reps are counted from your AirPods' : 'No AirPod data: press Space or Done one for each rep'}>{podsOn ? 'AirPods counting' : 'No AirPod signal'}</span>}
+          {useAir && <span className={`story-chip pods${podsOn && detectorKind ? ' on' : ''}`} title={!podsOn ? 'No AirPod data: press Space or Done one for each rep' : detectorKind ? 'Reps are counted from your AirPods' : 'This move has no AirPod detector yet: press Space or Done one for each rep'}>{!podsOn ? 'No AirPod signal' : detectorKind ? 'AirPods counting' : 'Tap Done for this move'}</span>}
           {breakMode && <span className="story-chip" title="Time left in your break">{fmtClock(timer.remainingNow)} left</span>}
           <button className="story-chip btn-chip" onClick={onExit}>{breakMode ? 'End break' : 'Leave story'}</button>
         </div>
